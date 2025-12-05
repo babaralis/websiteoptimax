@@ -380,7 +380,7 @@ export function BriefForm({
           variant="ghost"
           size="icon"
           onClick={handlePrev}
-          className="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white hover:bg-white/20"
+          className="absolute left-4 md:left-8 md:top-[55%] top-[58%] -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white hover:bg-white/20"
         >
           <ChevronLeft className="w-6 h-6" />
         </Button>
@@ -392,7 +392,7 @@ export function BriefForm({
           size="icon"
           onClick={handleNext}
           disabled={!canProceed() || isSubmitting}
-          className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed"
+          className="absolute right-4 md:right-8 md:top-[55%] top-[58%] -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <ChevronRight className="w-6 h-6" />
         </Button>
