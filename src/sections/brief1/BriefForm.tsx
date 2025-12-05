@@ -285,8 +285,22 @@ export function BriefForm({
                     Let's talk! Share your design requirements with one of our designers to get a perfect logo that you envisioned for.
                   </p>
                   <Button className="w-full bg-[#ff4772] hover:bg-[#ff4772]/90">
-                    Chat With Us
+                    <a 
+                      href="#" 
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (typeof window !== 'undefined' && (window as any).$zopim) {
+                          (window as any).$zopim.livechat.window.show();
+                        }
+                      }} 
+                      rel="noopener noreferrer"
+                    >
+                      Chat With Us
+                    </a>
                   </Button>
+
+                  
+
                 </div>
               </div>
               <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden">
