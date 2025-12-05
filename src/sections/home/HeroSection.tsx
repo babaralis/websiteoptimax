@@ -46,7 +46,7 @@ export function HeroSection() {
           initialCompanyName={companyName}
         />
       )}
-    <section className="relative md:h-[210vh] h-[180vh] flex items-center justify-center overflow-hidden md:pt-20 pt-80">
+    <section className="relative  flex items-center justify-center overflow-hidden md:pt-36 pt-80 pb-10">
       {/* Enhanced Background Effects */}
       <AbstractShapes variant="hero" />
       
@@ -228,19 +228,13 @@ export function HeroSection() {
               </div>
             </div>
           </motion.div>
-        </div>
-      </div>
-      
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
-      
-      {/* Scroll Indicator */}
+          {/* Scroll Indicator */}
       <Link href="#portfolio">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ delay: 1, duration: 0.5 }}
-        className="absolute bottom-12 left-1/2 -translate-x-1/2"
+        className="flex justify-center items-center"
       >
         <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2 glass">
           <motion.div
@@ -251,6 +245,13 @@ export function HeroSection() {
         </div>
       </motion.div>
       </Link>
+        </div>
+      </div>
+      
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      
+      
     </section>
     </>
   );
