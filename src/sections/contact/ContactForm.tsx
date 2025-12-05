@@ -11,6 +11,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { useToast } from "@/hooks/use-toast";
 import { Send, CheckCircle } from "lucide-react";
 import { event as trackEvent } from "@/lib/analytics";
+import { submitContactEmail } from "@/lib/email";
 
 const BUDGET_OPTIONS = [
   { value: "10k-25k", label: "$10,000 - $25,000" },
@@ -34,7 +35,17 @@ export function ContactForm() {
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsLoading(true);
-    
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      company: formData.get('company') as string,
+      website: formData.get('website') as string,
+      budget: formData.get('budget') as string,
+      timeline: formData.get('timeline') as string,
+      message: formData.get('message') as string,
+    };
+    await submitContactEmail(data);
     trackEvent({
       action: "form_submit",
       category: "Contact",

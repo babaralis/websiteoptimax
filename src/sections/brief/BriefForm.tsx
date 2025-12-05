@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { submitEmail } from "@/app/api/send-email/route";
+import { submitEmail } from "@/lib/email";
 import {
   Select,
   SelectContent,
