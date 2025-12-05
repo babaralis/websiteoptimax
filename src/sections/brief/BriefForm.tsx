@@ -74,24 +74,22 @@ export function BriefForm({
   };
 
   const nextStep = async () => {
-    if (currentStep < totalSteps) {
-      // If moving from step 6, send data to API and navigate to thank-you page
-      if (currentStep === 6) {
-        setIsSubmitting(true);
-        setValidationError("");
-        try {
-          await sendLeadToCRM(formData);
-          console.log('✅ Lead sent to CRM successfully');
-          // Navigate to thank-you page
-          router.push('/thank-you');
-        } catch (error) {
-          console.error('❌ Error sending lead to CRM:', error);
-          setValidationError('Failed to submit. Please try again.');
-          setIsSubmitting(false);
-        }
-      } else {
-        setCurrentStep(currentStep + 1);
+    // If on step 6, send data to API and navigate to thank-you page
+    if (currentStep === totalSteps) {
+      setIsSubmitting(true);
+      setValidationError("");
+      try {
+        await sendLeadToCRM(formData);
+        console.log('✅ Lead sent to CRM successfully');
+        // Navigate to thank-you page
+        router.push('/thank-you');
+      } catch (error) {
+        console.error('❌ Error sending lead to CRM:', error);
+        setValidationError('Failed to submit. Please try again.');
+        setIsSubmitting(false);
       }
+    } else if (currentStep < totalSteps) {
+      setCurrentStep(currentStep + 1);
     }
   };
 
@@ -381,7 +379,7 @@ export function BriefForm({
         </Button>
       )}
 
-      {currentStep < totalSteps && (
+      {currentStep <= totalSteps && (
         <Button
           variant="ghost"
           size="icon"
