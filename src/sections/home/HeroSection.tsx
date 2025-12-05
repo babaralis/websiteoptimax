@@ -174,7 +174,7 @@ export function HeroSection() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-glow-lg">
               <Image
-                src="/assets/images/banner.webp"
+                src="/assets/images/homebanner.jpg"
                 alt="B2B website design and development mockup showing modern interfaces"
                 className="w-full h-auto object-cover"
                 width={1200}

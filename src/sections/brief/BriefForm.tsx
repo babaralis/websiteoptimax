@@ -207,10 +207,10 @@ export function BriefForm({
                 value={formData.industry}
                 onValueChange={(value) => updateFormData("industry", value)}
               >
-                <SelectTrigger className="h-14 text-base bg-white/10 backdrop-blur-lg border-white/20 text-white w-full min-w-full">
+                <SelectTrigger className="h-12 text-base bg-white/10 backdrop-blur-lg border-white/20 text-white w-full min-w-full">
                   <SelectValue placeholder="Select Industry (optional)" />
                 </SelectTrigger>
-                <SelectContent>
+                <SelectContent side="bottom" position="popper" className="max-h-48">
                   <SelectItem value="accounting-finance">Accounting & Finance</SelectItem>
                   <SelectItem value="adventure-outdoor">Adventure & Outdoor</SelectItem>
                   <SelectItem value="agriculture-farming">Agriculture & Farming</SelectItem>

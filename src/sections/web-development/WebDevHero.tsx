@@ -7,7 +7,7 @@ import { ArrowRight, Code2, Star } from "lucide-react";
 import Link from "next/link";
 import { AbstractShapes } from "@/components/graphics/AbstractShapes";
 import { CountUp } from "@/components/animations/CountUp";
-import webdevHeroImage from "@/assets/webdevelopment/banner.png";
+import webdevHeroImage from "@/assets/webdevelopment/banner.jpg";
 import Image from "next/image";
 
 const platforms = ["React", "Next.js", "WordPress", "HubSpot", "Shopify"];

@@ -6,7 +6,7 @@ import { ArrowRight } from "lucide-react";
 import Link from "next/link";
 import { GridPattern, RadialGlow } from "@/components/graphics/GridPattern";
 import { motion } from "framer-motion";
-import portfolioHeroImage from "@/assets/hero/portfolio-hero.jpg";
+import portfolioHeroImage from "@/assets/portfolio/banner.jpg";
 import Image from "next/image";
 
 export function PortfolioHero() {

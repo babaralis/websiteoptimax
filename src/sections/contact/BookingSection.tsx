@@ -1,3 +1,5 @@
+"use client";
+
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -53,7 +55,16 @@ export function BookingSection() {
           
           <div className="mt-auto">
             <Button variant="hero" size="lg" className="w-full" asChild>
-              <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
+              <a 
+                href="javascript:void(0)" 
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (typeof window !== 'undefined' && (window as any).$zopim) {
+                    (window as any).$zopim.livechat.window.show();
+                  }
+                }} 
+                rel="noopener noreferrer"
+              >
                 Book Your Free Call
                 <ArrowRight className="ml-2 h-4 w-4" />
               </a>
