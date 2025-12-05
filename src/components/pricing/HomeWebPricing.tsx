@@ -5,8 +5,7 @@ import { motion } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Check, ArrowRight, Sparkles } from "lucide-react";
-import Link from "next/link";
+import { Check, ArrowRight, Sparkles, Loader2 } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 type Plan = {
@@ -462,7 +461,85 @@ const pricingTabs: PricingTab[] = [
 
 export function HomeWebPricing() {
   const [activeTab, setActiveTab] = useState<TabId>("html");
+  const [loading, setLoading] = useState<string | null>(null);
   const currentTab = pricingTabs.find((tab) => tab.id === activeTab)!;
+
+  // Helper function to generate package string
+  const generatePackageString = (tab: PricingTab, plan: Plan): string => {
+    // Extract currency and price from price string (e.g., "$299" -> "USD", "299")
+    const priceMatch = plan.price.match(/\$(\d+)/);
+    const currency = "USD";
+    const price = priceMatch ? priceMatch[1] : "0";
+    const discount = "0";
+    
+    // Format: Category-Type-Currency-Price-Discount
+    // Category is the tab label, Type is the plan name
+    // Handle special case: "E-Com Website" -> "ECom"
+    let category = tab.label;
+    if (category.includes("E-Com")) {
+      category = "ECom";
+    } else {
+      // Replace hyphens with spaces for other categories to avoid parsing issues
+      category = category.replace(/\s+/g, " ").replace(/-/g, " ");
+    }
+    
+    // Replace hyphens with spaces in type to avoid parsing issues
+    let type = plan.name.replace(/\s+/g, " ").replace(/-/g, " ");
+    type = type.replace(/E Com/g, "ECom"); // Convert "E Com" to "ECom" in type if needed
+    
+    return `${category}-${type}-${currency}-${price}-${discount}`;
+  };
+
+  // Handle payment button click
+  const handlePayment = async (tab: PricingTab, plan: Plan) => {
+    const packageString = generatePackageString(tab, plan);
+    
+    // Parse the package string
+    const firstHyphen = packageString.indexOf("-");
+    const category = packageString.substring(0, firstHyphen);
+    const rest = packageString.substring(firstHyphen + 1);
+    const parts = rest.split("-");
+    
+    const item_name = `${category} ${parts[0]}`;
+    const currency_code = parts[1];
+    const price = parts[2];
+    const discount = parts[3];
+
+    const item = {
+      item_name,
+      price,
+      currency_code,
+      category,
+      discount,
+    };
+
+    setLoading(packageString);
+
+    try {
+      const response = await fetch("https://admin.websiteoptimax.com/api/payment/ordernow/store", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+        body: JSON.stringify(item),
+      });
+
+      const data = await response.json();
+
+      if (data.success && data.link) {
+        window.location.href = data.link;
+      } else {
+        console.error("Payment failed:", data);
+        alert("Payment processing failed. Please try again or contact support.");
+        setLoading(null);
+      }
+    } catch (error) {
+      console.error("Payment error:", error);
+      alert("An error occurred. Please try again or contact support.");
+      setLoading(null);
+    }
+  };
 
   return (
     <section className="py-24 lg:py-32 pt-0">
@@ -584,13 +661,21 @@ export function HomeWebPricing() {
                     <Button
                       variant={plan.popular ? "hero" : "outline"}
                       size="lg"
-                      className="w-full text-sm font-semibold"
-                      asChild
+                      className="w-full text-sm font-semibold gap-2"
+                      onClick={() => handlePayment(currentTab, plan)}
+                      disabled={loading !== null || plan.price === "Portal"}
                     >
-                      <Link href="/contact" className="gap-2">
-                        {plan.cta}
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
+                      {loading === generatePackageString(currentTab, plan) ? (
+                        <>
+                          <Loader2 className="w-4 h-4 animate-spin" />
+                          Processing...
+                        </>
+                      ) : (
+                        <>
+                          {plan.cta}
+                          <ArrowRight className="w-4 h-4" />
+                        </>
+                      )}
                     </Button>
                   </CardContent>
                 </Card>
@@ -671,13 +756,21 @@ export function HomeWebPricing() {
                       <Button
                         variant={plan.popular ? "hero" : "outline"}
                         size="lg"
-                        className="w-full text-sm font-semibold"
-                        asChild
+                        className="w-full text-sm font-semibold gap-2"
+                        onClick={() => handlePayment(currentTab, plan)}
+                        disabled={loading !== null || plan.price === "Portal"}
                       >
-                        <Link href="/contact" className="gap-2">
-                          {plan.cta}
-                          <ArrowRight className="w-4 h-4" />
-                        </Link>
+                        {loading === generatePackageString(currentTab, plan) ? (
+                          <>
+                            <Loader2 className="w-4 h-4 animate-spin" />
+                            Processing...
+                          </>
+                        ) : (
+                          <>
+                            {plan.cta}
+                            <ArrowRight className="w-4 h-4" />
+                          </>
+                        )}
                       </Button>
                     </CardContent>
                   </Card>
