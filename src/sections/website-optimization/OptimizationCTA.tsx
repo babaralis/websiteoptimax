@@ -10,7 +10,7 @@ import { AbstractShapes } from "@/components/graphics/AbstractShapes";
 
 export function OptimizationCTA() {
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
+    <section className="py-24 lg:py-32 relative overflow-hidden pt-0">
       <AbstractShapes variant="section" />
       <RadialGlow color="primary" position="center" intensity="medium" />
       
@@ -29,7 +29,7 @@ export function OptimizationCTA() {
                 Limited Availability
               </motion.span>
               
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+              <h2 className="section-heading text-foreground ...1">
                 Ready to Stop Leaving{" "}
                 <span className="gradient-text-glow">Money on the Table?</span>
               </h2>
@@ -69,7 +69,7 @@ export function OptimizationCTA() {
                 className="mt-10 pt-8 border-t border-border/30"
                 initial={{ opacity: 0 }}
                 whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, margin: "-50px" }}
                 transition={{ delay: 0.4 }}
               >
                 <p className="text-muted-foreground text-sm">

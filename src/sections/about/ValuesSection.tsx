@@ -36,7 +36,7 @@ export function ValuesSection() {
           <span className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full bg-secondary/10 text-secondary border border-secondary/20">
             Our Principles
           </span>
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          <h2 className="section-heading text-foreground ...2">
             What We <span className="gradient-text">Stand For</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
@@ -47,12 +47,12 @@ export function ValuesSection() {
 
         <StaggerChildren className="grid md:grid-cols-2 gap-6 lg:gap-8">
           {values.map((value) => (
-            <StaggerItem key={value.title}>
-              <div className="flex gap-5 p-6 bg-card/50 border border-border rounded-xl hover:border-primary/30 transition-all duration-300 backdrop-blur-sm">
+            <StaggerItem key={value.title} className="h-full">
+              <div className="flex gap-5 p-6 bg-card/50 border border-border rounded-xl hover:border-primary/30 transition-all duration-300 backdrop-blur-sm h-full">
                 <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center">
                   <value.icon className="w-6 h-6 text-primary" />
                 </div>
-                <div>
+                <div className="flex-1">
                   <h3 className="text-lg font-semibold mb-2">{value.title}</h3>
                   <p className="text-muted-foreground">{value.description}</p>
                 </div>

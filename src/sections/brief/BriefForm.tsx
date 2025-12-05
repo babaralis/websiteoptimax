@@ -151,7 +151,7 @@ export function BriefForm({
     switch (currentStep) {
       case 1:
         return (
-          <div className="text-center md:w-[600px] w-[70%] mx-auto">
+          <div className="text-center md:w-[37.5rem] w-[70%] mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Enter Your Company Name
             </h2>
@@ -175,7 +175,7 @@ export function BriefForm({
 
       case 2:
         return (
-          <div className="text-center md:w-[600px] w-full">
+          <div className="text-center md:w-[37.5rem] w-full">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Enter Slogan
             </h2>
@@ -198,7 +198,7 @@ export function BriefForm({
 
       case 3:
         return (
-          <div className="text-center md:w-[600px] w-full">
+          <div className="text-center md:w-[37.5rem] w-full">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Select Industry
             </h2>
@@ -266,7 +266,7 @@ export function BriefForm({
 
       case 4:
         return (
-          <div className="text-center md:w-[600px] w-full">
+          <div className="text-center md:w-[37.5rem] w-full">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Website Steps
             </h2>
@@ -293,7 +293,7 @@ export function BriefForm({
 
       case 5:
         return (
-          <div className="text-center md:w-[600px] w-[70%] mx-auto">
+          <div className="text-center md:w-[37.5rem] w-[70%] mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Enter Your Email Address
             </h2>
@@ -317,7 +317,7 @@ export function BriefForm({
 
       case 6:
         return (
-          <div className="text-center md:w-[600px] w-[70%] mx-auto">
+          <div className="text-center md:w-[37.5rem] w-[70%] mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Enter Your Phone Number (Optional)
             </h2>

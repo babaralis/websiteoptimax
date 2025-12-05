@@ -14,7 +14,7 @@ export function PortfolioCTA() {
       
       <div className="container relative">
         <FadeIn className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+          <h2 className="section-heading text-foreground ...1">
             Your B2B Brand Could Be{" "}
             <span className="gradient-text">Next</span>
           </h2>

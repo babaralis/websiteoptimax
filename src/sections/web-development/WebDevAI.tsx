@@ -51,7 +51,7 @@ export function WebDevAI() {
             Future-Ready Development
           </span>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+          <h2 className="section-heading text-foreground ...1">
             AI-Optimized for <span className="gradient-text">Maximum Visibility</span>
           </h2>
           

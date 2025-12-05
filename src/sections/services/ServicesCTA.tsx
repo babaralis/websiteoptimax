@@ -18,7 +18,7 @@ export function ServicesCTA() {
       
       <div className="container relative">
         <FadeIn className="max-w-4xl mx-auto text-center">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+          <h2 className="section-heading text-foreground ...1">
             Ready to Stop Losing Customers to a{" "}
             <span className="gradient-text">Bad Website?</span>
           </h2>

@@ -19,7 +19,7 @@ export function WebDevCopywriting() {
               Conversion Copywriting
             </span>
             
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="section-heading text-foreground ...1">
               Words That <span className="gradient-text">Convert Visitors</span> Into Customers
             </h2>
             

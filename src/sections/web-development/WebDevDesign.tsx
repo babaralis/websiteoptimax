@@ -100,7 +100,7 @@ export function WebDevDesign() {
               Visual Design
             </span>
             
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="section-heading text-foreground ...1">
               Design That Brings Your{" "}
               <span className="gradient-text">Brand to Life</span>
             </h2>

@@ -47,7 +47,7 @@ export function OptimizationProblem() {
             The Hidden Problem
           </span>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+          <h2 className="section-heading text-foreground ...1">
             Your Website Is <span className="text-destructive">Leaking Money</span>
           </h2>
           
@@ -88,7 +88,7 @@ export function OptimizationProblem() {
                   className="flex items-center gap-3"
                   initial={{ opacity: 0, x: -10 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false, margin: "-50px" }}
                   transition={{ delay: 0.5 + index * 0.1 }}
                 >
                   <div className="w-6 h-6 rounded-full bg-destructive/20 flex items-center justify-center flex-shrink-0">

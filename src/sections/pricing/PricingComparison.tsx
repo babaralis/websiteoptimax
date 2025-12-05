@@ -57,12 +57,12 @@ function FeatureValue({ value }: { value: boolean | string }) {
 
 export function PricingComparison() {
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
+    <section className="py-24 lg:py-32 relative overflow-hidden pt-0">
       <GridPattern variant="dots" className="opacity-20" />
       
       <div className="container relative">
         <FadeIn className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+          <h2 className="section-heading text-foreground ...">
             Compare <span className="gradient-text">All Features</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

@@ -27,7 +27,7 @@ export function PricingCTA() {
                 Free Strategy Session
               </motion.span>
               
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 text-foreground">
+              <h2 className="section-heading text-foreground ...1 text-foreground">
                 Ready to Invest in{" "}
                 <span className="gradient-text-glow">Real Growth?</span>
               </h2>

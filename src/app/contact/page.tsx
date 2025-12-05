@@ -23,11 +23,11 @@ export default function ContactPage() {
       <ContactHero />
       <section className="pt-24 lg:pt-32 pb-24 lg:pb-32">
         <div className="container">
-          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12">
+          <div className="grid lg:grid-cols-5 gap-8 lg:gap-12 items-start">
             <div className="lg:col-span-3">
               <ContactForm />
             </div>
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-2 h-full">
               <BookingSection />
             </div>
           </div>

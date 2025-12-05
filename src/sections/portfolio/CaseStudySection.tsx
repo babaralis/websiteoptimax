@@ -32,7 +32,7 @@ export function CaseStudySection() {
       <div className="container relative">
         <FadeIn className="text-center mb-16">
           <Badge variant="outline" className="mb-4">Featured B2B Case Study</Badge>
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+          <h2 className="section-heading text-foreground ...">
             How We Helped CloudSync{" "}
             <span className="gradient-text">4x Their Pipeline</span>
           </h2>

@@ -18,7 +18,7 @@ export function AbstractShapes({ variant = "section", className = "" }: Abstract
             rotate: [0, 180, 360],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute -top-1/4 -right-1/4 w-[800px] h-[800px] rounded-full bg-gradient-radial from-primary/20 via-primary/5 to-transparent blur-3xl"
+          className="absolute -top-1/4 -right-1/4 w-[50rem] h-[50rem] rounded-full bg-gradient-radial from-primary/20 via-primary/5 to-transparent blur-3xl"
         />
         <motion.div
           animate={{ 
@@ -26,7 +26,7 @@ export function AbstractShapes({ variant = "section", className = "" }: Abstract
             rotate: [360, 180, 0],
           }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-1/4 -left-1/4 w-[600px] h-[600px] rounded-full bg-gradient-radial from-secondary/20 via-secondary/5 to-transparent blur-3xl"
+          className="absolute -bottom-1/4 -left-1/4 w-[37.5rem] h-[37.5rem] rounded-full bg-gradient-radial from-secondary/20 via-secondary/5 to-transparent blur-3xl"
         />
         
         {/* Floating geometric shapes */}

@@ -1,4 +1,7 @@
-import { Metadata } from "next";
+"use client";
+
+import { useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { OptimizationHero } from "@/sections/website-optimization/OptimizationHero";
 import { OptimizationProblem } from "@/sections/website-optimization/OptimizationProblem";
 import { OptimizationCaseStudies } from "@/sections/website-optimization/OptimizationCaseStudies";
@@ -7,20 +10,34 @@ import { OptimizationProcess } from "@/sections/website-optimization/Optimizatio
 import { OptimizationGuarantee } from "@/sections/website-optimization/OptimizationGuarantee";
 import { OptimizationQualification } from "@/sections/website-optimization/OptimizationQualification";
 import { OptimizationCTA } from "@/sections/website-optimization/OptimizationCTA";
-import { PAGE_SEO, generateServiceSchema } from "@/lib/seo";
-import { generateMetadata as genMeta } from "@/lib/metadata";
-
-export const metadata: Metadata = genMeta(PAGE_SEO.websiteOptimization);
 
 export default function WebsiteOptimizationPage() {
-  const serviceSchema = generateServiceSchema();
+  const pathname = usePathname();
+
+  useEffect(() => {
+    // Reset scroll position on route change
+    window.scrollTo({ top: 0, behavior: 'instant' });
+    
+    // Trigger multiple scroll/resize events to ensure animations detect viewport changes
+    const triggerEvents = () => {
+      window.dispatchEvent(new Event('scroll'));
+      window.dispatchEvent(new Event('resize'));
+    };
+    
+    // Multiple triggers at different intervals to catch all cases
+    const timers = [
+      setTimeout(triggerEvents, 50),
+      setTimeout(triggerEvents, 200),
+      setTimeout(triggerEvents, 400),
+    ];
+
+    return () => {
+      timers.forEach(timer => clearTimeout(timer));
+    };
+  }, [pathname]);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
-      />
       <OptimizationHero />
       <OptimizationProblem />
       <OptimizationCaseStudies />

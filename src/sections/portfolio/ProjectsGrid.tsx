@@ -58,7 +58,7 @@ export function ProjectsGrid() {
       
       <div className="container relative">
         <FadeIn className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+          <h2 className="section-heading text-foreground ...">
             Featured <span className="gradient-text">B2B Projects</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -70,7 +70,7 @@ export function ProjectsGrid() {
           {B2B_PROJECTS.map((project) => (
             <FadeIn key={project.title}>
               <Card className="group overflow-hidden transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/10 border-border/50 hover:border-primary/30 bg-card/50 backdrop-blur-sm">
-                <div className="relative aspect-[4/3] min-h-[400px] bg-gradient-to-br from-muted to-muted/50 overflow-hidden">
+                <div className="relative aspect-[4/3] min-h-[25rem] bg-gradient-to-br from-muted to-muted/50 overflow-hidden">
                   <Image
                     src={project.image}
                     alt={project.title}

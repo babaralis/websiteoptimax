@@ -25,7 +25,7 @@ export default function ThankYouPage() {
 
       {/* Content - Centered */}
       <div className="relative z-10 flex-1 flex items-center justify-center w-full px-4">
-        <div className="text-center md:max-w-[1200px] md:w-[90%] md:mx-auto w-full">
+        <div className="text-center md:max-w-[75rem] md:w-[90%] md:mx-auto w-full">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
             Thank You, How Would You Like To Proceed?
           </h2>

@@ -33,7 +33,7 @@ export function OptimizationQualification() {
             Is This Right For You?
           </span>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+          <h2 className="section-heading text-foreground ...1">
             This Program Is <span className="gradient-text">Not For Everyone</span>
           </h2>
           
@@ -64,7 +64,7 @@ export function OptimizationQualification() {
                     className="flex items-start gap-3"
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, margin: "-50px" }}
                     transition={{ delay: index * 0.1 }}
                   >
                     <div className="w-5 h-5 rounded-full bg-success/20 flex items-center justify-center flex-shrink-0 mt-0.5">
@@ -97,7 +97,7 @@ export function OptimizationQualification() {
                     className="flex items-start gap-3"
                     initial={{ opacity: 0, x: -10 }}
                     whileInView={{ opacity: 1, x: 0 }}
-                    viewport={{ once: true }}
+                    viewport={{ once: false, margin: "-50px" }}
                     transition={{ delay: 0.2 + index * 0.1 }}
                   >
                     <div className="w-5 h-5 rounded-full bg-muted flex items-center justify-center flex-shrink-0 mt-0.5">

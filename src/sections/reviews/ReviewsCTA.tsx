@@ -20,7 +20,7 @@ export function ReviewsCTA() {
             ))}
           </div>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+          <h2 className="section-heading text-foreground ...1">
             Ready to Join Our{" "}
             <span className="gradient-text">B2B Success Stories?</span>
           </h2>

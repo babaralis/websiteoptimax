@@ -46,7 +46,7 @@ export function TeamSection() {
           <span className="inline-block px-3 py-1 mb-4 text-sm font-medium rounded-full bg-primary/10 text-primary border border-primary/20">
             The Team
           </span>
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          <h2 className="section-heading text-foreground ...2 md:max-w-3xl mx-auto">
             Meet the B2B Specialists Behind{" "}
             <span className="gradient-text">Your Results</span>
           </h2>

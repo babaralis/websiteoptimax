@@ -9,8 +9,8 @@ export function GridPattern({ className = "", variant = "lines" }: GridPatternPr
       <div 
         className={`absolute inset-0 pointer-events-none ${className}`}
         style={{
-          backgroundImage: `radial-gradient(circle at 1px 1px, hsl(var(--muted-foreground) / 0.15) 1px, transparent 0)`,
-          backgroundSize: "40px 40px",
+          backgroundImage: `radial-gradient(circle at 0.0625rem 0.0625rem, hsl(var(--muted-foreground) / 0.15) 0.0625rem, transparent 0)`,
+          backgroundSize: "2.5rem 2.5rem",
         }}
       />
     );
@@ -34,11 +34,11 @@ export function GridPattern({ className = "", variant = "lines" }: GridPatternPr
   return (
     <div 
       className={`absolute inset-0 pointer-events-none ${className}`}
-      style={{
-        backgroundImage: `linear-gradient(to right, hsl(var(--border) / 0.3) 1px, transparent 1px),
-                          linear-gradient(to bottom, hsl(var(--border) / 0.3) 1px, transparent 1px)`,
-        backgroundSize: "60px 60px",
-      }}
+        style={{
+          backgroundImage: `linear-gradient(to right, hsl(var(--border) / 0.3) 0.0625rem, transparent 0.0625rem),
+                          linear-gradient(to bottom, hsl(var(--border) / 0.3) 0.0625rem, transparent 0.0625rem)`,
+          backgroundSize: "3.75rem 3.75rem",
+        }}
     />
   );
 }
@@ -80,7 +80,7 @@ export function RadialGlow({
 
   return (
     <div 
-      className={`absolute w-[600px] h-[600px] rounded-full bg-gradient-radial ${colorGradient[color]} blur-3xl ${positionClasses[position]} ${intensityOpacity[intensity]} ${className}`}
+      className={`absolute w-[37.5rem] h-[37.5rem] rounded-full bg-gradient-radial ${colorGradient[color]} blur-3xl ${positionClasses[position]} ${intensityOpacity[intensity]} ${className}`}
     />
   );
 }

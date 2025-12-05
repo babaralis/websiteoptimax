@@ -460,16 +460,16 @@ const pricingTabs: PricingTab[] = [
   },
 ];
 
-export function HomeWebPricing() {
+export function HomeWebPricing({className}: {className?: string}) {
   const [activeTab, setActiveTab] = useState<TabId>("html");
   const currentTab = pricingTabs.find((tab) => tab.id === activeTab)!;
 
   return (
-    <section className="py-24 lg:py-32 pt-0">
+    <section className={cn("py-24 lg:py-32", className)}>
       <div className="container">
         {/* Heading */}
         <FadeIn className="text-center mb-10 lg:mb-14">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+          <h2 className="section-heading text-foreground ...">
             Web Design &{" "}
             <span className="gradient-text">Development Packages</span>
           </h2>

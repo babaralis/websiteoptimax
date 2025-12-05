@@ -52,7 +52,7 @@ export function OptimizationProcess() {
             The Process
           </span>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+          <h2 className="section-heading text-foreground ...1">
             Results in <span className="gradient-text">30-60 Days</span>, Not 6 Months
           </h2>
           
@@ -65,7 +65,7 @@ export function OptimizationProcess() {
         <div className="max-w-4xl mx-auto">
           <div className="relative">
             {/* Connecting line */}
-            <div className="absolute left-[39px] top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-success hidden md:block" />
+            <div className="absolute left-[2.4375rem] top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-success hidden md:block" />
             
             {steps.map((step, index) => (
               <FadeIn key={step.title} delay={index * 0.1}>

@@ -43,7 +43,7 @@ export function OptimizationCaseStudies() {
             Proof Over Promises
           </span>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+          <h2 className="section-heading text-foreground ...1">
             Real Results From <span className="gradient-text">Real Companies</span>
           </h2>
           
@@ -62,19 +62,19 @@ export function OptimizationCaseStudies() {
                 transition={{ duration: 0.3 }}
               >
                 {/* Logo placeholder */}
-                <div className="h-16 flex items-center justify-center mb-6">
+                {/* <div className="h-16 flex items-center justify-center mb-6">
                   <img 
                     src={study.logo} 
                     alt={study.company}
-                    className="max-h-12 w-auto opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all"
+                    className="max-h-16 w-auto opacity-70 grayscale hover:grayscale-0 hover:opacity-100 transition-all"
                   />
-                </div>
+                </div> */}
                 
                 <motion.p 
                   className="text-5xl font-bold text-success mb-2"
                   initial={{ scale: 0.5, opacity: 0 }}
                   whileInView={{ scale: 1, opacity: 1 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: false, margin: "-50px" }}
                   transition={{ delay: index * 0.1 + 0.3, type: "spring" }}
                 >
                   {study.metric}

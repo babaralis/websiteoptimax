@@ -303,7 +303,7 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
 
       <div className="container relative">
         <FadeIn className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+          <h2 className="section-heading text-foreground ...">
             Featured <span className="gradient-text">B2B Projects</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
@@ -323,7 +323,7 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
                 )}
                 onClick={() => handleCardClick(project)}
               >
-                <div className="relative w-full max-h-[500px] bg-gradient-to-br from-muted to-muted/50 overflow-hidden flex items-center justify-center">
+                <div className="relative w-full max-h-[31.25rem] bg-gradient-to-br from-muted to-muted/50 overflow-hidden flex items-center justify-center">
                   <Image
                     src={project.image}
                     alt={project.title}

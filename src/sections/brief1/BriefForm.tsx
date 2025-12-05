@@ -114,7 +114,7 @@ export function BriefForm({
     switch (currentStep) {
       case 1:
         return (
-          <div className="text-center md:w-[600px]">
+          <div className="text-center md:w-[37.5rem]">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Enter Your Company Name
             </h2>
@@ -138,7 +138,7 @@ export function BriefForm({
 
       case 2:
         return (
-          <div className="text-center" style={{ width: '600px' }}>
+          <div className="text-center" style={{ width: '37.5rem' }}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Enter Slogan
             </h2>
@@ -161,7 +161,7 @@ export function BriefForm({
 
       case 3:
         return (
-          <div className="text-center" style={{ width: '600px' }}>
+          <div className="text-center" style={{ width: '37.5rem' }}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Select Industry
             </h2>
@@ -191,7 +191,7 @@ export function BriefForm({
 
       case 4:
         return (
-          <div className="text-center" style={{ width: '600px' }}>
+          <div className="text-center" style={{ width: '37.5rem' }}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Website Steps
             </h2>
@@ -218,7 +218,7 @@ export function BriefForm({
 
       case 5:
         return (
-          <div className="text-center" style={{ width: '600px' }}>
+          <div className="text-center" style={{ width: '37.5rem' }}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Enter Your Email Address
             </h2>
@@ -242,7 +242,7 @@ export function BriefForm({
 
       case 6:
         return (
-          <div className="text-center" style={{ width: '600px' }}>
+          <div className="text-center" style={{ width: '37.5rem' }}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Enter Your Phone Number (Optional)
             </h2>
@@ -265,7 +265,7 @@ export function BriefForm({
 
       case 7:
         return (
-          <div className="text-center" style={{ width: '600px' }}>
+          <div className="text-center" style={{ width: '37.5rem' }}>
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Thank You, How Would You Like To Proceed?
             </h2>

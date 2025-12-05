@@ -56,7 +56,7 @@ export function PricingTestimonials() {
     <section className="py-24 lg:py-32 relative overflow-hidden bg-muted/30">
       <div className="container relative">
         <FadeIn className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
+          <h2 className="section-heading text-foreground ...2">
             Trusted by{" "}
             <span className="gradient-text-glow">B2B Leaders</span>
           </h2>
@@ -77,7 +77,7 @@ export function PricingTestimonials() {
               {PRICING_TESTIMONIALS.map((testimonial, index) => (
                 <CarouselItem key={index} className="pl-4 md:basis-1/2 lg:basis-1/2">
                   <Card className="h-full border-border/50 bg-card/80 backdrop-blur-sm">
-                    <CardContent className="p-6 flex flex-col h-full min-h-[280px]">
+                    <CardContent className="p-6 flex flex-col h-full min-h-[17.5rem]">
                       <Quote className="h-8 w-8 text-primary/30 mb-4 flex-shrink-0" />
                       
                       <blockquote className="text-foreground mb-6 flex-1">

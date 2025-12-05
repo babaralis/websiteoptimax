@@ -24,9 +24,9 @@ const BOOKING_BENEFITS = [
 
 export function BookingSection() {
   return (
-    <FadeIn delay={0.2}>
-      <Card className="border-border/50 bg-gradient-to-br from-primary/5 via-secondary/5 to-transparent backdrop-blur-sm">
-        <CardContent className="p-6 md:p-8">
+    <FadeIn delay={0.2} className="h-full flex flex-col">
+      <Card className="border-border/50 bg-gradient-to-br from-primary/5 via-secondary/5 to-transparent backdrop-blur-sm flex-1">
+        <CardContent className="p-6 md:p-8 flex flex-col h-full">
           <div className="flex items-center gap-3 mb-6">
             <div className="p-2 rounded-lg bg-primary/20">
               <Calendar className="h-5 w-5 text-primary" />
@@ -37,13 +37,13 @@ export function BookingSection() {
             </div>
           </div>
           
-          <div className="space-y-4 mb-8">
+          <div className="space-y-4 mb-8 flex-1">
             {BOOKING_BENEFITS.map((benefit, index) => (
               <div key={index} className="flex items-start gap-3">
-                <div className="p-1.5 rounded-md bg-secondary/20 mt-0.5">
+                <div className="p-1.5 rounded-md bg-secondary/20 mt-0.5 flex-shrink-0">
                   <benefit.icon className="h-4 w-4 text-secondary" />
                 </div>
-                <div>
+                <div className="flex-1">
                   <p className="font-medium text-sm">{benefit.title}</p>
                   <p className="text-xs text-muted-foreground">{benefit.description}</p>
                 </div>
@@ -51,16 +51,18 @@ export function BookingSection() {
             ))}
           </div>
           
-          <Button variant="hero" size="lg" className="w-full" asChild>
-            <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
-              Book Your Free Call
-              <ArrowRight className="ml-2 h-4 w-4" />
-            </a>
-          </Button>
-          
-          <p className="text-xs text-muted-foreground text-center mt-4">
-            No sales pitch. Just actionable B2B advice.
-          </p>
+          <div className="mt-auto">
+            <Button variant="hero" size="lg" className="w-full" asChild>
+              <a href="https://calendly.com" target="_blank" rel="noopener noreferrer">
+                Book Your Free Call
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </a>
+            </Button>
+            
+            <p className="text-xs text-muted-foreground text-center mt-4">
+              No sales pitch. Just actionable B2B advice.
+            </p>
+          </div>
         </CardContent>
       </Card>
       

@@ -27,7 +27,7 @@ export function WebDevSuccess() {
               What Makes It Work
             </span>
             
-            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+            <h2 className="section-heading text-foreground ...1">
               What Makes a <span className="gradient-text">High-Converting</span> B2B Website?
             </h2>
             

@@ -67,7 +67,7 @@ export function WebDevPortfolio() {
             Recent Work
           </span>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+          <h2 className="section-heading text-foreground ...">
             B2B Websites That <span className="gradient-text">Drive Results</span>
           </h2>
           

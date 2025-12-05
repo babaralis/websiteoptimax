@@ -43,7 +43,7 @@ export default function HomePage() {
         <ProjectsGrid />
       </div> */}
 
-      <HomeWebPricing />
+      <HomeWebPricing className="pt-0" />
       <SocialProofSection />
       <ProcessSection />
       <FAQSection />

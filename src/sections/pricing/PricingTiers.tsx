@@ -63,7 +63,7 @@ export function PricingTiers() {
     <section className="py-24 lg:py-32">
       <div className="container">
         <FadeIn className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+          <h2 className="section-heading text-foreground ...">
             Choose Your <span className="gradient-text">Growth Path</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">

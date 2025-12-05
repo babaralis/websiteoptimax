@@ -59,7 +59,7 @@ export function CTASection() {
           <div className="relative z-10">
             <motion.span 
               className="inline-flex items-center gap-2 text-primary text-sm font-semibold tracking-wide uppercase mb-4 px-4 py-1.5 rounded-full bg-primary/10 border border-primary/20 badge-glow"
-              animate={{ boxShadow: ["0 0 20px hsl(346 100% 64% / 0.2)", "0 0 40px hsl(346 100% 64% / 0.4)", "0 0 20px hsl(346 100% 64% / 0.2)"] }}
+              animate={{ boxShadow: ["0 0 1.25rem hsl(346 100% 64% / 0.2)", "0 0 2.5rem hsl(346 100% 64% / 0.4)", "0 0 1.25rem hsl(346 100% 64% / 0.2)"] }}
               transition={{ duration: 2, repeat: Infinity }}
             >
               <Sparkles className="w-4 h-4" />

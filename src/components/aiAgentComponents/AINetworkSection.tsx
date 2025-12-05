@@ -21,7 +21,7 @@ const mobileNodes = [
 
 export function AINetworkSection() {
   return (
-    <section id="ai-network" className="section bg-background pb-0">
+    <section id="ai-network" className="section bg-background pt-0">
       <div className="container mx-auto px-4">
         <FadeIn>
           <div className="text-center max-w-2xl mx-auto mb-16">
@@ -38,7 +38,7 @@ export function AINetworkSection() {
         <div className="w-full">
           {/* Desktop Network Diagram */}
           <div className="hidden md:block network-diagram">
-            <div className="network-container relative w-full h-[600px]">
+            <div className="network-container relative w-full h-[37.5rem]">
               {/* SVG Connection Lines */}
               <svg
                 className="network-connections-svg absolute inset-0 w-full h-full"
@@ -168,7 +168,7 @@ export function AINetworkSection() {
                         <node.icon className="w-6 h-6" />
                       </div>
                     </div>
-                    <div className="node-label text-xs text-center text-foreground mt-2 max-w-[120px] font-medium">
+                    <div className="node-label text-xs text-center text-foreground mt-2 max-w-[7.5rem] font-medium">
                       {node.label}
                     </div>
                   </div>
@@ -179,7 +179,7 @@ export function AINetworkSection() {
 
           {/* Mobile Network Diagram */}
           <div className="md:hidden network-diagram-mobile">
-            <div className="network-container-mobile relative w-full h-[400px]">
+            <div className="network-container-mobile relative w-full h-[25rem]">
               <svg
                 className="network-connections-mobile absolute inset-0 w-full h-full"
                 viewBox="0 0 100 100"
@@ -231,7 +231,7 @@ export function AINetworkSection() {
                         {node.initials}
                       </div>
                     </div>
-                    <div className="node-label-mobile text-xs text-center text-foreground mt-2 max-w-[100px] font-medium">
+                    <div className="node-label-mobile text-xs text-center text-foreground mt-2 max-w-[6.25rem] font-medium">
                       {node.label}
                     </div>
                   </div>

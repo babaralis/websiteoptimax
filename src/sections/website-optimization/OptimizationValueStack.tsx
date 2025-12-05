@@ -64,7 +64,7 @@ export function OptimizationValueStack() {
             What You Get
           </span>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
+          <h2 className="section-heading text-foreground ...1">
             Everything You Need to{" "}
             <span className="gradient-text">Fix Your Website</span>
           </h2>

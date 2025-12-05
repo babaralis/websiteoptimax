@@ -28,6 +28,7 @@ export const FOOTER_LINKS = {
     // { label: "Web Design", href: "/services#design" },
     { label: "Web Development", href: "/web-development" },
     { label: "Website Optimization", href: "/website-optimization" },
+    { label: "AI Agent", href: "/ai-agent" },
     { label: "Portfolio", href: "/portfolio" },
     { label: "Pricing", href: "/pricing" },
   ],
