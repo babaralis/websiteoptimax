@@ -29,33 +29,6 @@ type PortfolioItem = {
 
 const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
-    id: 1,
-    title: "CloudSync Platform",
-    category: "B2B SaaS",
-    description:
-      "Enterprise data integration platform needed to convert more free trial users to paid subscriptions. Redesigned with conversion-focused UX and clear value propositions.",
-    result: "+340% trial-to-paid",
-    image: "/assets/images/portfolio/1.jpg",
-  },
-  {
-    id: 2,
-    title: "Meridian Consulting",
-    category: "B2B Services",
-    description:
-      "Management consulting firm struggling to generate qualified leads from their outdated website. Complete redesign with case studies and thought leadership content.",
-    result: "+$2.3M pipeline",
-    image: "/assets/images/portfolio/2.jpg",
-  },
-  {
-    id: 3,
-    title: "DataVault Pro",
-    category: "Enterprise SaaS",
-    description:
-      "Data security company needed a website that could close deals without sales calls. Built self-service portal with interactive demos and ROI calculators.",
-    result: "68% shorter cycle",
-    image: "/assets/images/portfolio/3.jpg",
-  },
-  {
     id: 4,
     title: "ScaleOps Solutions",
     category: "B2B Tech",
@@ -279,6 +252,33 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
       "Business intelligence platform wanted to demonstrate reporting capabilities. Built with interactive report examples, dashboard previews, and data visualization showcase.",
     result: "+289% reports",
     image: "/assets/images/portfolio/28.jpg",
+  },
+  {
+    id: 1,
+    title: "CloudSync Platform",
+    category: "B2B SaaS",
+    description:
+      "Enterprise data integration platform needed to convert more free trial users to paid subscriptions. Redesigned with conversion-focused UX and clear value propositions.",
+    result: "+340% trial-to-paid",
+    image: "/assets/images/portfolio/1.jpg",
+  },
+  {
+    id: 2,
+    title: "Meridian Consulting",
+    category: "B2B Services",
+    description:
+      "Management consulting firm struggling to generate qualified leads from their outdated website. Complete redesign with case studies and thought leadership content.",
+    result: "+$2.3M pipeline",
+    image: "/assets/images/portfolio/2.jpg",
+  },
+  {
+    id: 3,
+    title: "DataVault Pro",
+    category: "Enterprise SaaS",
+    description:
+      "Data security company needed a website that could close deals without sales calls. Built self-service portal with interactive demos and ROI calculators.",
+    result: "68% shorter cycle",
+    image: "/assets/images/portfolio/3.jpg",
   },
 ];
 
