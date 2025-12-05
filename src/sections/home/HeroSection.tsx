@@ -85,9 +85,7 @@ export function HeroSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
             className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 text-balance"
           >
-            We design and build high-performance websites for B2B, SaaS, and service companies. 
-            No templates. No fluff. Just conversion-focused digital experiences that generate 
-            qualified leads and accelerate your sales pipeline.
+            We design and build high-performance websites for B2B, SaaS, and service companies. No templates.
           </motion.p>
          
 

@@ -63,7 +63,7 @@ export function PricingFAQ() {
                   value={`faq-${index}`}
                   className="glass-card px-6 rounded-xl border-none"
                 >
-                  <AccordionTrigger className="text-left font-semibold text-foreground hover:text-primary hover:no-underline py-6">
+                  <AccordionTrigger className="text-xl text-left font-semibold text-foreground hover:text-primary hover:no-underline py-6">
                     {faq.question}
                   </AccordionTrigger>
                   <AccordionContent className="text-muted-foreground pb-6">

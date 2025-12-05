@@ -56,7 +56,7 @@ export function BookingSection() {
           <div className="mt-auto">
             <Button variant="hero" size="lg" className="w-full" asChild>
               <a 
-                href="javascript:void(0)" 
+                href="#" 
                 onClick={(e) => {
                   e.preventDefault();
                   if (typeof window !== 'undefined' && (window as any).$zopim) {
