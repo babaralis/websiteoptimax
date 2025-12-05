@@ -2,8 +2,8 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { motion } from "framer-motion";
-import { ArrowRight, Play, Sparkles, Award, Pencil } from "lucide-react";
+  import { motion } from "framer-motion";
+import { Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { STATS } from "@/lib/constants";
@@ -101,7 +101,14 @@ export function HeroSection() {
           >
             <div className="relative flex items-center rounded-l-[0.75rem] rounded-r-[0.75rem] md:rounded-r-none border-2 md:border-r-0 border-primary/50 bg-background overflow-hidden flex-1 h-14">
               <div className="flex items-center flex-1 h-full pl-4 pr-0">
-                <Pencil className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
+                {/* <Pencil className="w-5 h-5 text-primary mr-3 flex-shrink-0" /> */}
+                <Image
+                  src="/assets/images/pencil.png"
+                  alt="Pencil"
+                  width={20}
+                  height={20}
+                  className="w-5 h-5 mr-3 flex-shrink-0"
+                />
                 <Input
                   type="text"
                   placeholder="Enter Your Business Name"

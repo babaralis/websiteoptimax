@@ -308,3 +308,220 @@
     max-width: 100%;
   }
 }
+
+/* AI Agent Page Custom Styles */
+.btn-primary-custom {
+  @apply bg-primary text-primary-foreground font-semibold px-6 py-3 rounded-full transition-all duration-200 hover:shadow-lg hover:-translate-y-0.5;
+}
+
+.btn-outline-custom {
+  @apply border border-primary text-primary font-semibold px-6 py-3 rounded-full bg-transparent transition-all duration-200 hover:bg-primary hover:text-primary-foreground hover:-translate-y-0.5;
+}
+
+.ai-service-card {
+  @apply transition-all duration-200;
+}
+
+.ai-service-card:hover {
+  @apply -translate-y-1 shadow-glow-sm;
+}
+
+.service-icon-wrapper {
+  @apply transition-all duration-200;
+}
+
+.service-phone-mockup {
+  @apply rounded-lg transition-all duration-200;
+}
+
+.phone-screen {
+  @apply rounded-lg transition-all duration-200;
+}
+
+.phone-content {
+  @apply space-y-2;
+}
+
+.phone-header {
+  @apply flex items-center gap-2 pb-2 border-b border-border;
+}
+
+.phone-messages {
+  @apply space-y-2;
+}
+
+.phone-message {
+  @apply text-xs p-2 rounded-lg;
+}
+
+.phone-message.user-msg {
+  @apply ml-auto max-w-[80%];
+}
+
+.service-description {
+  @apply text-sm text-muted-foreground;
+}
+
+.benefit-card {
+  @apply transition-all duration-200;
+}
+
+.benefit-title {
+  @apply text-xl font-bold mb-3 text-foreground;
+}
+
+.benefit-description {
+  @apply text-muted-foreground mb-6;
+}
+
+.benefit-stats {
+  @apply grid grid-cols-2 gap-4;
+}
+
+.stat-box {
+  @apply bg-primary/10 rounded-lg p-4 text-center transition-all duration-200;
+}
+
+.stat-number {
+  @apply text-3xl font-bold text-primary mb-1;
+}
+
+.stat-label {
+  @apply text-sm text-muted-foreground;
+}
+
+.industry-agent-card {
+  @apply transition-all duration-200;
+}
+
+.agent-visual-wrapper {
+  @apply p-4 transition-all duration-200;
+}
+
+.agent-phone-mockup {
+  @apply transition-all duration-200;
+}
+
+.agent-phone-screen {
+  @apply bg-card rounded-lg p-3 transition-all duration-200;
+}
+
+.agent-phone-header {
+  @apply flex items-center justify-between mb-3 pb-2 border-b border-border;
+}
+
+.agent-phone-title {
+  @apply flex items-center gap-2;
+}
+
+.agent-status {
+  @apply text-xs text-green-500 font-medium;
+}
+
+.agent-phone-chat {
+  @apply space-y-2;
+}
+
+.agent-chat-status {
+  @apply text-xs text-center text-muted-foreground mb-2;
+}
+
+.agent-message {
+  @apply flex gap-2;
+}
+
+.agent-ai-msg {
+  @apply justify-start;
+}
+
+.agent-user-msg {
+  @apply justify-end;
+}
+
+.agent-msg-avatar {
+  @apply w-6 h-6 rounded-full bg-primary text-white text-xs flex items-center justify-center font-bold flex-shrink-0;
+}
+
+.agent-msg-content {
+  @apply flex flex-col max-w-[80%];
+}
+
+.agent-msg-name {
+  @apply text-xs font-medium text-foreground mb-1;
+}
+
+.agent-msg-text {
+  @apply text-xs p-2 rounded-lg;
+}
+
+.agent-msg-time {
+  @apply text-xs text-muted-foreground mt-1;
+}
+
+.agent-content {
+  @apply p-6;
+}
+
+.agent-card-title {
+  @apply text-xl font-bold mb-4 text-foreground;
+}
+
+.agent-features {
+  @apply space-y-3;
+}
+
+.network-diagram {
+  @apply relative;
+}
+
+.network-container {
+  @apply relative w-full;
+}
+
+.network-connections-svg {
+  @apply absolute inset-0 w-full h-full pointer-events-none;
+}
+
+.network-node {
+  @apply flex flex-col items-center;
+}
+
+.node-avatar {
+  @apply w-16 h-16 rounded-full border-2 flex items-center justify-center bg-card transition-all duration-200;
+}
+
+.avatar-inner {
+  @apply w-12 h-12 rounded-full flex items-center justify-center text-white;
+}
+
+.node-label {
+  @apply text-xs text-center text-foreground mt-2 max-w-[120px] font-medium;
+}
+
+.network-diagram-mobile {
+  @apply relative;
+}
+
+.network-container-mobile {
+  @apply relative w-full;
+}
+
+.network-connections-mobile {
+  @apply absolute inset-0 w-full h-full pointer-events-none;
+}
+
+.network-node-mobile {
+  @apply flex flex-col items-center;
+}
+
+.node-avatar-mobile {
+  @apply w-12 h-12 rounded-full border-2 flex items-center justify-center bg-card transition-all duration-200;
+}
+
+.avatar-inner-mobile {
+  @apply w-8 h-8 rounded-full flex items-center justify-center text-white text-xs font-bold;
+}
+
+.node-label-mobile {
+  @apply text-xs text-center text-foreground mt-2 max-w-[100px] font-medium;
+}
