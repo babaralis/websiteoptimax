@@ -81,7 +81,7 @@ export function BookingSection() {
             </p>
             <p className="text-muted-foreground">
               <span className="text-foreground font-medium">Location:</span>{" "}
-              Remote-first, serving B2B clients worldwide
+              505 Montgomery Street, San Francisco, CA 94111
             </p>
           </div>
         </CardContent>
