@@ -33,7 +33,7 @@ export default function ThankYouPage() {
             <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden">
               <div className="relative w-full h-48 overflow-hidden">
                 <Image
-                  src="/assets/images/brief/chat.jpg"
+                  src="/assets/images/brief/Customer support.jpg"
                   alt="Live Chat Support"
                   fill
                   className="object-cover"
@@ -52,7 +52,7 @@ export default function ThankYouPage() {
             <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden">
               <div className="relative w-full h-48 overflow-hidden">
                 <Image
-                  src="/assets/images/brief/last2-step.jpg"
+                  src="/assets/images/brief/Pricing Packages.jpg"
                   alt="Pricing Packages"
                   fill
                   className="object-cover"
@@ -71,7 +71,7 @@ export default function ThankYouPage() {
             <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden">
               <div className="relative w-full h-48 overflow-hidden">
                 <Image
-                  src="/assets/images/brief/portfolio.jpg"
+                  src="/assets/images/brief/creative portfolio.jpg"
                   alt="Creative Portfolio"
                   fill
                   className="object-cover"

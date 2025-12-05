@@ -2,10 +2,10 @@
 
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { submitEmail } from "@/app/api/send-email/route";
+import { submitEmail } from "@/lib/email";
 import {
   Select,
   SelectContent,
@@ -120,7 +120,7 @@ export function BriefForm({
 
   const slideVariants = {
     enter: (direction: number) => ({
-      x: direction > 0 ? 1000 : -1000,
+      x: direction > 0 ? "62.5rem" : "-62.5rem",
       opacity: 0,
     }),
     center: {
@@ -128,7 +128,7 @@ export function BriefForm({
       opacity: 1,
     },
     exit: (direction: number) => ({
-      x: direction > 0 ? -1000 : 1000,
+      x: direction > 0 ? "-62.5rem" : "62.5rem",
       opacity: 0,
     }),
   };
@@ -318,28 +318,35 @@ export function BriefForm({
       case 6:
         return (
           <div className="text-center md:w-[37.5rem] w-[70%] mx-auto">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-              Enter Your Phone Number (Optional)
-            </h2>
+            {!isSubmitting && (
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
+                Enter Your Phone Number (Optional)
+              </h2>
+            )}
             <div className="md:max-w-xl mx-auto w-full">
-              <Input
-                type="tel"
-                placeholder="Phone Number (Optional)"
-                value={formData.phone}
-                onChange={(e) => updateFormData("phone", e.target.value)}
-                className="h-14 text-base bg-white/10 backdrop-blur-lg border-white/20 text-white placeholder:text-white/60 w-full"
-                onKeyDown={(e) => {
-                  if (e.key === "Enter" && !isSubmitting) {
-                    handleNext();
-                  }
-                }}
-                disabled={isSubmitting}
-              />
+              {!isSubmitting && (
+                <Input
+                  type="tel"
+                  placeholder="Phone Number (Optional)"
+                  value={formData.phone}
+                  onChange={(e) => updateFormData("phone", e.target.value)}
+                  className="h-14 text-base bg-white/10 backdrop-blur-lg border-white/20 text-white placeholder:text-white/60 w-full"
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && !isSubmitting) {
+                      handleNext();
+                    }
+                  }}
+                  disabled={isSubmitting}
+                />
+              )}
               {validationError && (
                 <p className="text-red-400 mt-4 text-sm">{validationError}</p>
               )}
               {isSubmitting && (
-                <p className="text-white/80 mt-4 text-sm">Submitting your information...</p>
+                <div className="flex flex-col items-center justify-center gap-4 mt-8">
+                  <Loader2 className="w-16 h-16 animate-spin" style={{ color: '#ff4772' }} />
+                  <p className="text-white/80 text-base font-medium">Submitting your information...</p>
+                </div>
               )}
             </div>
           </div>

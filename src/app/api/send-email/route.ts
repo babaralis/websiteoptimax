@@ -1,31 +1,22 @@
-export async function submitEmail(data: {
-    companyName: string
-    email: string
-    industry: string
-    phone: string
-    slogan: string
-    website: string
-  }) {
-    const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://admin.websiteoptimax.com/api'
-    const formData = new FormData()
-    formData.append('companyName', data.companyName)
-    formData.append('email', data.email)
-    formData.append('industry', data.industry)
-    formData.append('phone', data.phone)
-    formData.append('slogan', data.slogan)
-    formData.append('website', data.website)
+import { NextRequest, NextResponse } from 'next/server';
+import { submitEmail } from '@/lib/email';
+
+export async function POST(request: NextRequest) {
+  try {
+    const body = await request.json();
     
-    const res = await fetch(`${baseUrl}/sendEmail`, {
-      method: 'POST',
-      headers: {
-        Accept: 'application/json',
+    const response = await submitEmail(body);
+    const responseData = await response.json().catch(() => ({}));
+    
+    return NextResponse.json(responseData, { status: 200 });
+  } catch (error) {
+    console.error('Error in send-email API route:', error);
+    return NextResponse.json(
+      { 
+        status: false,
+        error: error instanceof Error ? error.message : 'Failed to send email' 
       },
-      body: formData,
-    })
-    if (!res.status) {
-        const errorData = await res.json().catch(() => ({}))
-        throw new Error(errorData.message || 'Failed to submit contact form')
-      }
-    return res
+      { status: 500 }
+    );
   }
-  
+}

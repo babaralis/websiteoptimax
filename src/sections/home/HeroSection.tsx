@@ -46,7 +46,7 @@ export function HeroSection() {
           initialCompanyName={companyName}
         />
       )}
-    <section className="relative  flex items-center justify-center overflow-hidden md:pt-36 pt-80 pb-10">
+    <section className="relative  flex items-center justify-center overflow-hidden md:pt-36 pt-32 pb-10">
       {/* Enhanced Background Effects */}
       <AbstractShapes variant="hero" />
       
