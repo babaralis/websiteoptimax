@@ -10,7 +10,6 @@ import { STATS } from "@/lib/constants";
 import { event as trackEvent } from "@/lib/analytics";
 import { AbstractShapes } from "@/components/graphics/AbstractShapes";
 import { BriefForm } from "@/sections/brief/BriefForm";
-import homeHeroImage from "@/assets/hero/home-hero.jpg";
 import Image from "next/image";
 
 export function HeroSection() {
@@ -175,9 +174,11 @@ export function HeroSection() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-glow-lg">
               <Image
-                src={homeHeroImage}
+                src="/assets/images/banner.webp"
                 alt="B2B website design and development mockup showing modern interfaces"
                 className="w-full h-auto object-cover"
+                width={1200}
+                height={600}
                 priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />

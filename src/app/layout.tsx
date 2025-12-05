@@ -24,6 +24,11 @@ export const metadata: Metadata = {
   title: "Website Optimax | B2B Web Design & Digital Marketing",
   description: "Award-winning web design and digital marketing for B2B, SaaS, and service brands. 340% average lead increase. Book your free strategy session.",
   keywords: ["B2B web design", "SaaS website development", "digital marketing agency", "lead generation", "conversion optimization"],
+  icons: {
+    icon: "/assets/images/favicon.svg",
+    shortcut: "/assets/images/favicon.svg",
+    apple: "/assets/images/favicon.svg",
+  },
   openGraph: {
     type: "website",
     title: "Website Optimax | B2B Web Design & Digital Marketing",

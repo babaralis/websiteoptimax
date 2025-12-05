@@ -7,7 +7,7 @@ import { AbstractShapes } from "@/components/graphics/AbstractShapes";
 
 export default function ThankYouPage() {
   return (
-    <div className="relative min-h-screen flex flex-col overflow-hidden">
+    <div className="fixed inset-0 z-50 flex flex-col overflow-hidden">
       {/* Background with same styling as hero section */}
       <div className="absolute inset-0 bg-background overflow-hidden">
         <AbstractShapes variant="hero" />
@@ -15,7 +15,7 @@ export default function ThankYouPage() {
       </div>
 
       {/* Header with Logo */}
-      <header className="relative z-30 w-full py-4 px-6">
+      <header className="absolute top-0 left-0 z-30 w-full py-4 px-6">
         <div className="max-w-7xl mx-auto flex items-center">
           <Link href="/" className="inline-block mb-4">
             <Image src="/assets/images/logos/logo.svg" alt="Website Optimax" width={150} height={100} />
@@ -24,7 +24,7 @@ export default function ThankYouPage() {
       </header>
 
       {/* Content - Centered */}
-      <div className="relative z-10 flex-1 flex items-center justify-center w-full py-24 px-4">
+      <div className="relative z-10 flex-1 flex items-center justify-center w-full px-4">
         <div className="text-center md:max-w-[1200px] md:w-[90%] md:mx-auto w-full">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
             Thank You, How Would You Like To Proceed?
