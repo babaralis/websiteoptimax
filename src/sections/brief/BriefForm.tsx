@@ -5,6 +5,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { submitEmail } from "@/app/api/send-email/route";
 import {
   Select,
   SelectContent,
@@ -15,6 +16,7 @@ import {
 import { AbstractShapes } from "@/components/graphics/AbstractShapes";
 import Image from "next/image";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 
 interface BriefFormData {
   companyName: string;
@@ -41,16 +43,55 @@ export function BriefForm({
     email: "",
     phone: "",
   });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [validationError, setValidationError] = useState<string>("");
+  const router = useRouter();
 
-  const totalSteps = 7;
+  const totalSteps = 6;
 
   const updateFormData = (field: keyof BriefFormData, value: string) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
-  const nextStep = () => {
+  // Function to send data to CRM API via Next.js API route (avoids CORS issues)
+  const sendLeadToCRM = async (payload: BriefFormData) => {
+    try {
+      console.log('📤 Sending form data:', payload);
+  
+      const response = await submitEmail(payload);
+      
+      if (response.ok) {
+        console.log('✅ Email sent successfully');
+        return response;
+      }
+      
+      // Check if backend returned status: false
+      throw new Error(`Failed to send email. Status: ${response.status}`);
+    } catch (error) {
+      console.error('❌ Error sending lead to CRM:', error);
+      throw error;
+    }
+  };
+
+  const nextStep = async () => {
     if (currentStep < totalSteps) {
-      setCurrentStep(currentStep + 1);
+      // If moving from step 6, send data to API and navigate to thank-you page
+      if (currentStep === 6) {
+        setIsSubmitting(true);
+        setValidationError("");
+        try {
+          await sendLeadToCRM(formData);
+          console.log('✅ Lead sent to CRM successfully');
+          // Navigate to thank-you page
+          router.push('/thank-you');
+        } catch (error) {
+          console.error('❌ Error sending lead to CRM:', error);
+          setValidationError('Failed to submit. Please try again.');
+          setIsSubmitting(false);
+        }
+      } else {
+        setCurrentStep(currentStep + 1);
+      }
     }
   };
 
@@ -74,8 +115,6 @@ export function BriefForm({
         return formData.email.trim() !== "";
       case 6:
         return true; // Optional
-      case 7:
-        return true;
       default:
         return false;
     }
@@ -98,10 +137,10 @@ export function BriefForm({
 
   const [direction, setDirection] = useState(0);
 
-  const handleNext = () => {
-    if (canProceed()) {
+  const handleNext = async () => {
+    if (canProceed() && !isSubmitting) {
       setDirection(1);
-      nextStep();
+      await nextStep();
     }
   };
 
@@ -292,79 +331,18 @@ export function BriefForm({
                 onChange={(e) => updateFormData("phone", e.target.value)}
                 className="h-14 text-base bg-white/10 backdrop-blur-lg border-white/20 text-white placeholder:text-white/60 w-full"
                 onKeyDown={(e) => {
-                  if (e.key === "Enter") {
+                  if (e.key === "Enter" && !isSubmitting) {
                     handleNext();
                   }
                 }}
+                disabled={isSubmitting}
               />
-            </div>
-          </div>
-        );
-
-      case 7:
-        return (
-          <div className="text-center md:max-w-[1200px] md:w-[90%] md:mx-auto w-full">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-              Thank You, How Would You Like To Proceed?
-            </h2>
-            <div className="md:max-w-5xl mx-auto grid md:grid-cols-3 gap-6 mt-12">
-              <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden">
-                <div className="relative w-full h-48 overflow-hidden">
-                  <Image
-                    src="/assets/images/brief/chat.jpg"
-                    alt="Live Chat Support"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-4">Live Chat Support</h3>
-                  <p className="text-white/80 mb-6">
-                    Let's talk! Share your design requirements with one of our designers to get a perfect logo that you envisioned for.
-                  </p>
-                  <Button className="w-full bg-[#ff4772] hover:bg-[#ff4772]/90">
-                    Chat With Us
-                  </Button>
-                </div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden">
-                <div className="relative w-full h-48 overflow-hidden">
-                  <Image
-                    src="/assets/images/brief/last2-step.jpg"
-                    alt="Pricing Packages"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-4">Pricing Packages</h3>
-                  <p className="text-white/80 mb-6">
-                    Checkout our budget friendly packages & pricing plans tailor made for startups & growing businesses of all sizes.
-                  </p>
-                  <Button className="w-full bg-[#ff4772] hover:bg-[#ff4772]/90">
-                    View Pricing
-                  </Button>
-                </div>
-              </div>
-              <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden">
-                <div className="relative w-full h-48 overflow-hidden">
-                  <Image
-                    src="/assets/images/brief/portfolio.jpg"
-                    alt="Creative Portfolio"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="p-6">
-                  <h3 className="text-xl font-semibold text-white mb-4">Creative Portfolio</h3>
-                  <p className="text-white/80 mb-6">
-                    Checkout our amazing logo projects that we have designed for our recent customers to give their brand an identity.
-                  </p>
-                  <Button className="w-full bg-[#ff4772] hover:bg-[#ff4772]/90">
-                    Visit Portfolio
-                  </Button>
-                </div>
-              </div>
+              {validationError && (
+                <p className="text-red-400 mt-4 text-sm">{validationError}</p>
+              )}
+              {isSubmitting && (
+                <p className="text-white/80 mt-4 text-sm">Submitting your information...</p>
+              )}
             </div>
           </div>
         );
@@ -391,8 +369,8 @@ export function BriefForm({
         </div>
       </header>
 
-      {/* Navigation Arrows - Far Left and Right (Hidden on step 7) */}
-      {currentStep > 1 && currentStep < totalSteps && (
+      {/* Navigation Arrows - Far Left and Right */}
+      {currentStep > 1 && currentStep <= totalSteps && (
         <Button
           variant="ghost"
           size="icon"
@@ -408,7 +386,7 @@ export function BriefForm({
           variant="ghost"
           size="icon"
           onClick={handleNext}
-          disabled={!canProceed()}
+          disabled={!canProceed() || isSubmitting}
           className="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full bg-white/10 backdrop-blur-lg border border-white/20 text-white hover:bg-white/20 disabled:opacity-50 disabled:cursor-not-allowed"
         >
           <ChevronRight className="w-6 h-6" />
@@ -437,8 +415,8 @@ export function BriefForm({
         </AnimatePresence>
       </div>
 
-      {/* Pagination Dots - Bottom of Window (Hidden on step 7) */}
-      {currentStep < totalSteps && (
+      {/* Pagination Dots - Bottom of Window */}
+      {currentStep <= totalSteps && (
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 flex justify-center gap-2">
           {Array.from({ length: totalSteps }).map((_, index) => (
             <button
