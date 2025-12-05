@@ -47,7 +47,7 @@ export function PricingFAQ() {
       <div className="container">
         <FadeIn className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
-            Pricing <span className="text-gradient">Questions</span>
+            Frequently Asked <span className="gradient-text">Questions</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Everything you need to know about our pricing and process

@@ -19,7 +19,7 @@ export function ResultsMetrics() {
       <div className="container relative">
         <FadeIn className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
-            The B2B Numbers <span className="text-gradient">Speak</span>
+            The B2B Numbers <span className="gradient-text">Speak</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Across all our B2B and SaaS projects, here's the impact we've delivered.
@@ -32,7 +32,7 @@ export function ResultsMetrics() {
             return (
               <FadeIn key={stat.label}>
                 <div className="text-center p-8 rounded-2xl bg-gradient-to-br from-muted/50 to-transparent border border-border/50 backdrop-blur-sm hover:border-primary/30 transition-colors">
-                  <div className="text-4xl md:text-5xl lg:text-6xl font-bold text-gradient mb-2">
+                  <div className="text-4xl md:text-5xl lg:text-6xl font-bold gradient-text mb-2">
                     <CountUp
                       value={parsed.value}
                       prefix={parsed.prefix}

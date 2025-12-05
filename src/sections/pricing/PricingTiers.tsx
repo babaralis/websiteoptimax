@@ -64,7 +64,7 @@ export function PricingTiers() {
       <div className="container">
         <FadeIn className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
-            Choose Your <span className="text-gradient">Growth Path</span>
+            Choose Your <span className="gradient-text">Growth Path</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             All plans include strategy, design, development, and launch. No hidden fees.

@@ -24,7 +24,7 @@ export function PortfolioHero() {
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
             Measurable Results for{" "}
-            <span className="text-gradient">B2B & SaaS Brands</span>
+            <span className="gradient-text">B2B & SaaS Brands</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">

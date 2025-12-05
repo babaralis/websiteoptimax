@@ -1,9 +1,9 @@
 export const SITE_CONFIG = {
-  name: "Orbitline Digital Studio",
+  name: "Website Optimax",
   tagline: "Award-Winning Digital Marketing & Web Development",
   description: "High-performance web design, development, and digital marketing for B2B, SaaS, and service brands. We build websites that generate qualified leads and revenue.",
-  url: "https://orbitlinedigital.com",
-  email: "hello@orbitlinedigital.com",
+  url: "https://websiteoptimax.com",
+  email: "info@websiteoptimax.com",
   phone: "+1 (555) 234-5678",
 };
 
@@ -24,16 +24,16 @@ export const SERVICES_DROPDOWN = [
 
 export const FOOTER_LINKS = {
   services: [
-    { label: "Web Design", href: "/services#design" },
-    { label: "Web Development", href: "/services#development" },
-    { label: "Digital Marketing", href: "/services#marketing" },
-    { label: "Conversion Optimization", href: "/services#cro" },
+    // { label: "Web Design", href: "/services#design" },
+    { label: "Web Development", href: "/web-development" },
+    { label: "Website Optimization", href: "/website-optimization" },
+    { label: "Portfolio", href: "/portfolio" },
+    { label: "Pricing", href: "/pricing" },
   ],
   company: [
     { label: "About Us", href: "/about" },
-    { label: "Our Process", href: "/about#process" },
-    { label: "Case Studies", href: "/portfolio" },
-    { label: "Testimonials", href: "/reviews" },
+    { label: "Reviews", href: "/reviews" },
+    { label: "Contact Us", href: "/contact" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },
@@ -123,7 +123,7 @@ export const PROCESS_STEPS = [
 
 export const TESTIMONIALS = [
   {
-    quote: "Orbitline transformed our digital presence. Lead quality improved 340% and our sales cycle shortened by 3 weeks.",
+    quote: "Website Optimax transformed our digital presence. Lead quality improved 340% and our sales cycle shortened by 3 weeks.",
     author: "Sarah Mitchell",
     role: "VP Marketing, TechFlow SaaS",
     image: "/testimonials/sarah.jpg",
@@ -158,7 +158,7 @@ export const FAQS = [
     answer: "Most projects are completed within 6-8 weeks. This includes discovery, design, development, and launch. For larger enterprise projects, timelines may extend to 10-12 weeks. We also offer accelerated timelines for urgent needs.",
   },
   {
-    question: "What makes Orbitline different from other agencies?",
+    question: "What makes Website Optimax different from other agencies?",
     answer: "We're not just designers—we're conversion architects. Every decision we make is backed by data and focused on generating measurable business results. Plus, our B2B specialization means we speak your language and understand your buyers.",
   },
   {

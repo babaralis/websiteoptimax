@@ -21,18 +21,18 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Orbitline Digital Studio | B2B Web Design & Digital Marketing",
+  title: "Website Optimax | B2B Web Design & Digital Marketing",
   description: "Award-winning web design and digital marketing for B2B, SaaS, and service brands. 340% average lead increase. Book your free strategy session.",
   keywords: ["B2B web design", "SaaS website development", "digital marketing agency", "lead generation", "conversion optimization"],
   openGraph: {
     type: "website",
-    title: "Orbitline Digital Studio | B2B Web Design & Digital Marketing",
+    title: "Website Optimax | B2B Web Design & Digital Marketing",
     description: "Award-winning web design and digital marketing for B2B, SaaS, and service brands. 340% average lead increase.",
-    siteName: "Orbitline Digital Studio",
+    siteName: "Website Optimax",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Orbitline Digital Studio | B2B Web Design & Digital Marketing",
+    title: "Website Optimax | B2B Web Design & Digital Marketing",
     description: "Award-winning web design and digital marketing for B2B, SaaS, and service brands.",
   },
   themeColor: "#050816",

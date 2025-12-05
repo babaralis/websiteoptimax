@@ -20,7 +20,7 @@ export function ServicesCTA() {
         <FadeIn className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
             Ready to Stop Losing Customers to a{" "}
-            <span className="text-gradient">Bad Website?</span>
+            <span className="gradient-text">Bad Website?</span>
           </h2>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">

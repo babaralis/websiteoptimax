@@ -128,8 +128,8 @@ export default function PrivacyPage() {
                 <p className="text-muted-foreground leading-relaxed mt-4 font-semibold">
                   Important: {SITE_CONFIG.name} employees will never ask you to share credit card details via email, 
                   phone, or chat. If someone does, do not comply and report it to us immediately at{" "}
-                  <a href="mailto:security@orbitlinedigital.com" className="text-primary hover:underline">
-                    security@orbitlinedigital.com
+                  <a href="mailto:security@websiteoptimax.com" className="text-primary hover:underline">
+                    security@websiteoptimax.com
                   </a>
                 </p>
                 <hr className="my-6 border-muted" />
@@ -151,8 +151,8 @@ export default function PrivacyPage() {
                 </ul>
                 <p className="text-muted-foreground leading-relaxed mt-4">
                   Manage your information through your account dashboard or contact us at{" "}
-                  <a href="mailto:privacy@orbitlinedigital.com" className="text-primary hover:underline">
-                    privacy@orbitlinedigital.com
+                  <a href="mailto:privacy@websiteoptimax.com" className="text-primary hover:underline">
+                    privacy@websiteoptimax.com
                   </a>
                 </p>
                 <hr className="my-6 border-muted" />
@@ -183,8 +183,8 @@ export default function PrivacyPage() {
                     <p className="leading-relaxed">
                       We feature customer testimonials with your permission. If you&apos;d like to modify or remove 
                       your testimonial, contact us at{" "}
-                      <a href="mailto:support@orbitlinedigital.com" className="text-primary hover:underline">
-                        support@orbitlinedigital.com
+                      <a href="mailto:support@websiteoptimax.com" className="text-primary hover:underline">
+                        support@websiteoptimax.com
                       </a>
                     </p>
                   </div>

@@ -445,7 +445,7 @@ export function WebPricing() {
       <div className="container">
         <FadeIn className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
-            Web Design & <span className="text-gradient">Development Packages</span>
+            Web Design & <span className="gradient-text">Development Packages</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We create websites that not just fit your expectations, needs, and

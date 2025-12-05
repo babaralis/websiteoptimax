@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail, Phone, MapPin, Linkedin, Twitter } from "lucide-react";
 import { SITE_CONFIG, FOOTER_LINKS } from "@/lib/constants";
+import Image from "next/image";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -15,13 +16,11 @@ export function Footer() {
           {/* Brand Column */}
           <div className="lg:col-span-1">
             <Link href="/" className="inline-block mb-4">
-              <span className="text-xl font-display font-bold gradient-text">
-                {SITE_CONFIG.name}
-              </span>
+              <Image src="/assets/images/logos/logo.svg" alt="Website Optimax" width={150} height={100} />
             </Link>
-            <p className="text-muted-foreground text-sm mb-6 max-w-xs">
+            {/* <p className="text-muted-foreground text-sm mb-6 max-w-xs">
               {SITE_CONFIG.tagline}. High-performance digital solutions for B2B, SaaS, and service brands.
-            </p>
+            </p> */}
             <div className="space-y-3">
               <a
                 href={`mailto:${SITE_CONFIG.email}`}
@@ -44,9 +43,9 @@ export function Footer() {
             </div>
             
             {/* Social Links */}
-            <div className="flex items-center gap-4 mt-6">
+            {/* <div className="flex items-center gap-4 mt-6">
               <a 
-                href="https://linkedin.com/company/orbitlinedigital" 
+                href="https://linkedin.com/company/websiteoptimax" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
@@ -54,19 +53,19 @@ export function Footer() {
                 <Linkedin size={18} />
               </a>
               <a 
-                href="https://twitter.com/orbitlinedigital" 
+                href="https://twitter.com/websiteoptimax" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg bg-muted/50 flex items-center justify-center text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
               >
                 <Twitter size={18} />
               </a>
-            </div>
+            </div> */}
           </div>
 
           {/* Services */}
           <div>
-            <h4 className="font-semibold text-foreground mb-4">Services</h4>
+            <h4 className="font-semibold text-foreground mb-4">Quick Links</h4>
             <ul className="space-y-3">
               {FOOTER_LINKS.services.map((link) => (
                 <li key={link.href}>

@@ -13,7 +13,7 @@ import cooFemale1 from "@/assets/testimonials/coo-female-1.jpg";
 
 const B2B_TESTIMONIALS = [
   {
-    quote: "Orbitline transformed our B2B website from a digital brochure into a pipeline machine. Our enterprise leads tripled in 90 days.",
+    quote: "Website Optimax transformed our B2B website from a digital brochure into a pipeline machine. Our enterprise leads tripled in 90 days.",
     author: "Sarah Mitchell",
     role: "CMO, CloudSync Platform",
     rating: 5,
@@ -53,7 +53,7 @@ const B2B_TESTIMONIALS = [
     image: ceoMale1,
   },
   {
-    quote: "Orbitline gets B2B sales cycles. They built a site that educates and qualifies prospects before they even talk to sales.",
+    quote: "Website Optimax gets B2B sales cycles. They built a site that educates and qualifies prospects before they even talk to sales.",
     author: "Amanda Foster",
     role: "VP Sales, Meridian Consulting",
     rating: 5,
@@ -71,7 +71,7 @@ export function TestimonialsSection() {
         <FadeIn className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
             Real Reviews from{" "}
-            <span className="text-gradient">B2B Leaders</span>
+            <span className="gradient-text">B2B Leaders</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Every testimonial represents a real B2B transformation. Real companies, real pipeline, real revenue.

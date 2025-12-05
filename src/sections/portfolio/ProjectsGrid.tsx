@@ -59,7 +59,7 @@ export function ProjectsGrid() {
       <div className="container relative">
         <FadeIn className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
-            Featured <span className="text-gradient">B2B Projects</span>
+            Featured <span className="gradient-text">B2B Projects</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Every project represents a transformation in how B2B companies attract and convert buyers.

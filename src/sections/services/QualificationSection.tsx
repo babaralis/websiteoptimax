@@ -29,7 +29,7 @@ export function QualificationSection() {
       <div className="container">
         <FadeIn className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
-            Are We the <span className="text-gradient">Right Fit?</span>
+            Are We the <span className="gradient-text">Right Fit?</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We're selective about who we work with. Not because we're snobby—but because 

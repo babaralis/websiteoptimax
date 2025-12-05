@@ -7,11 +7,12 @@ import { PricingFAQ } from "@/sections/pricing/PricingFAQ";
 import { PricingCTA } from "@/sections/pricing/PricingCTA";
 import { generateMetadata as genMeta } from "@/lib/metadata";
 import { WebPricing } from "@/components/pricing/WebPricing";
+import { HomeWebPricing } from "@/components/pricing/HomeWebPricing";
 
 const pricingSchema = {
   "@context": "https://schema.org",
   "@type": "Product",
-  name: "Orbitline B2B Web Design Services",
+  name: "Website Optimax B2B Web Design Services",
   description: "High-performance web design and development for B2B and SaaS companies",
   offers: [
     {
@@ -39,7 +40,7 @@ const pricingSchema = {
 };
 
 export const metadata: Metadata = genMeta({
-  title: "Pricing | B2B Web Design Investment Plans | Orbitline",
+  title: "Pricing | B2B Web Design Investment Plans | Website Optimax",
   description: "Transparent pricing for B2B web design and development. Packages from $15,000 to $75,000+. 30-day money-back guarantee. See what's included.",
   keywords: ["b2b web design pricing", "website development cost", "saas website pricing", "web design packages"],
   ogImage: "/og-pricing.jpg",
@@ -53,8 +54,9 @@ export default function PricingPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(pricingSchema) }}
       />
       <PricingHero />
-      <PricingTiers />
-      <WebPricing />
+      {/* <PricingTiers /> */}
+      {/* <WebPricing /> */}
+      <HomeWebPricing />
       <PricingComparison />
       <PricingTestimonials />
       <PricingFAQ />

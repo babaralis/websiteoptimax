@@ -15,7 +15,7 @@ import vpMale1 from "@/assets/testimonials/vp-male-1.jpg";
 
 const TESTIMONIALS = [
   {
-    quote: "Orbitline transformed our digital presence. Lead quality improved 340% and our sales cycle shortened by 3 weeks.",
+    quote: "Website Optimax transformed our digital presence. Lead quality improved 340% and our sales cycle shortened by 3 weeks.",
     author: "Sarah Mitchell",
     role: "VP Marketing, TechFlow SaaS",
     image: marketingFemale1,
@@ -63,7 +63,7 @@ export function SocialProofSection() {
             </h2>
             <p className="section-subheading mx-auto">
               See what SaaS founders, B2B marketers, and service leaders say about 
-              partnering with Orbitline Digital Studio.
+              partnering with Website Optimax.
             </p>
           </div>
         </FadeIn>

@@ -18,7 +18,7 @@ import cooFemale1 from "@/assets/testimonials/coo-female-1.jpg";
 
 const PRICING_TESTIMONIALS = [
   {
-    quote: "Orbitline transformed our B2B website from a digital brochure into a pipeline machine. Our enterprise leads tripled in 90 days.",
+    quote: "Website Optimax transformed our B2B website from a digital brochure into a pipeline machine. Our enterprise leads tripled in 90 days.",
     author: "Sarah Mitchell",
     role: "CMO, CloudSync Platform",
     rating: 5,

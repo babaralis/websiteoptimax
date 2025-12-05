@@ -22,7 +22,7 @@ export function ReviewsCTA() {
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
             Ready to Join Our{" "}
-            <span className="text-gradient">B2B Success Stories?</span>
+            <span className="gradient-text">B2B Success Stories?</span>
           </h2>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">

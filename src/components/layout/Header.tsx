@@ -8,6 +8,7 @@ import { Menu, X, ChevronDown } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { NAV_LINKS, SERVICES_DROPDOWN, SITE_CONFIG } from "@/lib/constants";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 
 export function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -44,9 +45,7 @@ export function Header() {
       <div className="container-wide flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2 group">
-          <span className="text-xl font-display font-bold text-foreground group-hover:text-primary transition-colors">
-            {SITE_CONFIG.name}
-          </span>
+            <Image src="/assets/images/logos/logo.svg" alt="Website Optimax" width={150} height={100} />
         </Link>
 
         {/* Desktop Navigation */}
@@ -65,7 +64,7 @@ export function Header() {
           </Link>
 
           {/* Services Dropdown */}
-          <div 
+          <div
             className="relative"
             onMouseEnter={() => setIsServicesOpen(true)}
             onMouseLeave={() => setIsServicesOpen(false)}
@@ -79,8 +78,8 @@ export function Header() {
               )}
             >
               Services
-              <ChevronDown 
-                size={14} 
+              <ChevronDown
+                size={14}
                 className={cn(
                   "transition-transform duration-200",
                   isServicesOpen && "rotate-180"
@@ -106,12 +105,14 @@ export function Header() {
                         pathname === item.href && "bg-muted/50"
                       )}
                     >
-                      <span className={cn(
-                        "block text-sm font-medium",
-                        pathname === item.href
-                          ? "text-primary"
-                          : "text-foreground"
-                      )}>
+                      <span
+                        className={cn(
+                          "block text-sm font-medium",
+                          pathname === item.href
+                            ? "text-primary"
+                            : "text-foreground"
+                        )}
+                      >
                         {item.label}
                       </span>
                       <span className="block text-xs text-muted-foreground mt-0.5">
@@ -125,7 +126,7 @@ export function Header() {
           </div>
 
           {/* Other Nav Links */}
-          {NAV_LINKS.filter(link => link.href !== "/").map((link) => (
+          {NAV_LINKS.filter((link) => link.href !== "/").map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -193,8 +194,8 @@ export function Header() {
                   )}
                 >
                   Services
-                  <ChevronDown 
-                    size={18} 
+                  <ChevronDown
+                    size={18}
                     className={cn(
                       "transition-transform duration-200",
                       isServicesOpen && "rotate-180"
@@ -229,7 +230,7 @@ export function Header() {
               </div>
 
               {/* Other Links */}
-              {NAV_LINKS.filter(link => link.href !== "/").map((link) => (
+              {NAV_LINKS.filter((link) => link.href !== "/").map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}

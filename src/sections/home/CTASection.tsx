@@ -72,7 +72,7 @@ export function CTASection() {
             </h2>
             
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10">
-              Book a free strategy session and discover how Orbitline can transform 
+              Book a free strategy session and discover how Website Optimax can transform 
               your digital presence into a predictable source of qualified leads and revenue.
             </p>
             

@@ -18,7 +18,7 @@ export function ContactHero() {
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6">
             Ready to{" "}
-            <span className="text-gradient">Transform</span>{" "}
+            <span className="gradient-text">Transform</span>{" "}
             Your B2B Pipeline?
           </h1>
           

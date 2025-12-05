@@ -90,7 +90,7 @@ export function WebDevAI() {
                 <span className="text-5xl text-primary">"</span>
               </div>
               <blockquote className="text-lg md:text-xl text-foreground font-medium mb-4 pt-4">
-                Orbitline understands that modern B2B buyers research differently. Our AI-optimized 
+                Website Optimax understands that modern B2B buyers research differently. Our AI-optimized 
                 site now appears in ChatGPT recommendations, which accounts for 23% of our new leads.
               </blockquote>
               <div className="flex items-center justify-center gap-3">

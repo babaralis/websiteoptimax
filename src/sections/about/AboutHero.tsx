@@ -11,12 +11,12 @@ export function AboutHero() {
       <div className="container relative">
         <FadeIn className="max-w-4xl mx-auto text-center">
           <span className="inline-block px-4 py-2 mb-6 text-sm font-medium rounded-full bg-primary/10 text-primary border border-primary/20">
-            About Orbitline
+            About Website Optimax
           </span>
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
             We Build B2B Websites That{" "}
-            <span className="text-gradient">Actually Convert</span>
+            <span className="gradient-text">Actually Convert</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto">

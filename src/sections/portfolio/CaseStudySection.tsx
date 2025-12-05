@@ -18,7 +18,7 @@ const CASE_STUDY = {
     { label: "Sales Cycle", before: "94 days", after: "31 days", icon: Clock },
   ],
   testimonial: {
-    quote: "Orbitline didn't just redesign our website—they transformed how we sell. Our enterprise pipeline tripled and sales cycles dropped by two-thirds. This is what ROI looks like.",
+    quote: "Website Optimax didn't just redesign our website—they transformed how we sell. Our enterprise pipeline tripled and sales cycles dropped by two-thirds. This is what ROI looks like.",
     author: "James Morrison",
     role: "VP Sales, CloudSync Platform",
   },
@@ -34,7 +34,7 @@ export function CaseStudySection() {
           <Badge variant="outline" className="mb-4">Featured B2B Case Study</Badge>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
             How We Helped CloudSync{" "}
-            <span className="text-gradient">4x Their Pipeline</span>
+            <span className="gradient-text">4x Their Pipeline</span>
           </h2>
         </FadeIn>
         

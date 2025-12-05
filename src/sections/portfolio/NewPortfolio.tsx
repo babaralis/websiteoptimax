@@ -298,13 +298,13 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
   const handleClose = () => setSelectedImage(null);
 
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="portfolio" className="py-24 lg:py-32 relative overflow-hidden">
       <GridPattern variant="lines" className="opacity-20" />
 
       <div className="container relative">
         <FadeIn className="text-center mb-16">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
-            Featured <span className="text-gradient">B2B Projects</span>
+            Featured <span className="gradient-text">B2B Projects</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Every project represents a transformation in how B2B companies attract and convert buyers.
@@ -323,7 +323,7 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
                 )}
                 onClick={() => handleCardClick(project)}
               >
-                <div className="relative w-full min-h-[400px] max-h-[500px] bg-gradient-to-br from-muted to-muted/50 overflow-hidden flex items-center justify-center">
+                <div className="relative w-full max-h-[500px] bg-gradient-to-br from-muted to-muted/50 overflow-hidden flex items-center justify-center">
                   <Image
                     src={project.image}
                     alt={project.title}

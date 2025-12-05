@@ -227,6 +227,7 @@ export function HeroSection() {
       <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
       
       {/* Scroll Indicator */}
+      <Link href="#portfolio">
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -241,6 +242,7 @@ export function HeroSection() {
           />
         </div>
       </motion.div>
+      </Link>
     </section>
     </>
   );

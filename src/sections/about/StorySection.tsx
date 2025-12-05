@@ -14,11 +14,11 @@ export function StorySection() {
             </span>
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
               Born From Frustration With{" "}
-              <span className="text-gradient">B2B Websites That Don't Sell</span>
+              <span className="gradient-text">B2B Websites That Don't Sell</span>
             </h2>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                We started Orbitline after watching too many B2B companies pour money into 
+                We started Website Optimax after watching too many B2B companies pour money into 
                 beautiful websites that failed to generate a single qualified lead.
               </p>
               <p>
@@ -40,25 +40,25 @@ export function StorySection() {
               <div className="relative bg-card border border-border rounded-2xl p-8 lg:p-10 backdrop-blur-sm">
                 <div className="grid grid-cols-2 gap-8">
                   <div className="text-center">
-                    <div className="text-4xl md:text-5xl font-display font-bold text-gradient mb-2">
+                    <div className="text-4xl md:text-5xl font-display font-bold gradient-text mb-2">
                       150+
                     </div>
                     <p className="text-sm text-muted-foreground">B2B Projects Delivered</p>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl md:text-5xl font-display font-bold text-gradient mb-2">
+                    <div className="text-4xl md:text-5xl font-display font-bold gradient-text mb-2">
                       $47M+
                     </div>
                     <p className="text-sm text-muted-foreground">Pipeline Generated</p>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl md:text-5xl font-display font-bold text-gradient mb-2">
+                    <div className="text-4xl md:text-5xl font-display font-bold gradient-text mb-2">
                       3.4x
                     </div>
                     <p className="text-sm text-muted-foreground">Avg. Lead Increase</p>
                   </div>
                   <div className="text-center">
-                    <div className="text-4xl md:text-5xl font-display font-bold text-gradient mb-2">
+                    <div className="text-4xl md:text-5xl font-display font-bold gradient-text mb-2">
                       98%
                     </div>
                     <p className="text-sm text-muted-foreground">Client Satisfaction</p>

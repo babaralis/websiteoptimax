@@ -20,12 +20,12 @@ export function ReviewsHero() {
           
           <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
             What B2B Leaders{" "}
-            <span className="text-gradient">Say About Us</span>
+            <span className="gradient-text">Say About Us</span>
           </h1>
           
           <p className="text-lg md:text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
             We let our B2B results do the talking. Here's what founders, CMOs, and 
-            VPs of Marketing say about working with Orbitline.
+            VPs of Marketing say about working with Website Optimax.
           </p>
           
           <div className="flex items-center justify-center gap-8 text-muted-foreground flex-wrap">

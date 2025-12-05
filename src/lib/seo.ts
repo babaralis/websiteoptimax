@@ -53,13 +53,13 @@ export const PAGE_SEO: Record<string, SEOConfig> = {
   },
   reviews: {
     title: `Client Reviews & Testimonials | ${SITE_CONFIG.name}`,
-    description: "What B2B and SaaS leaders say about working with Orbitline Digital Studio. Real testimonials from real clients.",
+    description: "What B2B and SaaS leaders say about working with Website Optimax. Real testimonials from real clients.",
     keywords: ["B2B agency reviews", "web design testimonials", "client success stories"],
   },
   about: {
     title: `About Us | ${SITE_CONFIG.name}`,
     description: "We're a B2B-focused digital agency that combines strategic thinking with flawless execution. Learn about our team and approach.",
-    keywords: ["B2B digital agency", "about Orbitline", "web design team"],
+    keywords: ["B2B digital agency", "about Website Optimax", "web design team"],
   },
   contact: {
     title: `Contact Us | ${SITE_CONFIG.name}`,
@@ -68,7 +68,7 @@ export const PAGE_SEO: Record<string, SEOConfig> = {
   },
   privacy: {
     title: `Privacy Policy | ${SITE_CONFIG.name}`,
-    description: "Learn how Orbitline Digital Studio collects, uses, and protects your personal information.",
+    description: "Learn how Website Optimax collects, uses, and protects your personal information.",
     noIndex: true,
   },
   terms: {
@@ -90,8 +90,8 @@ export function generateOrganizationSchema() {
     email: SITE_CONFIG.email,
     telephone: SITE_CONFIG.phone,
     sameAs: [
-      "https://twitter.com/orbitlinedigital",
-      "https://linkedin.com/company/orbitlinedigital",
+      "https://twitter.com/websiteoptimax",
+      "https://linkedin.com/company/websiteoptimax",
     ],
   };
 }

@@ -37,7 +37,7 @@ export function ValuesSection() {
             Our Principles
           </span>
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
-            What We <span className="text-gradient">Stand For</span>
+            What We <span className="gradient-text">Stand For</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             These aren't buzzwords on a wall—they're the standards we hold 

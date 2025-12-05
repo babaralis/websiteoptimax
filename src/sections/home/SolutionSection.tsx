@@ -43,7 +43,7 @@ export function SolutionSection() {
                 whileHover={{ scale: 1.05 }}
               >
                 <CheckCircle className="w-4 h-4" />
-                The Orbitline Approach
+                The Website Optimax Approach
               </motion.span>
               <h2 className="section-heading text-foreground">
                 Digital Experiences Built for <span className="text-secondary">B2B Growth</span>

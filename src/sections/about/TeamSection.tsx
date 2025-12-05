@@ -48,7 +48,7 @@ export function TeamSection() {
           </span>
           <h2 className="text-3xl md:text-4xl font-display font-bold mb-4">
             Meet the B2B Specialists Behind{" "}
-            <span className="text-gradient">Your Results</span>
+            <span className="gradient-text">Your Results</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto">
             A small, senior team of B2B specialists who've helped companies 

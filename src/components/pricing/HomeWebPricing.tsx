@@ -156,6 +156,7 @@ const pricingTabs: PricingTab[] = [
       {
         name: "5 Pages CMS Website",
         price: "$799",
+        popular: true,
         features: [
           "5 Pages Custom Website",
           "CMS Admin Panel",
@@ -258,6 +259,7 @@ const pricingTabs: PricingTab[] = [
       {
         name: "Extended E-Com Website",
         price: "$2499",
+        popular: true,
         features: [
           "Upto 25 Products & Categories",
           "Product Attributes & Features",
@@ -357,8 +359,8 @@ const pricingTabs: PricingTab[] = [
     subLabel: "",
     plans: [
       {
-        name: "Product Based Marketplace Portal",
-        price: "Custom",
+        name: "Product Based Marketplace",
+        price: "Portal",
         features: [
           "Unlimited Sellers",
           "Unlimited Selling Products",
@@ -392,8 +394,9 @@ const pricingTabs: PricingTab[] = [
         cta: "Discuss Now",
       },
       {
-        name: "Service Based Marketplace Portal",
-        price: "Custom",
+        name: "Service Based Marketplace",
+        price: "Portal",
+        popular: true,
         features: [
           "Unlimited Providers",
           "Unlimited Service Offerings",
@@ -426,8 +429,8 @@ const pricingTabs: PricingTab[] = [
         cta: "Discuss Now",
       },
       {
-        name: "Networking Based Marketplace Portal",
-        price: "Custom",
+        name: "Networking Based Marketplace",
+        price: "Portal",
         features: [
           "Unlimited Users",
           "Multiple User Profiles & Pages",
@@ -468,7 +471,7 @@ export function HomeWebPricing() {
         <FadeIn className="text-center mb-10 lg:mb-14">
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
             Web Design &{" "}
-            <span className="text-gradient">Development Packages</span>
+            <span className="gradient-text">Development Packages</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             We create websites that not just fit your expectations, needs, and
@@ -508,13 +511,15 @@ export function HomeWebPricing() {
         </FadeIn>
 
         {/* Pricing grid */}
-        <div className="grid gap-8 max-w-6xl mx-auto md:grid-cols-2 lg:grid-cols-4 justify-center">
-          {currentTab.plans.map((plan, index) => (
+        {currentTab.plans.length <= 3 ? (
+          <div className="flex justify-center">
+            <div className="grid gap-8 mx-auto md:grid-cols-2 lg:grid-cols-3 lg:max-w-5xl">
+              {currentTab.plans.map((plan, index) => (
             <FadeIn key={plan.name} delay={index * 0.08}>
               <motion.div
                 whileHover={{ y: -8 }}
                 transition={{ duration: 0.3 }}
-                className="h-full"
+                // className="h-full"
               >
                 <Card
                   className={cn(
@@ -536,7 +541,7 @@ export function HomeWebPricing() {
                   <CardHeader
                     className={cn(
                       "text-center pb-0 pt-6",
-                      plan.popular && "pt-14"
+                      plan.popular && "pt-14" 
                     )}
                   >
                     <h3 className="text-base font-semibold tracking-wide text-foreground mb-1 uppercase">
@@ -591,8 +596,96 @@ export function HomeWebPricing() {
                 </Card>
               </motion.div>
             </FadeIn>
-          ))}
-        </div>
+              ))}
+            </div>
+          </div>
+        ) : (
+          <div className="grid gap-8 max-w-6xl mx-auto md:grid-cols-2 lg:grid-cols-4">
+            {currentTab.plans.map((plan, index) => (
+              <FadeIn key={plan.name} delay={index * 0.08}>
+                <motion.div
+                  whileHover={{ y: -8 }}
+                  transition={{ duration: 0.3 }}
+                  className="h-full"
+                >
+                  <Card
+                    className={cn(
+                      "h-full relative overflow-hidden transition-all duration-300",
+                      plan.popular
+                        ? "border-primary shadow-glow-lg bg-gradient-to-b from-primary/5 to-transparent"
+                        : "border-border/60 hover:border-primary/40 bg-card/60"
+                    )}
+                  >
+                    {plan.popular && (
+                      <div className="absolute top-0 left-0 right-0 bg-gradient-to-r from-primary to-secondary py-2 text-center">
+                        <span className="text-xs font-semibold text-white flex items-center justify-center gap-1">
+                          <Sparkles className="w-4 h-4" />
+                          Most Popular
+                        </span>
+                      </div>
+                    )}
+
+                    <CardHeader
+                      className={cn(
+                        "text-center pb-0 pt-6",
+                        plan.popular && "pt-14"
+                      )}
+                    >
+                      <h3 className="text-base font-semibold tracking-wide text-foreground mb-1 uppercase">
+                        {plan.name}
+                      </h3>
+                      <div className="mb-3">
+                        <span className="text-3xl md:text-4xl font-display font-bold text-foreground">
+                          {plan.price}
+                        </span>
+                      </div>
+                      {plan.description && (
+                        <p className="text-xs text-muted-foreground">
+                          {plan.description}
+                        </p>
+                      )}
+                    </CardHeader>
+
+                    <CardContent className="pt-6">
+                      <p className="text-xs font-semibold text-foreground mb-3">
+                        Features:
+                      </p>
+                      <ul className="space-y-2.5 mb-7">
+                        {plan.features.map((feature, i) => (
+                          <motion.li
+                            key={i}
+                            initial={{ opacity: 0, x: -10 }}
+                            whileInView={{ opacity: 1, x: 0 }}
+                            viewport={{ once: true }}
+                            transition={{ delay: i * 0.03 }}
+                            className="flex items-start gap-2.5"
+                          >
+                            <Check className="w-4 h-4 text-success shrink-0 mt-0.5" />
+                            <span className="text-xs text-muted-foreground leading-relaxed">
+                              {feature}
+                            </span>
+                          </motion.li>
+                        ))}
+                      </ul>
+
+                      <Button
+                        variant={plan.popular ? "hero" : "outline"}
+                        size="lg"
+                        className="w-full text-sm font-semibold"
+                        asChild
+                      >
+                        <Link href="/contact" className="gap-2">
+                          {plan.cta}
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      </Button>
+                    </CardContent>
+                  </Card>
+                </motion.div>
+              </FadeIn>
+            ))}
+          </div>
+        )}
 
         {/* Money-back guarantee */}
         <FadeIn delay={0.4}>

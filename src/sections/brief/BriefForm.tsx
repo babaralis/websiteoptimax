@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 import { AbstractShapes } from "@/components/graphics/AbstractShapes";
 import Image from "next/image";
+import Link from "next/link";
 
 interface BriefFormData {
   companyName: string;
@@ -113,11 +114,11 @@ export function BriefForm({
     switch (currentStep) {
       case 1:
         return (
-          <div className="text-center" style={{ width: '600px' }}>
+          <div className="text-center md:w-[600px] w-[70%] mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Enter Your Company Name
             </h2>
-            <div className="max-w-xl mx-auto w-full">
+            <div className="md:max-w-xl mx-auto w-full">
               <Input
                 type="text"
                 placeholder="Company Name"
@@ -137,11 +138,11 @@ export function BriefForm({
 
       case 2:
         return (
-          <div className="text-center" style={{ width: '600px' }}>
+          <div className="text-center md:w-[600px] w-full">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Enter Slogan
             </h2>
-            <div className="max-w-xl mx-auto w-full">
+            <div className="md:max-w-xl mx-auto w-full">
               <Input
                 type="text"
                 placeholder="Slogan (optional)"
@@ -160,11 +161,11 @@ export function BriefForm({
 
       case 3:
         return (
-          <div className="text-center" style={{ width: '600px' }}>
+          <div className="text-center md:w-[600px] w-full">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Select Industry
             </h2>
-            <div className="max-w-xl mx-auto w-full">
+            <div className="md:max-w-xl mx-auto w-full">
               <Select
                 value={formData.industry}
                 onValueChange={(value) => updateFormData("industry", value)}
@@ -228,11 +229,11 @@ export function BriefForm({
 
       case 4:
         return (
-          <div className="text-center" style={{ width: '600px' }}>
+          <div className="text-center md:w-[600px] w-full">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Website Steps
             </h2>
-            <div className="max-w-xl mx-auto w-full">
+            <div className="md:max-w-xl mx-auto w-full">
               <Select
                 value={formData.website}
                 onValueChange={(value) => updateFormData("website", value)}
@@ -255,11 +256,11 @@ export function BriefForm({
 
       case 5:
         return (
-          <div className="text-center" style={{ width: '600px' }}>
+          <div className="text-center md:w-[600px] w-[70%] mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Enter Your Email Address
             </h2>
-            <div className="max-w-xl mx-auto w-full">
+            <div className="md:max-w-xl mx-auto w-full">
               <Input
                 type="email"
                 placeholder="Your Email Address"
@@ -279,11 +280,11 @@ export function BriefForm({
 
       case 6:
         return (
-          <div className="text-center" style={{ width: '600px' }}>
+          <div className="text-center md:w-[600px] w-[70%] mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Enter Your Phone Number (Optional)
             </h2>
-            <div className="max-w-xl mx-auto w-full">
+            <div className="md:max-w-xl mx-auto w-full">
               <Input
                 type="tel"
                 placeholder="Phone Number (Optional)"
@@ -302,11 +303,11 @@ export function BriefForm({
 
       case 7:
         return (
-          <div className="text-center" style={{ maxWidth: '1200px', width: '90%', margin: '0 auto' }}>
+          <div className="text-center md:max-w-[1200px] md:w-[90%] md:mx-auto w-full">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Thank You, How Would You Like To Proceed?
             </h2>
-            <div className="max-w-5xl mx-auto grid md:grid-cols-3 gap-6 mt-12">
+            <div className="md:max-w-5xl mx-auto grid md:grid-cols-3 gap-6 mt-12">
               <div className="bg-white/10 backdrop-blur-lg border border-white/20 rounded-xl overflow-hidden">
                 <div className="relative w-full h-48 overflow-hidden">
                   <Image
@@ -382,11 +383,11 @@ export function BriefForm({
       </div>
 
       {/* Header with Logo */}
-      <header className="relative z-30 w-full py-4 px-6">
+      <header className="absolute top-0 left-0 z-30 w-full py-4 px-6">
         <div className="max-w-7xl mx-auto flex items-center">
-          <div className="text-2xl font-display font-bold text-white">
-            Orbitline Digital Studio
-          </div>
+          <Link href="/" className="inline-block mb-4">
+            <Image src="/assets/images/logos/logo.svg" alt="Website Optimax" width={150} height={100} />
+          </Link>
         </div>
       </header>
 
@@ -415,7 +416,7 @@ export function BriefForm({
       )}
 
       {/* Content - Centered */}
-      <div className="relative z-10 mx-auto px-4 flex-1 flex items-center justify-center">
+      <div className="relative z-10 md:mx-auto px-4 flex-1 flex items-center justify-center w-full">
 
         {/* Step Content */}
         <AnimatePresence mode="wait" custom={direction}>

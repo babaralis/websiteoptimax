@@ -14,6 +14,7 @@ import {
 } from "@/components/ui/select";
 import { AbstractShapes } from "@/components/graphics/AbstractShapes";
 import Image from "next/image";
+import Link from "next/link";
 
 interface BriefFormData {
   companyName: string;
@@ -113,11 +114,11 @@ export function BriefForm({
     switch (currentStep) {
       case 1:
         return (
-          <div className="text-center" style={{ width: '600px' }}>
+          <div className="text-center md:w-[600px]">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
               Enter Your Company Name
             </h2>
-            <div className="max-w-xl mx-auto w-full">
+            <div className="md:max-w-xl mx-auto w-full">
               <Input
                 type="text"
                 placeholder="Company Name"
@@ -344,11 +345,11 @@ export function BriefForm({
       </div>
 
       {/* Header with Logo */}
-      <header className="relative z-30 w-full py-4 px-6">
+      <header className="absolute top-0 left-0 z-30 w-full py-4 px-6">
         <div className="max-w-7xl mx-auto flex items-center">
-          <div className="text-2xl font-display font-bold text-white">
-            Orbitline Digital Studio
-          </div>
+          <Link href="/" className="inline-block mb-4">
+            <Image src="/assets/images/logos/logo.svg" alt="Website Optimax" width={150} height={100} />
+          </Link>
         </div>
       </header>
 
