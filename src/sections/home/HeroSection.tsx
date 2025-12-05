@@ -47,15 +47,15 @@ export function HeroSection() {
           initialCompanyName={companyName}
         />
       )}
-    <section className="relative h-[210vh] flex items-center justify-center overflow-hidden pt-20">
+    <section className="relative md:h-[210vh] h-[180vh] flex items-center justify-center overflow-hidden md:pt-20 pt-80">
       {/* Enhanced Background Effects */}
       <AbstractShapes variant="hero" />
       
       {/* Radial gradient overlay */}
       <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
       
-      <div className="container-wide relative z-10">
-        <div className="max-w-5xl mx-auto text-center">
+      <div className="container relative z-10">
+        <div className="md:max-w-5xl mx-auto text-center w-full">
           {/* Badge with glow */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -97,9 +97,9 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.35 }}
-            className="max-w-lg mx-auto mb-16 flex items-center gap-0 homebannerform"
+            className="md:max-w-lg w-full mx-auto mb-16 md:flex items-center gap-0 homebannerform"
           >
-            <div className="relative flex items-center rounded-l-[0.75rem] rounded-r-none border-2 border-r-0 border-primary/50 bg-background overflow-hidden flex-1 h-14">
+            <div className="relative flex items-center rounded-l-[0.75rem] rounded-r-[0.75rem] md:rounded-r-none border-2 md:border-r-0 border-primary/50 bg-background overflow-hidden flex-1 h-14">
               <div className="flex items-center flex-1 h-full pl-4 pr-0">
                 <Pencil className="w-5 h-5 text-primary mr-3 flex-shrink-0" />
                 <Input
@@ -108,7 +108,7 @@ export function HeroSection() {
                   value={companyName}
                   onChange={(e) => setCompanyName(e.target.value)}
                   required
-                  className="border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-base h-full flex-1"
+                  className="border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-base h-full w-full flex-1"      
                   onKeyDown={(e) => {
                     if (e.key === "Enter" && companyName.trim()) {
                       handleGetStarted();
@@ -130,7 +130,7 @@ export function HeroSection() {
             <Button 
                 variant="default" 
                 size="xl" 
-                className="animate-pulse-glow shadow-glow-lg rounded-l-none rounded-r-[0.75rem] h-14 px-8 text-base font-semibold whitespace-nowrap border-0 bg-[#ff4772] hover:bg-[#ff4772]/90 text-white relative z-10"
+                className="mt-4 md:mt-0 animate-pulse-glow shadow-glow-lg md:rounded-l-none rounded-r-[0.75rem] h-14 px-8 w-full text-base font-semibold whitespace-nowrap border-0 bg-[#ff4772] hover:bg-[#ff4772]/90 text-white relative z-10" 
                 onClick={handleGetStarted}
               >Get Started
               </Button>
@@ -164,7 +164,7 @@ export function HeroSection() {
             initial={{ opacity: 0, y: 40 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
-            className="mt-12 max-w-5xl mx-auto"
+            className="mt-12 md:max-w-5xl w-full mx-auto"
           >
             <div className="relative rounded-2xl overflow-hidden shadow-glow-lg">
               <Image
