@@ -528,7 +528,8 @@ export function HomeWebPricing() {
       const data = await response.json();
 
       if (data.success && data.link) {
-        window.location.href = data.link;
+        window.open(data.link, "_blank");
+        setLoading(null);
       } else {
         console.error("Payment failed:", data);
         alert("Payment processing failed. Please try again or contact support.");
