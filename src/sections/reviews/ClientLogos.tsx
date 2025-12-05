@@ -18,7 +18,7 @@ const B2B_CLIENTS = [
   { name: "ScaleOps", logo: scaleopsLogo },
   { name: "TalentBridge", logo: talentbridgeLogo },
   { name: "FinanceFlow", logo: financeflowLogo },
-  { name: "Meridian", logo: meridianLogo },
+  // { name: "Meridian", logo: meridianLogo },
 ];
 
 export function ClientLogos() {
