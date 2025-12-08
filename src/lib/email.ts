@@ -6,7 +6,7 @@ export async function submitEmail(data: {
   slogan: string
   website: string
 }) {
-  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'ttps://payment.websiteoptimax.com/api'
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://payment.websiteoptimax.com/api'
   const formData = new FormData()
   formData.append('companyName', data.companyName)
   formData.append('email', data.email)
@@ -41,7 +41,7 @@ export async function submitContactEmail(data: {
   timeline: string
   message: string
 }) {
-  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'ttps://payment.websiteoptimax.com/api'
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://payment.websiteoptimax.com/api'
   const formData = new FormData()
   formData.append('name', data.name)
   formData.append('email', data.email)

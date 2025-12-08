@@ -516,7 +516,7 @@ export function HomeWebPricing({className}: {className?: string}) {
     setLoading(packageString);
 
     try {
-      const response = await fetch("ttps://payment.websiteoptimax.com/api/payment/ordernow/store", {
+      const response = await fetch("https://payment.websiteoptimax.com/api/payment/ordernow/store", {
         method: "POST",
         headers: {
           Accept: "application/json",
