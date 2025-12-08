@@ -29,345 +29,273 @@ type PortfolioItem = {
 const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: 1,
-    title: "CloudSync Platform",
-    category: "B2B SaaS",
-    description:
-      "Enterprise data integration platform needed to convert more free trial users to paid subscriptions. Redesigned with conversion-focused UX and clear value propositions.",
-    result: "+340% trial-to-paid",
-    image: "/assets/images/portfolio/1.jpg",
-  },
-  {
-    id: 2,
-    title: "Meridian Consulting",
-    category: "B2B Services",
-    description:
-      "Management consulting firm struggling to generate qualified leads from their outdated website. Complete redesign with case studies and thought leadership content.",
-    result: "+$2.3M pipeline",
-    image: "/assets/images/portfolio/2.jpg",
-  },
-  {
-    id: 3,
-    title: "DataVault Pro",
-    category: "Enterprise SaaS",
-    description:
-      "Data security company needed a website that could close deals without sales calls. Built self-service portal with interactive demos and ROI calculators.",
-    result: "68% shorter cycle",
-    image: "/assets/images/portfolio/3.jpg",
-  },
-  {
-    id: 4,
-    title: "ScaleOps Solutions",
-    category: "B2B Tech",
-    description:
-      "DevOps platform wanted to position as market leader and increase enterprise demos. Created compelling hero section with video testimonials and feature comparisons.",
-    result: "+187% demos",
-    image: "/assets/images/portfolio/4.jpg",
-  },
-  {
-    id: 5,
-    title: "TalentBridge HR",
-    category: "HR SaaS",
-    description:
-      "HR software company needed to differentiate in a crowded market and attract mid-market buyers. Implemented interactive product tours and pricing transparency.",
-    result: "+420% MQLs",
-    image: "/assets/images/portfolio/5.jpg",
-  },
-  {
-    id: 6,
-    title: "FinanceFlow",
-    category: "FinTech B2B",
-    description:
-      "Financial services platform required compliance-focused design that still converted. Balanced regulatory requirements with modern UX and trust signals.",
-    result: "+89% conversions",
-    image: "/assets/images/portfolio/6.jpg",
-  },
-  {
-    id: 7,
-    title: "TechVenture Capital",
-    category: "Investment Services",
-    description:
-      "VC firm needed a modern website to attract portfolio companies and limited partners. Created sophisticated design with portfolio showcase and team expertise.",
-    result: "+156% inquiries",
-    image: "/assets/images/portfolio/7.jpg",
-  },
-  {
-    id: 8,
-    title: "SupplyChain Pro",
-    category: "Logistics SaaS",
-    description:
-      "Supply chain management platform required intuitive dashboard design for complex workflows. Built user-friendly interface with real-time tracking capabilities.",
-    result: "+245% adoption",
-    image: "/assets/images/portfolio/8.jpg",
-  },
-  {
-    id: 9,
     title: "MediCare Solutions",
-    category: "Healthcare B2B",
+    category: "Ecommerce & Retail",
     description:
       "Healthcare technology company needed HIPAA-compliant website with patient portal integration. Designed secure, accessible platform with clear navigation.",
     result: "+312% signups",
-    image: "/assets/images/portfolio/9.jpg",
-  },
-  {
-    id: 10,
-    title: "EduTech Enterprise",
-    category: "EdTech B2B",
-    description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/10.jpg",
-  },
-  {
-    id: 11,
-    title: "LegalTech Platform",
-    category: "Legal SaaS",
-    description:
-      "Legal software company needed to simplify complex product for law firms. Redesigned with clear use cases, client testimonials, and integration showcase.",
-    result: "+195% trials",
-    image: "/assets/images/portfolio/11.jpg",
-  },
-  {
-    id: 12,
-    title: "RealEstate Pro",
-    category: "PropTech B2B",
-    description:
-      "Real estate technology platform required modern website to attract commercial property managers. Built with property showcase and ROI calculator.",
-    result: "+223% leads",
-    image: "/assets/images/portfolio/12.jpg",
-  },
-  {
-    id: 13,
-    title: "MarketingHub",
-    category: "MarTech SaaS",
-    description:
-      "Marketing automation platform needed to stand out in competitive market. Created compelling landing pages with A/B testing capabilities and analytics dashboard.",
-    result: "+167% conversions",
-    image: "/assets/images/portfolio/13.jpg",
-  },
-  {
-    id: 14,
-    title: "SalesForce Pro",
-    category: "Sales SaaS",
-    description:
-      "Sales enablement platform wanted to increase enterprise deals. Designed with comprehensive product tours, integration guides, and customer success stories.",
-    result: "+289% enterprise deals",
-    image: "/assets/images/portfolio/14.jpg",
-  },
-  {
-    id: 15,
-    title: "AnalyticsIQ",
-    category: "Data Analytics",
-    description:
-      "Business intelligence platform needed to showcase data visualization capabilities. Built interactive dashboard previews and use case scenarios.",
-    result: "+234% signups",
-    image: "/assets/images/portfolio/15.jpg",
-  },
-  {
-    id: 16,
-    title: "CyberShield Enterprise",
-    category: "Cybersecurity",
-    description:
-      "Cybersecurity company required trust-building website with security certifications. Created comprehensive solution pages with threat intelligence showcase.",
-    result: "+412% inquiries",
-    image: "/assets/images/portfolio/16.jpg",
-  },
-  {
-    id: 17,
-    title: "CloudInfra Solutions",
-    category: "Cloud Services",
-    description:
-      "Cloud infrastructure provider needed to explain complex services simply. Designed with interactive architecture diagrams and pricing transparency.",
-    result: "+356% consultations",
-    image: "/assets/images/portfolio/17.jpg",
-  },
-  {
-    id: 18,
-    title: "AIWorks Platform",
-    category: "AI/ML SaaS",
-    description:
-      "AI platform wanted to demonstrate capabilities to enterprise buyers. Built with interactive demos, case studies, and ROI calculators.",
-    result: "+445% demos",
-    image: "/assets/images/portfolio/18.jpg",
-  },
-  {
-    id: 19,
-    title: "ComplianceGuard",
-    category: "RegTech",
-    description:
-      "Regulatory technology company needed compliance-focused design. Created comprehensive resource center with compliance checklists and industry guides.",
-    result: "+278% downloads",
-    image: "/assets/images/portfolio/19.jpg",
-  },
-  {
-    id: 20,
-    title: "WorkflowMax",
-    category: "Workflow SaaS",
-    description:
-      "Workflow automation platform required intuitive process builder showcase. Designed with visual workflow examples and integration marketplace.",
-    result: "+312% trials",
-    image: "/assets/images/portfolio/20.jpg",
-  },
-  {
-    id: 21,
-    title: "CustomerSuccess Hub",
-    category: "CSM SaaS",
-    description:
-      "Customer success platform needed to demonstrate value to SaaS companies. Built with customer health score examples and success metrics dashboard.",
-    result: "+189% signups",
-    image: "/assets/images/portfolio/21.jpg",
-  },
-  {
-    id: 22,
-    title: "API Gateway Pro",
-    category: "Developer Tools",
-    description:
-      "API management platform wanted to attract developer audience. Created comprehensive documentation, code examples, and developer resources.",
-    result: "+523% API keys",
-    image: "/assets/images/portfolio/22.jpg",
-  },
-  {
-    id: 23,
-    title: "PaymentGateway Plus",
-    category: "FinTech Payments",
-    description:
-      "Payment processing platform required trust-building design with security badges. Built with transparent pricing, integration guides, and merchant testimonials.",
-    result: "+267% signups",
-    image: "/assets/images/portfolio/23.jpg",
-  },
-  {
-    id: 24,
-    title: "ContentStudio",
-    category: "Content Marketing",
-    description:
-      "Content marketing platform needed to showcase content creation tools. Designed with content templates, workflow examples, and collaboration features.",
-    result: "+334% activations",
-    image: "/assets/images/portfolio/24.jpg",
-  },
-  {
-    id: 25,
-    title: "ProjectManager Pro",
-    category: "Project Management",
-    description:
-      "Project management platform wanted to demonstrate collaboration features. Built with interactive project views, timeline examples, and team dashboards.",
-    result: "+298% teams",
-    image: "/assets/images/portfolio/25.jpg",
-  },
-  {
-    id: 26,
-    title: "EcommerceSuite",
-    category: "E-commerce B2B",
-    description:
-      "B2B e-commerce platform required marketplace design for wholesale buyers. Created with product catalog, bulk ordering, and account management features.",
-    result: "+456% orders",
-    image: "/assets/images/portfolio/26.jpg",
-  },
-  {
-    id: 27,
-    title: "SupportDesk Enterprise",
-    category: "Customer Support",
-    description:
-      "Customer support platform needed to showcase ticketing system and automation. Designed with help center examples and integration showcase.",
-    result: "+378% tickets",
-    image: "/assets/images/portfolio/27.jpg",
-  },
-  {
-    id: 28,
-    title: "BusinessIntelligence Pro",
-    category: "BI & Analytics",
-    description:
-      "Business intelligence platform wanted to demonstrate reporting capabilities. Built with interactive report examples, dashboard previews, and data visualization showcase.",
-    result: "+289% reports",
-    image: "/assets/images/portfolio/28.jpg",
-  },
-  {
-    id: 29,
-    title: "CloudSync Platform",
-    category: "Ecommerce & Retail",
-    description:
-      "Enterprise data integration platform needed to convert more free trial users to paid subscriptions. Redesigned with conversion-focused UX and clear value propositions.",
-    result: "+340% trial-to-paid",
     image: "/assets/images/portfolio/ecomerce-retail/1.webp",
   },
   {
-    id: 30,
-    title: "Meridian Consulting",
+    id: 2,
+    title: "EduTech Enterprise",
     category: "Ecommerce & Retail",
     description:
-      "Management consulting firm struggling to generate qualified leads from their outdated website. Complete redesign with case studies and thought leadership content.",
-    result: "+$2.3M pipeline",
+      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+    result: "+278% demos",
     image: "/assets/images/portfolio/ecomerce-retail/2.webp",
   },
   {
-    id: 31,
-    title: "DataVault Pro",
+    id: 3,
+    title: "EduTech Enterprise",
     category: "Ecommerce & Retail",
     description:
-      "Data security company needed a website that could close deals without sales calls. Built self-service portal with interactive demos and ROI calculators.",
-    result: "68% shorter cycle",
+      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+    result: "+278% demos",
     image: "/assets/images/portfolio/ecomerce-retail/3.webp",
   },
   {
-    id: 32,
-    title: "ScaleOps Solutions",
+    id: 4,
+    title: "EduTech Enterprise",
     category: "Ecommerce & Retail",
     description:
-      "DevOps platform wanted to position as market leader and increase enterprise demos. Created compelling hero section with video testimonials and feature comparisons.",
-    result: "+187% demos",
+      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+    result: "+278% demos",
     image: "/assets/images/portfolio/ecomerce-retail/4.webp",
   },
   {
-    id: 33,
-    title: "TalentBridge HR",
+    id: 5,
+    title: "EduTech Enterprise",
     category: "Ecommerce & Retail",
     description:
-      "HR software company needed to differentiate in a crowded market and attract mid-market buyers. Implemented interactive product tours and pricing transparency.",
-    result: "+420% MQLs",
+      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+    result: "+278% demos",
     image: "/assets/images/portfolio/ecomerce-retail/5.webp",
   },
   {
-    id: 34,
-    title: "FinanceFlow",
+    id: 6,
+    title: "EduTech Enterprise",
     category: "Ecommerce & Retail",
     description:
-      "Financial services platform required compliance-focused design that still converted. Balanced regulatory requirements with modern UX and trust signals.",
-    result: "+89% conversions",
+      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+    result: "+278% demos",
     image: "/assets/images/portfolio/ecomerce-retail/6.webp",
   },
   {
-    id: 35,
-    title: "TechVenture Capital",
+    id: 7,
+    title: "EduTech Enterprise",
     category: "Ecommerce & Retail",
     description:
-      "VC firm needed a modern website to attract portfolio companies and limited partners. Created sophisticated design with portfolio showcase and team expertise.",
-    result: "+156% inquiries",
+      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+    result: "+278% demos",
     image: "/assets/images/portfolio/ecomerce-retail/7.webp",
   },
   {
-    id: 36,
-    title: "SupplyChain Pro",
+    id: 8,
+    title: "EduTech Enterprise",
     category: "Ecommerce & Retail",
     description:
-      "Supply chain management platform required intuitive dashboard design for complex workflows. Built user-friendly interface with real-time tracking capabilities.",
-    result: "+245% adoption",
+      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+    result: "+278% demos",
     image: "/assets/images/portfolio/ecomerce-retail/8.webp",
   },
   {
-    id: 37,
-    title: "MediCare Solutions",
+    id: 9,
+    title: "EduTech Enterprise",
     category: "Ecommerce & Retail",
     description:
-      "Healthcare technology company needed HIPAA-compliant website with patient portal integration. Designed secure, accessible platform with clear navigation.",
-    result: "+312% signups",
+      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+    result: "+278% demos",
     image: "/assets/images/portfolio/ecomerce-retail/9.webp",
   },
   {
-    id: 38,
+    id: 10,
     title: "EduTech Enterprise",
     category: "Ecommerce & Retail",
     description:
       "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
     result: "+278% demos",
     image: "/assets/images/portfolio/ecomerce-retail/10.webp",
+  },
+  {
+  id: 11,
+    title: "CloudSync Platform",
+    category: "Education & Learning",
+    description:
+      "Enterprise data integration platform needed to convert more free trial users to paid subscriptions. Redesigned with conversion-focused UX and clear value propositions.",
+    result: "+340% trial-to-paid",
+    image: "/assets/images/portfolio/education-learning/1.webp",
+  },
+  {
+    id: 12,
+    title: "Meridian Consulting",
+    category: "Education & Learning",
+    description:
+      "Management consulting firm struggling to generate qualified leads from their outdated website. Complete redesign with case studies and thought leadership content.",
+    result: "+$2.3M pipeline",
+    image: "/assets/images/portfolio/education-learning/2.webp",
+  },
+  {
+    id: 13,
+    title: "DataVault Pro",
+    category: "Education & Learning",
+    description:
+      "Data security company needed a website that could close deals without sales calls. Built self-service portal with interactive demos and ROI calculators.",
+    result: "68% shorter cycle",
+    image: "/assets/images/portfolio/education-learning/3.webp",
+  },
+  {
+    id: 14,
+    title: "ScaleOps Solutions",
+    category: "Education & Learning",
+    description:
+      "DevOps platform wanted to position as market leader and increase enterprise demos. Created compelling hero section with video testimonials and feature comparisons.",
+    result: "+187% demos",
+    image: "/assets/images/portfolio/education-learning/4.webp",
+  },
+  {
+    id: 15,
+    title: "TalentBridge HR",
+    category: "Education & Learning",
+    description:
+      "HR software company needed to differentiate in a crowded market and attract mid-market buyers. Implemented interactive product tours and pricing transparency.",
+    result: "+420% MQLs",
+    image: "/assets/images/portfolio/education-learning/5.webp",
+  },
+  {
+    id: 16,
+    title: "FinanceFlow",
+    category: "Education & Learning",
+    description:
+      "Financial services platform required compliance-focused design that still converted. Balanced regulatory requirements with modern UX and trust signals.",
+    result: "+89% conversions",
+    image: "/assets/images/portfolio/education-learning/6.webp",
+  },
+  {
+    id: 17,
+    title: "TechVenture Capital",
+    category: "Education & Learning",
+    description:
+      "VC firm needed a modern website to attract portfolio companies and limited partners. Created sophisticated design with portfolio showcase and team expertise.",
+    result: "+156% inquiries",
+    image: "/assets/images/portfolio/education-learning/7.webp",
+  },
+  {
+    id: 18,
+    title: "SupplyChain Pro",
+    category: "Education & Learning",
+    description:
+      "Supply chain management platform required intuitive dashboard design for complex workflows. Built user-friendly interface with real-time tracking capabilities.",
+    result: "+245% adoption",
+    image: "/assets/images/portfolio/education-learning/8.webp",
+  },
+  {
+      id: 19,
+    title: "MediCare Solutions",
+    category: "Education & Learning",
+    description:
+      "Healthcare technology company needed HIPAA-compliant website with patient portal integration. Designed secure, accessible platform with clear navigation.",
+    result: "+312% signups",
+    image: "/assets/images/portfolio/education-learning/9.webp",
+  },
+  {
+    id: 20,
+    title: "EduTech Enterprise",
+    category: "Education & Learning",
+    description:
+      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+    result: "+278% demos",
+    image: "/assets/images/portfolio/education-learning/10.webp",
+  },
+  {
+    id: 21,
+    title: "CloudSync Platform",
+    category: "Finance & Fintech",
+    description:
+      "Enterprise data integration platform needed to convert more free trial users to paid subscriptions. Redesigned with conversion-focused UX and clear value propositions.",
+    result: "+340% trial-to-paid",
+    image: "/assets/images/portfolio/finance-fintech/1.webp",
+  },
+  {
+      id: 22,
+    title: "Meridian Consulting",
+    category: "Finance & Fintech",
+    description:
+      "Management consulting firm struggling to generate qualified leads from their outdated website. Complete redesign with case studies and thought leadership content.",
+    result: "+$2.3M pipeline",
+    image: "/assets/images/portfolio/finance-fintech/2.webp",
+  },
+  {
+        id: 23,
+    title: "DataVault Pro",
+    category: "Finance & Fintech",
+    description:
+      "Data security company needed a website that could close deals without sales calls. Built self-service portal with interactive demos and ROI calculators.",
+    result: "68% shorter cycle",
+    image: "/assets/images/portfolio/finance-fintech/3.webp",
+  },
+  {
+    id: 24,
+    title: "ScaleOps Solutions",
+    category: "Finance & Fintech",
+    description:
+      "DevOps platform wanted to position as market leader and increase enterprise demos. Created compelling hero section with video testimonials and feature comparisons.",
+    result: "+187% demos",
+    image: "/assets/images/portfolio/finance-fintech/4.webp",
+  },
+  {
+    id: 25,
+    title: "TalentBridge HR",
+    category: "Finance & Fintech",
+    description:
+      "HR software company needed to differentiate in a crowded market and attract mid-market buyers. Implemented interactive product tours and pricing transparency.",
+    result: "+420% MQLs",
+    image: "/assets/images/portfolio/finance-fintech/5.webp",
+  },
+  {
+    id: 26,
+    title: "FinanceFlow",
+    category: "Finance & Fintech",
+    description:
+      "Financial services platform required compliance-focused design that still converted. Balanced regulatory requirements with modern UX and trust signals.",
+    result: "+89% conversions",
+    image: "/assets/images/portfolio/finance-fintech/6.webp",
+  },
+  {
+    id: 27,
+    title: "TechVenture Capital",
+    category: "Finance & Fintech",
+    description:
+      "VC firm needed a modern website to attract portfolio companies and limited partners. Created sophisticated design with portfolio showcase and team expertise.",
+    result: "+156% inquiries",
+    image: "/assets/images/portfolio/finance-fintech/7.webp",
+  },
+  {
+    id: 28,
+    title: "SupplyChain Pro",
+    category: "Finance & Fintech",
+    description:
+      "Supply chain management platform required intuitive dashboard design for complex workflows. Built user-friendly interface with real-time tracking capabilities.",
+    result: "+245% adoption",
+    image: "/assets/images/portfolio/finance-fintech/8.webp",
+  },
+  {
+        id: 29,
+    title: "MediCare Solutions",
+    category: "Finance & Fintech",
+    description:
+      "Healthcare technology company needed HIPAA-compliant website with patient portal integration. Designed secure, accessible platform with clear navigation.",
+    result: "+312% signups",
+    image: "/assets/images/portfolio/finance-fintech/9.webp",
+  },
+  {
+  id: 30,
+    title: "EduTech Enterprise",
+    category: "Finance & Fintech",
+    description:
+      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+    result: "+278% demos",
+    image: "/assets/images/portfolio/finance-fintech/10.webp",
   },
 ];
 type NewPortfolioProps = {
@@ -379,10 +307,11 @@ const getAllCategories = (): string[] => {
 };
 const createTabs = (): string[] => {
   const categories = getAllCategories();
-  // Remove "Ecommerce & Retail" from categories if it exists
-  const filteredCategories = categories.filter(cat => cat !== "Ecommerce & Retail");
-  // Create tabs: "All" first, then "Ecommerce & Retail", then other categories
-  const tabs = ["All", "Ecommerce & Retail", ...filteredCategories.slice(0, 10)];
+  // Remove special tabs from categories to avoid duplicates
+  const specialTabs = ["Ecommerce & Retail", "Education & Learning", "Finance & Fintech"];
+  const filteredCategories = categories.filter(cat => !specialTabs.includes(cat));
+  // Create tabs: "All" first, then special tabs in order, then other categories
+  const tabs = ["All", "Ecommerce & Retail", "Education & Learning", "Finance & Fintech", ...filteredCategories.slice(0, 8)];
   return tabs;
 };
 const TABS = createTabs();
@@ -428,7 +357,7 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
   const handleClose = () => setSelectedImage(null);
   const canScrollPrev = sliderOffset > 0;
   const canScrollNext = sliderOffset < maxOffset;
-  const translateX = -(sliderOffset * (34 / VISIBLE_TABS));
+  const translateX = -(sliderOffset * (100 / VISIBLE_TABS));
   return (
     <section id="portfolio" className="py-24 lg:py-32 relative overflow-hidden">
       <GridPattern variant="lines" className="opacity-20" />
