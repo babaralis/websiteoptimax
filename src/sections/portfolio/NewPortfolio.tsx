@@ -28,6 +28,33 @@ type PortfolioItem = {
 };
 const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
+    id: 1,
+    title: "CloudSync Platform",
+    category: "B2B SaaS",
+    description:
+      "Enterprise data integration platform needed to convert more free trial users to paid subscriptions. Redesigned with conversion-focused UX and clear value propositions.",
+    result: "+340% trial-to-paid",
+    image: "/assets/images/portfolio/1.jpg",
+  },
+  {
+    id: 2,
+    title: "Meridian Consulting",
+    category: "B2B Services",
+    description:
+      "Management consulting firm struggling to generate qualified leads from their outdated website. Complete redesign with case studies and thought leadership content.",
+    result: "+$2.3M pipeline",
+    image: "/assets/images/portfolio/2.jpg",
+  },
+  {
+    id: 3,
+    title: "DataVault Pro",
+    category: "Enterprise SaaS",
+    description:
+      "Data security company needed a website that could close deals without sales calls. Built self-service portal with interactive demos and ROI calculators.",
+    result: "68% shorter cycle",
+    image: "/assets/images/portfolio/3.jpg",
+  },
+  {
     id: 4,
     title: "ScaleOps Solutions",
     category: "B2B Tech",
@@ -253,31 +280,94 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     image: "/assets/images/portfolio/28.jpg",
   },
   {
-    id: 1,
+    id: 29,
     title: "CloudSync Platform",
-    category: "B2B SaaS",
+    category: "Ecommerce & Retail",
     description:
       "Enterprise data integration platform needed to convert more free trial users to paid subscriptions. Redesigned with conversion-focused UX and clear value propositions.",
     result: "+340% trial-to-paid",
-    image: "/assets/images/portfolio/1.jpg",
+    image: "/assets/images/portfolio/ecomerce-retail/1.webp",
   },
   {
-    id: 2,
+    id: 30,
     title: "Meridian Consulting",
-    category: "B2B Services",
+    category: "Ecommerce & Retail",
     description:
       "Management consulting firm struggling to generate qualified leads from their outdated website. Complete redesign with case studies and thought leadership content.",
     result: "+$2.3M pipeline",
-    image: "/assets/images/portfolio/2.jpg",
+    image: "/assets/images/portfolio/ecomerce-retail/2.webp",
   },
   {
-    id: 3,
+    id: 31,
     title: "DataVault Pro",
-    category: "Enterprise SaaS",
+    category: "Ecommerce & Retail",
     description:
       "Data security company needed a website that could close deals without sales calls. Built self-service portal with interactive demos and ROI calculators.",
     result: "68% shorter cycle",
-    image: "/assets/images/portfolio/3.jpg",
+    image: "/assets/images/portfolio/ecomerce-retail/3.webp",
+  },
+  {
+    id: 32,
+    title: "ScaleOps Solutions",
+    category: "Ecommerce & Retail",
+    description:
+      "DevOps platform wanted to position as market leader and increase enterprise demos. Created compelling hero section with video testimonials and feature comparisons.",
+    result: "+187% demos",
+    image: "/assets/images/portfolio/ecomerce-retail/4.webp",
+  },
+  {
+    id: 33,
+    title: "TalentBridge HR",
+    category: "Ecommerce & Retail",
+    description:
+      "HR software company needed to differentiate in a crowded market and attract mid-market buyers. Implemented interactive product tours and pricing transparency.",
+    result: "+420% MQLs",
+    image: "/assets/images/portfolio/ecomerce-retail/5.webp",
+  },
+  {
+    id: 34,
+    title: "FinanceFlow",
+    category: "Ecommerce & Retail",
+    description:
+      "Financial services platform required compliance-focused design that still converted. Balanced regulatory requirements with modern UX and trust signals.",
+    result: "+89% conversions",
+    image: "/assets/images/portfolio/ecomerce-retail/6.webp",
+  },
+  {
+    id: 35,
+    title: "TechVenture Capital",
+    category: "Ecommerce & Retail",
+    description:
+      "VC firm needed a modern website to attract portfolio companies and limited partners. Created sophisticated design with portfolio showcase and team expertise.",
+    result: "+156% inquiries",
+    image: "/assets/images/portfolio/ecomerce-retail/7.webp",
+  },
+  {
+    id: 36,
+    title: "SupplyChain Pro",
+    category: "Ecommerce & Retail",
+    description:
+      "Supply chain management platform required intuitive dashboard design for complex workflows. Built user-friendly interface with real-time tracking capabilities.",
+    result: "+245% adoption",
+    image: "/assets/images/portfolio/ecomerce-retail/8.webp",
+  },
+  {
+    id: 37,
+    title: "MediCare Solutions",
+    category: "Ecommerce & Retail",
+    description:
+      "Healthcare technology company needed HIPAA-compliant website with patient portal integration. Designed secure, accessible platform with clear navigation.",
+    result: "+312% signups",
+    image: "/assets/images/portfolio/ecomerce-retail/9.webp",
+  },
+  {
+    id: 38,
+    title: "EduTech Enterprise",
+    category: "Ecommerce & Retail",
+    description:
+      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+    result: "+278% demos",
+    image: "/assets/images/portfolio/ecomerce-retail/10.webp",
   },
 ];
 type NewPortfolioProps = {
@@ -289,13 +379,16 @@ const getAllCategories = (): string[] => {
 };
 const createTabs = (): string[] => {
   const categories = getAllCategories();
-  const tabs = ["All", ...categories.slice(0, 11)];
+  // Remove "Ecommerce & Retail" from categories if it exists
+  const filteredCategories = categories.filter(cat => cat !== "Ecommerce & Retail");
+  // Create tabs: "All" first, then "Ecommerce & Retail", then other categories
+  const tabs = ["All", "Ecommerce & Retail", ...filteredCategories.slice(0, 10)];
   return tabs;
 };
 const TABS = createTabs();
-const VISIBLE_TABS = 6;
-const ALL_TAB_LIMIT = 10;
-const CATEGORY_TAB_LIMIT = 6;
+const VISIBLE_TABS = 10;
+const ALL_TAB_LIMIT = 38;
+const CATEGORY_TAB_LIMIT = 38;
 export function NewPortfolio({ limit }: NewPortfolioProps) {
   const [selectedImage, setSelectedImage] = useState<PortfolioItem | null>(null);
   const [activeTab, setActiveTab] = useState<string>("All");
@@ -349,11 +442,11 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
           </p>
         </FadeIn>
         <FadeIn className="mb-12">
-          <div className="relative flex items-center mask-[] bgFade">
+          <div className="relative flex items-center">
             {canScrollPrev && (
               <button
                 onClick={handlePrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
                 aria-label="Previous tabs"
               >
                 <ChevronLeft className="h-5 w-5" />
@@ -361,10 +454,20 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
             )}
             <div
               ref={tabsContainerRef}
-              className="overflow-hidden flex-1 mx-12"
+              className="overflow-hidden flex-1 mx-12 relative"
             >
+              {/* Left Fade Gradient - appears when can scroll left */}
+              {canScrollPrev && (
+                <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
+              )}
+              
+              {/* Right Fade Gradient - appears when can scroll right */}
+              {canScrollNext && (
+                <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
+              )}
+
               <motion.div
-                className="flex gap-2"
+                className="flex gap-2 relative z-0"
                 animate={{
                   x: `${translateX}%`,
                 }}
@@ -397,7 +500,7 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
             {canScrollNext && (
               <button
                 onClick={handleNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
                 aria-label="Next tabs"
               >
                 <ChevronRight className="h-5 w-5" />
