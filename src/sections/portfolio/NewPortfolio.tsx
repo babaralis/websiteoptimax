@@ -478,6 +478,96 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     result: "+278% demos",
     image: "/assets/images/portfolio/green-renewable-energy/10.webp",
   },
+  {
+    id: 51,
+    title: "Xefag",
+    category: "Law",
+    description:
+      "Healthcare technology company needed HIPAA-compliant website with patient portal integration.",
+    result: "+45% reduction in support calls",
+    image: "/assets/images/portfolio/law/1.webp",
+  },
+  {
+    id: 52,
+    title: "VIBEX MG 3",
+    category: "Law",
+    description:
+      "VIBEX needed a professional landing page showcasing the MG 3 innovative massager, emphasizing tension relief and comfort.",
+    result: "+55% average session time",
+    image: "/assets/images/portfolio/law/2.webp",
+  },
+  {
+    id: 53,
+    title: "BULL Power Bank",
+    category: "Law",
+    description:
+      "BULL needed a premium product page design showcasing their 90000mAh Power Bank, highlighting its high capacity and 3-in-1 charging capability.",
+    result: "+68% increase in pre-orders",
+    image: "/assets/images/portfolio/law/3.webp",
+  },
+  {
+    id: 54,
+    title: "SOLÉNE",
+    category: "Law",
+    description:
+      "SOLÉNE needed a high-end, dynamic fashion e-commerce site emphasizing self-expression and promoting trend-forward pieces daily.",
+    result: "+180% growth in organic traffic",
+    image: "/assets/images/portfolio/law/4.webp",
+  },
+  {
+    id: 55,
+    title: "Nitro",
+    category: "Law",
+    description:
+      "Nitro needed a sleek dark-themed e-commerce site for their cool drinks, showcasing key features like nitrogen infusion and variety of flavors.",
+    result: "+27% conversion rate on mobile",
+    image: "/assets/images/portfolio/law/5.webp",
+  },
+  {
+    id: 56,
+    title: "TEKRON Chair",
+    category: "Law",
+    description:
+      "TEKRON required a bold, modern landing page for their Aluminum Folding Chair, emphasizing its experience, portability, and unique design features.",
+    result: "+92% increase in brand awareness",
+    image: "/assets/images/portfolio/law/6.webp",
+  },
+  {
+    id: 57,
+    title: "CHIC MODE",
+    category: "Law",
+    description:
+      "CHIC MODE needed an edgy website where fashion meets functional eyewear, focusing on a curated collection with superior quality and UV protection.",
+    result: "+70% improvement in customer retention",
+    image: "/assets/images/portfolio/law/7.webp",
+  },
+  {
+    id: 58,
+    title: "Productivity Extender",
+    category: "Law",
+    description:
+      "The client needed a minimalist, high-impact landing page to launch an essential companion device for extending Apple Watch battery life.",
+    result: "$1.2M raised in initial funding",
+    image: "/assets/images/portfolio/law/8.webp",
+  },
+  {
+    id: 59,
+    title: "ORVÉLIA",
+    category: "Law",
+    description:
+      "ORVÉLIA required a sophisticated skincare site showcasing their future formula, emphasizing radical transparency and advanced, clean ingredients.",
+    result: "+85% jump in average order value",
+    image: "/assets/images/portfolio/law/9.webp",
+  },
+  {
+    id: 60,
+    title: "Audira Q20",
+    category: "Law",
+    description:
+      "Audira required an immersive product page for their Q20 Hybrid ANC Headphones, highlighting pure audio delivery and deep, redefined comfort.",
+    result: "+115% boost in average retail rating",
+    image: "/assets/images/portfolio/law/10.webp",
+  },
 ];
 type NewPortfolioProps = {
   limit?: number;
@@ -690,15 +780,30 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
                 <DialogDescription>{selectedImage.description}</DialogDescription>
               </DialogHeader>
               <div className="relative w-full h-full flex flex-col">
-                <div className="relative flex-1 overflow-hidden bg-muted">
-                  <Image
-                    src={selectedImage.image}
-                    alt={selectedImage.title}
-                    fill
-                    className="object-contain"
-                    sizes="95vw"
-                    priority
-                  />
+                {/* Two Images Side by Side */}
+                <div className="relative flex-1 overflow-hidden bg-muted flex gap-2 p-2">
+                  {/* Left Image */}
+                  <div className="relative flex-1 overflow-hidden rounded-lg">
+                    <Image
+                      src={selectedImage.image}
+                      alt={`${selectedImage.title} - View 1`}
+                      fill
+                      className="object-contain"
+                      sizes="50vw"
+                      priority
+                    />
+                  </div>
+                  {/* Right Image */}
+                  <div className="relative flex-1 overflow-hidden rounded-lg">
+                    <Image
+                      src={selectedImage.image}
+                      alt={`${selectedImage.title} - View 2`}
+                      fill
+                      className="object-contain"
+                      sizes="50vw"
+                      priority
+                    />
+                  </div>
                 </div>
                 <div className="border-t bg-background p-6">
                   <div className="flex items-start justify-between gap-4">
