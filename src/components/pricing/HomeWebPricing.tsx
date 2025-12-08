@@ -601,7 +601,7 @@ export function HomeWebPricing({className}: {className?: string}) {
               >
                 <Card
                   className={cn(
-                    "h-full relative overflow-hidden transition-all duration-300",
+                    " relative overflow-hidden transition-all duration-300",
                     plan.popular
                       ? "border-primary shadow-glow-lg bg-gradient-to-b from-primary/5 to-transparent"
                       : "border-border/60 hover:border-primary/40 bg-card/60"
@@ -696,7 +696,7 @@ export function HomeWebPricing({className}: {className?: string}) {
                 >
                   <Card
                     className={cn(
-                      "h-full relative overflow-hidden transition-all duration-300",
+                      "relative overflow-hidden transition-all duration-300",
                       plan.popular
                         ? "border-primary shadow-glow-lg bg-gradient-to-b from-primary/5 to-transparent"
                         : "border-border/60 hover:border-primary/40 bg-card/60"
