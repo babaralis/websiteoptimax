@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Playfair_Display } from "next/font/google";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
@@ -42,6 +42,9 @@ export const metadata: Metadata = {
     title: "Website Optimax | B2B Web Design & Digital Marketing",
     description: "Award-winning web design and digital marketing for B2B, SaaS, and service brands.",
   },
+};
+
+export const viewport: Viewport = {
   themeColor: "#050816",
 };
 
