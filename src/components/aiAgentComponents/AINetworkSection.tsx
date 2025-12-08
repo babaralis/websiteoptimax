@@ -163,9 +163,9 @@ export function AINetworkSection() {
 
                 return (
                   <div key={index} className={`network-node ${positions[node.position]}`}>
-                    <div className={`node-avatar w-16 h-16 rounded-full ${node.borderColor} border-2 flex items-center justify-center bg-card`}>
-                      <div className={`avatar-inner w-12 h-12 rounded-full ${node.bgColor} flex items-center justify-center text-white`}>
-                        <node.icon className="w-6 h-6" />
+                    <div className={`node-avatar w-20 h-20 rounded-full ${node.borderColor} border-2 flex items-center justify-center bg-card`}>
+                      <div className={`avatar-inner w-16 h-16 rounded-full ${node.bgColor} flex items-center justify-center text-white`}>
+                        <node.icon className="w-14 h-14" />
                       </div>
                     </div>
                     <div className="node-label text-xs text-center text-foreground mt-2 max-w-[7.5rem] font-medium">

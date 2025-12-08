@@ -620,3 +620,11 @@
     padding-top: 0 !important;
   }
   
+  .node-avatar{
+    height: 6rem;
+    width: 6rem;
+  }
+  .avatar-inner{
+    height: 5rem;
+    width: 5rem;
+  }
