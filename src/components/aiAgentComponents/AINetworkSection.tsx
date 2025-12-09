@@ -9,7 +9,7 @@ const networkNodes = [
   { icon: Users, label: "Human Resources AI Agent", position: "left-bottom", borderColor: "border-green-500", bgColor: "bg-teal-500" },
   { icon: User, label: "Cameron Brooks", position: "center", borderColor: "border-purple-500", bgColor: "bg-green-500" },
   { icon: Heart, label: "Healthcare AI Agent", position: "right-top", borderColor: "border-yellow-500", bgColor: "bg-yellow-500" },
-  { icon: DollarSign, label: "Finance & Banking AI Agent", position: "right-middle", borderColor: "border-teal-500", bgColor: "bg-white" },
+  { icon: DollarSign, label: "Finance & Banking AI Agent", position: "right-middle", borderColor: "border-teal-500", bgColor: "bg-secondary" },
   { icon: Truck, label: "Transportation AI Agent", position: "right-bottom", borderColor: "border-red-500", bgColor: "bg-pink-500" },
 ];
 
@@ -152,13 +152,13 @@ export function AINetworkSection() {
               {/* Network Nodes */}
               {networkNodes.map((node, index) => {
                 const positions: Record<string, string> = {
-                  "left-top": "absolute top-12 left-40",
-                  "left-middle": "absolute top-1/2 left-12 -translate-y-1/2",
-                  "left-bottom": "absolute bottom-12 left-56",
+                  "left-top": "absolute top-1 left-[18rem]",
+                  "left-middle": "absolute top-1/2 left-[11rem] -translate-y-1/2",
+                  "left-bottom": "absolute bottom-10 left-[22rem]",
                   center: "absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2",
-                  "right-top": "absolute top-12 right-40",
-                  "right-middle": "absolute top-1/2 right-12 -translate-y-1/2",
-                  "right-bottom": "absolute bottom-12 right-56",
+                  "right-top": "absolute top-1 right-[18rem]",
+                  "right-middle": "absolute top-1/2 right-[11rem] -translate-y-1/2",
+                  "right-bottom": "absolute bottom-10 right-[22rem]",
                 };
 
                 return (

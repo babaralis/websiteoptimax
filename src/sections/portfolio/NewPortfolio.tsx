@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
-import { motion } from "framer-motion";
+import { useState, useRef, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerChildren } from "@/components/animations/StaggerChildren";
 import { Card, CardContent } from "@/components/ui/card";
@@ -13,7 +13,7 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { ArrowUpRight, TrendingUp } from "lucide-react";
+import { ArrowUpRight, TrendingUp, ChevronLeft, ChevronRight } from "lucide-react";
 import { GridPattern } from "@/components/graphics/GridPattern";
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -25,282 +25,444 @@ type PortfolioItem = {
   description: string;
   result: string;
   image: string;
+  imageMockupName: string;
 };
-
 const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
-    id: 4,
-    title: "ScaleOps Solutions",
-    category: "B2B Tech",
-    description:
-      "DevOps platform wanted to position as market leader and increase enterprise demos. Created compelling hero section with video testimonials and feature comparisons.",
-    result: "+187% demos",
-    image: "/assets/images/portfolio/4.jpg",
-  },
-  {
-    id: 5,
-    title: "TalentBridge HR",
-    category: "HR SaaS",
-    description:
-      "HR software company needed to differentiate in a crowded market and attract mid-market buyers. Implemented interactive product tours and pricing transparency.",
-    result: "+420% MQLs",
-    image: "/assets/images/portfolio/5.jpg",
-  },
-  {
-    id: 6,
-    title: "FinanceFlow",
-    category: "FinTech B2B",
-    description:
-      "Financial services platform required compliance-focused design that still converted. Balanced regulatory requirements with modern UX and trust signals.",
-    result: "+89% conversions",
-    image: "/assets/images/portfolio/6.jpg",
-  },
-  {
-    id: 7,
-    title: "TechVenture Capital",
-    category: "Investment Services",
-    description:
-      "VC firm needed a modern website to attract portfolio companies and limited partners. Created sophisticated design with portfolio showcase and team expertise.",
-    result: "+156% inquiries",
-    image: "/assets/images/portfolio/7.jpg",
-  },
-  {
-    id: 8,
-    title: "SupplyChain Pro",
-    category: "Logistics SaaS",
-    description:
-      "Supply chain management platform required intuitive dashboard design for complex workflows. Built user-friendly interface with real-time tracking capabilities.",
-    result: "+245% adoption",
-    image: "/assets/images/portfolio/8.jpg",
-  },
-  {
-    id: 9,
-    title: "MediCare Solutions",
-    category: "Healthcare B2B",
-    description:
-      "Healthcare technology company needed HIPAA-compliant website with patient portal integration. Designed secure, accessible platform with clear navigation.",
-    result: "+312% signups",
-    image: "/assets/images/portfolio/9.jpg",
-  },
-  {
-    id: 10,
-    title: "EduTech Enterprise",
-    category: "EdTech B2B",
-    description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/10.jpg",
-  },
-  {
-    id: 11,
-    title: "LegalTech Platform",
-    category: "Legal SaaS",
-    description:
-      "Legal software company needed to simplify complex product for law firms. Redesigned with clear use cases, client testimonials, and integration showcase.",
-    result: "+195% trials",
-    image: "/assets/images/portfolio/11.jpg",
-  },
-  {
-    id: 12,
-    title: "RealEstate Pro",
-    category: "PropTech B2B",
-    description:
-      "Real estate technology platform required modern website to attract commercial property managers. Built with property showcase and ROI calculator.",
-    result: "+223% leads",
-    image: "/assets/images/portfolio/12.jpg",
-  },
-  {
-    id: 13,
-    title: "MarketingHub",
-    category: "MarTech SaaS",
-    description:
-      "Marketing automation platform needed to stand out in competitive market. Created compelling landing pages with A/B testing capabilities and analytics dashboard.",
-    result: "+167% conversions",
-    image: "/assets/images/portfolio/13.jpg",
-  },
-  {
-    id: 14,
-    title: "SalesForce Pro",
-    category: "Sales SaaS",
-    description:
-      "Sales enablement platform wanted to increase enterprise deals. Designed with comprehensive product tours, integration guides, and customer success stories.",
-    result: "+289% enterprise deals",
-    image: "/assets/images/portfolio/14.jpg",
-  },
-  {
-    id: 15,
-    title: "AnalyticsIQ",
-    category: "Data Analytics",
-    description:
-      "Business intelligence platform needed to showcase data visualization capabilities. Built interactive dashboard previews and use case scenarios.",
-    result: "+234% signups",
-    image: "/assets/images/portfolio/15.jpg",
-  },
-  {
-    id: 16,
-    title: "CyberShield Enterprise",
-    category: "Cybersecurity",
-    description:
-      "Cybersecurity company required trust-building website with security certifications. Created comprehensive solution pages with threat intelligence showcase.",
-    result: "+412% inquiries",
-    image: "/assets/images/portfolio/16.jpg",
-  },
-  {
-    id: 17,
-    title: "CloudInfra Solutions",
-    category: "Cloud Services",
-    description:
-      "Cloud infrastructure provider needed to explain complex services simply. Designed with interactive architecture diagrams and pricing transparency.",
-    result: "+356% consultations",
-    image: "/assets/images/portfolio/17.jpg",
-  },
-  {
-    id: 18,
-    title: "AIWorks Platform",
-    category: "AI/ML SaaS",
-    description:
-      "AI platform wanted to demonstrate capabilities to enterprise buyers. Built with interactive demos, case studies, and ROI calculators.",
-    result: "+445% demos",
-    image: "/assets/images/portfolio/18.jpg",
-  },
-  {
-    id: 19,
-    title: "ComplianceGuard",
-    category: "RegTech",
-    description:
-      "Regulatory technology company needed compliance-focused design. Created comprehensive resource center with compliance checklists and industry guides.",
-    result: "+278% downloads",
-    image: "/assets/images/portfolio/19.jpg",
-  },
-  {
-    id: 20,
-    title: "WorkflowMax",
-    category: "Workflow SaaS",
-    description:
-      "Workflow automation platform required intuitive process builder showcase. Designed with visual workflow examples and integration marketplace.",
-    result: "+312% trials",
-    image: "/assets/images/portfolio/20.jpg",
-  },
-  {
-    id: 21,
-    title: "CustomerSuccess Hub",
-    category: "CSM SaaS",
-    description:
-      "Customer success platform needed to demonstrate value to SaaS companies. Built with customer health score examples and success metrics dashboard.",
-    result: "+189% signups",
-    image: "/assets/images/portfolio/21.jpg",
-  },
-  {
-    id: 22,
-    title: "API Gateway Pro",
-    category: "Developer Tools",
-    description:
-      "API management platform wanted to attract developer audience. Created comprehensive documentation, code examples, and developer resources.",
-    result: "+523% API keys",
-    image: "/assets/images/portfolio/22.jpg",
-  },
-  {
-    id: 23,
-    title: "PaymentGateway Plus",
-    category: "FinTech Payments",
-    description:
-      "Payment processing platform required trust-building design with security badges. Built with transparent pricing, integration guides, and merchant testimonials.",
-    result: "+267% signups",
-    image: "/assets/images/portfolio/23.jpg",
-  },
-  {
-    id: 24,
-    title: "ContentStudio",
-    category: "Content Marketing",
-    description:
-      "Content marketing platform needed to showcase content creation tools. Designed with content templates, workflow examples, and collaboration features.",
-    result: "+334% activations",
-    image: "/assets/images/portfolio/24.jpg",
-  },
-  {
-    id: 25,
-    title: "ProjectManager Pro",
-    category: "Project Management",
-    description:
-      "Project management platform wanted to demonstrate collaboration features. Built with interactive project views, timeline examples, and team dashboards.",
-    result: "+298% teams",
-    image: "/assets/images/portfolio/25.jpg",
-  },
-  {
-    id: 26,
-    title: "EcommerceSuite",
-    category: "E-commerce B2B",
-    description:
-      "B2B e-commerce platform required marketplace design for wholesale buyers. Created with product catalog, bulk ordering, and account management features.",
-    result: "+456% orders",
-    image: "/assets/images/portfolio/26.jpg",
-  },
-  {
-    id: 27,
-    title: "SupportDesk Enterprise",
-    category: "Customer Support",
-    description:
-      "Customer support platform needed to showcase ticketing system and automation. Designed with help center examples and integration showcase.",
-    result: "+378% tickets",
-    image: "/assets/images/portfolio/27.jpg",
-  },
-  {
-    id: 28,
-    title: "BusinessIntelligence Pro",
-    category: "BI & Analytics",
-    description:
-      "Business intelligence platform wanted to demonstrate reporting capabilities. Built with interactive report examples, dashboard previews, and data visualization showcase.",
-    result: "+289% reports",
-    image: "/assets/images/portfolio/28.jpg",
-  },
-  {
     id: 1,
-    title: "CloudSync Platform",
-    category: "B2B SaaS",
+    title: "Commurz",
+    category: "Ecommerce & Retail",
     description:
-      "Enterprise data integration platform needed to convert more free trial users to paid subscriptions. Redesigned with conversion-focused UX and clear value propositions.",
-    result: "+340% trial-to-paid",
-    image: "/assets/images/portfolio/1.jpg",
+      "E-commerce platform needed modern website design to boost sales and improve user experience.",
+    result: "+45% increase in online sales",
+    image: "/assets/images/portfolio/ecomerce-retail/1.webp",
+    imageMockupName: "Commurz",
   },
   {
     id: 2,
-    title: "Meridian Consulting",
-    category: "B2B Services",
+    title: "Amble Sheep",
+    category: "Ecommerce & Retail",
     description:
-      "Management consulting firm struggling to generate qualified leads from their outdated website. Complete redesign with case studies and thought leadership content.",
-    result: "+$2.3M pipeline",
-    image: "/assets/images/portfolio/2.jpg",
+      "Coffee brand needed attractive website to showcase products and increase online sales.",
+    result: "+62% growth in average order value",
+    image: "/assets/images/portfolio/ecomerce-retail/2.webp",
+    imageMockupName: "Amble Sheep",
   },
   {
     id: 3,
-    title: "DataVault Pro",
-    category: "Enterprise SaaS",
+    title: "Zare",
+    category: "Ecommerce & Retail",
     description:
-      "Data security company needed a website that could close deals without sales calls. Built self-service portal with interactive demos and ROI calculators.",
-    result: "68% shorter cycle",
-    image: "/assets/images/portfolio/3.jpg",
+      "Retail company needed professional online store to expand market reach and increase conversions.",
+    result: "+78% increase in customer engagement",
+    image: "/assets/images/portfolio/ecomerce-retail/3.webp",
+    imageMockupName: "mockup-03.webp",
+  },
+  {
+    id: 4,
+    title: "Enerloc",
+    category: "Ecommerce & Retail",
+    description:
+      "Electric toothbrush brand needed modern website to showcase products and boost online sales.",
+    result: "+85% improvement in mobile conversions",
+    image: "/assets/images/portfolio/ecomerce-retail/4.webp",
+    imageMockupName: "mockup-04.webp",
+  },
+  {
+    id: 5,
+    title: "Dripora",
+    category: "Ecommerce & Retail",
+    description:
+      "Fashion e-commerce needed sleek website design to enhance brand image and boost sales.",
+    result: "+52% increase in repeat customers",
+    image: "/assets/images/portfolio/ecomerce-retail/5.webp",
+    imageMockupName: "mockup-05.webp",
+  },
+  {
+    id: 6,
+    title: "Vera",
+    category: "Ecommerce & Retail",
+    description:
+      "Beauty brand required modern e-commerce platform to showcase products and improve user experience.",
+    result: "+71% growth in monthly revenue",
+    image: "/assets/images/portfolio/ecomerce-retail/6.webp",
+    imageMockupName: "mockup-06.webp",
+  },
+  {
+  id: 11,
+    title: "eCoach",
+    category: "Education & Learning",
+    description:
+      "E-learning platform needed interactive website to deliver courses and enhance student learning experience.",
+    result: "+89% increase in course enrollments",
+    image: "/assets/images/portfolio/education-learning/1.webp",
+    imageMockupName: "mockup-07.webp",
+  },
+  {
+    id: 12,
+    title: "Moondu",
+    category: "Education & Learning",
+    description:
+      "Online education platform required modern design to attract learners and improve course completion rates.",
+    result: "+76% growth in active users",
+    image: "/assets/images/portfolio/education-learning/2.webp",
+    imageMockupName: "mockup-08.webp",
+  },
+  {
+    id: 13,
+    title: "Monac",
+    category: "Education & Learning",
+    description:
+      "Educational institution needed professional website to showcase programs and increase student registrations.",
+    result: "+94% improvement in student engagement",
+    image: "/assets/images/portfolio/education-learning/3.webp",
+    imageMockupName: "mockup-09.webp",
+  },
+  {
+    id: 14,
+    title: "Omekaa",
+    category: "Education & Learning",
+    description:
+      "Training platform required engaging website design to promote courses and boost enrollment numbers.",
+    result: "+67% increase in course signups",
+    image: "/assets/images/portfolio/education-learning/4.webp",
+    imageMockupName: "mockup-10.webp",
+  },
+  {
+    id: 15,
+    title: "Talento",
+    category: "Education & Learning",
+    description:
+      "Learning management system needed user-friendly interface to improve accessibility and student satisfaction.",
+    result: "+83% growth in platform usage",
+    image: "/assets/images/portfolio/education-learning/5.webp",
+    imageMockupName: "mockup-11.webp",
+  },
+  {
+    id: 16,
+    title: "Educaa",
+    category: "Education & Learning",
+    description:
+      "Educational technology platform required modern website to showcase features and attract new users.",
+    result: "+91% increase in user retention",
+    image: "/assets/images/portfolio/education-learning/6.webp",
+    imageMockupName: "mockup-12.webp",
+  },
+
+   {
+    id: 31,
+    title: "Pour",
+    category: "Food & Beverage",
+    description:
+      "Beverage company needed attractive website design to showcase products and increase online orders.",
+    result: "+56% increase in online sales",
+    image: "/assets/images/portfolio/food-beverage/1.webp",
+    imageMockupName: "mockup-13.webp",
+  },
+  {
+    id: 32,
+    title: "Penny Juice",
+    category: "Food & Beverage",
+    description:
+      "Juice brand required modern e-commerce website to display products and boost customer engagement.",
+    result: "+73% growth in monthly orders",
+    image: "/assets/images/portfolio/food-beverage/2.webp",
+    imageMockupName: "mockup-14.webp",
+  },
+  {
+    id: 33,
+    title: "Coffee Time",
+    category: "Food & Beverage",
+    description:
+      "Coffee shop needed professional website to promote menu items and attract more customers.",
+    result: "+64% increase in foot traffic",
+    image: "/assets/images/portfolio/food-beverage/3.webp",
+    imageMockupName: "mockup-15.webp",
+  },
+  {
+    id: 34,
+    title: "P.TRES",
+    category: "Food & Beverage",
+    description:
+      "Coffee brand needed elegant website design to showcase products and boost sales.",
+    result: "+81% growth in table bookings",
+    image: "/assets/images/portfolio/food-beverage/4.webp",
+    imageMockupName: "mockup-16.webp",
+  },
+  {
+    id: 35,
+    title: "Altitude",
+    category: "Food & Beverage",
+    description:
+      "Coffee and tea brand needed modern website to showcase products and boost sales.",
+    result: "+69% increase in repeat orders",
+    image: "/assets/images/portfolio/food-beverage/5.webp",
+    imageMockupName: "mockup-17.webp",
+  },
+  {
+    id: 36,
+    title: "Fizzon",
+    category: "Food & Beverage",
+    description:
+      "Beverage brand required dynamic website to highlight products and drive customer conversions.",
+    result: "+87% improvement in brand awareness",
+    image: "/assets/images/portfolio/food-beverage/6.webp",
+    imageMockupName: "mockup-18.webp",
+  },
+  // {
+  //   id: 37,
+  //   title: "EduTech Enterprise",
+  //   category: "Food & Beverage",
+  //   description:
+  //     "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+  //   result: "+278% demos",
+  //   image: "/assets/images/portfolio/food-beverage/7.webp",
+  // },
+  // {
+  //   id: 38,
+  //   title: "EduTech Enterprise",
+  //   category: "Food & Beverage",
+  //   description:
+  //     "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+  //   result: "+278% demos",
+  //   image: "/assets/images/portfolio/food-beverage/8.webp",
+  // },
+  // {
+  //   id: 39,
+  //   title: "EduTech Enterprise",
+  //   category: "Food & Beverage",
+  //   description:
+  //     "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+  //   result: "+278% demos",
+  //   image: "/assets/images/portfolio/food-beverage/9.webp",
+  // },
+  // {
+  //   id: 40,
+  //   title: "EduTech Enterprise",
+  //   category: "Food & Beverage",
+  //   description:
+  //     "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
+  //   result: "+278% demos",
+  //   image: "/assets/images/portfolio/food-beverage/10.webp",
+  // },
+   {
+    id: 41,
+    title: "Sendrim",
+    category: "Logistics & Mobility",
+    description:
+      "Logistics company needed efficient website to manage shipments and improve customer service.",
+    result: "+72% increase in shipment tracking",
+    image: "/assets/images/portfolio/logistics-mobility/1.webp",
+    imageMockupName: "mockup-19.webp",
+  },
+  {
+    id: 42,
+    title: "Logistix",
+    category: "Logistics & Mobility",
+    description:
+      "Transportation service required modern platform to streamline operations and enhance user experience.",
+    result: "+59% growth in service bookings",
+    image: "/assets/images/portfolio/logistics-mobility/2.webp",
+    imageMockupName: "mockup-20.webp",
+  },
+  {
+    id: 43,
+    title: "Eazy Stock",
+    category: "Logistics & Mobility",
+    description:
+      "Warehouse management needed professional website to showcase services and attract new clients.",
+    result: "+84% increase in client inquiries",
+    image: "/assets/images/portfolio/logistics-mobility/3.webp",
+    imageMockupName: "mockup-21.webp",
+  },
+  {
+    id: 44,
+    title: "Abivin",
+    category: "Logistics & Mobility",
+    description:
+      "Supply chain platform required user-friendly design to improve efficiency and customer satisfaction.",
+    result: "+66% improvement in delivery times",
+    image: "/assets/images/portfolio/logistics-mobility/4.webp",
+    imageMockupName: "mockup-22.webp",
+  },
+  {
+    id: 45,
+    title: "Uthao",
+    category: "Logistics & Mobility",
+    description:
+      "Moving service needed attractive website to showcase offerings and increase booking requests.",
+    result: "+77% growth in online bookings",
+    image: "/assets/images/portfolio/logistics-mobility/5.webp",
+    imageMockupName: "mockup-23.webp",
+  },
+  {
+    id: 46,
+    title: "Moving",
+    category: "Logistics & Mobility",
+    description:
+      "Transportation company required modern website design to promote services and boost sales.",
+    result: "+63% increase in customer retention",
+    image: "/assets/images/portfolio/logistics-mobility/6.webp",
+    imageMockupName: "mockup-24.webp",
+    },
+
+  {
+    id: 51,
+    title: "K.WILLIAM",
+    category: "Law",
+    description:
+      "Law firm needed professional website establishing trust for growing businesses.",
+    result: "+68% increase in consultation bookings",
+    image: "/assets/images/portfolio/law/1.webp",
+    imageMockupName: "mockup-25.webp",
+  },
+  {
+    id: 52,
+    title: "TrustWell",
+    category: "Law",
+    description:
+      "Legal firm needed professional website to build credibility and attract potential clients.",
+    result: "+74% increase in client consultations",
+    image: "/assets/images/portfolio/law/2.webp",
+    imageMockupName: "mockup-26.webp",
+  },
+  {
+    id: 53,
+    title: "USLAW",
+    category: "Law",
+    description:
+      "Law practice required modern website design to showcase expertise and increase visibility.",
+    result: "+61% growth in website traffic",
+    image: "/assets/images/portfolio/law/3.webp",
+    imageMockupName: "mockup-27.webp",
+  },
+  {
+    id: 54,
+    title: "Valuelaw.ca",
+    category: "Law",
+    description:
+      "Legal services needed user-friendly website to provide information and generate leads.",
+    result: "+79% increase in lead generation",
+    image: "/assets/images/portfolio/law/4.webp",
+    imageMockupName: "mockup-28.webp",
+  },
+  {
+    id: 55,
+    title: "E-Dikigoros",
+    category: "Law",
+    description:
+      "Law firm required elegant website to establish authority and improve client engagement.",
+    result: "+86% improvement in online inquiries",
+    image: "/assets/images/portfolio/law/5.webp",
+    imageMockupName: "mockup-29.webp",
+  },
+  {
+    id: 56,
+    title: "LawGuru",
+    category: "Law",
+    description:
+      "Legal platform needed professional design to showcase services and build trust.",
+    result: "+93% increase in case inquiries",
+    image: "/assets/images/portfolio/law/6.webp",
+    imageMockupName: "mockup-30.webp",
   },
 ];
-
 type NewPortfolioProps = {
-  /** How many cards to show. If not provided, shows all 28. */
   limit?: number;
+};
+const getAllCategories = (): string[] => {
+  const categories = Array.from(new Set(PORTFOLIO_ITEMS.map((item) => item.category)));
+  return categories;
+};
+const createTabs = (): string[] => {
+  const categories = getAllCategories();
+  // Remove special tabs from categories to avoid duplicates
+  const specialTabs = ["Ecommerce & Retail", "Education & Learning", ];
+  const filteredCategories = categories.filter(cat => !specialTabs.includes(cat));
+  // Create tabs: "All" first, then special tabs in order, then other categories
+  const tabs = ["All", "Ecommerce & Retail", "Education & Learning", ...filteredCategories.slice(0, 8)];
+  return tabs;
+};
+const TABS = createTabs();
+const VISIBLE_TABS = 6;
+const ALL_TAB_LIMIT = 38;
+const CATEGORY_TAB_LIMIT = 38;
+
+// Helper function to get mockup and website image paths
+const getImagePaths = (imagePath: string) => {
+  // Extract category folder and number from path like "/assets/images/portfolio/ecomerce-retail/1.webp"
+  const match = imagePath.match(/\/portfolio\/([^\/]+)\/(\d+)\.webp$/);
+  if (!match) {
+    // Fallback to original image if pattern doesn't match
+    return { mockup: imagePath, website: imagePath };
+  }
+  
+  const [, categoryFolder, number] = match;
+  
+  // Fix typo: ecomerce-retail -> ecommerce-retail
+  const correctedCategory = categoryFolder === "ecomerce-retail" 
+    ? "ecommerce-retail" 
+    : categoryFolder;
+  
+  // Format number with leading zero (01, 02, etc.)
+  const formattedNumber = number.padStart(2, "0");
+  
+  // Generate paths for mockup and website
+  const mockupPath = `/assets/images/portfolio/${correctedCategory}/mockup-${formattedNumber}.webp`;
+  const websitePath = `/assets/images/portfolio/${correctedCategory}/website-${formattedNumber}.webp`;
+  
+  return { mockup: mockupPath, website: websitePath };
+};
+
+// Helper function to get mockup image path for card display
+const getMockupImagePath = (imagePath: string) => {
+  const { mockup } = getImagePaths(imagePath);
+  return mockup;
 };
 
 export function NewPortfolio({ limit }: NewPortfolioProps) {
   const [selectedImage, setSelectedImage] = useState<PortfolioItem | null>(null);
-
-  // ✅ Apply limit here
-  const itemsToShow =
-    typeof limit === "number" ? PORTFOLIO_ITEMS.slice(0, limit) : PORTFOLIO_ITEMS;
-
+  const [activeTab, setActiveTab] = useState<string>("All");
+  const [sliderOffset, setSliderOffset] = useState(0);
+  const tabsContainerRef = useRef<HTMLDivElement>(null);
+  const getFilteredItems = (): PortfolioItem[] => {
+    let filtered: PortfolioItem[];
+    if (activeTab === "All") {
+      filtered = PORTFOLIO_ITEMS;
+    } else {
+      filtered = PORTFOLIO_ITEMS.filter((item) => item.category === activeTab);
+    }
+    const tabLimit = activeTab === "All" ? ALL_TAB_LIMIT : CATEGORY_TAB_LIMIT;
+    return filtered.slice(0, tabLimit);
+  };
+  const itemsToShow = getFilteredItems();
+  const maxOffset = Math.max(0, TABS.length - VISIBLE_TABS);
+  const handlePrev = () => {
+    setSliderOffset((prev) => Math.max(0, prev - 1));
+  };
+  const handleNext = () => {
+    setSliderOffset((prev) => Math.min(maxOffset, prev + 1));
+  };
+  useEffect(() => {
+    const activeIndex = TABS.indexOf(activeTab);
+    if (activeIndex !== -1) {
+      const visibleStart = sliderOffset;
+      const visibleEnd = sliderOffset + VISIBLE_TABS - 1;  
+      if (activeIndex < visibleStart) {
+        setSliderOffset(activeIndex);
+      } else if (activeIndex > visibleEnd) {
+        setSliderOffset(Math.max(0, activeIndex - VISIBLE_TABS + 1));
+      }
+    }
+  }, [activeTab]);
   const handleCardClick = (item: PortfolioItem) => setSelectedImage(item);
   const handleClose = () => setSelectedImage(null);
-
+  const canScrollPrev = sliderOffset > 0;
+  const canScrollNext = sliderOffset < maxOffset;
+  const translateX = -(sliderOffset * (100 / VISIBLE_TABS));
   return (
     <section id="portfolio" className="py-24 lg:py-32 relative overflow-hidden">
       <GridPattern variant="lines" className="opacity-20" />
-
       <div className="container relative">
         <FadeIn className="text-center mb-16">
           <h2 className="section-heading text-foreground ...">
@@ -310,8 +472,82 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
             Every project represents a transformation in how B2B companies attract and convert buyers.
           </p>
         </FadeIn>
+        <FadeIn className="mb-12">
+          <div className="relative flex items-center">
+            {canScrollPrev && (
+              <button
+                onClick={handlePrev}
+                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                aria-label="Previous tabs"
+              >
+                <ChevronLeft className="h-5 w-5" />
+              </button>
+            )}
+            <div
+              ref={tabsContainerRef}
+              className="overflow-hidden flex-1 mx-12 relative"
+            >
+              {/* Left Fade Gradient - appears when can scroll left */}
+              {canScrollPrev && (
+                <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
+              )}
+              
+              {/* Right Fade Gradient - appears when can scroll right */}
+              {canScrollNext && (
+                <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
+              )}
 
-        <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              <motion.div
+                className="flex gap-2 relative z-0"
+                animate={{
+                  x: `${translateX}%`,
+                }}
+                transition={{
+                  type: "spring",
+                  stiffness: 300,
+                  damping: 30,
+                }}  
+              >
+                {TABS.map((tab) => {
+                  const isActive = activeTab === tab;
+                  return (
+                    <button
+                      key={tab}
+                      onClick={() => setActiveTab(tab)}
+                      className={cn(
+                        "px-6 py-3 rounded-lg text-sm font-medium whitespace-nowrap transition-all duration-300 flex-shrink-0",
+                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+                        isActive
+                          ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                          : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
+                      )}    
+                    >
+                      {tab}
+                    </button>
+                  );
+                })}
+              </motion.div>
+            </div>
+            {canScrollNext && (
+              <button
+                onClick={handleNext}
+                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                aria-label="Next tabs"
+              >
+                <ChevronRight className="h-5 w-5" />
+              </button>
+            )}
+          </div>
+        </FadeIn>
+        <AnimatePresence mode="wait">
+          <motion.div
+            key={activeTab}
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -20 }}
+            transition={{ duration: 0.3 }}
+          >
+            <StaggerChildren className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {itemsToShow.map((project) => (
             <FadeIn key={project.id}>
               <Card
@@ -325,36 +561,30 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
               >
                 <div className="relative w-full max-h-[31.25rem] bg-gradient-to-br from-muted to-muted/50 overflow-hidden flex items-center justify-center">
                   <Image
-                    src={project.image}
+                    src={getMockupImagePath(project.image)}
                     alt={project.title}
                     width={800}
                     height={600}
                     className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-
                   <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10" />
-
                   <Badge className="absolute top-4 left-4 z-20 bg-background/80 backdrop-blur-sm text-foreground">
                     {project.category}
                   </Badge>
-
                   <div className="absolute bottom-4 right-4 z-20 opacity-0 group-hover:opacity-100 transition-opacity">
                     <div className="w-10 h-10 rounded-full bg-primary flex items-center justify-center">
                       <ArrowUpRight className="h-5 w-5 text-primary-foreground" />
                     </div>
                   </div>
                 </div>
-
                 <CardContent className="p-6">
                   <h3 className="text-xl font-semibold mb-2 group-hover:text-primary transition-colors">
                     {project.title}
                   </h3>
-
                   <p className="text-muted-foreground mb-4 line-clamp-2">
                     {project.description}
                   </p>
-
                   <div className="flex items-center gap-2 text-success font-semibold">
                     <TrendingUp className="h-4 w-4" />
                     <span className="text-sm">{project.result}</span>
@@ -364,9 +594,9 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
             </FadeIn>
           ))}
         </StaggerChildren>
+        </motion.div>
+        </AnimatePresence>
       </div>
-
-      {/* Lightbox Dialog */}
       <Dialog
         open={!!selectedImage}
         onOpenChange={(open) => {
@@ -380,21 +610,26 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
                 <DialogTitle>{selectedImage.title}</DialogTitle>
                 <DialogDescription>{selectedImage.description}</DialogDescription>
               </DialogHeader>
-
               <div className="relative w-full h-full flex flex-col">
-                {/* Image */}
-                <div className="relative flex-1 overflow-hidden bg-muted">
-                  <Image
-                    src={selectedImage.image}
-                    alt={selectedImage.title}
-                    fill
-                    className="object-contain"
-                    sizes="95vw"
-                    priority
-                  />
+                {/* Website Image */}
+                <div className="relative flex-1 overflow-y-auto bg-muted flex gap-2 p-2 poppupImage">
+                  {(() => {
+                    const { website } = getImagePaths(selectedImage.image);
+                    return (
+                      <div className="relative w-full rounded-lg">
+                    <Image
+                          src={website}
+                          alt={`${selectedImage.title} - Website`}
+                          width={1200}
+                          height={2000}
+                          className="w-full h-auto object-cover rounded-lg"
+                          sizes="100vw"
+                      priority
+                    />
+                  </div>
+                    );
+                  })()}
                 </div>
-
-                {/* Info */}
                 <div className="border-t bg-background p-6">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
@@ -405,7 +640,6 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
                           <span>{selectedImage.result}</span>
                         </div>
                       </div>
-
                       <h3 className="text-2xl font-bold mb-2">
                         {selectedImage.title}
                       </h3>
