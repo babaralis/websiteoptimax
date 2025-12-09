@@ -681,6 +681,7 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
   const [selectedImage, setSelectedImage] = useState<PortfolioItem | null>(null);
   const [activeTab, setActiveTab] = useState<string>("All");
   const [sliderOffset, setSliderOffset] = useState(0);
+  const [mobileSliderOffset, setMobileSliderOffset] = useState(0);
   const tabsContainerRef = useRef<HTMLDivElement>(null);
   const getFilteredItems = (): PortfolioItem[] => {
     let filtered: PortfolioItem[];
@@ -694,15 +695,19 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
   };
   const itemsToShow = getFilteredItems();
   const maxOffset = Math.max(0, TABS.length - VISIBLE_TABS);
+  const mobileMaxOffset = Math.max(0, TABS.length - 1); // Mobile: 1 tab visible at a time
   const handlePrev = () => {
     setSliderOffset((prev) => Math.max(0, prev - 1));
+    setMobileSliderOffset((prev) => Math.max(0, prev - 1));
   };
   const handleNext = () => {
     setSliderOffset((prev) => Math.min(maxOffset, prev + 1));
+    setMobileSliderOffset((prev) => Math.min(mobileMaxOffset, prev + 1));
   };
   useEffect(() => {
     const activeIndex = TABS.indexOf(activeTab);
     if (activeIndex !== -1) {
+      // Desktop slider logic
       const visibleStart = sliderOffset;
       const visibleEnd = sliderOffset + VISIBLE_TABS - 1;  
       if (activeIndex < visibleStart) {
@@ -710,13 +715,20 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
       } else if (activeIndex > visibleEnd) {
         setSliderOffset(Math.max(0, activeIndex - VISIBLE_TABS + 1));
       }
+
+      // Mobile slider logic - show active tab
+      setMobileSliderOffset(activeIndex);
     }
   }, [activeTab]);
   const handleCardClick = (item: PortfolioItem) => setSelectedImage(item);
   const handleClose = () => setSelectedImage(null);
   const canScrollPrev = sliderOffset > 0;
   const canScrollNext = sliderOffset < maxOffset;
+  const canScrollPrevMobile = mobileSliderOffset > 0;
+  const canScrollNextMobile = mobileSliderOffset < mobileMaxOffset;
   const translateX = -(sliderOffset * (50 / VISIBLE_TABS));
+  // Mobile: Move by 100% of visible width per tab (which is 100/TABS.length of slider container)
+  const mobileTranslateX = -(mobileSliderOffset * (100 / TABS.length));
   return (
     <section id="portfolio" className="py-24 lg:py-32 relative overflow-hidden">
       <GridPattern variant="lines" className="opacity-20" />
@@ -731,29 +743,45 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
         </FadeIn>
         <FadeIn className="mb-12">
           <div className="relative flex items-center">
+            {/* Navigation Buttons - Desktop */}
             {canScrollPrev && (
               <button
                 onClick={handlePrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-border shadow-md items-center justify-center hover:bg-muted transition-colors"
                 aria-label="Previous tabs"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
             )}
+            {/* Navigation Buttons - Mobile */}
+            {canScrollPrevMobile && (
+              <button
+                onClick={handlePrev}
+                className="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                aria-label="Previous tabs"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+            )}
             <div
               ref={tabsContainerRef}
-              className="overflow-hidden flex-1 mx-12 relative"
+              className="overflow-x-auto overflow-y-hidden flex-1 md:mx-12 mx-10 relative scrollbar-hide"
+              style={{
+                WebkitOverflowScrolling: 'touch',
+              }}
             >
+              {/* Desktop Fade Gradients */}
               {canScrollPrev && (
-                <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
+                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
               )}
               
               {canScrollNext && (
-                <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
+                <div className="hidden md:block absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
               )}
 
+              {/* Desktop Slider */}
               <motion.div
-                className="flex gap-2 relative z-0"
+                className="hidden md:flex gap-2 relative z-0"
                 animate={{
                   x: `${translateX}%`,
                 }}
@@ -782,14 +810,66 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
                   );
                 })}
               </motion.div>
+
+              {/* Mobile Slider - 1 tab at a time */}
+              <div className="md:hidden overflow-hidden relative z-0">
+                <motion.div
+                  className="flex relative z-0"
+                  animate={{
+                    x: `${mobileTranslateX}%`,
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 30,
+                  }}
+                  style={{
+                    width: `${TABS.length * 100}%`,
+                  }}
+                >
+                  {TABS.map((tab) => {
+                    const isActive = activeTab === tab;
+                    return (
+                      <button
+                        key={tab}
+                        data-tab={tab}
+                        onClick={() => setActiveTab(tab)}
+                        className={cn(
+                          "px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-300 flex-shrink-0",
+                          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+                          isActive
+                            ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                            : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
+                        )}
+                        style={{
+                          width: `${100 / TABS.length}%`,
+                        }}
+                      >
+                        {tab}
+                      </button>
+                    );
+                  })}
+                </motion.div>
+              </div>
             </div>
+            {/* Navigation Buttons - Desktop */}
             {canScrollNext && (
               <button
                 onClick={handleNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-border shadow-md items-center justify-center hover:bg-muted transition-colors"
                 aria-label="Next tabs"
               >
                 <ChevronRight className="h-5 w-5" />
+              </button>
+            )}
+            {/* Navigation Buttons - Mobile */}
+            {canScrollNextMobile && (
+              <button
+                onClick={handleNext}
+                className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                aria-label="Next tabs"
+              >
+                <ChevronRight className="h-4 w-4" />
               </button>
             )}
           </div>
