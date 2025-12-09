@@ -63,6 +63,19 @@ export function Header() {
             Home
           </Link>
 
+          {/* AI Agent Link - moved before Services */}
+          <Link
+            href="/ai-agent"
+            className={cn(
+              "text-sm font-medium transition-colors animated-underline",
+              pathname === "/ai-agent"
+                ? "text-primary"
+                : "text-muted-foreground hover:text-foreground"
+            )}
+          >
+            AI Agent
+          </Link>
+
           {/* Services Dropdown */}
           <div
             className="relative"
@@ -78,7 +91,7 @@ export function Header() {
                   : "text-muted-foreground hover:text-foreground"
               )}
             >
-              Services
+              Web Services
               <ChevronDown
                 size={14}
                 className={cn(
@@ -126,8 +139,8 @@ export function Header() {
             </AnimatePresence>
           </div>
 
-          {/* Other Nav Links */}
-          {NAV_LINKS.filter((link) => link.href !== "/").map((link) => (
+          {/* Other Nav Links - filter out AI Agent since it's now above */}
+          {NAV_LINKS.filter((link) => link.href !== "/" && link.href !== "/ai-agent").map((link) => (
             <Link
               key={link.href}
               href={link.href}
@@ -183,6 +196,19 @@ export function Header() {
                 Home
               </Link>
 
+              {/* AI Agent - moved before Services */}
+              <Link
+                href="/ai-agent"
+                className={cn(
+                  "text-lg font-medium py-2 transition-colors",
+                  pathname === "/ai-agent"
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
+                )}
+              >
+                AI Agent
+              </Link>
+
               {/* Services Section */}
               <div>
                 <div className="flex items-center justify-between">
@@ -195,7 +221,7 @@ export function Header() {
                         : "text-muted-foreground hover:text-foreground"
                     )}
                   >
-                    Services
+                    Web Services
                   </Link>
                   <button
                     onClick={() => setIsServicesOpen(!isServicesOpen)}
@@ -237,8 +263,8 @@ export function Header() {
                 </AnimatePresence>
               </div>
 
-              {/* Other Links */}
-              {NAV_LINKS.filter((link) => link.href !== "/").map((link) => (
+              {/* Other Links - filter out AI Agent */}
+              {NAV_LINKS.filter((link) => link.href !== "/" && link.href !== "/ai-agent").map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
