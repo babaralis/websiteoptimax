@@ -1,164 +1,256 @@
 "use client";
 
-import { motion } from "framer-motion";
-import { FadeIn } from "@/components/animations/FadeIn";
+import { useState, useEffect } from "react";
+import Link from "next/link";
+  import { motion } from "framer-motion";
+import { Award } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ArrowRight, CheckCircle, Star } from "lucide-react";
+import { STATS } from "@/lib/constants";
+import { event as trackEvent } from "@/lib/analytics";
 import { AbstractShapes } from "@/components/graphics/AbstractShapes";
-import { CountUp } from "@/components/animations/CountUp";
-
-const platforms = ["React", "Next.js", "WordPress", "HubSpot", "Shopify"];
-
-const benefits = [
-  "Free strategy consultation",
-  "Custom growth roadmap",
-  "No obligation quote",
-];
+import { BriefForm } from "@/sections/brief/BriefForm";
+import Image from "next/image";
 
 export function LandingHero() {
+  const [showBriefForm, setShowBriefForm] = useState(false);
+  const [companyName, setCompanyName] = useState("");
+
+  const handleGetStarted = () => {
+    if (companyName.trim()) {
+      setShowBriefForm(true);
+      trackEvent({
+        action: "cta_click",
+        category: "Engagement",
+        label: "Hero - Get Started",
+      });
+    }
+  };
+
+  // Disable body scroll when form is open
+  useEffect(() => {
+    if (showBriefForm) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [showBriefForm]);
+
   return (
-    <section className="relative overflow-hidden py-20 lg:py-28">
+    <>
+      {showBriefForm && (
+        <BriefForm
+          initialCompanyName={companyName}
+        />
+      )}
+    <section className="relative  flex items-center justify-center overflow-hidden md:pt-36 pt-32 pb-10">
+      {/* Enhanced Background Effects */}
       <AbstractShapes variant="hero" />
-
+      
+      {/* Radial gradient overlay */}
+      <div className="absolute inset-0 bg-gradient-radial from-primary/5 via-transparent to-transparent" />
+      
       <div className="container relative z-10">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
-          {/* LEFT CONTENT */}
-          <FadeIn>
-            {/* Platform tags */}
-            <div className="mb-6 flex flex-wrap gap-2">
-              {platforms.map((platform) => (
-                <span
-                  key={platform}
-                  className="rounded-full border border-border/50 bg-muted/50 px-3 py-1 text-sm font-medium text-muted-foreground"
-                >
-                  {platform}
-                </span>
-              ))}
-            </div>
+        <div className="md:max-w-5xl mx-auto text-center w-full">
+          {/* Badge with glow */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary/10 border border-primary/20 text-sm text-primary mb-8 badge-glow"
+          >
+            <Award className="w-4 h-4" />
+            <span>Award-Winning B2B Digital Agency</span>
+          </motion.div>
+          
+          {/* Headline with enhanced typography */}
+          <motion.h1
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.1 }}
+            className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-foreground leading-[1.1] mb-6"
+          >
+            Websites That Turn{" "}
+            <span className="gradient-text-glow">B2B Traffic</span>{" "}
+            Into Revenue
+          </motion.h1>
+          
+          {/* Subheadline */}
+          <motion.p
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto mb-10 text-balance"
+          >
+            We design and build high-performance websites for B2B, SaaS, and service companies. No templates.
+          </motion.p>
+         
 
-            {/* Heading */}
-            <h1 className="mb-6 text-4xl font-display font-bold leading-tight md:text-5xl lg:text-6xl">
-              Get a Website That{" "}
-              <span className="gradient-text-glow">Converts Visitors</span>{" "}
-              Into Revenue
-            </h1>
-
-            {/* Subheading */}
-            <p className="mb-8 text-lg text-muted-foreground md:text-xl">
-              Stop losing leads to a weak website. We build high-converting B2B
-              websites that turn traffic into qualified pipeline—averaging{" "}
-              <strong className="text-foreground">340% more leads</strong> for
-              our clients.
-            </p>
-
-            {/* Benefits list */}
-            <div className="mb-8 flex flex-wrap gap-4">
-              {benefits.map((benefit) => (
-                <div key={benefit} className="flex items-center gap-2">
-                  <CheckCircle className="h-5 w-5 text-success" />
-                  <span className="text-muted-foreground">{benefit}</span>
-                </div>
-              ))}
-            </div>
-
-            {/* Stats row */}
-            <div className="flex flex-wrap gap-8">
-              <div>
-                <p className="text-3xl font-bold text-primary">
-                  <CountUp value={127} suffix="+" duration={2} />
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Brands Transformed
-                </p>
-              </div>
-
-              <div>
-                <p className="text-3xl font-bold text-secondary">
-                  <CountUp value={340} suffix="%" duration={2} />
-                </p>
-                <p className="text-sm text-muted-foreground">
-                  Avg. Lead Increase
-                </p>
-              </div>
-
-              <div className="flex items-center gap-1">
-                <div className="flex">
-                  {[1, 2, 3, 4, 5].map((i) => (
-                    <Star
-                      key={i}
-                      className="h-5 w-5 fill-primary text-primary"
-                    />
-                  ))}
-                </div>
-                <span className="ml-2 text-sm text-muted-foreground">
-                  5.0 on Clutch
-                </span>
+          {/* Input Field with Button */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.35 }}
+            className="md:max-w-lg w-full mx-auto mb-16 md:flex items-center gap-0 homebannerform"
+          >
+            <div className="relative flex items-center rounded-l-[0.75rem] rounded-r-[0.75rem] md:rounded-r-none border-2 md:border-r-0 border-primary/50 bg-background overflow-hidden flex-1 h-14">
+              <div className="flex items-center flex-1 h-full pl-4 pr-0">
+                {/* <Pencil className="w-5 h-5 text-primary mr-3 flex-shrink-0" /> */}
+                <Image
+                  src="/assets/images/pencil.png"
+                  alt="Pencil"
+                  width={20}
+                  height={20}
+                  className="w-5 h-5 mr-3 flex-shrink-0"
+                />
+                <Input
+                  type="text"
+                  placeholder="Enter Your Business Name"
+                  value={companyName}
+                  onChange={(e) => setCompanyName(e.target.value)}
+                  required
+                  className="border-0 focus-visible:ring-0 focus-visible:ring-offset-0 bg-transparent text-base h-full w-full flex-1"      
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" && companyName.trim()) {
+                      handleGetStarted();
+                    }
+                  }}
+                />
               </div>
             </div>
-          </FadeIn>
 
-          {/* RIGHT: FORM CARD (FRONTEND ONLY) */}
-          <FadeIn direction="left" delay={0.2}>
-            <motion.div
-              className="glass-card-premium rounded-2xl p-8"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.3 }}
+            {/* <Button
+              variant="default"
+              size="lg"
+              className="rounded-l-none rounded-r-[0.75rem] h-14 px-8 text-base font-semibold whitespace-nowrap border-0 bg-[#ff4772] hover:bg-[#ff4772]/90 text-white relative z-10"
+              onClick={handleGetStarted}
             >
-              <div className="mb-6 text-center">
-                <h2 className="mb-2 text-2xl font-display font-bold">
-                  Get Your Free Strategy Call
-                </h2>
-                <p className="text-muted-foreground">
-                  Discover how we can help grow your business
-                </p>
-              </div>
+              Get Started
+            </Button> */}
 
-              {/* Simple static form – no submit logic */}
-              <form
-                className="space-y-4"
-                onSubmit={(e) => e.preventDefault()}
+            <Button 
+                variant="default" 
+                size="xl" 
+                className="mt-4 md:mt-0 animate-pulse-glow shadow-glow-lg md:rounded-l-none rounded-r-[0.75rem] h-14 px-8 w-full text-base font-semibold whitespace-nowrap border-0 bg-[#ff4772] hover:bg-[#ff4772]/90 text-white relative z-10" 
+                onClick={handleGetStarted}
+              >Get Started
+              </Button>
+
+          </motion.div>
+          
+          {/* Stats with glass cards */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto"
+          >
+            {STATS.map((stat, index) => (
+              <motion.div 
+                key={index} 
+                className="glass-card p-4 md:p-6 text-center card-hover group"
+                whileHover={{ scale: 1.02 }}
+                transition={{ duration: 0.2 }}
               >
-                <Input
-                  placeholder="Your Name *"
-                  className="bg-background/50"
-                />
-                <Input
-                  type="email"
-                  placeholder="Work Email *"
-                  className="bg-background/50"
-                />
-                <Input
-                  placeholder="Company Name *"
-                  className="bg-background/50"
-                />
-                <Input
-                  placeholder="Current Website URL (optional)"
-                  className="bg-background/50"
-                />
-
-                <Button
-                  type="button"
-                  variant="hero"
-                  size="xl"
-                  className="w-full shadow-glow-md"
-                >
-                  Get My Free Consultation
-                  <ArrowRight className="ml-2 h-5 w-5" />
-                </Button>
-              </form>
-
-              <div className="mt-6 border-t border-border/30 pt-4 text-center">
-                <div className="flex items-center justify-center gap-2 text-sm text-muted-foreground">
-                  <div className="h-2 w-2 animate-pulse rounded-full bg-success" />
-                  <span>Only 3 spots left this month</span>
+                <div className="text-2xl md:text-3xl font-bold text-foreground mb-1 group-hover:text-primary transition-colors">
+                  {stat.value}
                 </div>
+                <div className="text-xs md:text-sm text-muted-foreground">{stat.label}</div>
+              </motion.div>
+            ))}
+          </motion.div>
+          
+          {/* Hero Image */}
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.5 }}
+            className="mt-12 md:max-w-5xl w-full mx-auto"
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-glow-lg">
+              <Image
+                src="/assets/images/homebanner.jpg"
+                alt="B2B website design and development mockup showing modern interfaces"
+                className="w-full h-auto object-cover"
+                width={1200}
+                height={600}
+                priority
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/60 via-transparent to-transparent" />
+            </div>
+          </motion.div>
+          
+          {/* Trust badges */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.6, delay: 0.7 }}
+            className="mt-12 mb-12 flex flex-wrap items-center justify-center gap-6 text-muted-foreground text-sm"
+          >
+            <span>Trusted by industry leaders:</span>
+            <div className="flex items-center gap-8 opacity-60">
+              <div className="relative h-8 w-32">
+                <Image
+                  src="/assets/images/logos/3.svg"
+                  alt="TechFlow"
+                  fill
+                  className="object-contain brightness-0 invert"
+                />
               </div>
-            </motion.div>
-          </FadeIn>
+              <div className="relative h-8 w-32">
+                <Image
+                  src="/assets/images/logos/6.svg"
+                  alt="GrowthLabs"
+                  fill
+                  className="object-contain brightness-0 invert"
+                />
+              </div>
+              <div className="relative h-8 w-32">
+                <Image
+                  src="/assets/images/logos/7.svg"
+                  alt="CloudSecure"
+                  fill
+                  className="object-contain brightness-0 invert"
+                />
+              </div>
+              <div className="relative h-8 w-32">
+                <Image
+                  src="/assets/images/logos/8.svg"
+                  alt="ScaleUp"
+                  fill
+                  className="object-contain brightness-0 invert"
+                />
+              </div>
+            </div>
+          </motion.div>
+          {/* Scroll Indicator */}
+      <Link href="#portfolio">
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1, duration: 0.5 }}
+        className="flex justify-center items-center"
+      >
+        <div className="w-6 h-10 rounded-full border-2 border-muted-foreground/30 flex justify-center pt-2 glass">
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.5, repeat: Infinity }}
+            className="w-1.5 h-1.5 rounded-full bg-primary"
+          />
+        </div>
+      </motion.div>
+      </Link>
         </div>
       </div>
+      
+      {/* Bottom gradient fade */}
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      
+      
     </section>
+    </>
   );
 }
