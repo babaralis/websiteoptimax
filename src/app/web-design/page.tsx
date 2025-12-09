@@ -1,12 +1,12 @@
 import { Metadata } from "next";
 import { LandingHero } from "@/components/webdesign/LandingHero";
-import { WebDevSuccess } from "@/sections/web-development/WebDevSuccess";
+import { WebDesignDevSuccess } from "@/components/webdesign/WebDesignDevSuccess";
 import { WebDevAI } from "@/sections/web-development/WebDevAI";
 import { NewPortfolio } from "@/sections/portfolio/NewPortfolio";
 import { WebDesignCTA } from "@/components/webdesign/WebDesignCTA";
 import { TestimonialsSection } from "@/sections/reviews/TestimonialsSection";
 import { WebDesignVision } from "@/components/webdesign/WebDesignVision";
-import { WebDevUX } from "@/sections/web-development/WebDevUX";
+import { WebDesignDevUX } from "@/components/webdesign/WebDevDesignUX";
 import { WebDesignLead } from "@/components/webdesign/WebDesignLead";
 import { WebDesignPopup } from "@/components/webdesign/WebDesignPopup";
 import { WebDesignFloatingCTA } from "@/components/webdesign/WebDesignFloatingCTA";
@@ -28,14 +28,14 @@ export default function WebDesignPage() {
       <WebDesignPopup />
       <WebDesignFloatingCTA />
       <LandingHero />
-      <WebDevSuccess />
+      <WebDesignDevSuccess />
       <WebDesignCTA />
       <WebDevAI />
       <NewPortfolio limit={9} />
       <WebDesignCTA />
       <TestimonialsSection />
       <WebDesignVision />
-      <WebDevUX />
+      <WebDesignDevUX />
       <WebDesignLead />
     </>
   );

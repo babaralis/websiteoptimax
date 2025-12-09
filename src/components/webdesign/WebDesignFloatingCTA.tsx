@@ -40,7 +40,9 @@ export function WebDesignFloatingCTA() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [isDismissed]);
 
-  const handleDismiss = () => {
+  const handleDismiss = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
     setIsDismissed(true);
     setIsVisible(false);
   };
@@ -58,22 +60,23 @@ export function WebDesignFloatingCTA() {
           className="fixed bottom-0 left-0 right-0 z-40 px-4 pb-4 md:pb-6"
         >
           <div className="container mx-auto">
-            <div className="glass-card-premium rounded-2xl p-4 md:p-6 shadow-2xl border border-border/50 relative overflow-hidden">
+            <div className="glass-card-premium rounded-2xl p-4 md:p-6 shadow-2xl border border-border/50 relative overflow-visible">
               {/* Background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-secondary/10" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-secondary/10 z-0" />
               
-              {/* Close button */}
+              {/* Close button - Mobile */}
               <button
                 onClick={handleDismiss}
-                className="absolute top-3 right-3 p-1.5 rounded-full hover:bg-muted/50 transition-colors z-10 md:hidden"
+                className="absolute top-2 right-2 md:hidden p-2 rounded-full hover:bg-muted/50 active:bg-muted/70 transition-colors z-50 pointer-events-auto touch-manipulation"
                 aria-label="Close"
+                type="button"
               >
-                <X className="w-4 h-4 text-muted-foreground" />
+                <X className="w-5 h-5 text-muted-foreground" />
               </button>
 
               <div className="relative z-10 flex flex-col sm:flex-row items-center justify-between gap-4">
                 {/* Left: Text Content */}
-                <div className="flex-1 text-center sm:text-left">
+                <div className="flex-1 text-center sm:text-left pr-8 md:pr-0">
                   <h3 className="text-lg md:text-xl font-display font-bold mb-1">
                     Ready to Transform Your Website?
                   </h3>
@@ -106,10 +109,12 @@ export function WebDesignFloatingCTA() {
                       Book Free Call
                     </Link>
                   </Button>
+                  {/* Close button - Desktop */}
                   <button
                     onClick={handleDismiss}
-                    className="hidden sm:block p-2 rounded-full hover:bg-muted/50 transition-colors"
+                    className="hidden sm:block p-2 rounded-full hover:bg-muted/50 active:bg-muted/70 transition-colors z-50 pointer-events-auto"
                     aria-label="Close"
+                    type="button"
                   >
                     <X className="w-5 h-5 text-muted-foreground" />
                   </button>
