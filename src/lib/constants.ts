@@ -18,6 +18,7 @@ export const NAV_LINKS = [
 
 export const SERVICES_DROPDOWN = [
   { label: "All Services", href: "/services", description: "Overview of our service offerings" },
+  { label: "Web Design", href: "/web-design", description: "High-converting B2B web design that generates leads" },
   { label: "Web Development", href: "/web-development", description: "High-performance websites for B2B brands" },
   { label: "Website Optimization", href: "/website-optimization", description: "Convert more visitors into customers" },
   { label: "AI Agent Development", href: "/ai-agent", description: "Automate your business with AI" },
@@ -26,6 +27,7 @@ export const SERVICES_DROPDOWN = [
 export const FOOTER_LINKS = {
   services: [
     // { label: "Web Design", href: "/services#design" },
+    { label: "Web Design", href: "/web-design" },
     { label: "Web Development", href: "/web-development" },
     { label: "Website Optimization", href: "/website-optimization" },
     { label: "AI Agent", href: "/ai-agent" },
