@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { ServicesHero } from "@/sections/services/ServicesHero";
+import { AllServicesSection } from "@/sections/services/AllServicesSection";
 import { FeaturesComparison } from "@/sections/services/FeaturesComparison";
 import { QualificationSection } from "@/sections/services/QualificationSection";
 import { ServicesCTA } from "@/sections/services/ServicesCTA";
@@ -18,6 +19,7 @@ export default function ServicesPage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
       <ServicesHero />
+      <AllServicesSection />
       <FeaturesComparison />
       <QualificationSection />
       <ServicesCTA />
