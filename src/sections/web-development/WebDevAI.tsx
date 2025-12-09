@@ -5,6 +5,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { StaggerChildren } from "@/components/animations/StaggerChildren";
 import { Brain, FileSearch, Palette, Code, LineChart, RefreshCw } from "lucide-react";
 import { RadialGlow } from "@/components/graphics/GridPattern";
+import Image from "next/image";
 
 const aiFeatures = [
   {
@@ -94,7 +95,13 @@ export function WebDevAI() {
                 site now appears in ChatGPT recommendations, which accounts for 23% of our new leads.
               </blockquote>
               <div className="flex items-center justify-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary" />
+                <Image
+                  src="/assets/images/testi.webp"
+                  alt="David Park"
+                  width={40}
+                  height={40}
+                  className="w-10 h-10 rounded-full object-cover"
+                />
                 <div className="text-left">
                   <p className="font-semibold text-foreground">David Park</p>
                   <p className="text-sm text-muted-foreground">VP Digital, CloudSecure</p>

@@ -69,10 +69,11 @@ export function Header() {
             onMouseEnter={() => setIsServicesOpen(true)}
             onMouseLeave={() => setIsServicesOpen(false)}
           >
-            <button
+            <Link
+              href="/services"
               className={cn(
                 "text-sm font-medium transition-colors flex items-center gap-1",
-                isServicesActive
+                pathname === "/services" || isServicesActive
                   ? "text-primary"
                   : "text-muted-foreground hover:text-foreground"
               )}
@@ -85,7 +86,7 @@ export function Header() {
                   isServicesOpen && "rotate-180"
                 )}
               />
-            </button>
+            </Link>
 
             <AnimatePresence>
               {isServicesOpen && (
@@ -184,24 +185,31 @@ export function Header() {
 
               {/* Services Section */}
               <div>
-                <button
-                  onClick={() => setIsServicesOpen(!isServicesOpen)}
-                  className={cn(
-                    "w-full text-lg font-medium py-2 transition-colors flex items-center justify-between",
-                    isServicesActive
-                      ? "text-primary"
-                      : "text-muted-foreground hover:text-foreground"
-                  )}
-                >
-                  Services
-                  <ChevronDown
-                    size={18}
+                <div className="flex items-center justify-between">
+                  <Link
+                    href="/services"
                     className={cn(
-                      "transition-transform duration-200",
-                      isServicesOpen && "rotate-180"
+                      "text-lg font-medium py-2 transition-colors",
+                      pathname === "/services" || isServicesActive
+                        ? "text-primary"
+                        : "text-muted-foreground hover:text-foreground"
                     )}
-                  />
-                </button>
+                  >
+                    Services
+                  </Link>
+                  <button
+                    onClick={() => setIsServicesOpen(!isServicesOpen)}
+                    className="p-2"
+                  >
+                    <ChevronDown
+                      size={18}
+                      className={cn(
+                        "transition-transform duration-200",
+                        isServicesOpen && "rotate-180"
+                      )}
+                    />
+                  </button>
+                </div>
                 <AnimatePresence>
                   {isServicesOpen && (
                     <motion.div
