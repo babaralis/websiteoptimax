@@ -498,7 +498,7 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
               )}
 
               <motion.div
-                className="flex gap-2 relative z-0"
+                className="flex gap-2 relative z-0 justify-center"
                 animate={{
                   x: `${translateX}%`,
                 }}
