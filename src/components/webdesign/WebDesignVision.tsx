@@ -50,7 +50,7 @@ const steps: ProcessStep[] = [
 
 export function WebDesignVision() {
   return (
-    <section className="relative py-24 lg:py-32 overflow-hidden">
+    <section className="relative py-24 lg:py-32 overflow-hidden pt-0">
       <GridPattern className="opacity-30" />
       
       <div className="container relative z-10">
