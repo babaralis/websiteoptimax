@@ -25,461 +25,621 @@ type PortfolioItem = {
   description: string;
   result: string;
   image: string;
+  imageMockupName: string;
 };
 const PORTFOLIO_ITEMS: PortfolioItem[] = [
   {
     id: 1,
-    title: "Xefag",
+    title: "Commurz",
     category: "Ecommerce & Retail",
     description:
-      "Healthcare technology company needed HIPAA-compliant website with patient portal integration.",
-    result: "+45% reduction in support calls",
+      "E-commerce platform needed modern website design to boost sales and improve user experience.",
+    result: "+45% increase in online sales",
     image: "/assets/images/portfolio/ecomerce-retail/1.webp",
+    imageMockupName: "Commurz",
   },
   {
     id: 2,
-    title: "VIBEX MG 3",
+    title: "Amble Sheep",
     category: "Ecommerce & Retail",
     description:
-      "VIBEX needed a professional landing page showcasing the MG 3 innovative massager, emphasizing tension relief and comfort.",
-    result: "+55% average session time",
+      "Coffee brand needed attractive website to showcase products and increase online sales.",
+    result: "+62% growth in average order value",
     image: "/assets/images/portfolio/ecomerce-retail/2.webp",
+    imageMockupName: "Amble Sheep",
   },
   {
     id: 3,
-    title: "BULL Power Bank",
+    title: "Zare",
     category: "Ecommerce & Retail",
     description:
-      "BULL needed a premium product page design showcasing their 90000mAh Power Bank, highlighting its high capacity and 3-in-1 charging capability.",
-    result: "+68% increase in pre-orders",
+      "Retail company needed professional online store to expand market reach and increase conversions.",
+    result: "+78% increase in customer engagement",
     image: "/assets/images/portfolio/ecomerce-retail/3.webp",
+    imageMockupName: "mockup-03.webp",
   },
   {
     id: 4,
-    title: "SOLÉNE",
+    title: "Enerloc",
     category: "Ecommerce & Retail",
     description:
-      "SOLÉNE needed a high-end, dynamic fashion e-commerce site emphasizing self-expression and promoting trend-forward pieces daily.",
-    result: "+180% growth in organic traffic",
+      "Electric toothbrush brand needed modern website to showcase products and boost online sales.",
+    result: "+85% improvement in mobile conversions",
     image: "/assets/images/portfolio/ecomerce-retail/4.webp",
+    imageMockupName: "mockup-04.webp",
   },
   {
     id: 5,
-    title: "Nitro",
+    title: "Dripora",
     category: "Ecommerce & Retail",
     description:
-      "Nitro needed a sleek dark-themed e-commerce site for their cool drinks, showcasing key features like nitrogen infusion and variety of flavors.",
-    result: "+27% conversion rate on mobile",
+      "Fashion e-commerce needed sleek website design to enhance brand image and boost sales.",
+    result: "+52% increase in repeat customers",
     image: "/assets/images/portfolio/ecomerce-retail/5.webp",
+    imageMockupName: "mockup-05.webp",
   },
   {
     id: 6,
-    title: "TEKRON Chair",
+    title: "Vera",
     category: "Ecommerce & Retail",
     description:
-      "TEKRON required a bold, modern landing page for their Aluminum Folding Chair, emphasizing its experience, portability, and unique design features.",
-    result: "+92% increase in brand awareness",
+      "Beauty brand required modern e-commerce platform to showcase products and improve user experience.",
+    result: "+71% growth in monthly revenue",
     image: "/assets/images/portfolio/ecomerce-retail/6.webp",
-  },
-  {
-    id: 7,
-    title: "CHIC MODE",
-    category: "Ecommerce & Retail",
-    description:
-      "CHIC MODE needed an edgy website where fashion meets functional eyewear, focusing on a curated collection with superior quality and UV protection.",
-    result: "+70% improvement in customer retention",
-    image: "/assets/images/portfolio/ecomerce-retail/7.webp",
-  },
-  {
-    id: 8,
-    title: "Productivity Extender",
-    category: "Ecommerce & Retail",
-    description:
-      "The client needed a minimalist, high-impact landing page to launch an essential companion device for extending Apple Watch battery life.",
-    result: "$1.2M raised in initial funding",
-    image: "/assets/images/portfolio/ecomerce-retail/8.webp",
-  },
-  {
-    id: 9,
-    title: "ORVÉLIA",
-    category: "Ecommerce & Retail",
-    description:
-      "ORVÉLIA required a sophisticated skincare site showcasing their future formula, emphasizing radical transparency and advanced, clean ingredients.",
-    result: "+85% jump in average order value",
-    image: "/assets/images/portfolio/ecomerce-retail/9.webp",
-  },
-  {
-    id: 10,
-    title: "Audira Q20",
-    category: "Ecommerce & Retail",
-    description:
-      "Audira required an immersive product page for their Q20 Hybrid ANC Headphones, highlighting pure audio delivery and deep, redefined comfort.",
-    result: "+115% boost in average retail rating",
-    image: "/assets/images/portfolio/ecomerce-retail/10.webp",
+    imageMockupName: "mockup-06.webp",
   },
   {
   id: 11,
-    title: "Art Course",
+    title: "eCoach",
     category: "Education & Learning",
     description:
-      "The project involved creating an interactive platform to help users learn, explore, and test their knowledge of art through quizzes and modules.",
-    result: "9/10 average user satisfaction rating",
+      "E-learning platform needed interactive website to deliver courses and enhance student learning experience.",
+    result: "+89% increase in course enrollments",
     image: "/assets/images/portfolio/education-learning/1.webp",
+    imageMockupName: "mockup-07.webp",
   },
   {
     id: 12,
-    title: "LEARNME",
+    title: "Moondu",
     category: "Education & Learning",
     description:
-      "LEARNME required a futuristic e-learning platform to elevate management skills with cutting-edge courses and comprehensive training modules.",
-    result: "1.2K total number of users completed the training",
+      "Online education platform required modern design to attract learners and improve course completion rates.",
+    result: "+76% growth in active users",
     image: "/assets/images/portfolio/education-learning/2.webp",
+    imageMockupName: "mockup-08.webp",
   },
   {
     id: 13,
-    title: "eduwerks",
+    title: "Monac",
     category: "Education & Learning",
     description:
-      "eduwerks needed a dynamic learning platform focused on unlocking the future of education with abstract visuals and clear pricing structures.",
-    result: "98% completion rate for premium courses",
+      "Educational institution needed professional website to showcase programs and increase student registrations.",
+    result: "+94% improvement in student engagement",
     image: "/assets/images/portfolio/education-learning/3.webp",
+    imageMockupName: "mockup-09.webp",
   },
   {
     id: 14,
-    title: "D.Flow UIUX Course",
+    title: "Omekaa",
     category: "Education & Learning",
     description:
-      "D.Flow required a compelling landing page to market their live class for aspiring UIUX Designers, emphasizing creativity and skill development.",
-    result: "+15% year-over-year revenue growth",
+      "Training platform required engaging website design to promote courses and boost enrollment numbers.",
+    result: "+67% increase in course signups",
     image: "/assets/images/portfolio/education-learning/4.webp",
+    imageMockupName: "mockup-10.webp",
   },
   {
     id: 15,
-    title: "SAIA",
+    title: "Talento",
     category: "Education & Learning",
     description:
-      "SAIA required a compelling community platform to turn medical internships into a solidarity journey for intern doctors and students in France.",
-    result: "9,500 total community members joined",
+      "Learning management system needed user-friendly interface to improve accessibility and student satisfaction.",
+    result: "+83% growth in platform usage",
     image: "/assets/images/portfolio/education-learning/5.webp",
+    imageMockupName: "mockup-11.webp",
   },
   {
     id: 16,
-    title: "EX Course",
+    title: "Educaa",
     category: "Education & Learning",
     description:
-      "EX Course needed a modern, engaging e-learning platform emphasizing proven success and offering comprehensive instruction across design fields.",
-    result: "92% of students secured a job after graduation",
+      "Educational technology platform required modern website to showcase features and attract new users.",
+    result: "+91% increase in user retention",
     image: "/assets/images/portfolio/education-learning/6.webp",
-  },
-  {
-    id: 17,
-    title: "Edunex",
-    category: "Education & Learning",
-    description:
-      "Edunex needed a modern e-learning platform focused on bridging the knowledge gap by connecting students with industry professionals and expert instructors.",
-    result: "+140K total students enrolled",
-    image: "/assets/images/portfolio/education-learning/7.webp",
-  },
-  {
-    id: 18,
-    title: "EduCore",
-    category: "Education & Learning",
-    description:
-      "EduCore needed a sleek, dark-themed landing page to help users launch and market their courses with compelling visuals and pricing plans.",
-    result: "+7.5K courses launched within the first year",
-    image: "/assets/images/portfolio/education-learning/8.webp",
-  },
-  {
-      id: 19,
-    title: "Modular Education Platform",
-    category: "Education & Learning",
-    description:
-      "The project involved designing a fully modular online learning environment, utilizing bright, distinct cards to categorize courses and highlight key metrics and features.",
-    result: "$15M company delta valuation achieved",
-    image: "/assets/images/portfolio/education-learning/9.webp",
-  },
-  {
-    id: 20,
-    title: "TUTOR Platform",
-    category: "Education & Learning",
-    description:
-      "The project involved designing an engaging and personalized tutoring platform connecting students with expert instructors across a variety of academic subjects.",
-    result: "90% student satisfaction in exam preparation",
-    image: "/assets/images/portfolio/education-learning/10.webp",
-  },
-  {
-    id: 21,
-    title: "The Modern Way To Live",
-    category: "Finance & Fintech",
-    description:
-      "The client needed a sharp, dark-themed finance platform that made managing money easily and offering innovative features like a referral bonus and easy access.",
-    result: "$50 referral bonus distributed",
-    image: "/assets/images/portfolio/finance-fintech/1.webp",
-  },
-  {
-      id: 22,
-    title: "PsBank FaceCards",
-    category: "Finance & Fintech",
-    description:
-      "PsBank needed a dark-mode landing page to promote their FaceCards feature, allowing users to create personalized bank cards based on their facial features.",
-    result: "+18% increase in new customer acquisition",
-    image: "/assets/images/portfolio/finance-fintech/2.webp",
-  },
-  {
-        id: 23,
-    title: "CashPilot",
-    category: "Finance & Fintech",
-    description:
-      "The project involved designing a financial planning app that integrates personal financial data to project affordability and help users manage long-term goals.",
-    result: "4.8/5 average rating in the App Store",
-    image: "/assets/images/portfolio/finance-fintech/3.webp",
-  },
-  {
-    id: 24,
-    title: "Bank.io",
-    category: "Finance & Fintech",
-    description:
-      "Bank.io needed a vibrant banking website showcasing its full-service approach, highlighting features like credit card rewards and easy savings accounts.",
-    result: "$2.5M growth in square checking accounts",
-    image: "/assets/images/portfolio/finance-fintech/4.webp",
-  },
-  {
-    id: 25,
-    title: "Cryptic",
-    category: "Finance & Fintech",
-    description:
-      "Cryptic needed a dark-themed platform to revolutionize transactions with secure blockchain solutions, empowering seamless crypto-powered virtual cards and trading.",
-    result: "+210% growth in daily active users",
-    image: "/assets/images/portfolio/finance-fintech/5.webp",
-  },
-  {
-    id: 26,
-    title: "HealthAI Dashboard",
-    category: "Finance & Fintech",
-    description:
-      "The project involved designing a sophisticated health dashboard to visualize user vitals, track fitness goals, and provide personalized insights for proactive well-being.",
-    result: "+30% improvement in user goal achievement",
-    image: "/assets/images/portfolio/finance-fintech/6.webp",
-  },
-  {
-    id: 27,
-    title: "Next Era of Digital Finance",
-    category: "Finance & Fintech",
-    description:
-      "The client needed a sophisticated DeFi platform to redefine digital finance, offering secure blockchain interactions and seamless wallet management for modern users.",
-    result: "+156% inquiries",
-    image: "/assets/images/portfolio/finance-fintech/7.webp",
-  },
-  {
-    id: 28,
-    title: "SupplyChain Pro",
-    category: "Finance & Fintech",
-    description:
-      "Supply chain management platform required intuitive dashboard design for complex workflows. Built user-friendly interface with real-time tracking capabilities.",
-    result: "+245% adoption",
-    image: "/assets/images/portfolio/finance-fintech/8.webp",
-  },
-  {
-        id: 29,
-    title: "MediCare Solutions",
-    category: "Finance & Fintech",
-    description:
-      "Healthcare technology company needed HIPAA-compliant website with patient portal integration. Designed secure, accessible platform with clear navigation.",
-    result: "+312% signups",
-    image: "/assets/images/portfolio/finance-fintech/9.webp",
-  },
-  {
-  id: 30,
-    title: "EduTech Enterprise",
-    category: "Finance & Fintech",
-    description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/finance-fintech/10.webp",
+    imageMockupName: "mockup-12.webp",
   },
 
    {
     id: 31,
-    title: "MediCare Solutions",
+    title: "Pour",
     category: "Food & Beverage",
     description:
-      "Healthcare technology company needed HIPAA-compliant website with patient portal integration. Designed secure, accessible platform with clear navigation.",
-    result: "+312% signups",
+      "Beverage company needed attractive website design to showcase products and increase online orders.",
+    result: "+56% increase in online sales",
     image: "/assets/images/portfolio/food-beverage/1.webp",
+    imageMockupName: "mockup-13.webp",
   },
   {
     id: 32,
-    title: "EduTech Enterprise",
+    title: "Penny Juice",
     category: "Food & Beverage",
     description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
+      "Juice brand required modern e-commerce website to display products and boost customer engagement.",
+    result: "+73% growth in monthly orders",
     image: "/assets/images/portfolio/food-beverage/2.webp",
+    imageMockupName: "mockup-14.webp",
   },
   {
     id: 33,
-    title: "EduTech Enterprise",
+    title: "Coffee Time",
     category: "Food & Beverage",
     description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
+      "Coffee shop needed professional website to promote menu items and attract more customers.",
+    result: "+64% increase in foot traffic",
     image: "/assets/images/portfolio/food-beverage/3.webp",
+    imageMockupName: "mockup-15.webp",
   },
   {
     id: 34,
-    title: "EduTech Enterprise",
+    title: "P.TRES",
     category: "Food & Beverage",
     description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
+      "Coffee brand needed elegant website design to showcase products and boost sales.",
+    result: "+81% growth in table bookings",
     image: "/assets/images/portfolio/food-beverage/4.webp",
+    imageMockupName: "mockup-16.webp",
   },
   {
     id: 35,
-    title: "EduTech Enterprise",
+    title: "Altitude",
     category: "Food & Beverage",
     description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
+      "Coffee and tea brand needed modern website to showcase products and boost sales.",
+    result: "+69% increase in repeat orders",
     image: "/assets/images/portfolio/food-beverage/5.webp",
+    imageMockupName: "mockup-17.webp",
   },
   {
     id: 36,
-    title: "EduTech Enterprise",
+    title: "Fizzon",
     category: "Food & Beverage",
     description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
+      "Beverage brand required dynamic website to highlight products and drive customer conversions.",
+    result: "+87% improvement in brand awareness",
     image: "/assets/images/portfolio/food-beverage/6.webp",
-  },
-  {
-    id: 37,
-    title: "EduTech Enterprise",
-    category: "Food & Beverage",
-    description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/food-beverage/7.webp",
-  },
-  {
-    id: 38,
-    title: "EduTech Enterprise",
-    category: "Food & Beverage",
-    description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/food-beverage/8.webp",
-  },
-  {
-    id: 39,
-    title: "EduTech Enterprise",
-    category: "Food & Beverage",
-    description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/food-beverage/9.webp",
-  },
-  {
-    id: 40,
-    title: "EduTech Enterprise",
-    category: "Food & Beverage",
-    description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/food-beverage/10.webp",
+    imageMockupName: "mockup-18.webp",
   },
    {
     id: 41,
-    title: "MediCare Solutions",
-    category: "Green & Renewable Energy",
+    title: "Sendrim",
+    category: "Logistics & Mobility",
     description:
-      "Healthcare technology company needed HIPAA-compliant website with patient portal integration. Designed secure, accessible platform with clear navigation.",
-    result: "+312% signups",
-    image: "/assets/images/portfolio/green-renewable-energy/1.webp",
+      "Logistics company needed efficient website to manage shipments and improve customer service.",
+    result: "+72% increase in shipment tracking",
+    image: "/assets/images/portfolio/logistics-mobility/1.webp",
+    imageMockupName: "mockup-19.webp",
   },
   {
     id: 42,
-    title: "EduTech Enterprise",
-    category: "Green & Renewable Energy",
+    title: "Logistix",
+    category: "Logistics & Mobility",
     description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/green-renewable-energy/2.webp",
+      "Transportation service required modern platform to streamline operations and enhance user experience.",
+    result: "+59% growth in service bookings",
+    image: "/assets/images/portfolio/logistics-mobility/2.webp",
+    imageMockupName: "mockup-20.webp",
   },
   {
     id: 43,
-    title: "EduTech Enterprise",
-    category: "Green & Renewable Energy",
+    title: "Eazy Stock",
+    category: "Logistics & Mobility",
     description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/green-renewable-energy/3.webp",
+      "Warehouse management needed professional website to showcase services and attract new clients.",
+    result: "+84% increase in client inquiries",
+    image: "/assets/images/portfolio/logistics-mobility/3.webp",
+    imageMockupName: "mockup-21.webp",
   },
   {
     id: 44,
-    title: "EduTech Enterprise",
-    category: "Green & Renewable Energy",
+    title: "Abivin",
+    category: "Logistics & Mobility",
     description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/green-renewable-energy/4.webp",
+      "Supply chain platform required user-friendly design to improve efficiency and customer satisfaction.",
+    result: "+66% improvement in delivery times",
+    image: "/assets/images/portfolio/logistics-mobility/4.webp",
+    imageMockupName: "mockup-22.webp",
   },
   {
     id: 45,
-    title: "EduTech Enterprise",
-    category: "Green & Renewable Energy",
+    title: "Uthao",
+    category: "Logistics & Mobility",
     description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/green-renewable-energy/5.webp",
+      "Moving service needed attractive website to showcase offerings and increase booking requests.",
+    result: "+77% growth in online bookings",
+    image: "/assets/images/portfolio/logistics-mobility/5.webp",
+    imageMockupName: "mockup-23.webp",
   },
   {
     id: 46,
-    title: "EduTech Enterprise",
-    category: "Green & Renewable Energy",
+    title: "Moving",
+    category: "Logistics & Mobility",
     description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/green-renewable-energy/6.webp",
+      "Transportation company required modern website design to promote services and boost sales.",
+    result: "+63% increase in customer retention",
+    image: "/assets/images/portfolio/logistics-mobility/6.webp",
+    imageMockupName: "mockup-24.webp",
+    },
+
+  {
+    id: 51,
+    title: "K.WILLIAM",
+    category: "Law",
+    description:
+      "Law firm needed professional website establishing trust for growing businesses.",
+    result: "+68% increase in consultation bookings",
+    image: "/assets/images/portfolio/law/1.webp",
+    imageMockupName: "mockup-25.webp",
   },
   {
-    id: 47,
-    title: "EduTech Enterprise",
-    category: "Green & Renewable Energy",
+    id: 52,
+    title: "TrustWell",
+    category: "Law",
     description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/green-renewable-energy/7.webp",
+      "Legal firm needed professional website to build credibility and attract potential clients.",
+    result: "+74% increase in client consultations",
+    image: "/assets/images/portfolio/law/2.webp",
+    imageMockupName: "mockup-26.webp",
   },
   {
-    id: 48,
-    title: "EduTech Enterprise",
-    category: "Green & Renewable Energy",
+    id: 53,
+    title: "USLAW",
+    category: "Law",
     description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/green-renewable-energy/8.webp",
+      "Law practice required modern website design to showcase expertise and increase visibility.",
+    result: "+61% growth in website traffic",
+    image: "/assets/images/portfolio/law/3.webp",
+    imageMockupName: "mockup-27.webp",
   },
   {
-    id: 49,
-    title: "EduTech Enterprise",
-    category: "Green & Renewable Energy",
+    id: 54,
+    title: "Valuelaw.ca",
+    category: "Law",
     description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/green-renewable-energy/9.webp",
+      "Legal services needed user-friendly website to provide information and generate leads.",
+    result: "+79% increase in lead generation",
+    image: "/assets/images/portfolio/law/4.webp",
+    imageMockupName: "mockup-28.webp",
   },
   {
-    id: 50,
-    title: "EduTech Enterprise",
-    category: "Green & Renewable Energy",
+    id: 55,
+    title: "E-Dikigoros",
+    category: "Law",
     description:
-      "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-    result: "+278% demos",
-    image: "/assets/images/portfolio/green-renewable-energy/10.webp",
+      "Law firm required elegant website to establish authority and improve client engagement.",
+    result: "+86% improvement in online inquiries",
+    image: "/assets/images/portfolio/law/5.webp",
+    imageMockupName: "mockup-29.webp",
+  },
+  {
+    id: 56,
+    title: "LawGuru",
+    category: "Law",
+    description:
+      "Legal platform needed professional design to showcase services and build trust.",
+    result: "+93% increase in case inquiries",
+    image: "/assets/images/portfolio/law/6.webp",
+    imageMockupName: "mockup-30.webp",
   },
 
-   
+  // Finance & Fintech
+  {
+    id: 61,
+    title: "PayFlow",
+    category: "Finance & Fintech",
+    description:
+      "Payment processing platform needed modern website to showcase secure transaction solutions and increase merchant signups.",
+    result: "+125% increase in merchant registrations",
+    image: "/assets/images/portfolio/finance-fintech/1.webp",
+    imageMockupName: "mockup-31.webp",
+  },
+  {
+    id: 62,
+    title: "CryptoWallet Pro",
+    category: "Finance & Fintech",
+    description:
+      "Cryptocurrency wallet platform required secure and user-friendly website to build trust and attract investors.",
+    result: "+98% growth in active users",
+    image: "/assets/images/portfolio/finance-fintech/2.webp",
+    imageMockupName: "mockup-32.webp",
+  },
+  {
+    id: 63,
+    title: "InvestSmart",
+    category: "Finance & Fintech",
+    description:
+      "Investment platform needed professional website to showcase portfolio management tools and attract new investors.",
+    result: "+156% increase in investment signups",
+    image: "/assets/images/portfolio/finance-fintech/3.webp",
+    imageMockupName: "mockup-33.webp",
+  },
+  {
+    id: 64,
+    title: "BankLink",
+    category: "Finance & Fintech",
+    description:
+      "Digital banking solution required modern website to demonstrate seamless banking experience and increase customer acquisition.",
+    result: "+87% improvement in customer onboarding",
+    image: "/assets/images/portfolio/finance-fintech/4.webp",
+    imageMockupName: "mockup-34.webp",
+  },
+  {
+    id: 65,
+    title: "LoanEase",
+    category: "Finance & Fintech",
+    description:
+      "Loan management platform needed user-friendly website to simplify loan applications and increase conversions.",
+    result: "+134% growth in loan applications",
+    image: "/assets/images/portfolio/finance-fintech/5.webp",
+    imageMockupName: "mockup-35.webp",
+  },
+  {
+    id: 66,
+    title: "WealthTracker",
+    category: "Finance & Fintech",
+    description:
+      "Personal finance app required engaging website to showcase budgeting tools and attract new users.",
+    result: "+112% increase in app downloads",
+    image: "/assets/images/portfolio/finance-fintech/6.webp",
+    imageMockupName: "mockup-36.webp",
+  },
+
+  // Green & Renewable Energy
+  {
+    id: 71,
+    title: "SolarMax Solutions",
+    category: "Green & Renewable Energy",
+    description:
+      "Solar energy company needed modern website to showcase renewable energy solutions and increase customer inquiries.",
+    result: "+145% increase in consultation bookings",
+    image: "/assets/images/portfolio/green-renewable-energy/1.webp",
+    imageMockupName: "mockup-37.webp",
+  },
+  {
+    id: 72,
+    title: "WindPower Pro",
+    category: "Green & Renewable Energy",
+    description:
+      "Wind energy platform required professional website to demonstrate sustainable energy solutions and attract investors.",
+    result: "+92% growth in investor inquiries",
+    image: "/assets/images/portfolio/green-renewable-energy/2.webp",
+    imageMockupName: "mockup-38.webp",
+  },
+  {
+    id: 73,
+    title: "EcoEnergy Hub",
+    category: "Green & Renewable Energy",
+    description:
+      "Renewable energy marketplace needed engaging website to connect consumers with green energy providers.",
+    result: "+178% increase in provider signups",
+    image: "/assets/images/portfolio/green-renewable-energy/3.webp",
+    imageMockupName: "mockup-39.webp",
+  },
+  {
+    id: 74,
+    title: "GreenTech Innovations",
+    category: "Green & Renewable Energy",
+    description:
+      "Clean technology company required modern website to showcase innovative green solutions and increase visibility.",
+    result: "+126% growth in partnership inquiries",
+    image: "/assets/images/portfolio/green-renewable-energy/4.webp",
+    imageMockupName: "mockup-40.webp",
+  },
+  {
+    id: 75,
+    title: "RenewableGrid",
+    category: "Green & Renewable Energy",
+    description:
+      "Energy management platform needed user-friendly website to demonstrate smart grid solutions and attract utilities.",
+    result: "+103% increase in utility partnerships",
+    image: "/assets/images/portfolio/green-renewable-energy/5.webp",
+    imageMockupName: "mockup-41.webp",
+  },
+  {
+    id: 76,
+    title: "EcoCharge",
+    category: "Green & Renewable Energy",
+    description:
+      "Electric vehicle charging network required modern website to showcase charging infrastructure and increase station bookings.",
+    result: "+167% growth in charging station usage",
+    image: "/assets/images/portfolio/green-renewable-energy/6.webp",
+    imageMockupName: "mockup-42.webp",
+  },
+
+  // Healthcare & Wellness
+  {
+    id: 81,
+    title: "HealthCare Plus",
+    category: "Healthcare & Wellness",
+    description:
+      "Healthcare platform needed modern website to provide medical information and connect patients with healthcare providers.",
+    result: "+138% increase in patient registrations",
+    image: "/assets/images/portfolio/healthcare-wellness/1.webp",
+    imageMockupName: "mockup-43.webp",
+  },
+  {
+    id: 82,
+    title: "WellnessHub",
+    category: "Healthcare & Wellness",
+    description:
+      "Wellness platform required engaging website to showcase fitness programs and health coaching services.",
+    result: "+115% growth in membership signups",
+    image: "/assets/images/portfolio/healthcare-wellness/2.webp",
+    imageMockupName: "mockup-44.webp",
+  },
+  {
+    id: 83,
+    title: "MediConnect",
+    category: "Healthcare & Wellness",
+    description:
+      "Telemedicine platform needed user-friendly website to facilitate virtual consultations and improve patient access.",
+    result: "+189% increase in virtual appointments",
+    image: "/assets/images/portfolio/healthcare-wellness/3.webp",
+    imageMockupName: "mockup-45.webp",
+  },
+  {
+    id: 84,
+    title: "FitLife App",
+    category: "Healthcare & Wellness",
+    description:
+      "Fitness tracking app required modern website to showcase workout programs and attract health-conscious users.",
+    result: "+142% growth in app subscriptions",
+    image: "/assets/images/portfolio/healthcare-wellness/4.webp",
+    imageMockupName: "mockup-46.webp",
+  },
+  {
+    id: 85,
+    title: "MentalWell",
+    category: "Healthcare & Wellness",
+    description:
+      "Mental health platform needed professional website to provide therapy services and support resources.",
+    result: "+156% increase in therapy bookings",
+    image: "/assets/images/portfolio/healthcare-wellness/5.webp",
+    imageMockupName: "mockup-47.webp",
+  },
+  {
+    id: 86,
+    title: "HealthTracker Pro",
+    category: "Healthcare & Wellness",
+    description:
+      "Health monitoring platform required engaging website to showcase medical device integration and patient management tools.",
+    result: "+128% growth in device activations",
+    image: "/assets/images/portfolio/healthcare-wellness/6.webp",
+    imageMockupName: "mockup-48.webp",
+  },
+
+  // Pets
+  {
+    id: 91,
+    title: "PetCare Plus",
+    category: "Pets",
+    description:
+      "Pet care platform needed modern website to connect pet owners with veterinarians and pet services.",
+    result: "+134% increase in service bookings",
+    image: "/assets/images/portfolio/pets/1.webp",
+    imageMockupName: "mockup-49.webp",
+  },
+  {
+    id: 92,
+    title: "PawShop",
+    category: "Pets",
+    description:
+      "Pet supplies e-commerce needed attractive website to showcase products and increase online sales.",
+    result: "+167% growth in monthly revenue",
+    image: "/assets/images/portfolio/pets/2.webp",
+    imageMockupName: "mockup-50.webp",
+  },
+  {
+    id: 93,
+    title: "PetVet Online",
+    category: "Pets",
+    description:
+      "Veterinary clinic required professional website to provide pet health information and schedule appointments.",
+    result: "+145% increase in appointment bookings",
+    image: "/assets/images/portfolio/pets/3.webp",
+    imageMockupName: "mockup-51.webp",
+  },
+  {
+    id: 94,
+    title: "FurryFriends",
+    category: "Pets",
+    description:
+      "Pet adoption platform needed engaging website to help pets find loving homes and increase adoption rates.",
+    result: "+178% growth in successful adoptions",
+    image: "/assets/images/portfolio/pets/4.webp",
+    imageMockupName: "mockup-52.webp",
+  },
+  {
+    id: 95,
+    title: "DogWalk Pro",
+    category: "Pets",
+    description:
+      "Pet walking service required modern website to connect pet owners with professional walkers and increase bookings.",
+    result: "+156% increase in walker registrations",
+    image: "/assets/images/portfolio/pets/5.webp",
+    imageMockupName: "mockup-53.webp",
+  },
+  {
+    id: 96,
+    title: "PetGroom Studio",
+    category: "Pets",
+    description:
+      "Pet grooming salon needed attractive website to showcase services and increase customer bookings.",
+    result: "+123% growth in grooming appointments",
+    image: "/assets/images/portfolio/pets/6.webp",
+    imageMockupName: "mockup-54.webp",
+  },
+
+  // Real Estate
+  {
+    id: 101,
+    title: "PropertyPro",
+    category: "Real Estate",
+    description:
+      "Real estate platform needed modern website to showcase property listings and connect buyers with sellers.",
+    result: "+189% increase in property inquiries",
+    image: "/assets/images/portfolio/real-estate/1.webp",
+    imageMockupName: "mockup-55.webp",
+  },
+  {
+    id: 102,
+    title: "HomeFinders",
+    category: "Real Estate",
+    description:
+      "Property search platform required user-friendly website to help users find their dream homes and increase engagement.",
+    result: "+167% growth in property views",
+    image: "/assets/images/portfolio/real-estate/2.webp",
+    imageMockupName: "mockup-56.webp",
+  },
+  {
+    id: 103,
+    title: "EstateHub",
+    category: "Real Estate",
+    description:
+      "Real estate agency needed professional website to showcase listings and increase client consultations.",
+    result: "+145% increase in consultation bookings",
+    image: "/assets/images/portfolio/real-estate/3.webp",
+    imageMockupName: "mockup-57.webp",
+  },
+  {
+    id: 104,
+    title: "RentEasy",
+    category: "Real Estate",
+    description:
+      "Rental platform required modern website to connect tenants with landlords and streamline rental processes.",
+    result: "+178% growth in rental applications",
+    image: "/assets/images/portfolio/real-estate/4.webp",
+    imageMockupName: "mockup-58.webp",
+  },
+  {
+    id: 105,
+    title: "LuxuryHomes",
+    category: "Real Estate",
+    description:
+      "Luxury property marketplace needed elegant website to showcase high-end listings and attract affluent buyers.",
+    result: "+156% increase in premium inquiries",
+    image: "/assets/images/portfolio/real-estate/5.webp",
+    imageMockupName: "mockup-59.webp",
+  },
+  {
+    id: 106,
+    title: "PropertyManager Pro",
+    category: "Real Estate",
+    description:
+      "Property management platform required comprehensive website to help landlords manage properties and increase efficiency.",
+    result: "+134% growth in property management signups",
+    image: "/assets/images/portfolio/real-estate/6.webp",
+    imageMockupName: "mockup-60.webp",
+  },
 ];
 type NewPortfolioProps = {
   limit?: number;
@@ -490,17 +650,33 @@ const getAllCategories = (): string[] => {
 };
 const createTabs = (): string[] => {
   const categories = getAllCategories();
-  // Remove special tabs from categories to avoid duplicates
-  const specialTabs = ["Ecommerce & Retail", "Education & Learning", "Finance & Fintech"];
+  const specialTabs = ["Ecommerce & Retail", "Education & Learning", "Finance & Fintech", "Green & Renewable Energy", "Healthcare & Wellness", "Pets", "Real Estate"];
   const filteredCategories = categories.filter(cat => !specialTabs.includes(cat));
-  // Create tabs: "All" first, then special tabs in order, then other categories
-  const tabs = ["All", "Ecommerce & Retail", "Education & Learning", "Finance & Fintech", ...filteredCategories.slice(0, 8)];
+  const tabs = ["All", "Ecommerce & Retail", "Education & Learning", "Finance & Fintech", "Green & Renewable Energy", "Healthcare & Wellness", "Pets", "Real Estate", ...filteredCategories.slice(0, 4)];
   return tabs;
 };
 const TABS = createTabs();
-const VISIBLE_TABS = 10;
+const VISIBLE_TABS = 6;
 const ALL_TAB_LIMIT = 38;
 const CATEGORY_TAB_LIMIT = 38;
+const getImagePaths = (imagePath: string) => {
+  const match = imagePath.match(/\/portfolio\/([^\/]+)\/(\d+)\.webp$/);
+  if (!match) {
+    return { mockup: imagePath, website: imagePath };
+  }
+  const [, categoryFolder, number] = match;
+  const correctedCategory = categoryFolder === "ecomerce-retail" 
+    ? "ecommerce-retail" 
+    : categoryFolder;
+  const formattedNumber = number.padStart(2, "0");
+  const mockupPath = `/assets/images/portfolio/${correctedCategory}/mockup-${formattedNumber}.webp`;
+  const websitePath = `/assets/images/portfolio/${correctedCategory}/website-${formattedNumber}.webp`;
+  return { mockup: mockupPath, website: websitePath };
+};
+const getMockupImagePath = (imagePath: string) => {
+  const { mockup } = getImagePaths(imagePath);
+  return mockup;
+};
 export function NewPortfolio({ limit }: NewPortfolioProps) {
   const [selectedImage, setSelectedImage] = useState<PortfolioItem | null>(null);
   const [activeTab, setActiveTab] = useState<string>("All");
@@ -540,7 +716,7 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
   const handleClose = () => setSelectedImage(null);
   const canScrollPrev = sliderOffset > 0;
   const canScrollNext = sliderOffset < maxOffset;
-  const translateX = -(sliderOffset * (100 / VISIBLE_TABS));
+  const translateX = -(sliderOffset * (50 / VISIBLE_TABS));
   return (
     <section id="portfolio" className="py-24 lg:py-32 relative overflow-hidden">
       <GridPattern variant="lines" className="opacity-20" />
@@ -568,18 +744,16 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
               ref={tabsContainerRef}
               className="overflow-hidden flex-1 mx-12 relative"
             >
-              {/* Left Fade Gradient - appears when can scroll left */}
               {canScrollPrev && (
                 <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
               )}
               
-              {/* Right Fade Gradient - appears when can scroll right */}
               {canScrollNext && (
                 <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
               )}
 
               <motion.div
-                className="flex gap-2 relative z-0 justify-center"
+                className="flex gap-2 relative z-0"
                 animate={{
                   x: `${translateX}%`,
                 }}
@@ -642,7 +816,7 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
               >
                 <div className="relative w-full max-h-[31.25rem] bg-gradient-to-br from-muted to-muted/50 overflow-hidden flex items-center justify-center">
                   <Image
-                    src={project.image}
+                    src={getMockupImagePath(project.image)}
                     alt={project.title}
                     width={800}
                     height={600}
@@ -692,15 +866,23 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
                 <DialogDescription>{selectedImage.description}</DialogDescription>
               </DialogHeader>
               <div className="relative w-full h-full flex flex-col">
-                <div className="relative flex-1 overflow-hidden bg-muted">
-                  <Image
-                    src={selectedImage.image}
-                    alt={selectedImage.title}
-                    fill
-                    className="object-contain"
-                    sizes="95vw"
-                    priority
-                  />
+                <div className="relative flex-1 overflow-y-auto bg-muted flex gap-2 p-2 poppupImage">
+                  {(() => {
+                    const { website } = getImagePaths(selectedImage.image);
+                    return (
+                      <div className="relative w-full rounded-lg">
+                    <Image
+                          src={website}
+                          alt={`${selectedImage.title} - Website`}
+                          width={1200}
+                          height={2000}
+                          className="w-full h-auto object-cover rounded-lg"
+                          sizes="100vw"
+                      priority
+                    />
+                  </div>
+                    );
+                  })()}
                 </div>
                 <div className="border-t bg-background p-6">
                   <div className="flex items-start justify-between gap-4">
