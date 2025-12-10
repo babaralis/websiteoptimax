@@ -79,14 +79,14 @@ export function TeamSection() {
                 <p className="text-sm text-muted-foreground text-center mb-4">
                   {member.bio}
                 </p>
-                <div className="flex justify-center gap-3">
+                {/* <div className="flex justify-center gap-3">
                   <button className="p-2 rounded-full bg-muted hover:bg-primary/10 hover:text-primary transition-colors">
                     <Linkedin className="w-4 h-4" />
                   </button>
                   <button className="p-2 rounded-full bg-muted hover:bg-primary/10 hover:text-primary transition-colors">
                     <Twitter className="w-4 h-4" />
                   </button>
-                </div>
+                </div> */}
               </div>
             </StaggerItem>
           ))}
