@@ -44,6 +44,7 @@ export function ContactForm() {
       budget: formData.get('budget') as string,
       timeline: formData.get('timeline') as string,
       message: formData.get('message') as string,
+      phone: formData.get('phone') as string || '',
       title: "Contact Request",
     };
     await submitContactEmail(data);
@@ -136,6 +137,7 @@ export function ContactForm() {
                   className="bg-background/50"
                 />
               </div>
+             
               <div className="space-y-2">
                 <Label htmlFor="website">Current Website</Label>
                 <Input
@@ -146,9 +148,16 @@ export function ContactForm() {
                   className="bg-background/50"
                 />
               </div>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-6">
+              <div className="space-y-2">
+                <Label htmlFor="name"> Phone No (Optional) *</Label>
+                <Input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="1234567890"
+                  className="bg-background/50 text-sm sm:text-base"
+                />
+              </div>
               <div className="space-y-2">
                 <Label htmlFor="budget">Budget Range</Label>
                 <Select name="budget">
@@ -164,6 +173,9 @@ export function ContactForm() {
                   </SelectContent>
                 </Select>
               </div>
+            </div>
+            
+
               <div className="space-y-2">
                 <Label htmlFor="timeline">Project Timeline</Label>
                 <Select name="timeline">
@@ -179,7 +191,7 @@ export function ContactForm() {
                   </SelectContent>
                 </Select>
               </div>
-            </div>
+           
             
             <div className="space-y-2">
               <Label htmlFor="message">Tell Us About Your B2B Goals *</Label>
