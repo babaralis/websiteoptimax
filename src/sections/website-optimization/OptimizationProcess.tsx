@@ -70,12 +70,12 @@ export function OptimizationProcess() {
             {steps.map((step, index) => (
               <FadeIn key={step.title} delay={index * 0.1}>
                 <motion.div
-                  className="relative flex gap-6 mb-8 last:mb-0"
+                  className="relative flex flex-col md:flex-row gap-4 md:gap-6 mb-8 last:mb-0"
                   whileHover={{ x: 8 }}
                   transition={{ duration: 0.2 }}
                 >
-                  {/* Step number */}
-                  <div className="relative z-10 flex-shrink-0">
+                  {/* Step number - Above on mobile, left on desktop */}
+                  <div className="relative z-10 flex-shrink-0 flex justify-center md:justify-start">
                     <motion.div 
                       className="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary/20 to-secondary/20 flex items-center justify-center border border-border/50"
                       whileHover={{ scale: 1.1, rotate: 5 }}

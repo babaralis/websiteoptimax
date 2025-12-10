@@ -72,7 +72,7 @@ export function OptimizationGuarantee() {
                 </div>
                 
                 <div className="text-center lg:text-left">
-                  <Button variant="hero" size="xl" asChild className="shadow-glow-md">
+                  <Button variant="hero" size="xl" asChild className="shadow-glow-md guarantee-btn">
                     <Link href="/contact" className="gap-2">
                       Claim Your Guarantee
                       <ArrowRight className="h-5 w-5" />

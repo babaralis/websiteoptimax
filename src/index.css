@@ -682,6 +682,10 @@ h3{
 
 /* Mobile Hero Section - Only applies on mobile (below md breakpoint) */
 @media (max-width: 767px) {
+  .guarantee-btn{
+    width: 100%;
+    font-size: .7rem;
+  }
   .mobile-hero-section {
     padding-top: 8rem; /* pt-12 equivalent */
   }
