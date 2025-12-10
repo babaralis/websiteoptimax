@@ -87,6 +87,22 @@ export default function RootLayout({
                 $.type = "text/javascript";
                 e.parentNode.insertBefore($, e);
               })(document, "script");
+
+              window.addEventListener("load", () => {
+                const waitForZopim = setInterval(() => {
+                  if (window.$zopim) {
+                    clearInterval(waitForZopim);
+              
+                    $zopim(() => {
+                      $zopim.livechat.setOnUnreadMsgs((count) => {
+                        if (count >= 1) {
+                          $zopim.livechat.window.show();
+                        }
+                      });
+                    });
+                  }
+                }, 100);
+              });
             `,
           }}
         />
