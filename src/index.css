@@ -671,3 +671,47 @@
 .webdesign-banner-card {
   border: 1px solid rgba(30, 64, 175, 0.4);
 }
+
+h2{
+  letter-spacing: 0.05rem;
+}
+h3{
+  font-size: 1.3rem !important;
+}
+
+
+/* Mobile Hero Section - Only applies on mobile (below md breakpoint) */
+@media (max-width: 767px) {
+  .mobile-hero-section {
+    padding-top: 8rem; /* pt-12 equivalent */
+  }
+  
+  .mobile-hero-container {
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+  }
+  
+  .mobile-hero-grid {
+    justify-items: center;
+  }
+  
+  .mobile-hero-content {
+    width: 100%;
+  }
+  
+  .mobile-hero-button {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .mobile-hero-form {
+    width: 100%;
+    max-width: 28rem; /* max-w-md */
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .mobile-about-container {
+    padding-left: 1rem; /* px-4 */
+    padding-right: 1rem; /* px-4 */
+  }
+}

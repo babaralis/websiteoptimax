@@ -136,10 +136,18 @@ export function WebDesignFloatingCTA() {
                   <Button
                     variant="hero"
                     size="lg"
-                    asChild
                     className="shadow-glow-sm"
                   >
-                    <Link href="/contact" className="gap-2">
+                    <Link 
+                      href="#" 
+                      className="flex items-center gap-2"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (typeof window !== 'undefined' && (window as any).$zopim) {
+                          (window as any).$zopim.livechat.window.toggle();
+                        }
+                      }}
+                    >
                       <Phone className="w-4 h-4" />
                       Book Free Call
                     </Link>

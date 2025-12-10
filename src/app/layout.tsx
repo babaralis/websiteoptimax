@@ -8,6 +8,7 @@ import { CookieConsent } from "@/components/CookieConsent";
 import { ScrollToTop } from "@/components/ScrollToTop";
 import Script from "next/script";
 import "@/index.css";
+import { ConsultationForm } from "@/components/forms/ConsultationForm";
 
 const inter = Inter({ 
   subsets: ["latin"],

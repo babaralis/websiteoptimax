@@ -63,9 +63,9 @@ export function OptimizationProcess() {
         </FadeIn>
         
         <div className="max-w-4xl mx-auto">
-          <div className="relative">
+          <div className="relative grid gap-4">
             {/* Connecting line */}
-            <div className="absolute left-[2.4375rem] top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-success hidden md:block" />
+            <div className="absolute left-[2.4375rem] top-0 bottom-0 w-px bg-gradient-to-b from-primary via-secondary to-success hidden" />
             
             {steps.map((step, index) => (
               <FadeIn key={step.title} delay={index * 0.1}>
