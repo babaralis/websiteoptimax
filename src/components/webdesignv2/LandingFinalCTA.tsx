@@ -33,7 +33,7 @@ export function LandingFinalCTA() {
               transition={{ duration: 0.3 }}
             >
               <img 
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=600&h=500&fit=crop" 
+                src="/assets/images/webdesign/uncover.jpg" 
                 alt="Expert consultation"
                 className="w-full h-80 lg:h-96 object-cover"
               />
@@ -80,7 +80,16 @@ export function LandingFinalCTA() {
                 </Button>
                 
                 <Button variant="heroOutline" size="xl" asChild>
-                  <Link href="/contact" className="gap-2">
+                  <Link 
+                    href="#" 
+                    className="flex items-center gap-2"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (typeof window !== 'undefined' && (window as any).$zopim) {
+                        (window as any).$zopim.livechat.window.toggle();
+                      }
+                    }}
+                  >
                     Get Started
                     <ArrowRight className="w-5 h-5" />
                   </Link>

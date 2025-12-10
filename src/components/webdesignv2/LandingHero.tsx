@@ -5,7 +5,7 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowRight, Star, Phone } from "lucide-react";
+import { ArrowRight, Star, Phone, MessageSquare } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
@@ -78,9 +78,18 @@ export function LandingHero() {
             </div>
             
             <div className="mobile-hero-button">
-              <Button variant="hero" size="lg" asChild className="shadow-glow-md">
-                <a href="#quote-form" className="gap-2">
-                  <Phone className="w-4 h-4" />
+              <Button variant="hero" size="lg" className="shadow-glow-md">
+                <a 
+                  href="#" 
+                  className="flex items-center gap-2"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (typeof window !== 'undefined' && (window as any).$zopim) {
+                      (window as any).$zopim.livechat.window.toggle();
+                    }
+                  }}
+                >
+                  <MessageSquare className="w-4 h-4" />
                   Claim Free Consultation
                 </a>
               </Button>

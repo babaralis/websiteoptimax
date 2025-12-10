@@ -113,15 +113,15 @@ export function WebDesignPopup() {
 
                   <p className="text-muted-foreground text-center mb-6">
                     Get our <strong className="text-foreground">free B2B Website Audit Checklist</strong> — 
-                    the same framework we use to generate 340% more leads for our clients.
+                    the same framework we use to generate 80% more leads for our clients.
                   </p>
-
+                  
                   {/* Benefits */}
                   <div className="space-y-2 mb-6">
                     {[
-                      "27-point conversion audit checklist",
-                      "AI optimization tips for 2024",
-                      "Real examples from $10M+ brands",
+                      "10-point conversion audit checklist",
+                      "AI optimization tips for 2025",
+                      "Real examples from 100+ brands",
                     ].map((benefit) => (
                       <div key={benefit} className="flex items-center gap-2">
                         <CheckCircle className="w-4 h-4 text-success flex-shrink-0" />

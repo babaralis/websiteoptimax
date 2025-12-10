@@ -41,7 +41,16 @@ export function WebDevCTA() {
               
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Button variant="hero" size="xl" asChild className="shadow-glow-md">
-                  <Link href="/contact" className="gap-2">
+                  <Link 
+                    href="#"
+                    className="flex items-center gap-2"
+                    onClick={(e) => {
+                      e.preventDefault();
+                      if (typeof window !== 'undefined' && (window as any).$zopim) {
+                        (window as any).$zopim.livechat.window.toggle();
+                      }
+                    }}
+                  >
                     Book Strategy Call
                     <ArrowRight className="h-5 w-5" />
                   </Link>

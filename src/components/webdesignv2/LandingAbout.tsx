@@ -61,7 +61,7 @@ export function LandingAbout() {
             {/* Team Image */}
             <div className="relative mb-8 rounded-2xl overflow-hidden">
               <img 
-                src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=600&h=300&fit=crop" 
+                src="/assets/images/webdesign/why1.jpg" 
                 alt="Our team at work"
                 className="w-full h-48 object-cover"
               />
@@ -71,8 +71,17 @@ export function LandingAbout() {
               </div>
             </div>
             
-            <Button variant="hero" size="lg" asChild className="shadow-glow-sm">
-              <Link href="/contact" className="gap-2">
+            <Button variant="hero" size="lg" className="shadow-glow-sm">
+              <Link 
+                href="#" 
+                className="flex items-center gap-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (typeof window !== 'undefined' && (window as any).$zopim) {
+                    (window as any).$zopim.livechat.window.toggle();
+                  }
+                }}
+              >
                 Get A Free Website Audit Today!
                 <ArrowRight className="w-4 h-4" />
               </Link>
@@ -89,7 +98,7 @@ export function LandingAbout() {
                 transition={{ duration: 0.3 }}
               >
                 <img 
-                  src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=350&fit=crop" 
+                  src="/assets/images/webdesign/why2.jpg" 
                   alt="Data-driven strategy dashboard"
                   className="w-full h-56 object-cover"
                 />

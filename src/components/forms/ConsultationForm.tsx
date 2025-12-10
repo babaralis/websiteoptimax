@@ -49,7 +49,7 @@ export function ConsultationForm() {
           aria-label="Toggle consultation form"
         >
           <span 
-            className="text-base text-primary-foreground font-semibold tracking-wider capatalize whitespace-nowrap"
+            className="text-lg md:text-xl text-primary-foreground font-semibold tracking-[0.1em] md:tracking-[0.12em] capitalize whitespace-nowrap"
             style={{ 
               writingMode: 'vertical-rl',
               textOrientation: 'mixed',

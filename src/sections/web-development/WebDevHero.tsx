@@ -57,7 +57,17 @@ export function WebDevHero() {
                 </Link>
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
-                <Link href="/contact">Get a Quote</Link>
+                <Link 
+                  href="#"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (typeof window !== 'undefined' && (window as any).$zopim) {
+                      (window as any).$zopim.livechat.window.toggle();
+                    }
+                  }}
+                >
+                  Get a Quote
+                </Link>
               </Button>
             </div>
           </FadeIn>
