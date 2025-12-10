@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/button";
-import { Phone, ArrowRight, Clock, Users } from "lucide-react";
+import { MessageSquare, ArrowRight, Clock, Users } from "lucide-react";
 import Link from "next/link";
 import { LucideIcon } from "lucide-react";
 
@@ -53,9 +53,18 @@ export function WebDesignCTA() {
 
             {/* Right: Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button variant="hero" size="lg" asChild className="shadow-glow-sm">
-                <Link href="/contact" className="gap-2">
-                  <Phone className="w-4 h-4" />
+              <Button variant="hero" size="lg" className="shadow-glow-sm">
+                <Link 
+                  href="#" 
+                  className="flex items-center gap-2"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (typeof window !== 'undefined' && (window as any).$zopim) {
+                      (window as any).$zopim.livechat.window.toggle();
+                    }
+                  }}
+                >
+                  <MessageSquare className="w-4 h-4" />
                   Book Free Call
                 </Link>
               </Button>

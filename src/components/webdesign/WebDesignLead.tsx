@@ -113,8 +113,17 @@ export function WebDesignLead() {
               transition={{ delay: 0.4 }}
             >
               <span className="text-sm sm:text-base text-muted-foreground text-center sm:text-left">Prefer to talk first?</span>
-              <Button variant="heroOutline" size="sm" className="sm:size-default" asChild>
-                <Link href="/contact" className="gap-2 text-sm sm:text-base">
+              <Button variant="heroOutline" size="sm" className="sm:size-default">
+                <Link 
+                  href="#" 
+                  className="flex items-center gap-2 text-sm sm:text-base"
+                  onClick={(e) => {
+                    e.preventDefault();
+                    if (typeof window !== 'undefined' && (window as any).$zopim) {
+                      (window as any).$zopim.livechat.window.toggle();
+                    }
+                  }}
+                >
                   Schedule a Call Directly
                   <ArrowRight className="w-3 h-3 sm:w-4 sm:h-4" />
                 </Link>

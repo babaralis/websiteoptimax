@@ -12,32 +12,67 @@ export function WebDesignFloatingCTA() {
   const heroRef = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    // Find the hero section
-    const heroSection = document.querySelector('section[class*="py-20"], section[class*="py-28"]');
+    // Find the hero section - try multiple selectors
+    const findHeroSection = () => {
+      // Try to find by common hero section patterns
+      const selectors = [
+        'section[class*="pt-20"]',
+        'section[class*="pt-28"]',
+        'section[class*="py-20"]',
+        'section[class*="py-28"]',
+        'section:first-of-type',
+      ];
+      
+      for (const selector of selectors) {
+        const section = document.querySelector(selector);
+        if (section) {
+          return section as HTMLElement;
+        }
+      }
+      return null;
+    };
+
+    const heroSection = findHeroSection();
     if (heroSection) {
-      heroRef.current = heroSection as HTMLElement;
+      heroRef.current = heroSection;
     }
 
     const handleScroll = () => {
       if (isDismissed) return;
 
       if (heroRef.current) {
-        const heroBottom = heroRef.current.offsetTop + heroRef.current.offsetHeight;
-        const scrollPosition = window.scrollY + window.innerHeight;
+        const rect = heroRef.current.getBoundingClientRect();
         
-        // Show CTA when scrolled past hero section
-        setIsVisible(window.scrollY > heroBottom - 100);
+        // Show CTA when scrolled past hero section (when hero bottom is above viewport)
+        // Using a threshold to show it slightly before hero completely exits
+        const shouldShow = rect.bottom < window.innerHeight - 100;
+        setIsVisible(shouldShow);
       } else {
-        // Fallback: show after 600px scroll
-        setIsVisible(window.scrollY > 600);
+        // Fallback: show after 400px scroll
+        setIsVisible(window.scrollY > 400);
       }
     };
+
+    // Small delay to ensure DOM is ready
+    const timeoutId = setTimeout(() => {
+      const heroSection = findHeroSection();
+      if (heroSection) {
+        heroRef.current = heroSection;
+      }
+      handleScroll();
+    }, 100);
 
     // Check initial scroll position
     handleScroll();
 
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    window.addEventListener("resize", handleScroll, { passive: true });
+    
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
+    };
   }, [isDismissed]);
 
   const handleDismiss = (e: React.MouseEvent) => {
@@ -60,9 +95,9 @@ export function WebDesignFloatingCTA() {
           className="fixed bottom-0 left-0 right-0 z-40 px-4 pb-4 md:pb-6"
         >
           <div className="container mx-auto">
-            <div className="glass-card-premium rounded-2xl p-4 md:p-6 shadow-2xl border border-border/50 relative overflow-visible">
+            <div className="glass-card-premium rounded-2xl p-4 md:p-6 shadow-2xl border border-border/50 relative overflow-hidden">
               {/* Background gradient */}
-              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-secondary/10 z-0" />
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/10 via-transparent to-secondary/10 z-0 rounded-2xl" />
               
               {/* Close button - Mobile */}
               <button
@@ -101,10 +136,18 @@ export function WebDesignFloatingCTA() {
                   <Button
                     variant="hero"
                     size="lg"
-                    asChild
                     className="shadow-glow-sm"
                   >
-                    <Link href="/contact" className="gap-2">
+                    <Link 
+                      href="#" 
+                      className="flex items-center gap-2"
+                      onClick={(e) => {
+                        e.preventDefault();
+                        if (typeof window !== 'undefined' && (window as any).$zopim) {
+                          (window as any).$zopim.livechat.window.toggle();
+                        }
+                      }}
+                    >
                       <Phone className="w-4 h-4" />
                       Book Free Call
                     </Link>
