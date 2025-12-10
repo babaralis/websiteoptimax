@@ -38,11 +38,6 @@ export default function HomePage() {
       <PainSection />
       <SolutionSection />
       <NewPortfolio limit={9} />
-
-      {/* <div className="[&_.grid]:lg:grid-cols-2">
-        <ProjectsGrid />
-      </div> */}
-
       <HomeWebPricing className="pt-0" />
       <SocialProofSection />
       <ProcessSection />

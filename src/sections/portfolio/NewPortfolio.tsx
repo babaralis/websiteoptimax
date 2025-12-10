@@ -209,42 +209,6 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     image: "/assets/images/portfolio/food-beverage/6.webp",
     imageMockupName: "mockup-18.webp",
   },
-  // {
-  //   id: 37,
-  //   title: "EduTech Enterprise",
-  //   category: "Food & Beverage",
-  //   description:
-  //     "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-  //   result: "+278% demos",
-  //   image: "/assets/images/portfolio/food-beverage/7.webp",
-  // },
-  // {
-  //   id: 38,
-  //   title: "EduTech Enterprise",
-  //   category: "Food & Beverage",
-  //   description:
-  //     "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-  //   result: "+278% demos",
-  //   image: "/assets/images/portfolio/food-beverage/8.webp",
-  // },
-  // {
-  //   id: 39,
-  //   title: "EduTech Enterprise",
-  //   category: "Food & Beverage",
-  //   description:
-  //     "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-  //   result: "+278% demos",
-  //   image: "/assets/images/portfolio/food-beverage/9.webp",
-  // },
-  // {
-  //   id: 40,
-  //   title: "EduTech Enterprise",
-  //   category: "Food & Beverage",
-  //   description:
-  //     "Educational technology platform wanted to showcase learning management system to institutions. Created interactive demos and comprehensive feature pages.",
-  //   result: "+278% demos",
-  //   image: "/assets/images/portfolio/food-beverage/10.webp",
-  // },
    {
     id: 41,
     title: "Sendrim",
@@ -366,6 +330,316 @@ const PORTFOLIO_ITEMS: PortfolioItem[] = [
     image: "/assets/images/portfolio/law/6.webp",
     imageMockupName: "mockup-30.webp",
   },
+
+  // Finance & Fintech
+  {
+    id: 61,
+    title: "PayFlow",
+    category: "Finance & Fintech",
+    description:
+      "Payment processing platform needed modern website to showcase secure transaction solutions and increase merchant signups.",
+    result: "+125% increase in merchant registrations",
+    image: "/assets/images/portfolio/finance-fintech/1.webp",
+    imageMockupName: "mockup-31.webp",
+  },
+  {
+    id: 62,
+    title: "CryptoWallet Pro",
+    category: "Finance & Fintech",
+    description:
+      "Cryptocurrency wallet platform required secure and user-friendly website to build trust and attract investors.",
+    result: "+98% growth in active users",
+    image: "/assets/images/portfolio/finance-fintech/2.webp",
+    imageMockupName: "mockup-32.webp",
+  },
+  {
+    id: 63,
+    title: "InvestSmart",
+    category: "Finance & Fintech",
+    description:
+      "Investment platform needed professional website to showcase portfolio management tools and attract new investors.",
+    result: "+156% increase in investment signups",
+    image: "/assets/images/portfolio/finance-fintech/3.webp",
+    imageMockupName: "mockup-33.webp",
+  },
+  {
+    id: 64,
+    title: "BankLink",
+    category: "Finance & Fintech",
+    description:
+      "Digital banking solution required modern website to demonstrate seamless banking experience and increase customer acquisition.",
+    result: "+87% improvement in customer onboarding",
+    image: "/assets/images/portfolio/finance-fintech/4.webp",
+    imageMockupName: "mockup-34.webp",
+  },
+  {
+    id: 65,
+    title: "LoanEase",
+    category: "Finance & Fintech",
+    description:
+      "Loan management platform needed user-friendly website to simplify loan applications and increase conversions.",
+    result: "+134% growth in loan applications",
+    image: "/assets/images/portfolio/finance-fintech/5.webp",
+    imageMockupName: "mockup-35.webp",
+  },
+  {
+    id: 66,
+    title: "WealthTracker",
+    category: "Finance & Fintech",
+    description:
+      "Personal finance app required engaging website to showcase budgeting tools and attract new users.",
+    result: "+112% increase in app downloads",
+    image: "/assets/images/portfolio/finance-fintech/6.webp",
+    imageMockupName: "mockup-36.webp",
+  },
+
+  // Green & Renewable Energy
+  {
+    id: 71,
+    title: "SolarMax Solutions",
+    category: "Green & Renewable Energy",
+    description:
+      "Solar energy company needed modern website to showcase renewable energy solutions and increase customer inquiries.",
+    result: "+145% increase in consultation bookings",
+    image: "/assets/images/portfolio/green-renewable-energy/1.webp",
+    imageMockupName: "mockup-37.webp",
+  },
+  {
+    id: 72,
+    title: "WindPower Pro",
+    category: "Green & Renewable Energy",
+    description:
+      "Wind energy platform required professional website to demonstrate sustainable energy solutions and attract investors.",
+    result: "+92% growth in investor inquiries",
+    image: "/assets/images/portfolio/green-renewable-energy/2.webp",
+    imageMockupName: "mockup-38.webp",
+  },
+  {
+    id: 73,
+    title: "EcoEnergy Hub",
+    category: "Green & Renewable Energy",
+    description:
+      "Renewable energy marketplace needed engaging website to connect consumers with green energy providers.",
+    result: "+178% increase in provider signups",
+    image: "/assets/images/portfolio/green-renewable-energy/3.webp",
+    imageMockupName: "mockup-39.webp",
+  },
+  {
+    id: 74,
+    title: "GreenTech Innovations",
+    category: "Green & Renewable Energy",
+    description:
+      "Clean technology company required modern website to showcase innovative green solutions and increase visibility.",
+    result: "+126% growth in partnership inquiries",
+    image: "/assets/images/portfolio/green-renewable-energy/4.webp",
+    imageMockupName: "mockup-40.webp",
+  },
+  {
+    id: 75,
+    title: "RenewableGrid",
+    category: "Green & Renewable Energy",
+    description:
+      "Energy management platform needed user-friendly website to demonstrate smart grid solutions and attract utilities.",
+    result: "+103% increase in utility partnerships",
+    image: "/assets/images/portfolio/green-renewable-energy/5.webp",
+    imageMockupName: "mockup-41.webp",
+  },
+  {
+    id: 76,
+    title: "EcoCharge",
+    category: "Green & Renewable Energy",
+    description:
+      "Electric vehicle charging network required modern website to showcase charging infrastructure and increase station bookings.",
+    result: "+167% growth in charging station usage",
+    image: "/assets/images/portfolio/green-renewable-energy/6.webp",
+    imageMockupName: "mockup-42.webp",
+  },
+
+  // Healthcare & Wellness
+  {
+    id: 81,
+    title: "HealthCare Plus",
+    category: "Healthcare & Wellness",
+    description:
+      "Healthcare platform needed modern website to provide medical information and connect patients with healthcare providers.",
+    result: "+138% increase in patient registrations",
+    image: "/assets/images/portfolio/healthcare-wellness/1.webp",
+    imageMockupName: "mockup-43.webp",
+  },
+  {
+    id: 82,
+    title: "WellnessHub",
+    category: "Healthcare & Wellness",
+    description:
+      "Wellness platform required engaging website to showcase fitness programs and health coaching services.",
+    result: "+115% growth in membership signups",
+    image: "/assets/images/portfolio/healthcare-wellness/2.webp",
+    imageMockupName: "mockup-44.webp",
+  },
+  {
+    id: 83,
+    title: "MediConnect",
+    category: "Healthcare & Wellness",
+    description:
+      "Telemedicine platform needed user-friendly website to facilitate virtual consultations and improve patient access.",
+    result: "+189% increase in virtual appointments",
+    image: "/assets/images/portfolio/healthcare-wellness/3.webp",
+    imageMockupName: "mockup-45.webp",
+  },
+  {
+    id: 84,
+    title: "FitLife App",
+    category: "Healthcare & Wellness",
+    description:
+      "Fitness tracking app required modern website to showcase workout programs and attract health-conscious users.",
+    result: "+142% growth in app subscriptions",
+    image: "/assets/images/portfolio/healthcare-wellness/4.webp",
+    imageMockupName: "mockup-46.webp",
+  },
+  {
+    id: 85,
+    title: "MentalWell",
+    category: "Healthcare & Wellness",
+    description:
+      "Mental health platform needed professional website to provide therapy services and support resources.",
+    result: "+156% increase in therapy bookings",
+    image: "/assets/images/portfolio/healthcare-wellness/5.webp",
+    imageMockupName: "mockup-47.webp",
+  },
+  {
+    id: 86,
+    title: "HealthTracker Pro",
+    category: "Healthcare & Wellness",
+    description:
+      "Health monitoring platform required engaging website to showcase medical device integration and patient management tools.",
+    result: "+128% growth in device activations",
+    image: "/assets/images/portfolio/healthcare-wellness/6.webp",
+    imageMockupName: "mockup-48.webp",
+  },
+
+  // Pets
+  {
+    id: 91,
+    title: "PetCare Plus",
+    category: "Pets",
+    description:
+      "Pet care platform needed modern website to connect pet owners with veterinarians and pet services.",
+    result: "+134% increase in service bookings",
+    image: "/assets/images/portfolio/pets/1.webp",
+    imageMockupName: "mockup-49.webp",
+  },
+  {
+    id: 92,
+    title: "PawShop",
+    category: "Pets",
+    description:
+      "Pet supplies e-commerce needed attractive website to showcase products and increase online sales.",
+    result: "+167% growth in monthly revenue",
+    image: "/assets/images/portfolio/pets/2.webp",
+    imageMockupName: "mockup-50.webp",
+  },
+  {
+    id: 93,
+    title: "PetVet Online",
+    category: "Pets",
+    description:
+      "Veterinary clinic required professional website to provide pet health information and schedule appointments.",
+    result: "+145% increase in appointment bookings",
+    image: "/assets/images/portfolio/pets/3.webp",
+    imageMockupName: "mockup-51.webp",
+  },
+  {
+    id: 94,
+    title: "FurryFriends",
+    category: "Pets",
+    description:
+      "Pet adoption platform needed engaging website to help pets find loving homes and increase adoption rates.",
+    result: "+178% growth in successful adoptions",
+    image: "/assets/images/portfolio/pets/4.webp",
+    imageMockupName: "mockup-52.webp",
+  },
+  {
+    id: 95,
+    title: "DogWalk Pro",
+    category: "Pets",
+    description:
+      "Pet walking service required modern website to connect pet owners with professional walkers and increase bookings.",
+    result: "+156% increase in walker registrations",
+    image: "/assets/images/portfolio/pets/5.webp",
+    imageMockupName: "mockup-53.webp",
+  },
+  {
+    id: 96,
+    title: "PetGroom Studio",
+    category: "Pets",
+    description:
+      "Pet grooming salon needed attractive website to showcase services and increase customer bookings.",
+    result: "+123% growth in grooming appointments",
+    image: "/assets/images/portfolio/pets/6.webp",
+    imageMockupName: "mockup-54.webp",
+  },
+
+  // Real Estate
+  {
+    id: 101,
+    title: "PropertyPro",
+    category: "Real Estate",
+    description:
+      "Real estate platform needed modern website to showcase property listings and connect buyers with sellers.",
+    result: "+189% increase in property inquiries",
+    image: "/assets/images/portfolio/real-estate/1.webp",
+    imageMockupName: "mockup-55.webp",
+  },
+  {
+    id: 102,
+    title: "HomeFinders",
+    category: "Real Estate",
+    description:
+      "Property search platform required user-friendly website to help users find their dream homes and increase engagement.",
+    result: "+167% growth in property views",
+    image: "/assets/images/portfolio/real-estate/2.webp",
+    imageMockupName: "mockup-56.webp",
+  },
+  {
+    id: 103,
+    title: "EstateHub",
+    category: "Real Estate",
+    description:
+      "Real estate agency needed professional website to showcase listings and increase client consultations.",
+    result: "+145% increase in consultation bookings",
+    image: "/assets/images/portfolio/real-estate/3.webp",
+    imageMockupName: "mockup-57.webp",
+  },
+  {
+    id: 104,
+    title: "RentEasy",
+    category: "Real Estate",
+    description:
+      "Rental platform required modern website to connect tenants with landlords and streamline rental processes.",
+    result: "+178% growth in rental applications",
+    image: "/assets/images/portfolio/real-estate/4.webp",
+    imageMockupName: "mockup-58.webp",
+  },
+  {
+    id: 105,
+    title: "LuxuryHomes",
+    category: "Real Estate",
+    description:
+      "Luxury property marketplace needed elegant website to showcase high-end listings and attract affluent buyers.",
+    result: "+156% increase in premium inquiries",
+    image: "/assets/images/portfolio/real-estate/5.webp",
+    imageMockupName: "mockup-59.webp",
+  },
+  {
+    id: 106,
+    title: "PropertyManager Pro",
+    category: "Real Estate",
+    description:
+      "Property management platform required comprehensive website to help landlords manage properties and increase efficiency.",
+    result: "+134% growth in property management signups",
+    image: "/assets/images/portfolio/real-estate/6.webp",
+    imageMockupName: "mockup-60.webp",
+  },
 ];
 type NewPortfolioProps = {
   limit?: number;
@@ -376,54 +650,38 @@ const getAllCategories = (): string[] => {
 };
 const createTabs = (): string[] => {
   const categories = getAllCategories();
-  // Remove special tabs from categories to avoid duplicates
-  const specialTabs = ["Ecommerce & Retail", "Education & Learning", ];
+  const specialTabs = ["Ecommerce & Retail", "Education & Learning", "Finance & Fintech", "Green & Renewable Energy", "Healthcare & Wellness", "Pets", "Real Estate"];
   const filteredCategories = categories.filter(cat => !specialTabs.includes(cat));
-  // Create tabs: "All" first, then special tabs in order, then other categories
-  const tabs = ["All", "Ecommerce & Retail", "Education & Learning", ...filteredCategories.slice(0, 8)];
+  const tabs = ["All", "Ecommerce & Retail", "Education & Learning", "Finance & Fintech", "Green & Renewable Energy", "Healthcare & Wellness", "Pets", "Real Estate", ...filteredCategories.slice(0, 4)];
   return tabs;
 };
 const TABS = createTabs();
 const VISIBLE_TABS = 6;
 const ALL_TAB_LIMIT = 38;
 const CATEGORY_TAB_LIMIT = 38;
-
-// Helper function to get mockup and website image paths
 const getImagePaths = (imagePath: string) => {
-  // Extract category folder and number from path like "/assets/images/portfolio/ecomerce-retail/1.webp"
   const match = imagePath.match(/\/portfolio\/([^\/]+)\/(\d+)\.webp$/);
   if (!match) {
-    // Fallback to original image if pattern doesn't match
     return { mockup: imagePath, website: imagePath };
   }
-  
   const [, categoryFolder, number] = match;
-  
-  // Fix typo: ecomerce-retail -> ecommerce-retail
   const correctedCategory = categoryFolder === "ecomerce-retail" 
     ? "ecommerce-retail" 
     : categoryFolder;
-  
-  // Format number with leading zero (01, 02, etc.)
   const formattedNumber = number.padStart(2, "0");
-  
-  // Generate paths for mockup and website
   const mockupPath = `/assets/images/portfolio/${correctedCategory}/mockup-${formattedNumber}.webp`;
   const websitePath = `/assets/images/portfolio/${correctedCategory}/website-${formattedNumber}.webp`;
-  
   return { mockup: mockupPath, website: websitePath };
 };
-
-// Helper function to get mockup image path for card display
 const getMockupImagePath = (imagePath: string) => {
   const { mockup } = getImagePaths(imagePath);
   return mockup;
 };
-
 export function NewPortfolio({ limit }: NewPortfolioProps) {
   const [selectedImage, setSelectedImage] = useState<PortfolioItem | null>(null);
   const [activeTab, setActiveTab] = useState<string>("All");
   const [sliderOffset, setSliderOffset] = useState(0);
+  const [mobileSliderOffset, setMobileSliderOffset] = useState(0);
   const tabsContainerRef = useRef<HTMLDivElement>(null);
   const getFilteredItems = (): PortfolioItem[] => {
     let filtered: PortfolioItem[];
@@ -437,15 +695,19 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
   };
   const itemsToShow = getFilteredItems();
   const maxOffset = Math.max(0, TABS.length - VISIBLE_TABS);
+  const mobileMaxOffset = Math.max(0, TABS.length - 1); // Mobile: 1 tab visible at a time
   const handlePrev = () => {
     setSliderOffset((prev) => Math.max(0, prev - 1));
+    setMobileSliderOffset((prev) => Math.max(0, prev - 1));
   };
   const handleNext = () => {
     setSliderOffset((prev) => Math.min(maxOffset, prev + 1));
+    setMobileSliderOffset((prev) => Math.min(mobileMaxOffset, prev + 1));
   };
   useEffect(() => {
     const activeIndex = TABS.indexOf(activeTab);
     if (activeIndex !== -1) {
+      // Desktop slider logic
       const visibleStart = sliderOffset;
       const visibleEnd = sliderOffset + VISIBLE_TABS - 1;  
       if (activeIndex < visibleStart) {
@@ -453,13 +715,20 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
       } else if (activeIndex > visibleEnd) {
         setSliderOffset(Math.max(0, activeIndex - VISIBLE_TABS + 1));
       }
+
+      // Mobile slider logic - show active tab
+      setMobileSliderOffset(activeIndex);
     }
   }, [activeTab]);
   const handleCardClick = (item: PortfolioItem) => setSelectedImage(item);
   const handleClose = () => setSelectedImage(null);
   const canScrollPrev = sliderOffset > 0;
   const canScrollNext = sliderOffset < maxOffset;
-  const translateX = -(sliderOffset * (100 / VISIBLE_TABS));
+  const canScrollPrevMobile = mobileSliderOffset > 0;
+  const canScrollNextMobile = mobileSliderOffset < mobileMaxOffset;
+  const translateX = -(sliderOffset * (50 / VISIBLE_TABS));
+  // Mobile: Move by 100% of visible width per tab (which is 100/TABS.length of slider container)
+  const mobileTranslateX = -(mobileSliderOffset * (100 / TABS.length));
   return (
     <section id="portfolio" className="py-24 lg:py-32 relative overflow-hidden">
       <GridPattern variant="lines" className="opacity-20" />
@@ -474,31 +743,45 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
         </FadeIn>
         <FadeIn className="mb-12">
           <div className="relative flex items-center">
+            {/* Navigation Buttons - Desktop */}
             {canScrollPrev && (
               <button
                 onClick={handlePrev}
-                className="absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-border shadow-md items-center justify-center hover:bg-muted transition-colors"
                 aria-label="Previous tabs"
               >
                 <ChevronLeft className="h-5 w-5" />
               </button>
             )}
+            {/* Navigation Buttons - Mobile */}
+            {canScrollPrevMobile && (
+              <button
+                onClick={handlePrev}
+                className="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                aria-label="Previous tabs"
+              >
+                <ChevronLeft className="h-4 w-4" />
+              </button>
+            )}
             <div
               ref={tabsContainerRef}
-              className="overflow-hidden flex-1 mx-12 relative"
+              className="overflow-x-auto overflow-y-hidden flex-1 md:mx-12 mx-10 relative scrollbar-hide"
+              style={{
+                WebkitOverflowScrolling: 'touch',
+              }}
             >
-              {/* Left Fade Gradient - appears when can scroll left */}
+              {/* Desktop Fade Gradients */}
               {canScrollPrev && (
-                <div className="absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
+                <div className="hidden md:block absolute left-0 top-0 bottom-0 w-16 bg-gradient-to-r from-background via-background/80 to-transparent z-10 pointer-events-none" />
               )}
               
-              {/* Right Fade Gradient - appears when can scroll right */}
               {canScrollNext && (
-                <div className="absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
+                <div className="hidden md:block absolute right-0 top-0 bottom-0 w-16 bg-gradient-to-l from-background via-background/80 to-transparent z-10 pointer-events-none" />
               )}
 
+              {/* Desktop Slider */}
               <motion.div
-                className="flex gap-2 relative z-0 justify-center"
+                className="hidden md:flex gap-2 relative z-0"
                 animate={{
                   x: `${translateX}%`,
                 }}
@@ -527,14 +810,66 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
                   );
                 })}
               </motion.div>
+
+              {/* Mobile Slider - 1 tab at a time */}
+              <div className="md:hidden overflow-hidden relative z-0">
+                <motion.div
+                  className="flex relative z-0"
+                  animate={{
+                    x: `${mobileTranslateX}%`,
+                  }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 300,
+                    damping: 30,
+                  }}
+                  style={{
+                    width: `${TABS.length * 100}%`,
+                  }}
+                >
+                  {TABS.map((tab) => {
+                    const isActive = activeTab === tab;
+                    return (
+                      <button
+                        key={tab}
+                        data-tab={tab}
+                        onClick={() => setActiveTab(tab)}
+                        className={cn(
+                          "px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-300 flex-shrink-0",
+                          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2",
+                          isActive
+                            ? "bg-primary text-primary-foreground shadow-lg shadow-primary/20"
+                            : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
+                        )}
+                        style={{
+                          width: `${100 / TABS.length}%`,
+                        }}
+                      >
+                        {tab}
+                      </button>
+                    );
+                  })}
+                </motion.div>
+              </div>
             </div>
+            {/* Navigation Buttons - Desktop */}
             {canScrollNext && (
               <button
                 onClick={handleNext}
-                className="absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-border shadow-md items-center justify-center hover:bg-muted transition-colors"
                 aria-label="Next tabs"
               >
                 <ChevronRight className="h-5 w-5" />
+              </button>
+            )}
+            {/* Navigation Buttons - Mobile */}
+            {canScrollNextMobile && (
+              <button
+                onClick={handleNext}
+                className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-background border border-border shadow-md flex items-center justify-center hover:bg-muted transition-colors"
+                aria-label="Next tabs"
+              >
+                <ChevronRight className="h-4 w-4" />
               </button>
             )}
           </div>
@@ -611,7 +946,6 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
                 <DialogDescription>{selectedImage.description}</DialogDescription>
               </DialogHeader>
               <div className="relative w-full h-full flex flex-col">
-                {/* Website Image */}
                 <div className="relative flex-1 overflow-y-auto bg-muted flex gap-2 p-2 poppupImage">
                   {(() => {
                     const { website } = getImagePaths(selectedImage.image);

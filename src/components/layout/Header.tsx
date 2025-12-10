@@ -159,7 +159,13 @@ export function Header() {
         {/* CTA Button */}
         <div className="hidden md:block">
           <Button variant="hero" size="lg" asChild>
-            <Link href="/contact">Get Started</Link>
+          <Link className="btn_primary" href="#" onClick={(e) => {
+            e.preventDefault();
+            if (typeof window !== 'undefined' && (window as any).$zopim) {
+              (window as any).$zopim.livechat.window.toggle();
+            }
+          }}>Get Started</Link>
+            {/* <Link href="/contact">Get Started</Link> */}
           </Button>
         </div>
 
