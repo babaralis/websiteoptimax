@@ -50,7 +50,7 @@ const B2B_TESTIMONIALS = [
     role: "Marketing Director, FinanceFlow",
     rating: 5,
     metric: "-60% CPL",
-    image: ceoMale1,
+    image: "/assets/images/testi/man1.webp",
   },
   {
     quote: "Website Optimax gets B2B sales cycles. They built a site that educates and qualifies prospects before they even talk to sales.",
@@ -58,7 +58,7 @@ const B2B_TESTIMONIALS = [
     role: "VP Sales, Meridian Consulting",
     rating: 5,
     metric: "68% shorter cycle",
-    image: marketingFemale1,
+    image: '/assets/images/testi/woman1.webp',
   },
 ];
 

@@ -39,10 +39,10 @@ export function Header() {
     <>
       <header
         className={cn(
-          "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
+          "fixed top-0 left-0 right-0 z-50 transition-all",
           isScrolled
-            ? "bg-background/80 backdrop-blur-xl border-b border-border/50 py-3"
-            : "bg-transparent py-5"
+            ? "bg-background/80 backdrop-blur-xl border-b border-border/50 py-3 duration-0"
+            : "bg-transparent py-5 duration-300"
         )}
       >
         <div className="container-wide flex items-center justify-between">
@@ -111,7 +111,7 @@ export function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     exit={{ opacity: 0, y: 10 }}
                     transition={{ duration: 0.2 }}
-                    className="absolute top-full left-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-xl overflow-hidden z-50"
+                    className="absolute top-full left-0 mt-2 w-64 bg-background border border-border rounded-lg shadow-xl overflow-hidden z-[100]"
                   >
                     {SERVICES_DROPDOWN.map((item) => (
                       <Link
