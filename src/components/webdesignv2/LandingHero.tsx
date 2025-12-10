@@ -5,13 +5,16 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { ArrowRight, Star, Phone, MessageSquare } from "lucide-react";
+import { ArrowRight, Star, Phone, MessageSquare, CheckCircle } from "lucide-react";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { z } from "zod";
 import { Form, FormControl, FormField, FormItem, FormMessage } from "@/components/ui/form";
 import { useToast } from "@/hooks/use-toast";
 import { GridPattern } from "@/components/graphics/GridPattern";
+import { submitContactEmail } from "@/lib/email";
+import { event as trackEvent } from "@/lib/analytics";
+import { useState } from "react";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Name must be at least 2 characters"),
@@ -24,6 +27,7 @@ type FormData = z.infer<typeof formSchema>;
 
 export function LandingHero() {
   const { toast } = useToast();
+  const [isSubmitted, setIsSubmitted] = useState(false);
   
   const form = useForm<FormData>({
     resolver: zodResolver(formSchema),
@@ -36,12 +40,53 @@ export function LandingHero() {
   });
 
   const onSubmit = async (data: FormData) => {
-    await new Promise(resolve => setTimeout(resolve, 1000));
-    toast({
-      title: "Quote Request Submitted!",
-      description: "We'll get back to you within 24 hours with your custom quote.",
-    });
-    form.reset();
+    try {
+      const emailData = {
+        name: data.fullName,
+        email: data.email,
+        company: data.phone || 'Not provided',
+        website: '',
+        budget: 'Not specified',
+        timeline: 'Not specified',
+        message: `Phone: ${data.phone || 'Not provided'}\n\nProject Description:\n${data.description || 'No description provided'}`,
+        title: "FREE Quote Request (LandingHero v2)",
+      };
+
+      await submitContactEmail(emailData);
+      
+      trackEvent({
+        action: "form_submit",
+        category: "Contact",
+        label: "Landing Hero v2 Quote Form",
+      });
+
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setIsSubmitted(true);
+      
+      trackEvent({
+        action: "form_success",
+        category: "Contact",
+        label: "Landing Hero v2 Quote Completed",
+      });
+      
+      toast({
+        title: "Quote Request Submitted!",
+        description: "We'll get back to you within 24 hours with your custom quote.",
+      });
+
+      // Reset after showing success
+      setTimeout(() => {
+        setIsSubmitted(false);
+        form.reset();
+      }, 5000);
+    } catch (error) {
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    }
   };
 
   return (
@@ -105,101 +150,120 @@ export function LandingHero() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
-              <h2 className="text-2xl font-display font-bold text-center mb-2">
-                Request a FREE Quote
-              </h2>
-              <p className="text-muted-foreground text-center text-sm mb-6">
-                + Get a FREE Landing Page with your project
-              </p>
-              
-              <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
-                  <FormField
-                    control={form.control}
-                    name="fullName"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <Input 
-                            placeholder="Full Name*" 
-                            className="bg-muted/50 border-border/50 h-12"
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="email"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <Input 
-                            type="email"
-                            placeholder="Email Address*" 
-                            className="bg-muted/50 border-border/50 h-12"
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="phone"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <Input 
-                            type="tel"
-                            placeholder="+1 Phone No" 
-                            className="bg-muted/50 border-border/50 h-12"
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <FormField
-                    control={form.control}
-                    name="description"
-                    render={({ field }) => (
-                      <FormItem>
-                        <FormControl>
-                          <Textarea 
-                            placeholder="To Help Us Understand Better, Enter A Brief Description About Your Project."
-                            className="bg-muted/50 border-border/50 min-h-[100px] resize-none"
-                            {...field} 
-                          />
-                        </FormControl>
-                        <FormMessage />
-                      </FormItem>
-                    )}
-                  />
-                  
-                  <p className="text-xs text-muted-foreground">
-                    By entering your phone number, you agree to receive text messages per our terms of use and privacy policy
+              {isSubmitted ? (
+                /* Success Message */
+                <div className="text-center py-12">
+                  <div className="w-20 h-20 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-6">
+                    <CheckCircle className="h-10 w-10 text-success" />
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3">Thank You!</h3>
+                  <p className="text-muted-foreground mb-2">
+                    Your quote request has been submitted successfully.
+                  </p>
+                  <p className="text-sm text-muted-foreground">
+                    We'll get back to you within 24 hours with your custom quote and FREE landing page offer!
+                  </p>
+                </div>
+              ) : (
+                /* Form */
+                <>
+                  <h2 className="text-2xl font-display font-bold text-center mb-2">
+                    Request a FREE Quote
+                  </h2>
+                  <p className="text-muted-foreground text-center text-sm mb-6">
+                    + Get a FREE Landing Page with your project
                   </p>
                   
-                  <Button 
-                    type="submit" 
-                    variant="hero" 
-                    size="lg" 
-                    className="w-full shadow-glow-sm"
-                    disabled={form.formState.isSubmitting}
-                  >
-                    {form.formState.isSubmitting ? "Submitting..." : "Get A FREE Landing Page"}
-                    <ArrowRight className="w-4 h-4 ml-2" />
-                  </Button>
-                </form>
-              </Form>
+                  <Form {...form}>
+                    <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                      <FormField
+                        control={form.control}
+                        name="fullName"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormControl>
+                              <Input 
+                                placeholder="Full Name*" 
+                                className="bg-muted/50 border-border/50 h-12"
+                                {...field} 
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="email"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormControl>
+                              <Input 
+                                type="email"
+                                placeholder="Email Address*" 
+                                className="bg-muted/50 border-border/50 h-12"
+                                {...field} 
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="phone"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormControl>
+                              <Input 
+                                type="tel"
+                                placeholder=" Phone No" 
+                                className="bg-muted/50 border-border/50 h-12"
+                                {...field} 
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <FormField
+                        control={form.control}
+                        name="description"
+                        render={({ field }) => (
+                          <FormItem>
+                            <FormControl>
+                              <Textarea 
+                                placeholder="To Help Us Understand Better, Enter A Brief Description About Your Project."
+                                className="bg-muted/50 border-border/50 min-h-[100px] resize-none"
+                                {...field} 
+                              />
+                            </FormControl>
+                            <FormMessage />
+                          </FormItem>
+                        )}
+                      />
+                      
+                      <p className="text-xs text-muted-foreground">
+                        By entering your phone number, you agree to receive text messages per our terms of use and privacy policy
+                      </p>
+                      
+                      <Button 
+                        type="submit" 
+                        variant="hero" 
+                        size="lg" 
+                        className="w-full shadow-glow-sm"
+                        disabled={form.formState.isSubmitting}
+                      >
+                        {form.formState.isSubmitting ? "Submitting..." : "Get A FREE Landing Page"}
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
+                    </form>
+                  </Form>
+                </>
+              )}
             </motion.div>
           </FadeIn>
         </div>
