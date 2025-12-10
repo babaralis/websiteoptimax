@@ -9,25 +9,25 @@ const guarantees = [
     icon: RefreshCw,
     title: "Results or Redesign Guarantee",
     description: "If your website doesn't deliver results, we'll redesign it for free.",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=200&fit=crop",
+    image: "/assets/images/webdesign/guarantee1.jpg",
   },
   {
     icon: Rocket,
     title: "10-Day Launch Guarantee",
     description: "Get your website live in 10 business days or less.",
-    image: "https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=400&h=200&fit=crop",
+    image: "/assets/images/webdesign/guarantee2.jpg",
   },
   {
     icon: DollarSign,
     title: "No Hidden Fees",
     description: "Transparent pricing with no surprise costs or charges.",
-    image: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=200&fit=crop",
+    image: "/assets/images/webdesign/guarantee3.jpg",
   },
   {
     icon: Headphones,
     title: "30 Days Free Support",
     description: "Complimentary support for 30 days after launch.",
-    image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=200&fit=crop",
+    image: "/assets/images/webdesign/guarantee4.jpg",
   },
 ];
 

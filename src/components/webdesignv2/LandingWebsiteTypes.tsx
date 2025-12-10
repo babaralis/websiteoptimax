@@ -9,19 +9,19 @@ const websiteTypes = [
     icon: Layout,
     title: "Landing Pages",
     description: "Attract and convert potential customers with high-converting landing pages designed for specific campaigns or products.",
-    image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=600&h=400&fit=crop",
+    image: "/assets/images/webdesign/landing.jpg",
   },
   {
     icon: Briefcase,
     title: "Business Websites",
     description: "Showcase your brand with a professional, user-friendly website that reflects your business's values and goals.",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    image: "/assets/images/webdesign/business.jpg",
   },
   {
     icon: ShoppingBag,
     title: "E-Commerce Stores",
     description: "Create an online store that provides a smooth shopping experience, secure transactions, and drives conversions.",
-    image: "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=600&h=400&fit=crop",
+    image: "/assets/images/webdesign/e-commerce.jpg",
   },
 ];
 

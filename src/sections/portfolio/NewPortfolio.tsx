@@ -679,7 +679,7 @@ const getMockupImagePath = (imagePath: string) => {
 };
 export function NewPortfolio({ limit }: NewPortfolioProps) {
   const [selectedImage, setSelectedImage] = useState<PortfolioItem | null>(null);
-  const [activeTab, setActiveTab] = useState<string>("All");
+  const [activeTab, setActiveTab] = useState<string>("Ecommerce & Retail");
   const [sliderOffset, setSliderOffset] = useState(0);
   const [mobileSliderOffset, setMobileSliderOffset] = useState(0);
   const tabsContainerRef = useRef<HTMLDivElement>(null);

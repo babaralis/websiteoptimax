@@ -5,14 +5,14 @@ import { FadeIn } from "@/components/animations/FadeIn";
 import { Building2, ShoppingCart, Landmark, Utensils, Cpu, Truck, Home, Dumbbell } from "lucide-react";
 
 const industries = [
-  { name: "Construction", icon: Building2, image: "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=300&h=200&fit=crop" },
-  { name: "E-Commerce", icon: ShoppingCart, image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=300&h=200&fit=crop" },
-  { name: "Fintech", icon: Landmark, image: "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=300&h=200&fit=crop" },
-  { name: "Food", icon: Utensils, image: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=300&h=200&fit=crop" },
-  { name: "Technology", icon: Cpu, image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=300&h=200&fit=crop" },
-  { name: "Transport", icon: Truck, image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=300&h=200&fit=crop" },
-  { name: "Real Estate", icon: Home, image: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=300&h=200&fit=crop" },
-  { name: "Fitness", icon: Dumbbell, image: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=300&h=200&fit=crop" },
+  { name: "Construction", icon: Building2, image: "/assets/images/webdesign/industries/construction.jpg" },
+  { name: "E-Commerce", icon: ShoppingCart, image: "/assets/images/webdesign/industries/e-commerce.jpg" },
+  { name: "Fintech", icon: Landmark, image: "/assets/images/webdesign/industries/fintech.jpg" },
+  { name: "Food", icon: Utensils, image: "/assets/images/webdesign/industries/food.jpg" },
+  { name: "Technology", icon: Cpu, image: "/assets/images/webdesign/industries/technology.jpg" },
+  { name: "Transport", icon: Truck, image: "/assets/images/webdesign/industries/transport.jpg" },
+  { name: "Real Estate", icon: Home, image: "/assets/images/webdesign/industries/real-estate.jpg" },
+  { name: "Fitness", icon: Dumbbell, image: "/assets/images/webdesign/industries/fitness.jpg" },
 ];
 
 export function LandingIndustries() {

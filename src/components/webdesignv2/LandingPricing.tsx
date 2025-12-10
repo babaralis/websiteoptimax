@@ -8,7 +8,7 @@ import Link from "next/link";
 
 const packages = [
   {
-    name: "Basic",
+    name: "BASIC WEBSITE PACKAGE",
     originalPrice: "$398",
     price: "$199",
     popular: false,
@@ -21,83 +21,180 @@ const packages = [
       "Complete W3C Certified HTML",
       "Up to 3 Revisions",
       "48 to 72 hours TAT",
+      "Facebook Page Design",
+      "Twitter Page Design",
+      "YouTube Page Design",
+      "Mobile Responsive will be Additional $99*",
+      "CMS will be Additional $149*",
+      "100% Satisfaction Guarantee",
+      "100% Unique Design Guarantee",
+      "100% Money Back Guarantee *",
+      "NO MONTHLY OR ANY YEARLY FEE *",
     ],
   },
   {
-    name: "Professional",
+    name: "PROFESSIONAL",
     originalPrice: "$1,390",
     price: "$695",
     popular: true,
     features: [
-      "Up to 5 Unique Pages",
+      "Up to 5 Unique Pages Website",
       "Admin Panel Integration",
-      "5+ Stock Photos & Banners",
+      "5+ Stock Photos & Banner Designs",
       "FREE Social Media Integration",
       "FREE Favicon Design",
       "FREE Google Friendly Sitemap",
       "Unlimited Revisions",
       "Cross Browser Compatible",
+      "Complete W3C Certified HTML",
+      "Website Initial Concepts in 48 Hours",
+      "Complete Design & Deployment",
+      "Custom, Interactive & Dynamic Web Design",
+      "Industry specified Team of Expert Designers and Developers",
+      "Complete Source Files",
+      "Dedicated Project Manager",
+      "100% Ownership Rights",
+      "Value Added Services",
+      "CMS will be additional $149 *",
+      "Mobile Responsive will be additional $199 *",
     ],
   },
   {
-    name: "Elite",
+    name: "ELITE",
     originalPrice: "$1,990",
     price: "$995",
     popular: false,
     features: [
-      "Up to 10 Unique Pages",
-      "Customized WordPress/PHP",
+      "Up to 10 Unique Pages Website",
+      "Custom Made, Interactive & Dynamic Design",
+      "Customized WordPress or PHP Development",
       "Interactive Sliding Banners",
-      "10 Custom Banner Designs",
+      "Up to 10 Custom Made Banner Designs",
       "10 Stock Images",
       "Unlimited Revisions",
-      "Fully Mobile Responsive",
-      "Priority Support",
+      "Online Signup Area (For Newsletters, Offers etc.)",
+      "Search Bar",
+      "Live Feeds of Social Networks integration (Optional)",
+      "Google Friendly Sitemap",
+      "Search Engine Submission",
+      "Cross Browser Compatible",
+      "Complete W3C Certified HTML",
+      "Industry specified Team of Expert Designers and Developers",
+      "Complete Deployment",
+      "Complete Source Files",
+      "Dedicated Project Manager",
+      "100% Ownership Rights",
+      "CMS will be additional $149 *",
+      "Mobile Responsive will be additional $199 *",
+      "*NO MONTHLY OR ANY HIDDEN FEE*",
     ],
   },
 ];
 
 const premiumPackages = [
   {
-    name: "Silver",
-    originalPrice: "$3,190",
+    name: "SILVER",
+    originalPrice: "$6,990",
     price: "$1,595",
     features: [
-      "Up to 15 Unique Pages",
-      "Custom Interactive Design",
-      "WordPress/PHP Development",
+      "Up to 15 Unique Pages Website",
+      "Custom Made, Interactive, Dynamic & High-End Design",
+      "Customized WordPress or PHP Development",
       "Fully Mobile Responsive",
       "Interactive Sliding Banners",
-      "15 Custom Banner Designs",
+      "Up to 15 Custom Made Banner Designs",
       "15 Stock Images",
+      "Unlimited Revisions",
+      "Content Management System",
+      "Online Appointment/Booking/Scheduling/Online Ordering Integration (Optional)",
+      "Online Payment Integration (Optional)",
+      "Multi Lingual (Optional)",
+      "Custom Dynamic Forms (Optional)",
+      "Signup Area (For Newsletters, Offers etc.)",
+      "Search Bar",
+      "Live Feeds of Social Networks integration (Optional)",
+      "Google Friendly Sitemap",
+      "Search Engine Submission",
+      "Cross Browser Compatible",
+      "Complete W3C Certified HTML",
+      "Industry specified Team of Expert Designers and Developers",
+      "Complete Deployment",
+      "Complete Source Files",
+      "Dedicated Project Manager",
+      "100% Ownership Rights",
+      "*NO MONTHLY OR ANY HIDDEN FEE*",
     ],
   },
   {
-    name: "Business",
-    originalPrice: "$4,990",
+    name: "BUSINESS",
+    originalPrice: "$6,990",
     price: "$2,495",
     features: [
       "25 Pages Website",
-      "Custom Interactive Design",
-      "WordPress/PHP Development",
+      "Custom Made, Interactive, Dynamic & High-End Design",
+      "Customized WordPress or PHP Development",
       "Fully Mobile Responsive",
+      "Cross-platform (Desktop, iPhone, Android, etc.) responsive compatibility",
       "Interactive Sliding Banners",
-      "15 Custom Banner Designs",
+      "Up to 15 Custom Made Banner Designs",
       "15 Stock Images",
+      "Unlimited Revisions",
+      "Content Management System",
+      "Online Appointment/Booking/Scheduling/Online Ordering Integration (Optional)",
+      "Online Payment Integration (Optional)",
+      "Multi Lingual (Optional)",
+      "Custom Dynamic Forms (Optional)",
+      "Signup Area (For Newsletters, Offers etc.)",
+      "Search Bar",
+      "Live Feeds of Social Networks integration (Optional)",
+      "Google Friendly Sitemap",
+      "Search Engine Submission",
+      "Cross Browser Compatible",
+      "Complete W3C Certified HTML",
+      "Industry specified Team of Expert Designers and Developers",
+      "Complete Deployment",
+      "Complete Source Files",
+      "Dedicated Project Manager",
+      "100% Ownership Rights",
+      "*NO MONTHLY OR ANY HIDDEN FEE*",
     ],
   },
   {
-    name: "Platinum",
+    name: "PLATINUM",
     originalPrice: "$8,990",
     price: "$4,495",
     features: [
-      "30-60 Sec Explainer Video",
-      "Custom Interactive Design",
-      "WordPress/PHP Development",
+      "Unlimited Pages Website",
+      "Custom Made, Interactive, Dynamic & High-End Design",
+      "Customized WordPress or PHP Development",
       "Fully Mobile Responsive",
+      "Cross-platform (Desktop, iPhone, Android, etc.) responsive compatibility",
+      "30-60 Sec Business Specific Explainer Video",
+      "Parallax Scrolling",
+      "Security plugins",
+      "Downloadable items (eBooks, PDFs, Podcast, Videos)",
       "Interactive Sliding Banners",
-      "Premium Support",
-      "Dedicated Manager",
+      "Up to 15 Custom Made Banner Designs",
+      "15 Stock Images",
+      "Unlimited Revisions",
+      "Content Management System",
+      "Online Appointment/Booking/Scheduling/Online Ordering Integration (Optional)",
+      "Online Payment Integration (Optional)",
+      "Multi Lingual (Optional)",
+      "Custom Dynamic Forms (Optional)",
+      "Signup Area (For Newsletters, Offers etc.)",
+      "Search Bar",
+      "Live Feeds of Social Networks integration (Optional)",
+      "Google Friendly Sitemap",
+      "Search Engine Submission",
+      "Cross Browser Compatible",
+      "Complete W3C Certified HTML",
+      "Industry specified Team of Expert Designers and Developers",
+      "Complete Deployment",
+      "Complete Source Files",
+      "Dedicated Project Manager",
+      "100% Ownership Rights",
+      "*NO MONTHLY OR ANY HIDDEN FEE*",
     ],
   },
 ];
@@ -122,7 +219,7 @@ export function LandingPricing() {
           {packages.map((pkg, index) => (
             <FadeIn key={pkg.name} delay={index * 0.1}>
               <motion.div
-                className={`glass-card-elevated p-6 h-full flex flex-col relative ${pkg.popular ? 'ring-2 ring-primary' : ''}`}
+                className={`glass-card-elevated p-6 flex flex-col relative ${pkg.popular ? 'ring-2 ring-primary' : ''}`}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3 }}
               >
@@ -143,7 +240,7 @@ export function LandingPricing() {
                   </div>
                 </div>
                 
-                <ul className="space-y-3 flex-grow mb-6">
+                <ul className="space-y-3 mb-6">
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
                       <Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
@@ -189,7 +286,7 @@ export function LandingPricing() {
           {premiumPackages.map((pkg, index) => (
             <FadeIn key={pkg.name} delay={index * 0.1}>
               <motion.div
-                className="glass-card p-6 h-full flex flex-col"
+                className="glass-card p-6 flex flex-col"
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3 }}
               >
@@ -201,7 +298,7 @@ export function LandingPricing() {
                   </div>
                 </div>
                 
-                <ul className="space-y-3 flex-grow mb-6">
+                <ul className="space-y-3 mb-6">
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
                       <Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
