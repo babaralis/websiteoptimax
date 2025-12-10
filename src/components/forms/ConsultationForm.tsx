@@ -2,13 +2,20 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, CheckCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { useToast } from "@/hooks/use-toast";
+import { event as trackEvent } from "@/lib/analytics";
+import { submitContactEmail } from "@/lib/email";
+import { title } from "process";
 
 export function ConsultationForm() {
+  const { toast } = useToast();
   const [isOpen, setIsOpen] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -16,11 +23,64 @@ export function ConsultationForm() {
     project: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Frontend only - no backend submission
-    console.log("Form submitted:", formData);
-    // You can add toast notification here if needed
+    setIsLoading(true);
+
+    const data = {
+      name: formData.name,
+      email: formData.email,
+      company: formData.phone, // Using phone field as company for compatibility
+      website: '',
+      budget: 'Not specified',
+      timeline: 'Not specified',
+      message: `Phone: ${formData.phone}\n\nProject Details:\n${formData.project}`,
+      title: "Consultation Form (Floating)",
+    };
+
+    try {
+      await submitContactEmail(data);
+      
+      trackEvent({
+        action: "form_submit",
+        category: "Contact",
+        label: "Consultation Form (Floating)",
+      });
+      
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setIsLoading(false);
+      setIsSubmitted(true);
+      
+      trackEvent({
+        action: "form_success",
+        category: "Contact",
+        label: "Consultation Form Completed",
+      });
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+
+      // Reset form after 3 seconds
+      setTimeout(() => {
+        setIsSubmitted(false);
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          project: "",
+        });
+      }, 3000);
+    } catch (error) {
+      setIsLoading(false);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -76,66 +136,86 @@ export function ConsultationForm() {
                 <span className="gradient-text-glow">Free</span> Consultation
               </h2>
 
-              {/* Form */}
-              <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
-                <div>
-                  <Input
-                    name="name"
-                    type="text"
-                    placeholder="Your Name Here"
-                    value={formData.name}
-                    onChange={handleChange}
-                    className="bg-background/50 border-primary/30 focus-visible:border-primary focus-visible:ring-primary/20 text-sm sm:text-base"
-                    required
-                  />
+              {/* Success Message */}
+              {isSubmitted ? (
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="h-8 w-8 text-success" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Thank You!</h3>
+                  <p className="text-sm text-muted-foreground">
+                    We'll contact you within 24 hours.
+                  </p>
                 </div>
+              ) : (
+                /* Form */
+                <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
+                  <div>
+                    <Input
+                      name="name"
+                      type="text"
+                      placeholder="Your Name Here"
+                      value={formData.name}
+                      onChange={handleChange}
+                      className="bg-background/50 border-primary/30 focus-visible:border-primary focus-visible:ring-primary/20 text-sm sm:text-base"
+                      required
+                    />
+                  </div>
 
-                <div>
-                  <Input
-                    name="phone"
-                    type="tel"
-                    placeholder="Phone Number"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="bg-background/50 border-primary/30 focus-visible:border-primary focus-visible:ring-primary/20 text-sm sm:text-base"
-                    required
-                  />
-                </div>
+                  <div>
+                    <Input
+                      name="phone"
+                      type="tel"
+                      placeholder="Phone Number"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="bg-background/50 border-primary/30 focus-visible:border-primary focus-visible:ring-primary/20 text-sm sm:text-base"
+                      required
+                    />
+                  </div>
 
-                <div>
-                  <Input
-                    name="email"
-                    type="email"
-                    placeholder="Your Email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    className="bg-background/50 border-primary/30 focus-visible:border-primary focus-visible:ring-primary/20 text-sm sm:text-base"
-                    required
-                  />
-                </div>
+                  <div>
+                    <Input
+                      name="email"
+                      type="email"
+                      placeholder="Your Email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      className="bg-background/50 border-primary/30 focus-visible:border-primary focus-visible:ring-primary/20 text-sm sm:text-base"
+                      required
+                    />
+                  </div>
 
-                <div>
-                  <Textarea
-                    name="project"
-                    placeholder="Describe Your Project Need"
-                    value={formData.project}
-                    onChange={handleChange}
-                    rows={4}
-                    className="bg-background/50 border-primary/30 focus-visible:border-primary focus-visible:ring-primary/20 resize-none text-sm sm:text-base"
-                    required
-                  />
-                </div>
+                  <div>
+                    <Textarea
+                      name="project"
+                      placeholder="Describe Your Project Need"
+                      value={formData.project}
+                      onChange={handleChange}
+                      rows={4}
+                      className="bg-background/50 border-primary/30 focus-visible:border-primary focus-visible:ring-primary/20 resize-none text-sm sm:text-base"
+                      required
+                    />
+                  </div>
 
-                <Button
-                  type="submit"
-                  variant="hero"
-                  size="lg"
-                  className="w-full shadow-glow-md text-sm sm:text-base"
-                >
-                  Submit
-                  <ArrowRight className="w-4 h-4" />
-                </Button>
-              </form>
+                  <Button
+                    type="submit"
+                    variant="hero"
+                    size="lg"
+                    disabled={isLoading}
+                    className="w-full shadow-glow-md text-sm sm:text-base"
+                  >
+                    {isLoading ? (
+                      "Sending..."
+                    ) : (
+                      <>
+                        Submit
+                        <ArrowRight className="w-4 h-4" />
+                      </>
+                    )}
+                  </Button>
+                </form>
+              )}
             </div>
           </div>
         </div>

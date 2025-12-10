@@ -7,8 +7,11 @@ import { Input } from "@/components/ui/input";
 import { ArrowRight, CheckCircle, Star } from "lucide-react";
 import { AbstractShapes } from "@/components/graphics/AbstractShapes";
 import { CountUp } from "@/components/animations/CountUp";
-
+import { event as trackEvent } from "@/lib/analytics";
+import { submitContactEmail } from "@/lib/email";
 const platforms = ["React", "Next.js", "WordPress", "HubSpot", "Shopify"];
+import { useState } from "react";
+import { useToast } from "@/hooks/use-toast";
 
 const benefits = [
   "Free strategy consultation",
@@ -17,6 +20,59 @@ const benefits = [
 ];
 
 export function LandingHero() {
+  const { toast } = useToast();
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsLoading(true);
+    
+    const formData = new FormData(e.target as HTMLFormElement);
+    const data = {
+      name: formData.get('name') as string,
+      email: formData.get('email') as string,
+      company: formData.get('company') as string,
+      website: formData.get('website') as string || '',
+      budget: 'Not specified',
+      timeline: 'Not specified',
+      message: 'Free consultation request from landing page',
+      title: "Strategy Call",
+    };
+    
+    try {
+      await submitContactEmail(data);
+      
+      trackEvent({
+        action: "form_submit",
+        category: "Contact",
+        label: "Landing Hero Form",
+      });
+      
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setIsLoading(false);
+      setIsSubmitted(true);
+      
+      trackEvent({
+        action: "form_success",
+        category: "Contact",
+        label: "Landing Hero Form Completed",
+      });
+      
+      toast({
+        title: "Message sent successfully!",
+        description: "We'll get back to you within 24 hours.",
+      });
+    } catch (error) {
+      setIsLoading(false);
+      toast({
+        title: "Something went wrong",
+        description: "Please try again or contact us directly.",
+        variant: "destructive",
+      });
+    }
+  };
   return (
     <section className="relative overflow-hidden pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-12 sm:pb-16 md:pb-20 lg:pb-28">
       <AbstractShapes variant="hero" />
@@ -115,39 +171,66 @@ export function LandingHero() {
                 </p>
               </div>
 
-              {/* Simple static form – no submit logic */}
-              <form
-                className="space-y-3 sm:space-y-4"
-                onSubmit={(e) => e.preventDefault()}
-              >
-                <Input
-                  placeholder="Your Name *"
-                  className="bg-background/50 text-sm sm:text-base"
-                />
-                <Input
-                  type="email"
-                  placeholder="Work Email *"
-                  className="bg-background/50 text-sm sm:text-base"
-                />
-                <Input
-                  placeholder="Company Name *"
-                  className="bg-background/50 text-sm sm:text-base"
-                />
-                <Input
-                  placeholder="Current Website URL (optional)"
-                  className="bg-background/50 text-sm sm:text-base"
-                />
-
-                <Button
-                  type="button"
-                  variant="hero"
-                  size="lg"
-                  className="w-full text-sm sm:text-base shadow-glow-md"
+              {/* Functional form with email submission */}
+              {isSubmitted ? (
+                <div className="text-center py-8">
+                  <div className="w-16 h-16 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-4">
+                    <CheckCircle className="h-8 w-8 text-success" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-2">Thank You!</h3>
+                  <p className="text-sm text-muted-foreground">
+                    We'll contact you within 24 hours.
+                  </p>
+                </div>
+              ) : (
+                <form
+                  className="space-y-3 sm:space-y-4"
+                  onSubmit={handleSubmit}
                 >
-                  Get My Free Consultation
-                  <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
-                </Button>
-              </form>
+                  <Input
+                    name="name"
+                    placeholder="Your Name *"
+                    required
+                    className="bg-background/50 text-sm sm:text-base"
+                  />
+                  <Input
+                    name="email"
+                    type="email"
+                    placeholder="Work Email *"
+                    required
+                    className="bg-background/50 text-sm sm:text-base"
+                  />
+                  <Input
+                    name="company"
+                    placeholder="Company Name *"
+                    required
+                    className="bg-background/50 text-sm sm:text-base"
+                  />
+                  <Input
+                    name="website"
+                    type="url"
+                    placeholder="Current Website URL (optional)"
+                    className="bg-background/50 text-sm sm:text-base"
+                  />
+
+                  <Button
+                    type="submit"
+                    variant="hero"
+                    size="lg"
+                    disabled={isLoading}
+                    className="w-full text-sm sm:text-base shadow-glow-md"
+                  >
+                    {isLoading ? (
+                      "Sending..."
+                    ) : (
+                      <>
+                        Get My Free Consultation
+                        <ArrowRight className="ml-2 h-4 w-4 sm:h-5 sm:w-5" />
+                      </>
+                    )}
+                  </Button>
+                </form>
+              )}
 
               <div className="mt-4 sm:mt-6 border-t border-border/30 pt-3 sm:pt-4 text-center">
                 <div className="flex items-center justify-center gap-2 text-xs sm:text-sm text-muted-foreground">

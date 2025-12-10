@@ -14,6 +14,7 @@ export async function submitEmail(data: {
   formData.append('phone', data.phone)
   formData.append('slogan', data.slogan)
   formData.append('website', data.website)
+
   
   const res = await fetch(`${baseUrl}/sendEmail`, {
     method: 'POST',
@@ -40,6 +41,7 @@ export async function submitContactEmail(data: {
   budget: string
   timeline: string
   message: string
+  title: string
 }) {
   const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://payment.websiteoptimax.com/api'
   const formData = new FormData()
@@ -50,6 +52,7 @@ export async function submitContactEmail(data: {
   formData.append('budget', data.budget)
   formData.append('timeline', data.timeline)
   formData.append('message', data.message)
+  formData.append('title', data.title)
   
   const res = await fetch(`${baseUrl}/sendContactEmail`, {
     method: 'POST',

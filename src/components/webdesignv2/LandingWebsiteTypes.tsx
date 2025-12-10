@@ -40,7 +40,7 @@ export function LandingWebsiteTypes() {
             <span className="gradient-text">Every Business Type</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-3xl mx-auto">
-            At Orbitline, we create high-performance websites tailored to your industry, audience, and brand goals. Whether you're a startup, a product-based brand, or a personal creator—we've got you covered.
+            At WebsiteOptimax, we create high-performance websites tailored to your industry, audience, and brand goals. Whether you're a startup, a product-based brand, or a personal creator—we've got you covered.
           </p>
         </FadeIn>
         

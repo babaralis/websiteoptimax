@@ -44,6 +44,7 @@ export function ContactForm() {
       budget: formData.get('budget') as string,
       timeline: formData.get('timeline') as string,
       message: formData.get('message') as string,
+      title: "Contact Request",
     };
     await submitContactEmail(data);
     trackEvent({

@@ -51,11 +51,11 @@ export function LandingAbout() {
             </span>
             
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6">
-              Why <span className="gradient-text">Orbitline</span>?
+              Why <span className="gradient-text">WebsiteOptimax</span>?
             </h2>
             
             <p className="text-lg text-muted-foreground mb-8">
-              At Orbitline, we engineer digital assets that align with your brand, support your sales process, and drive measurable growth. Backed by 70+ specialists in strategy, design, development, and marketing, we create websites that captivate your prospects, guide them through your funnel, and operate as high-performance revenue engines.
+              At WebsiteOptimax, we engineer digital assets that align with your brand, support your sales process, and drive measurable growth. Backed by 70+ specialists in strategy, design, development, and marketing, we create websites that captivate your prospects, guide them through your funnel, and operate as high-performance revenue engines.
             </p>
             
             {/* Team Image */}
