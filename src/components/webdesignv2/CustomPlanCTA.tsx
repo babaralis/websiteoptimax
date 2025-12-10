@@ -38,7 +38,7 @@ export function CustomPlanCTA() {
       </div>
 
       {/* Content Container */}
-      <div className="container relative z-10">
+      {/* <div className="container relative z-10">
         <div className="p-8 md:p-10 text-center max-w-4xl mx-auto">
           <h2 className="text-2xl md:text-3xl font-display font-bold mb-4">
             Get A Custom Plan Tailored To Your Business Goals
@@ -82,7 +82,7 @@ export function CustomPlanCTA() {
             <span>24/7 Available</span>
           </div>
         </div>
-      </div>
+      </div> */}
     </section>
   );
 }
