@@ -663,8 +663,16 @@ export function HomeWebPricing({className}: {className?: string}) {
                       variant={plan.popular ? "hero" : "outline"}
                       size="lg"
                       className="w-full text-sm font-semibold gap-2"
-                      onClick={() => handlePayment(currentTab, plan)}
-                      disabled={loading !== null || plan.price === "Portal"}
+                      onClick={() => {
+                        if (plan.cta === "Discuss Now") {
+                          if (typeof window !== 'undefined' && (window as any).$zopim) {
+                            (window as any).$zopim.livechat.window.toggle();
+                          }
+                        } else {
+                          handlePayment(currentTab, plan);
+                        }
+                      }}
+                      disabled={loading !== null || (plan.price === "Portal" && plan.cta !== "Discuss Now")}
                     >
                       {loading === generatePackageString(currentTab, plan) ? (
                         <>
@@ -758,8 +766,16 @@ export function HomeWebPricing({className}: {className?: string}) {
                         variant={plan.popular ? "hero" : "outline"}
                         size="lg"
                         className="w-full text-sm font-semibold gap-2"
-                        onClick={() => handlePayment(currentTab, plan)}
-                        disabled={loading !== null || plan.price === "Portal"}
+                        onClick={() => {
+                          if (plan.cta === "Discuss Now") {
+                            if (typeof window !== 'undefined' && (window as any).$zopim) {
+                              (window as any).$zopim.livechat.window.toggle();
+                            }
+                          } else {
+                            handlePayment(currentTab, plan);
+                          }
+                        }}
+                        disabled={loading !== null || (plan.price === "Portal" && plan.cta !== "Discuss Now")}
                       >
                         {loading === generatePackageString(currentTab, plan) ? (
                           <>

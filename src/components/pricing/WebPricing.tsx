@@ -521,12 +521,28 @@ export function WebPricing() {
                       variant={plan.popular ? "hero" : "outline"}
                       size="lg"
                       className="w-full"
-                      asChild
+                      asChild={plan.cta !== "Discuss Now"}
                     >
-                      <Link href="/contact" className="gap-2">
-                        {plan.cta}
-                        <ArrowRight className="w-4 h-4" />
-                      </Link>
+                      {plan.cta === "Discuss Now" ? (
+                        <a 
+                          href="#"
+                          className="flex items-center gap-2"
+                          onClick={(e) => {
+                            e.preventDefault();
+                            if (typeof window !== 'undefined' && (window as any).$zopim) {
+                              (window as any).$zopim.livechat.window.toggle();
+                            }
+                          }}
+                        >
+                          {plan.cta}
+                          <ArrowRight className="w-4 h-4" />
+                        </a>
+                      ) : (
+                        <Link href="/contact" className="gap-2">
+                          {plan.cta}
+                          <ArrowRight className="w-4 h-4" />
+                        </Link>
+                      )}
                     </Button>
                   </CardContent>
                 </Card>
