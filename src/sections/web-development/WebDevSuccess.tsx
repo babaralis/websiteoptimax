@@ -64,7 +64,7 @@ export function WebDevSuccess() {
                 transition={{ duration: 0.3 }}
               >
                 {/* Website mockup illustration */}
-                <Image src="/assets/images/webdevelopment/what-makes-a-high-converting-b2b-website.jpg" alt="Web development success" width={600} height={500} />
+                <Image src="/assets/images/webdevelopment/what-makes-a-high-converting-b2b-Website.jpg" alt="Web development success" width={600} height={500} />
                 {/* <div className="relative aspect-[4/3] bg-gradient-to-br from-background via-muted/30 to-background rounded-xl border border-border/50 overflow-hidden">
                   
                   <div className="absolute top-0 left-0 right-0 h-8 bg-muted/50 border-b border-border/50 flex items-center px-3 gap-1.5">
