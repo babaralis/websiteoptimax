@@ -130,7 +130,7 @@ export function LandingHero() {
               <Image src="/assets/images/webdesign/Web design-v2/googlereview-logo.webp" alt="Google Logo" width={100} height={100} />
             </div>
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mt-4">
-              <p className="text-muted-foreground text-lg">We're rated <span className="gradient-text">4.8/5</span> from <span className="gradient-text">18,467</span> customer reviews.</p>
+              <p className="text-muted-foreground text-lg">We're rated <span className="gradient-text">4.8/5</span> from <span className="gradient-text">100+</span> customer reviews.</p>
             </div>
           </FadeIn>
           <FadeIn delay={0.2} className="mobile-hero-form">
