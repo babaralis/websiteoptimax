@@ -1,23 +1,19 @@
 'use client';
 
 import { motion } from "framer-motion";
-import { Star } from "lucide-react";
+import Image from "next/image";
 
-const logos = [
-  { name: "Google", rating: "4.9/5" },
-  { name: "Trustpilot", rating: "4.8/5" },
-  { name: "Clutch", rating: "5.0/5" },
-  { name: "DesignRush", rating: "Top Agency" },
-  { name: "GoodFirms", rating: "Verified" },
-  { name: "Expertise", rating: "Best of 2024" },
-];
+const logos = Array.from({ length: 14 }, (_, i) => ({
+  src: `/assets/images/webdesign/logos/generated-svg-image${i + 1}.svg`,
+  alt: `Logo ${i + 1}`,
+}));
 
 export function LandingLogoSlider() {
   return (
     <section className="py-8 lg:py-12 relative overflow-hidden border-y border-border/30 bg-surface/30">
       <div className="container">
         <p className="text-center text-sm text-muted-foreground mb-6">
-          Rated <span className="text-foreground font-semibold">4.8/5</span> from 18,467+ customer reviews
+        Trusted by teams at <span className="text-foreground font-semibold">growth-focused</span> brands
         </p>
         
         {/* Logo Slider */}
@@ -37,16 +33,16 @@ export function LandingLogoSlider() {
             {/* Double the logos for seamless loop */}
             {[...logos, ...logos].map((logo, index) => (
               <div
-                key={`${logo.name}-${index}`}
-                className="flex items-center gap-3 shrink-0 px-6 py-3 rounded-xl bg-card/50 border border-border/30"
+                key={`${logo.src}-${index}`}
+                className="flex items-center justify-center shrink-0 px-8 py-4 rounded-xl bg-card/50 border border-border/30 h-24 w-48 md:h-28 md:w-56"
               >
-                <div className="flex gap-0.5">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-3 h-3 fill-primary text-primary" />
-                  ))}
-                </div>
-                <span className="font-semibold text-foreground whitespace-nowrap">{logo.name}</span>
-                <span className="text-xs text-muted-foreground whitespace-nowrap">{logo.rating}</span>
+                <Image
+                  src={logo.src}
+                  alt={logo.alt}
+                  width={200}
+                  height={100}
+                  className="object-contain filter brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
+                />
               </div>
             ))}
           </motion.div>

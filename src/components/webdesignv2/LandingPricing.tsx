@@ -343,10 +343,11 @@ export function LandingPricing() {
         </div>
         
         {/* Contact Bar */}
-        <FadeIn>
+        
+        {/* <FadeIn>
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12 text-sm text-muted-foreground">
-            
-            {/* <a 
+
+            <a 
               href="#" 
               className="flex items-center gap-2 hover:text-primary transition-colors"
               onClick={(e) => {
@@ -358,7 +359,7 @@ export function LandingPricing() {
             >
               <MessageSquare className="w-4 h-4" />
               Live Chat
-            </a> */}
+            </a>
             
             <a href="tel:+19178311779" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone className="w-4 h-4" />
@@ -367,7 +368,7 @@ export function LandingPricing() {
             <span className="text-muted-foreground/50">|</span>
             <span>Add on: $500 for expedited services</span>
           </div>
-        </FadeIn>
+        </FadeIn> */}
         
         {/* Premium Packages */}
         <FadeIn className="text-center mb-8">
