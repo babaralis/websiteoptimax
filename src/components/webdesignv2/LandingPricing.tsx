@@ -240,7 +240,7 @@ export function LandingPricing() {
                   </div>
                 </div>
                 
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-3 mb-6 h-[400px] overflow-y-auto pr-2 custom-scrollbar">
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
                       <Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
@@ -264,10 +264,12 @@ export function LandingPricing() {
         {/* Contact Bar */}
         <FadeIn>
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12 text-sm text-muted-foreground">
-            <a href="#" className="flex items-center gap-2 hover:text-primary transition-colors">
+
+            {/* <a href="#" className="flex items-center gap-2 hover:text-primary transition-colors">
               <MessageSquare className="w-4 h-4" />
               Live Chat
-            </a>
+            </a> */}
+            
             <a href="tel:+19178311779" className="flex items-center gap-2 hover:text-primary transition-colors">
               <Phone className="w-4 h-4" />
               (917) 831-1779
@@ -299,7 +301,7 @@ export function LandingPricing() {
                   </div>
                 </div>
                 
-                <ul className="space-y-3 mb-6">
+                <ul className="space-y-3 mb-6 h-[400px] overflow-y-auto pr-2 custom-scrollbar">
                   {pkg.features.map((feature) => (
                     <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
                       <Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" />

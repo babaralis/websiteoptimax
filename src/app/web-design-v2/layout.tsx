@@ -18,7 +18,7 @@ export default function WebDesignV2Layout({ children }: WebDesignV2LayoutProps) 
       <WebDesignV2Footer />
       <Script
           id="zopim-live-chat"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.$zopim || (function(d, s) {
@@ -38,20 +38,12 @@ export default function WebDesignV2Layout({ children }: WebDesignV2LayoutProps) 
                 e.parentNode.insertBefore($, e);
               })(document, "script");
 
-              window.addEventListener("load", () => {
-                const waitForZopim = setInterval(() => {
-                  if (window.$zopim) {
-                    clearInterval(waitForZopim);
-              
-                    $zopim(() => {
-                      $zopim.livechat.setOnUnreadMsgs((count) => {
-                        if (count >= 1) {
-                          $zopim.livechat.window.show();
-                        }
-                      });
-                    });
+              $zopim(function() {
+                $zopim.livechat.setOnUnreadMsgs(function(count) {
+                  if (count >= 1) {
+                    $zopim.livechat.window.show();
                   }
-                }, 100);
+                });
               });
             `,
           }}

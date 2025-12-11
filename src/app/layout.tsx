@@ -58,18 +58,9 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <head>
         <meta name="robots" content="noindex, nofollow" />
-      </head>
-      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
-        <Providers>
-          <Layout>{children}</Layout>
-          <Toaster />
-          <Sonner />
-          <CookieConsent />
-          <ScrollToTop />
-        </Providers>
         <Script
           id="zopim-live-chat"
-          strategy="afterInteractive"
+          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               window.$zopim || (function(d, s) {
@@ -89,24 +80,25 @@ export default function RootLayout({
                 e.parentNode.insertBefore($, e);
               })(document, "script");
 
-              window.addEventListener("load", () => {
-                const waitForZopim = setInterval(() => {
-                  if (window.$zopim) {
-                    clearInterval(waitForZopim);
-              
-                    $zopim(() => {
-                      $zopim.livechat.setOnUnreadMsgs((count) => {
-                        if (count >= 1) {
-                          $zopim.livechat.window.show();
-                        }
-                      });
-                    });
+              $zopim(function() {
+                $zopim.livechat.setOnUnreadMsgs(function(count) {
+                  if (count >= 1) {
+                    $zopim.livechat.window.show();
                   }
-                }, 100);
+                });
               });
             `,
           }}
         />
+      </head>
+      <body className={`${inter.variable} ${playfair.variable} font-sans`}>
+        <Providers>
+          <Layout>{children}</Layout>
+          <Toaster />
+          <Sonner />
+          <CookieConsent />
+          <ScrollToTop />
+        </Providers>
         
       </body>
     </html>

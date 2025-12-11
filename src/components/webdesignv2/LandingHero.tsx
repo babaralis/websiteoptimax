@@ -121,7 +121,7 @@ export function LandingHero() {
                   }
                 }}
               >
-                Get Your Growth Strategy
+                Start Your Website Now
                 <ArrowRight className="w-5 h-5" />
               </button>
             </div>

@@ -292,6 +292,58 @@
   .scrollbar-hide::-webkit-scrollbar {
     display: none;
   }
+
+  /* Custom Scrollbar Styling */
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 9px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: hsl(168deg 95% 43% / 10%);
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: #05d6ac;
+    border-radius: 4px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #05d6ac;
+    opacity: 0.8;
+  }
+
+  /* Firefox scrollbar */
+  .custom-scrollbar {
+    scrollbar-width: thin;
+    scrollbar-color: #05d6ac hsl(168deg 95% 43% / 10%);
+  }
+
+  /* Global Scrollbar Styling */
+  *::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: hsl(168deg 95% 43% / 10%);
+    border-radius: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background: #05d6ac;
+    border-radius: 4px;
+  }
+
+  *::-webkit-scrollbar-thumb:hover {
+    background: #05d6ac;
+    opacity: 0.8;
+  }
+
+  /* Firefox global scrollbar */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #05d6ac hsl(168deg 95% 43% / 10%);
+  }
 }
 
 .homebannerform input {

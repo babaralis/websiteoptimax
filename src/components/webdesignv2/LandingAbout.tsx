@@ -82,7 +82,7 @@ export function LandingAbout() {
                   }
                 }}
               >
-                Get A Free Website Audit Today!
+                Start Your Website Now
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </Button>

@@ -107,7 +107,7 @@ export function CTASection() {
                 })}
               >
                 <Link href="/contact" className="gap-2">
-                  Get Your Growth Strategy
+                Start Your Website Now
                   <ArrowRight className="w-5 h-5" />
                 </Link>
               </Button>
