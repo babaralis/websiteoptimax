@@ -1,9 +1,10 @@
 'use client';
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/button";
-import { Check, Phone, MessageSquare, Star } from "lucide-react";
+import { Check, Phone, MessageSquare, Star, ArrowRight, Loader2 } from "lucide-react";
 import Link from "next/link";
 
 const packages = [
@@ -200,6 +201,75 @@ const premiumPackages = [
 ];
 
 export function LandingPricing() {
+  const [loading, setLoading] = useState<string | null>(null);
+
+  // Helper function to generate package string
+  const generatePackageString = (pkg: typeof packages[0] | typeof premiumPackages[0]): string => {
+    // Extract currency and price from price string (e.g., "$199" -> "USD", "199")
+    const priceMatch = pkg.price.match(/\$?([\d,]+)/);
+    const currency = "USD";
+    const price = priceMatch ? priceMatch[1].replace(/,/g, "") : "0";
+    const discount = "0";
+    
+    // Format: Category-Type-Currency-Price-Discount
+    const category = "Website Design";
+    let type = pkg.name.replace(/\s+/g, " ").replace(/-/g, " ");
+    
+    return `${category}-${type}-${currency}-${price}-${discount}`;
+  };
+
+  // Handle payment button click
+  const handlePayment = async (pkg: typeof packages[0] | typeof premiumPackages[0]) => {
+    const packageString = generatePackageString(pkg);
+    
+    // Parse the package string
+    const firstHyphen = packageString.indexOf("-");
+    const category = packageString.substring(0, firstHyphen);
+    const rest = packageString.substring(firstHyphen + 1);
+    const parts = rest.split("-");
+    
+    const item_name = `${category} ${parts[0]}`;
+    const currency_code = parts[1];
+    const price = parts[2];
+    const discount = parts[3];
+
+    const item = {
+      item_name,
+      price,
+      currency_code,
+      category,
+      discount,
+    };
+
+    setLoading(packageString);
+
+    try {
+      const response = await fetch("https://payment.websiteoptimax.com/api/payment/ordernow/store", {
+        method: "POST",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json;charset=UTF-8",
+        },
+        body: JSON.stringify(item),
+      });
+
+      const data = await response.json();
+
+      if (data.success && data.link) {
+        window.open(data.link, "_blank");
+        setLoading(null);
+      } else {
+        console.error("Payment failed:", data);
+        alert("Payment processing failed. Please try again or contact support.");
+        setLoading(null);
+      }
+    } catch (error) {
+      console.error("Payment error:", error);
+      alert("An error occurred. Please try again or contact support.");
+      setLoading(null);
+    }
+  };
+
   return (
     <section id="pricing" className="py-20 lg:py-28 relative overflow-hidden pt-0">
       <div className="container">
@@ -251,10 +321,21 @@ export function LandingPricing() {
                 
                 <Button 
                   variant={pkg.popular ? "hero" : "heroOutline"} 
-                  className="w-full"
-                  asChild
+                  className="w-full gap-2"
+                  onClick={() => handlePayment(pkg)}
+                  disabled={loading !== null}
                 >
-                  <Link href="/contact">Order Now</Link>
+                  {loading === generatePackageString(pkg) ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Processing...
+                    </>
+                  ) : (
+                    <>
+                      Order Now
+                      <ArrowRight className="w-4 h-4" />
+                    </>
+                  )}
                 </Button>
               </motion.div>
             </FadeIn>
@@ -264,7 +345,16 @@ export function LandingPricing() {
         {/* Contact Bar */}
         <FadeIn>
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12 text-sm text-muted-foreground">
-            <a href="#" className="flex items-center gap-2 hover:text-primary transition-colors">
+            <a 
+              href="#" 
+              className="flex items-center gap-2 hover:text-primary transition-colors"
+              onClick={(e) => {
+                e.preventDefault();
+                if (typeof window !== 'undefined' && (window as any).$zopim) {
+                  (window as any).$zopim.livechat.window.toggle();
+                }
+              }}
+            >
               <MessageSquare className="w-4 h-4" />
               Live Chat
             </a>
@@ -308,8 +398,23 @@ export function LandingPricing() {
                   ))}
                 </ul>
                 
-                <Button variant="heroOutline" className="w-full" asChild>
-                  <Link href="/contact">Order Now</Link>
+                <Button 
+                  variant="heroOutline" 
+                  className="w-full gap-2"
+                  onClick={() => handlePayment(pkg)}
+                  disabled={loading !== null}
+                >
+                  {loading === generatePackageString(pkg) ? (
+                    <>
+                      <Loader2 className="w-4 h-4 animate-spin" />
+                      Processing...
+                    </>
+                  ) : (
+                    <>
+                      Order Now
+                      <ArrowRight className="w-4 h-4" />
+                    </>
+                  )}
                 </Button>
               </motion.div>
             </FadeIn>
