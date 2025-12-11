@@ -8,10 +8,10 @@ export function CustomPlanCTA() {
   return (
     <section className="py-12 relative overflow-hidden bg-card/50 backdrop-blur-sm">
       <div className="absolute inset-0 bg-gradient-to-r from-primary/20 via-secondary/15 to-primary/20" />
-      <div className="hidden lg:block absolute left-0 bottom-0 w-[21%] h-full pointer-events-none z-0">
+      <div className="hidden lg:block absolute left-0 bottom-[-7rem] w-[24%] h-full pointer-events-none z-0">
         <div className="relative w-full h-full">
           <Image
-            src="/assets/images/webdesign/cta-left.webp"
+            src="/assets/images/webdesign/cta-01.webp"
             alt="Design mockups"
             fill
             className="object-contain object-left-bottom"
@@ -19,10 +19,10 @@ export function CustomPlanCTA() {
           />
         </div>
       </div>
-      <div className="hidden lg:block absolute right-0 bottom-0 w-[21%] h-full pointer-events-none z-0">
+      <div className="hidden lg:block absolute right-0 bottom-[-7rem] w-[24%] h-full pointer-events-none z-0">
         <div className="relative w-full h-full">
           <Image
-            src="/assets/images/webdesign/cta-right.webp"
+            src="/assets/images/webdesign/cta-02.webp"
             alt="Design mockups"
             fill
             className="object-contain object-right-bottom"

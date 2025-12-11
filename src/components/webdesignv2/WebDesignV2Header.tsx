@@ -33,7 +33,7 @@ export function WebDesignV2Header() {
       )}
     >
       <div className="container-wide flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-2 group">
+        <Link href="/web-design-v2" className="flex items-center gap-2 group">
           <Image src="/assets/images/logos/logo.svg" alt="Website Optimax" width={150} height={100} />
         </Link>
         <nav className="hidden md:flex items-center gap-8">
