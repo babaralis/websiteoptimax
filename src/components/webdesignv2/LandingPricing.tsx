@@ -345,7 +345,8 @@ export function LandingPricing() {
         {/* Contact Bar */}
         <FadeIn>
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12 text-sm text-muted-foreground">
-            <a 
+            
+            {/* <a 
               href="#" 
               className="flex items-center gap-2 hover:text-primary transition-colors"
               onClick={(e) => {
