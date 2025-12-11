@@ -4,7 +4,7 @@ export const SITE_CONFIG = {
   description: "High-performance web design, development, and digital marketing for B2B, SaaS, and service brands. We build websites that generate qualified leads and revenue.",
   url: "https://websiteoptimax.com",
   email: "info@websiteoptimax.com",
-  phone: "+1 (346) 626-8322",
+  phone: "+1 (646) 814-2689",
 };
 
 export const NAV_LINKS = [
