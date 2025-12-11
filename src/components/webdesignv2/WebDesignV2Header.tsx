@@ -62,7 +62,16 @@ export function WebDesignV2Header() {
             Pricing
           </button>
           <Button
-            onClick={() => scrollToSection('quote-form')}
+            onClick={(e) => {
+              e.preventDefault();
+              if (typeof window !== 'undefined' && (window as any).$zopim) {
+                (window as any).$zopim.livechat.window.show();
+              } else {
+                console.log('Zopim not loaded yet');
+                // Fallback: scroll to form if Zopim not loaded
+                scrollToSection('quote-form');
+              }
+            }}
             variant="hero"
             size="lg"
             className="ml-4"
@@ -110,17 +119,24 @@ export function WebDesignV2Header() {
           >
             Pricing
           </button>
-          <div className="hidden md:block">
-            <Button variant="hero" size="lg" asChild>
-            <Link className="btn_primary" href="#" onClick={(e) => {
+          <Button
+            onClick={(e) => {
               e.preventDefault();
               if (typeof window !== 'undefined' && (window as any).$zopim) {
-                (window as any).$zopim.livechat.window.toggle();
+                (window as any).$zopim.livechat.window.show();
+              } else {
+                console.log('Zopim not loaded yet');
+                // Fallback: scroll to form if Zopim not loaded
+                scrollToSection('quote-form');
               }
-            }}>Get Started</Link>
-              {/* <Link href="/contact">Get Started</Link> */}
-            </Button>
-          </div>
+              setIsMobileMenuOpen(false);
+            }}
+            variant="hero"
+            size="lg"
+            className="w-full"
+          >
+            Get Started
+          </Button>
         </nav>
       </motion.div>
     </header>

@@ -105,7 +105,25 @@ export function LandingHero() {
               We design and develop websites that go beyond aesthetics. Built to support your sales team, capture qualified leads, and drive measurable growth, our websites are engineered for performance. With strategy at the core, we turn your digital presence into the hardest-working asset in your entire sales stack.
             </p>
             <div className="mobile-hero-button">
-            <a className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg animate-pulse-glow shadow-glow-lg gap-2" href="/contact">Get Your Growth Strategy<ArrowRight className="w-5 h-5" /></a>
+              <button 
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg animate-pulse-glow shadow-glow-lg gap-2"
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (typeof window !== 'undefined' && (window as any).$zopim) {
+                    (window as any).$zopim.livechat.window.show();
+                  } else {
+                    console.log('Zopim not loaded yet');
+                    // Fallback: scroll to form
+                    const form = document.getElementById('quote-form');
+                    if (form) {
+                      form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    }
+                  }
+                }}
+              >
+                Get Your Growth Strategy
+                <ArrowRight className="w-5 h-5" />
+              </button>
             </div>
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mt-8">
               <Image src="/assets/images/webdesign/Web design-v2/trust-logo.svg" alt="Trustpilot Logo" width={100} height={100} />
