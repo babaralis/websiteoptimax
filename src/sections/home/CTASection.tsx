@@ -94,7 +94,7 @@ export function CTASection() {
             </div>
             
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            {/* <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
               <Button 
                 variant="hero" 
                 size="xl" 
@@ -123,7 +123,7 @@ export function CTASection() {
               >
                 <Link href="/services">View Our Services</Link>
               </Button>
-            </div>
+            </div> */}
             
             {/* Urgency */}
             <motion.div 

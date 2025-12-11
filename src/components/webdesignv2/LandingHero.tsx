@@ -233,14 +233,16 @@ export function LandingHero() {
                       <p className="text-xs text-muted-foreground">
                         By entering your phone number, you agree to receive text messages per our terms of use and privacy policy
                       </p>
-                      <a type="submit"
-                        onClick={form.handleSubmit(onSubmit)}
-                        href="#" 
-                        className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 h-12 rounded-lg px-8 text-base shadow-glow-sm gap-2"
+                      <Button 
+                        type="submit" 
+                        variant="hero" 
+                        size="lg" 
+                        className="w-full shadow-glow-sm"
+                        disabled={form.formState.isSubmitting}
                       >
-                        Get A FREE Landing Page
-                        <ArrowRight className="w-5 h-5 ml-2" />
-                      </a>
+                        {form.formState.isSubmitting ? "Submitting..." : "Get A FREE Landing Page"}
+                        <ArrowRight className="w-4 h-4 ml-2" />
+                      </Button>
                     </form>
                   </Form>
                 </>

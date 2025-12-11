@@ -39,7 +39,23 @@ export function CustomPlanCTA() {
             Not sure where to begin? Let our experts help you shape the perfect digital strategy. Whether you're looking for a new website, a rebrand, Amazon marketing, or book publishing support — we'll assess your needs and craft a custom proposal that aligns with your goals, timeline, and budget.
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 mb-4">
-          <a className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg animate-pulse-glow shadow-glow-lg gap-2" href="/contact">Get Your Growth Strategy<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-5 h-5"><path d="M5 12h14"></path><path d="m12 5 7 7-7 7"></path></svg></a>
+            <button 
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg animate-pulse-glow shadow-glow-lg gap-2"
+              onClick={(e) => {
+                e.preventDefault();
+                if (typeof window !== 'undefined' && (window as any).$zopim) {
+                  (window as any).$zopim.livechat.window.show();
+                } else {
+                  console.log('Zopim not loaded yet');
+                }
+              }}
+            >
+              Get Your Growth Strategy
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="lucide lucide-arrow-right w-5 h-5">
+                <path d="M5 12h14"></path>
+                <path d="m12 5 7 7-7 7"></path>
+              </svg>
+            </button>
             {/* <Button variant="hero" size="lg" asChild className="">
               <Link href="/contact" className="gap-2">
                 <Phone className="w-4 h-4" />
