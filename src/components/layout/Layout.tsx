@@ -13,14 +13,16 @@ interface LayoutProps {
 export function Layout({ children }: LayoutProps) {
   const pathname = usePathname();
   const isWebDesignV2 = pathname?.startsWith("/web-design-v2");
+  const isWebDesignV3 = pathname?.startsWith("/web-design-v3");
+  const shouldHideHeaderFooter = isWebDesignV2 || isWebDesignV3;
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
-      {!isWebDesignV2 && <Header />}
+      {!shouldHideHeaderFooter && <Header />}
       <main className="flex-1">
         <PageTransition>{children}</PageTransition>
       </main>
-      {!isWebDesignV2 && <Footer />}
+      {!shouldHideHeaderFooter && <Footer />}
     </div>
   );
 }
