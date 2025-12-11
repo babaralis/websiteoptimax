@@ -15,6 +15,7 @@ import { GridPattern } from "@/components/graphics/GridPattern";
 import { submitContactEmail } from "@/lib/email";
 import { event as trackEvent } from "@/lib/analytics";
 import { useState } from "react";
+import Image from "next/image";
 
 const formSchema = z.object({
   fullName: z.string().min(2, "Name must be at least 2 characters"),
@@ -103,18 +104,15 @@ export function LandingHero() {
             <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
               We design and develop websites that go beyond aesthetics. Built to support your sales team, capture qualified leads, and drive measurable growth, our websites are engineered for performance. With strategy at the core, we turn your digital presence into the hardest-working asset in your entire sales stack.
             </p>
-            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mb-8">
-              <div className="flex items-center gap-2">
-                <div className="flex">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-5 h-5 fill-primary text-primary" />
-                  ))}
-                </div>
-                <span className="text-muted-foreground text-sm">4.8/5 from 18,467 reviews</span>
-              </div>
-            </div>
             <div className="mobile-hero-button">
             <a className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg animate-pulse-glow shadow-glow-lg gap-2" href="/contact">Get Your Growth Strategy<ArrowRight className="w-5 h-5" /></a>
+            </div>
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mt-8">
+              <Image src="/assets/images/webdesign/Web design-v2/trust-logo.svg" alt="Trustpilot Logo" width={100} height={100} />
+              <Image src="/assets/images/webdesign/Web design-v2/googlereview-logo.webp" alt="Google Logo" width={100} height={100} />
+            </div>
+            <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mt-4">
+              <p className="text-muted-foreground text-lg">We're rated <span className="gradient-text">4.8/5</span> from <span className="gradient-text">18,467</span> customer reviews.</p>
             </div>
           </FadeIn>
           <FadeIn delay={0.2} className="mobile-hero-form">
@@ -219,8 +217,8 @@ export function LandingHero() {
                       </p>
                       <a type="submit"
                         onClick={form.handleSubmit(onSubmit)}
-                        href="/contact" 
-                        className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg animate-pulse-glow shadow-glow-lg gap-2"
+                        href="#" 
+                        className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 h-12 rounded-lg px-8 text-base shadow-glow-sm gap-2"
                       >
                         Get A FREE Landing Page
                         <ArrowRight className="w-5 h-5 ml-2" />

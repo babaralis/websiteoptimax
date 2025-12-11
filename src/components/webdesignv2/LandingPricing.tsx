@@ -279,7 +279,8 @@ export function LandingPricing() {
         
         {/* Premium Packages */}
         <FadeIn className="text-center mb-8">
-          <h3 className="text-2xl font-display font-bold">Premium Packages</h3>
+          <h3 className="text-[2.5rem] font-display font-bold">Premium <span className="gradient-text">Packages</span>
+          </h3>
         </FadeIn>
         
         <div className="grid md:grid-cols-3 gap-6">
