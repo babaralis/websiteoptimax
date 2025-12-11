@@ -201,7 +201,7 @@ const premiumPackages = [
 
 export function LandingPricing() {
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden pt-0">
+    <section id="pricing" className="py-20 lg:py-28 relative overflow-hidden pt-0">
       <div className="container">
         <FadeIn className="text-center mb-12">
           <span className="inline-flex items-center gap-2 text-secondary text-sm font-semibold tracking-wide uppercase mb-4 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20">

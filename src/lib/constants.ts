@@ -25,18 +25,17 @@ export const SERVICES_DROPDOWN = [
 
 export const FOOTER_LINKS = {
   services: [
-    // { label: "Web Design", href: "/services#design" },
     { label: "Web Design", href: "/web-design" },
     { label: "Web Development", href: "/web-development" },
     { label: "Website Optimization", href: "/website-optimization" },
     { label: "AI Agent", href: "/ai-agent" },
     { label: "Portfolio", href: "/portfolio" },
-    { label: "Pricing", href: "/pricing" },
   ],
   company: [
     { label: "About Us", href: "/about" },
     { label: "Reviews", href: "/reviews" },
     { label: "Contact Us", href: "/contact" },
+    { label: "Pricing", href: "/pricing" },
   ],
   legal: [
     { label: "Privacy Policy", href: "/privacy" },

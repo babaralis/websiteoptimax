@@ -324,7 +324,7 @@ export function WebDesign2Testimonial() {
   const column3 = B2B_TESTIMONIALS.filter(t => t.column === 3);
 
   return (
-    <section className="py-24 lg:py-32 relative overflow-hidden">
+    <section id="reviews" className="py-24 lg:py-32 relative overflow-hidden">
       <GridPattern variant="lines" className="opacity-20" />
       
       <div className="container relative">

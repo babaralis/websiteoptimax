@@ -31,7 +31,7 @@ const highlights = [
 
 export function LandingAbout() {
   return (
-    <section className="py-20 lg:py-28 relative overflow-hidden bg-surface/50">
+    <section id="about" className="py-20 lg:py-28 relative overflow-hidden bg-surface/50">
       {/* Background Image */}
       <div className="absolute inset-0 opacity-10">
         <img 
@@ -92,7 +92,7 @@ export function LandingAbout() {
           <FadeIn delay={0.2}>
             <div className="relative">
               {/* Featured Image */}
-              <motion.div 
+              {/* <motion.div 
                 className="mb-6 rounded-2xl overflow-hidden"
                 whileHover={{ scale: 1.02 }}
                 transition={{ duration: 0.3 }}
@@ -102,7 +102,7 @@ export function LandingAbout() {
                   alt="Data-driven strategy dashboard"
                   className="w-full h-56 object-cover"
                 />
-              </motion.div>
+              </motion.div> */}
               
               <div className="grid grid-cols-2 gap-6">
                 {highlights.map((item, index) => (

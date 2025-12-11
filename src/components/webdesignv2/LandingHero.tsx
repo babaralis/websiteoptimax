@@ -75,7 +75,6 @@ export function LandingHero() {
         description: "We'll get back to you within 24 hours with your custom quote.",
       });
 
-      // Reset after showing success
       setTimeout(() => {
         setIsSubmitted(false);
         form.reset();
@@ -92,25 +91,18 @@ export function LandingHero() {
   return (
     <section className="relative min-h-screen flex items-center py-20 lg:py-28 overflow-hidden mobile-hero-section">
       <GridPattern className="opacity-20" />
-      
-      {/* Background Glow */}
       <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/20 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-secondary/15 rounded-full blur-3xl" />
-      
       <div className="container relative z-10 mobile-hero-container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mobile-hero-grid">
-          {/* Left Content */}
           <FadeIn className="text-center lg:text-left mobile-hero-content">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
               Your Website, Reimagined as a{" "}
               <span className="gradient-text">Revenue Engine</span>
             </h1>
-            
             <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
               We design and develop websites that go beyond aesthetics. Built to support your sales team, capture qualified leads, and drive measurable growth, our websites are engineered for performance. With strategy at the core, we turn your digital presence into the hardest-working asset in your entire sales stack.
             </p>
-            
-            {/* Trust Indicators */}
             <div className="flex flex-wrap items-center justify-center lg:justify-start gap-6 mb-8">
               <div className="flex items-center gap-2">
                 <div className="flex">
@@ -121,37 +113,19 @@ export function LandingHero() {
                 <span className="text-muted-foreground text-sm">4.8/5 from 18,467 reviews</span>
               </div>
             </div>
-            
             <div className="mobile-hero-button">
-              <Button variant="hero" size="lg" className="shadow-glow-md">
-                <a 
-                  href="#" 
-                  className="flex items-center gap-2"
-                  onClick={(e) => {
-                    e.preventDefault();
-                    if (typeof window !== 'undefined' && (window as any).$zopim) {
-                      (window as any).$zopim.livechat.window.toggle();
-                    }
-                  }}
-                >
-                  <MessageSquare className="w-4 h-4" />
-                  Claim Free Consultation
-                </a>
-              </Button>
+            <a className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg animate-pulse-glow shadow-glow-lg gap-2" href="/contact">Get Your Growth Strategy<ArrowRight className="w-5 h-5" /></a>
             </div>
           </FadeIn>
-          
-          {/* Right Form */}
           <FadeIn delay={0.2} className="mobile-hero-form">
             <motion.div 
               id="quote-form"
-              className="glass-card-premium p-8"
+              className="glass-card-premium p-8 shadow-[0_0_3px_6px_rgba(255,71,114,0.5)] border border-[#ff4772]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
             >
               {isSubmitted ? (
-                /* Success Message */
                 <div className="text-center py-12">
                   <div className="w-20 h-20 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-6">
                     <CheckCircle className="h-10 w-10 text-success" />
@@ -165,15 +139,13 @@ export function LandingHero() {
                   </p>
                 </div>
               ) : (
-                /* Form */
                 <>
-                  <h2 className="text-2xl font-display font-bold text-center mb-2">
-                    Request a FREE Quote
+                  <h2 className="text-3xl font-display font-bold text-center mb-2">
+                    Request a <span className="gradient-text-glow">FREE Quote</span>
                   </h2>
                   <p className="text-muted-foreground text-center text-sm mb-6">
                     + Get a FREE Landing Page with your project
                   </p>
-                  
                   <Form {...form}>
                     <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
                       <FormField
@@ -192,7 +164,6 @@ export function LandingHero() {
                           </FormItem>
                         )}
                       />
-                      
                       <FormField
                         control={form.control}
                         name="email"
@@ -210,7 +181,6 @@ export function LandingHero() {
                           </FormItem>
                         )}
                       />
-                      
                       <FormField
                         control={form.control}
                         name="phone"
@@ -228,7 +198,6 @@ export function LandingHero() {
                           </FormItem>
                         )}
                       />
-                      
                       <FormField
                         control={form.control}
                         name="description"
@@ -245,21 +214,17 @@ export function LandingHero() {
                           </FormItem>
                         )}
                       />
-                      
                       <p className="text-xs text-muted-foreground">
                         By entering your phone number, you agree to receive text messages per our terms of use and privacy policy
                       </p>
-                      
-                      <Button 
-                        type="submit" 
-                        variant="hero" 
-                        size="lg" 
-                        className="w-full shadow-glow-sm"
-                        disabled={form.formState.isSubmitting}
+                      <a type="submit"
+                        onClick={form.handleSubmit(onSubmit)}
+                        href="/contact" 
+                        className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg animate-pulse-glow shadow-glow-lg gap-2"
                       >
-                        {form.formState.isSubmitting ? "Submitting..." : "Get A FREE Landing Page"}
-                        <ArrowRight className="w-4 h-4 ml-2" />
-                      </Button>
+                        Get A FREE Landing Page
+                        <ArrowRight className="w-5 h-5 ml-2" />
+                      </a>
                     </form>
                   </Form>
                 </>
@@ -268,6 +233,6 @@ export function LandingHero() {
           </FadeIn>
         </div>
       </div>
-    </section>
+      </section>
   );
 }

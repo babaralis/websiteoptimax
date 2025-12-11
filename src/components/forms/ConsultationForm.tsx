@@ -29,7 +29,7 @@ export function ConsultationForm() {
     const data = {
       name: formData.name,
       email: formData.email,
-      company: formData.phone, // Using phone field as company for compatibility
+      company: formData.phone,
       website: '',
       budget: 'Not specified',
       timeline: 'Not specified',
@@ -62,7 +62,6 @@ export function ConsultationForm() {
         description: "We'll get back to you within 24 hours.",
       });
 
-      // Reset form after 3 seconds
       setTimeout(() => {
         setIsSubmitted(false);
         setFormData({
@@ -91,16 +90,14 @@ export function ConsultationForm() {
 
   return (
     <div className="fixed right-0 top-1/2 -translate-y-1/2 z-50 pointer-events-none">
-      {/* Main Container - Slides in/out */}
       <motion.div
         initial={false}
         animate={{ 
-          x: isOpen ? 0 : "calc(100% - 50px)", // Show only vertical tab when closed (50px for mobile, 60px for desktop)
+          x: isOpen ? 0 : "calc(100% - 50px)",
         }}
         transition={{ type: "spring", damping: 30, stiffness: 300 }}
         className="flex items-center pointer-events-auto"
       >
-        {/* Vertical Tab - Always visible on right edge, joined with form */}
         <button
           onClick={() => setIsOpen(!isOpen)}
           className="bg-primary text-primary-foreground backdrop-blur-lg border-l border-primary/30 px-2 md:px-3 py-4 md:py-4 flex items-center justify-center hover:bg-primary/90 transition-colors rounded-l-lg md:rounded-l-xl flex-shrink-0 shadow-lg shadow-primary/25"
@@ -119,23 +116,13 @@ export function ConsultationForm() {
             Claim your 20% Discount Now
           </span>
         </button>
-
-        {/* Form Panel - Slides in when open */}
-        <div className="w-full max-w-sm sm:max-w-md flex">
-          {/* Form Container - Border radius on left side, no radius on right */}
+        <div className="w-full max-w-[21rem] sm:max-w-[21rem] flex">
           <div className="flex-1 glass-card-premium rounded-l-lg md:rounded-l-2xl rounded-r-none p-4 sm:p-6 md:p-8 relative overflow-hidden">
-            {/* Background gradient - with rounded corners fix */}
-            <div className="absolute inset-0 bg-gradient-to-br from-primary/10 via-transparent to-secondary/10 rounded-l-lg md:rounded-l-2xl rounded-r-none" />
-
-            {/* Form Content */}
             <div className="relative z-10">
-              {/* Title */}
               <h2 className="text-xl sm:text-2xl md:text-3xl font-display font-bold mb-4 sm:mb-6 text-foreground">
                 Book a{" "}
                 <span className="gradient-text-glow">Free</span> Consultation
               </h2>
-
-              {/* Success Message */}
               {isSubmitted ? (
                 <div className="text-center py-8">
                   <div className="w-16 h-16 rounded-full bg-success/20 flex items-center justify-center mx-auto mb-4">
@@ -146,8 +133,7 @@ export function ConsultationForm() {
                     We'll contact you within 24 hours.
                   </p>
                 </div>
-              ) : (
-                /* Form */
+              ) : ( 
                 <form onSubmit={handleSubmit} className="space-y-3 sm:space-y-4">
                   <div>
                     <Input

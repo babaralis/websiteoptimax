@@ -108,7 +108,7 @@ export function ContactForm() {
                 <Input
                   id="name"
                   name="name"
-                  placeholder="John Smith"
+                  placeholder="Enter your name"
                   required
                   className="bg-background/50"
                 />
@@ -119,7 +119,7 @@ export function ContactForm() {
                   id="email"
                   name="email"
                   type="email"
-                  placeholder="john@company.com"
+                  placeholder="Enter your email"
                   required
                   className="bg-background/50"
                 />
@@ -132,7 +132,7 @@ export function ContactForm() {
                 <Input
                   id="company"
                   name="company"
-                  placeholder="Your Company"
+                  placeholder="Enter your company name"
                   required
                   className="bg-background/50"
                 />
@@ -144,7 +144,7 @@ export function ContactForm() {
                   id="website"
                   name="website"
                   type="url"
-                  placeholder="https://yourcompany.com"
+                  placeholder="Enter your website URL"
                   className="bg-background/50"
                 />
               </div>
@@ -154,7 +154,7 @@ export function ContactForm() {
                   type="tel"
                   id="phone"
                   name="phone"
-                  placeholder="1234567890"
+                  placeholder="Enter your phone number"
                   className="bg-background/50 text-sm sm:text-base"
                 />
               </div>
