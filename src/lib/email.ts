@@ -71,3 +71,17 @@ export async function submitContactEmail(data: {
   return res
 }
 
+
+export async function getCategories() {
+  const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://payment.websiteoptimax.com/api'    
+
+  const res = await fetch(`${baseUrl}/getCategory`, {
+    method: 'GET',
+    headers: {
+      Accept: 'application/json',
+    },
+  })
+  
+  const responseData = await res.json().catch(() => ({}))
+  return responseData.data || []
+}

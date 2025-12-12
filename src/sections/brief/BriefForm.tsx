@@ -1,11 +1,12 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight, Loader2 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { submitEmail } from "@/lib/email";
+import { submitEmail ,getCategories} from "@/lib/email";
+import {  briefLead} from "@/lib/lead";
 import {
   Select,
   SelectContent,
@@ -18,6 +19,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 
+
 interface BriefFormData {
   companyName: string;
   slogan: string;
@@ -25,6 +27,12 @@ interface BriefFormData {
   website: string;
   email: string;
   phone: string;
+}
+
+interface Industry {
+  id: number;
+  name: string;
+  slug?: string;
 }
 
 export function BriefForm({
@@ -58,7 +66,7 @@ export function BriefForm({
     try {
       console.log('📤 Sending form data:', payload);
   
-      const response = await submitEmail(payload);
+      const response = await briefLead(payload);
       
       if (response.ok) {
         console.log('✅ Email sent successfully');
@@ -268,7 +276,7 @@ export function BriefForm({
         return (
           <div className="text-center md:w-[37.5rem] w-full">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-8">
-              Website Steps
+              Website Type
             </h2>
             <div className="md:max-w-xl mx-auto w-full">
               <Select
