@@ -245,6 +245,8 @@ export function LandingPricing() {
           Accept: "application/json",
           "Content-Type": "application/json;charset=UTF-8",
         },
+        credentials: "omit", // Explicitly set for Safari compatibility
+        mode: "cors", // Explicitly enable CORS
         body: JSON.stringify(item),
       });
 
