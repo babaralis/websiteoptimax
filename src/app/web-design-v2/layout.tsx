@@ -16,6 +16,39 @@ export default function WebDesignV2Layout({ children }: WebDesignV2LayoutProps) 
         <PageTransition>{children}</PageTransition>
       </main>
       <WebDesignV2Footer />
+               {/* Google Tag Manager - Loads 10 seconds after page load */}
+               <Script id="google-tag-manager" strategy="afterInteractive">
+          {`(function(){
+            function loadGTM() {
+              (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+              new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+              j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+              'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+              })(window,document,'script','dataLayer','GTM-P37P6FLQ');
+            }
+            
+            if(document.readyState==='complete'){
+              setTimeout(loadGTM,10000);
+            } else {
+              window.addEventListener('load',function(){
+                setTimeout(loadGTM,10000);
+              });
+            }
+          })();`}
+        </Script>
+
+        {/* ClickRank AI SEO Script */}
+        <Script id="clickrank-ai" strategy="afterInteractive">
+          {`
+            (function () {
+              var clickRankAi = document.createElement("script");
+              clickRankAi.src = "https://js.clickrank.ai/seo/f2471eb6-5b04-474d-ad2b-47cf003ec8bb/script?" + new Date().getTime();
+              clickRankAi.async = true;
+              document.head.appendChild(clickRankAi);
+            })();
+          `}
+        </Script>
+
       <Script
           id="zopim-live-chat"
           strategy="beforeInteractive"
