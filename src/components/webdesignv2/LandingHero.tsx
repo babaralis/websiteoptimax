@@ -103,9 +103,9 @@ export function LandingHero() {
               We Build Websites, That Work{" "}
               <span className="gradient-text"> - For You and Your Customers.</span>
             </h1>
-            <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
+            {/* <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
               We design and develop websites that go beyond aesthetics. Built to support your sales team, capture qualified leads, and drive measurable growth, our websites are engineered for performance. With strategy at the core, we turn your digital presence into the hardest-working asset in your entire sales stack.
-            </p>
+            </p> */}
             <div className="mobile-hero-button">
               <button 
                 className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-primary text-primary-foreground hover:bg-primary/90 shadow-lg hover:shadow-xl hover:shadow-primary/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg animate-pulse-glow shadow-glow-lg gap-2"
