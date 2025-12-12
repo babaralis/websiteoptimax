@@ -14,7 +14,8 @@ export function Layout({ children }: LayoutProps) {
   const pathname = usePathname();
   const isWebDesignV2 = pathname?.startsWith("/web-design-v2");
   const isWebDesignV3 = pathname?.startsWith("/web-design-v3");
-  const shouldHideHeaderFooter = isWebDesignV2 || isWebDesignV3;
+  const isWebDesignV4 = pathname?.startsWith("/web-design-v4");
+  const shouldHideHeaderFooter = isWebDesignV2 || isWebDesignV3 || isWebDesignV4;
 
   return (
     <div className="min-h-screen flex flex-col bg-background">
