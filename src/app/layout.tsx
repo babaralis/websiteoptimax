@@ -70,11 +70,12 @@ export default function RootLayout({
         <meta name="format-detection" content="telephone=no" />
         
         {/* Preconnect to external domains for faster loading on all devices including Apple */}
+        <link rel="preconnect" href="https://payment.websiteoptimax.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://v2.zopim.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
         <link rel="preconnect" href="https://js.clickrank.ai" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://static.zdassets.com" />
-        <link rel="dns-prefetch" href="https://payment.websiteoptimax.com" />
+        <link rel="dns-prefetch" href="https://ipapi.co" />
 
               {/* Google Tag Manager - Loads 10 seconds after page load */}
       <Script id="google-tag-manager" strategy="afterInteractive">
