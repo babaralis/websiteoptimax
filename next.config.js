@@ -20,7 +20,7 @@ const nextConfig = {
           {
             key: "Content-Security-Policy",
             value:
-              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.zdassets.com https://*.zendesk.com https://*.zdassets.com https://www.googletagmanager.com https://js.clickrank.ai https://v2.zopim.com; connect-src 'self' https://*.zendesk.com wss://*.zendesk.com https://ipapi.co https://www.googletagmanager.com;"
+              "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://static.zdassets.com https://*.zendesk.com https://*.zdassets.com https://www.googletagmanager.com https://js.clickrank.ai https://v2.zopim.com; connect-src 'self' https://*.zendesk.com wss://*.zendesk.com https://ipapi.co https://www.googletagmanager.com https://payment.websiteoptimax.com;"
           }
         ]
       }
