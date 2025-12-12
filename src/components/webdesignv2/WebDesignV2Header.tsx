@@ -7,23 +7,44 @@ import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { ConsultationForm } from "@/components/forms/ConsultationForm";
 import Image from "next/image";
+
 export function WebDesignV2Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      const sections = ["about", "portfolio", "reviews", "pricing"];
+      let current = "";
+
+      sections.forEach((id) => {
+        const el = document.getElementById(id);
+        if (el) {
+          const rect = el.getBoundingClientRect();
+          if (rect.top <= 150 && rect.bottom >= 150) {
+            current = id;
+          }
+        }
+      });
+
+      setActiveSection(current);
     };
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
     setIsMobileMenuOpen(false);
   };
+
   return (
     <>
       <header
@@ -38,40 +59,29 @@ export function WebDesignV2Header() {
           <Link href="/web-design-v2" className="flex items-center gap-2 group">
             <Image src="/assets/images/logos/logo.svg" alt="Website Optimax" width={150} height={100} />
           </Link>
+
+          {/* Desktop Nav */}
           <nav className="hidden md:flex items-center gap-8">
-            <button
-              onClick={() => scrollToSection('about')}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors animated-underline"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection('portfolio')}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors animated-underline"
-            >
-              Portfolio
-            </button>
-            <button
-              onClick={() => scrollToSection('reviews')}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors animated-underline"
-            >
-              Reviews
-            </button>
-            <button
-              onClick={() => scrollToSection('pricing')}
-              className="text-sm font-medium text-muted-foreground hover:text-primary transition-colors animated-underline"
-            >
-              Pricing
-            </button>
+            {["about", "portfolio", "reviews", "pricing"].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item)}
+                className={cn(
+                  "text-sm font-medium text-muted-foreground hover:text-primary transition-colors animated-underline",
+                  activeSection === item && "text-primary animated-underline-active"
+                )}
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </button>
+            ))}
+
             <Button
               onClick={(e) => {
                 e.preventDefault();
-                if (typeof window !== 'undefined' && (window as any).$zopim) {
+                if (typeof window !== "undefined" && (window as any).$zopim) {
                   (window as any).$zopim.livechat.window.show();
                 } else {
-                  console.log('Zopim not loaded yet');
-                  // Fallback: scroll to form if Zopim not loaded
-                  scrollToSection('quote-form');
+                  scrollToSection("quote-form");
                 }
               }}
               variant="hero"
@@ -81,6 +91,8 @@ export function WebDesignV2Header() {
               Get Started
             </Button>
           </nav>
+
+          {/* Mobile Toggle */}
           <button
             className="md:hidden p-2 text-muted-foreground hover:text-foreground transition-colors"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -88,6 +100,8 @@ export function WebDesignV2Header() {
             {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
+
+        {/* Mobile Menu */}
         <motion.div
           initial={false}
           animate={{
@@ -97,39 +111,26 @@ export function WebDesignV2Header() {
           className="md:hidden overflow-hidden bg-background/95 backdrop-blur-xl border-b border-border"
         >
           <nav className="container-wide py-4 space-y-4">
-            <button
-              onClick={() => scrollToSection('about')}
-              className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2"
-            >
-              About
-            </button>
-            <button
-              onClick={() => scrollToSection('portfolio')}
-              className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2"
-            >
-              Portfolio
-            </button>
-            <button
-              onClick={() => scrollToSection('reviews')}
-              className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2"
-            >
-              Reviews
-            </button>
-            <button
-              onClick={() => scrollToSection('pricing')}
-              className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2"
-            >
-              Pricing
-            </button>
+            {["about", "portfolio", "reviews", "pricing"].map((item) => (
+              <button
+                key={item}
+                onClick={() => scrollToSection(item)}
+                className={cn(
+                  "block w-full text-left text-sm font-medium text-muted-foreground hover:text-primary transition-colors py-2",
+                  activeSection === item && "text-primary"
+                )}
+              >
+                {item.charAt(0).toUpperCase() + item.slice(1)}
+              </button>
+            ))}
+
             <Button
               onClick={(e) => {
                 e.preventDefault();
-                if (typeof window !== 'undefined' && (window as any).$zopim) {
+                if (typeof window !== "undefined" && (window as any).$zopim) {
                   (window as any).$zopim.livechat.window.show();
                 } else {
-                  console.log('Zopim not loaded yet');
-                  // Fallback: scroll to form if Zopim not loaded
-                  scrollToSection('quote-form');
+                  scrollToSection("quote-form");
                 }
                 setIsMobileMenuOpen(false);
               }}
@@ -142,9 +143,8 @@ export function WebDesignV2Header() {
           </nav>
         </motion.div>
       </header>
+
       <ConsultationForm />
     </>
   );
-  
 }
-

@@ -271,11 +271,17 @@ export function LandingPricing() {
   };
 
   return (
-    <section id="pricing" className="py-20 lg:py-28 relative overflow-hidden pt-0">
+    <>
+
+  <div id="pricing" style={{visibility: 'hidden'}}>
+      <div>sdfs</div><div>sdfs</div><div>sdfs</div><div>sdfs</div><div>sdfs</div>    
+    </div>
+
+    <section className="py-20 lg:py-28 relative overflow-hidden ptzero">
       <div className="container">
         <FadeIn className="text-center mb-12">
           <span className="inline-flex items-center gap-2 text-secondary text-sm font-semibold tracking-wide uppercase mb-4 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20">
-            Pricing & Packages
+            Pricing & Packages  
           </span>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
@@ -425,5 +431,20 @@ export function LandingPricing() {
         </div>
       </div>
     </section>
+
+    <style>
+
+      {`
+      
+      .ptzero
+      {
+        padding-top:0px;
+      }
+      
+      `}
+
+    </style>
+    
+    </>
   );
 }

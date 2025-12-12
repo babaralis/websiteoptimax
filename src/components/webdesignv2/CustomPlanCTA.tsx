@@ -11,22 +11,24 @@ export function CustomPlanCTA() {
       <div className="hidden lg:block absolute left-0 bottom-[-7rem] w-[24%] h-full pointer-events-none z-0">
         <div className="relative w-full h-full">
           <Image
-            src="/assets/images/webdesign/cta-01.webp"
+            src="/assets/images/webdesign/cta-0001.webp"
             alt="Design mockups"
             fill
             className="object-contain object-left-bottom"
             sizes="25vw"
+            style={{ minHeight: '530px', top:'-88px'}}
           />
         </div>
       </div>
       <div className="hidden lg:block absolute right-0 bottom-[-7rem] w-[24%] h-full pointer-events-none z-0">
         <div className="relative w-full h-full">
           <Image
-            src="/assets/images/webdesign/cta-02.webp"
+            src="/assets/images/webdesign/cta-002.webp"
             alt="Design mockups"
             fill
             className="object-contain object-right-bottom"
             sizes="25vw"
+            style={{ minHeight: '530px', top:'-88px'}}
           />
         </div>
       </div>
