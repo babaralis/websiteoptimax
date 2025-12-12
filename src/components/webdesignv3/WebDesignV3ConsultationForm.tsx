@@ -9,6 +9,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import { event as trackEvent } from "@/lib/analytics";
 import { submitContactEmail } from "@/lib/email";
+import { contactLead } from "@/lib/lead";
 
 export function WebDesignV3ConsultationForm() {
   const { toast } = useToast();
@@ -35,10 +36,11 @@ export function WebDesignV3ConsultationForm() {
       timeline: 'Not specified',
       message: `Phone: ${formData.phone}\n\nProject Details:\n${formData.project}`,
       title: "Consultation Form (Floating v3)",
+      phone: formData.phone,
     };
 
     try {
-      await submitContactEmail(data);
+      await contactLead(data);
       
       trackEvent({
         action: "form_submit",

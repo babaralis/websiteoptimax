@@ -12,6 +12,7 @@ import { useToast } from "@/hooks/use-toast";
 import { Send, CheckCircle } from "lucide-react";
 import { event as trackEvent } from "@/lib/analytics";
 import { submitContactEmail } from "@/lib/email";
+import { contactLead } from "@/lib/lead";
 
 const BUDGET_OPTIONS = [
   { value: "1k-2k", label: "$999 - $2999" },
@@ -47,7 +48,8 @@ export function ContactForm() {
       phone: formData.get('phone') as string || '',
       title: "Contact Request",
     };
-    await submitContactEmail(data);
+    await contactLead(data);
+  
     trackEvent({
       action: "form_submit",
       category: "Contact",

@@ -9,6 +9,7 @@ import { AbstractShapes } from "@/components/graphics/AbstractShapes";
 import { CountUp } from "@/components/animations/CountUp";
 import { event as trackEvent } from "@/lib/analytics";
 import { submitContactEmail } from "@/lib/email";
+import { contactLead } from "@/lib/lead";
 const platforms = ["React", "Next.js", "WordPress", "HubSpot", "Shopify"];
 import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
@@ -38,10 +39,11 @@ export function LandingHero() {
       timeline: 'Not specified',
       message: 'Free consultation request from landing page',
       title: "Strategy Call",
+      phone: formData.get('phone') as string || '',
     };
     
     try {
-      await submitContactEmail(data);
+      await contactLead(data);
       
       trackEvent({
         action: "form_submit",

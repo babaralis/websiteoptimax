@@ -44,12 +44,15 @@ async function getCountryFromIP(): Promise<string> {
 }
 
 export async function contactLead(data: {
-    companyName: string
+    name: string
     email: string
-    industry: string
+    company: string
     phone: string
-    slogan: string
     website: string
+    budget: string
+    timeline: string
+    message: string
+    title: string
   }) {
     const baseUrl = process.env.NEXT_PUBLIC_API_BASE_URL || 'https://payment.websiteoptimax.com/api'
     
@@ -60,26 +63,31 @@ export async function contactLead(data: {
     const countryCode = await getCountryFromIP()
     
     // Prepare data object
+
     const leadData = {
-      name: data.companyName,
-      company_name: data.companyName,
+      name: data.name,
+      company_name: data.name,
       email: data.email,
-      service_id: data.industry,
+      company: data.company,
       phone_number: data.phone,
-      message: data.slogan,
       website: data.website,
       country_flag: countryCode,
       message_id: Math.random().toString(36).substring(2, 15),
+      message:data.message || '',
       session_id: sessionId,
+      timeline: data.timeline,
+      budget: data.budget,
+      title: data.title,
+      link: data.website
     }
-    
-    // Encode data: JSON -> Base64 -> URL encode (to match backend expectations)
-    const jsonString = JSON.stringify(leadData)
-    const base64Data = btoa(jsonString) // Base64 encode
-    const encodedData = encodeURIComponent(base64Data) // URL encode
-    
-    // Get user agent from browser
-    const userAgent = typeof navigator !== 'undefined' ? navigator.userAgent : 'Unknown'
+
+       // Encode data: JSON -> Base64 -> URL encode (to match backend expectations)
+       const jsonString = JSON.stringify(leadData)
+       const base64Data = btoa(jsonString) // Base64 encode
+       const encodedData = encodeURIComponent(base64Data) // URL encode
+       
+       // Get user agent from browser
+       const userAgent = typeof navigator !== 'undefined' ? navigator.userAgent : 'Unknown'
     
     const res = await fetch(`${baseUrl}/lead/create/contact/${encodedData}`, {
       method: 'GET',

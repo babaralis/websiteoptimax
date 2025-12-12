@@ -13,6 +13,7 @@ import { Form, FormControl, FormField, FormItem, FormMessage } from "@/component
 import { useToast } from "@/hooks/use-toast";
 import { GridPattern } from "@/components/graphics/GridPattern";
 import { submitContactEmail } from "@/lib/email";
+import { contactLead } from "@/lib/lead";
 import { event as trackEvent } from "@/lib/analytics";
 import { useState } from "react";
 import Image from "next/image";
@@ -51,9 +52,10 @@ export function LandingHero() {
         timeline: 'Not specified',
         message: `Phone: ${data.phone || 'Not provided'}\n\nProject Description:\n${data.description || 'No description provided'}`,
         title: "FREE Quote Request (LandingHero v2)",
+        phone: data.phone || 'Not provided',
       };
 
-      await submitContactEmail(emailData);
+      await contactLead(emailData);
       
       trackEvent({
         action: "form_submit",
