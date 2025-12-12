@@ -100,8 +100,8 @@ export function LandingHero() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mobile-hero-grid">
           <FadeIn className="text-center lg:text-left mobile-hero-content">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-display font-bold mb-6 leading-tight">
-              Your Website, Reimagined as a{" "}
-              <span className="gradient-text">Revenue Engine</span>
+              We Build Websites, That Work{" "}
+              <span className="gradient-text"> - For You and Your Customers.</span>
             </h1>
             <p className="text-lg text-muted-foreground mb-8 max-w-xl mx-auto lg:mx-0">
               We design and develop websites that go beyond aesthetics. Built to support your sales team, capture qualified leads, and drive measurable growth, our websites are engineered for performance. With strategy at the core, we turn your digital presence into the hardest-working asset in your entire sales stack.
