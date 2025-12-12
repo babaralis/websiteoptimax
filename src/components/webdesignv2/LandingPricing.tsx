@@ -32,6 +32,9 @@ const packages = [
       "100% Money Back Guarantee *",
       "NO MONTHLY OR ANY YEARLY FEE *",
     ],
+    amount: 199,
+    category: 'Website Development',
+    currency_code: 'USD'
   },
   {
     name: "PROFESSIONAL",
@@ -59,6 +62,9 @@ const packages = [
       "CMS will be additional $149 *",
       "Mobile Responsive will be additional $199 *",
     ],
+    amount: 695,
+    category: 'Website Development',
+    currency_code: 'USD'
   },
   {
     name: "ELITE",
@@ -89,6 +95,9 @@ const packages = [
       "Mobile Responsive will be additional $199 *",
       "*NO MONTHLY OR ANY HIDDEN FEE*",
     ],
+    amount: 995,
+    category: 'Website Development',
+    currency_code: 'USD'
   },
 ];
 
@@ -125,6 +134,9 @@ const premiumPackages = [
       "100% Ownership Rights",
       "*NO MONTHLY OR ANY HIDDEN FEE*",
     ],
+    amount: 1595,
+    category: 'Website Development',
+    currency_code: 'USD'
   },
   {
     name: "BUSINESS",
@@ -159,6 +171,9 @@ const premiumPackages = [
       "100% Ownership Rights",
       "*NO MONTHLY OR ANY HIDDEN FEE*",
     ],
+    amount: 2495,
+    category: 'Website Development',
+    currency_code: 'USD'
   },
   {
     name: "PLATINUM",
@@ -197,10 +212,15 @@ const premiumPackages = [
       "100% Ownership Rights",
       "*NO MONTHLY OR ANY HIDDEN FEE*",
     ],
+    amount: 4495,
+    category: 'Website Development',
+    currency_code: 'USD'
   },
 ];
 
 export function LandingPricing() {
+
+  const baseCrmUrl = "https://payment.websiteoptimax.com/payment/paynow"
   const [loading, setLoading] = useState<string | null>(null);
 
   // Helper function to generate package string
@@ -210,28 +230,29 @@ export function LandingPricing() {
     const currency = "USD";
     const price = priceMatch ? priceMatch[1].replace(/,/g, "") : "0";
     const discount = "0";
-    
+
     // Format: Category-Type-Currency-Price-Discount
     const category = "Website Design";
     let type = pkg.name.replace(/\s+/g, " ").replace(/-/g, " ");
-    
+
     return `${category}-${type}-${currency}-${price}-${discount}`;
   };
 
   // Handle payment button click
   const handlePayment = async (pkg: typeof packages[0] | typeof premiumPackages[0]) => {
     const packageString = generatePackageString(pkg);
-    
+
     // Parse the package string
     const firstHyphen = packageString.indexOf("-");
     const category = packageString.substring(0, firstHyphen);
     const rest = packageString.substring(firstHyphen + 1);
     const parts = rest.split("-");
-    
+
     const item_name = `${category} ${parts[0]}`;
     const currency_code = parts[1];
     const price = parts[2];
     const discount = parts[3];
+
 
     const item = {
       item_name,
@@ -275,84 +296,78 @@ export function LandingPricing() {
   return (
     <>
 
-  <div id="pricing" style={{visibility: 'hidden'}}>
-      <div>sdfs</div><div>sdfs</div><div>sdfs</div><div>sdfs</div><div>sdfs</div>    
-    </div>
+      <div id="pricing" style={{ visibility: 'hidden' }}>
+        <div>sdfs</div><div>sdfs</div><div>sdfs</div><div>sdfs</div><div>sdfs</div>
+      </div>
 
-    <section className="py-20 lg:py-28 relative overflow-hidden ptzero">
-      <div className="container">
-        <FadeIn className="text-center mb-12">
-          <span className="inline-flex items-center gap-2 text-secondary text-sm font-semibold tracking-wide uppercase mb-4 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20">
-            Pricing & Packages  
-          </span>
-          
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
-            Get More for Less with Our{" "}
-            <span className="gradient-text">Value-Packed Plans</span>
-          </h2>
-        </FadeIn>
-        
-        {/* Standard Packages */}
-        <div className="grid md:grid-cols-3 gap-6 mb-8">
-          {packages.map((pkg, index) => (
-            <FadeIn key={pkg.name} delay={index * 0.1}>
-              <motion.div
-                className={`glass-card-elevated p-6 flex flex-col relative ${pkg.popular ? 'ring-2 ring-primary' : ''}`}
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
-              >
-                {pkg.popular && (
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-semibold">
-                      <Star className="w-3 h-3" />
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{pkg.name}</h3>
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="text-muted-foreground line-through text-sm">{pkg.originalPrice}</span>
-                    <span className="text-3xl font-bold gradient-text">{pkg.price}</span>
-                  </div>
-                </div>
-                
-                <ul className="space-y-3 mb-6 h-[400px] overflow-y-auto pr-2 custom-scrollbar">
-                  {pkg.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <Button 
-                  variant={pkg.popular ? "hero" : "heroOutline"} 
-                  className="w-full gap-2"
-                  onClick={() => handlePayment(pkg)}
-                  disabled={loading !== null}
+      <section className="py-20 lg:py-28 relative overflow-hidden ptzero">
+        <div className="container">
+          <FadeIn className="text-center mb-12">
+            <span className="inline-flex items-center gap-2 text-secondary text-sm font-semibold tracking-wide uppercase mb-4 px-4 py-1.5 rounded-full bg-secondary/10 border border-secondary/20">
+              Pricing & Packages
+            </span>
+
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">
+              Get More for Less with Our{" "}
+              <span className="gradient-text">Value-Packed Plans</span>
+            </h2>
+          </FadeIn>
+
+          {/* Standard Packages */}
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            {packages.map((pkg, index) => (
+              <FadeIn key={pkg.name} delay={index * 0.1}>
+                <motion.div
+                  className={`glass-card-elevated p-6 flex flex-col relative ${pkg.popular ? 'ring-2 ring-primary' : ''}`}
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  {loading === generatePackageString(pkg) ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      Processing...
-                    </>
-                  ) : (
-                    <>
-                      Order Now
-                      <ArrowRight className="w-4 h-4" />
-                    </>
+                  {pkg.popular && (
+                    <div className="absolute -top-3 left-1/2 -translate-x-1/2">
+                      <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-primary text-primary-foreground text-xs font-semibold">
+                        <Star className="w-3 h-3" />
+                        Most Popular
+                      </span>
+                    </div>
                   )}
-                </Button>
-              </motion.div>
-            </FadeIn>
-          ))}
-        </div>
-        
-        {/* Contact Bar */}
-        
-        {/* <FadeIn>
+
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-semibold text-foreground mb-2">{pkg.name}</h3>
+                    <div className="flex items-center justify-center gap-2">
+                      <span className="text-muted-foreground line-through text-sm">{pkg.originalPrice}</span>
+                      <span className="text-3xl font-bold gradient-text">{pkg.price}</span>
+                    </div>
+                  </div>
+
+                  <ul className="space-y-3 mb-6 h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                    {pkg.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                 <Link href={`${baseCrmUrl}?item=${pkg.name}&amount=${pkg.amount}&category=${pkg.category}&currency_code=${pkg.currency_code}`}>
+                    <Button
+                      variant="heroOutline"
+                      className="w-full gap-2"
+                      disabled={loading !== null}
+                    >
+                      <>
+                        Order Now
+                        <ArrowRight className="w-4 h-4" />
+                      </>
+                    </Button>
+                  </Link>
+                </motion.div>
+              </FadeIn>
+            ))}
+          </div>
+
+          {/* Contact Bar */}
+
+          {/* <FadeIn>
           <div className="flex flex-wrap items-center justify-center gap-4 mb-12 text-sm text-muted-foreground">
 
             <a 
@@ -377,66 +392,60 @@ export function LandingPricing() {
             <span>Add on: $500 for expedited services</span>
           </div>
         </FadeIn> */}
-        
-        {/* Premium Packages */}
-        <FadeIn className="text-center mb-8">
-          <h3 className="text-4xl font-display font-bold">Premium <span className="gradient-text">Packages</span>
-          </h3>
-        </FadeIn>
-        
-        <div className="grid md:grid-cols-3 gap-6">
-          {premiumPackages.map((pkg, index) => (
-            <FadeIn key={pkg.name} delay={index * 0.1}>
-              <motion.div
-                className="glass-card p-6 flex flex-col"
-                whileHover={{ y: -4 }}
-                transition={{ duration: 0.3 }}
-              >
-                <div className="text-center mb-6">
-                  <h3 className="text-xl font-semibold text-foreground mb-2">{pkg.name}</h3>
-                  <div className="flex items-center justify-center gap-2">
-                    <span className="text-muted-foreground line-through text-sm">{pkg.originalPrice}</span>
-                    <span className="text-3xl font-bold gradient-text">{pkg.price}</span>
-                  </div>
-                </div>
-                
-                <ul className="space-y-3 mb-6 h-[400px] overflow-y-auto pr-2 custom-scrollbar">
-                  {pkg.features.map((feature) => (
-                    <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
-                      <span>{feature}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <Button 
-                  variant="heroOutline" 
-                  className="w-full gap-2"
-                  onClick={() => handlePayment(pkg)}
-                  disabled={loading !== null}
+
+          {/* Premium Packages */}
+          <FadeIn className="text-center mb-8">
+            <h3 className="text-4xl font-display font-bold">Premium <span className="gradient-text">Packages</span>
+            </h3>
+          </FadeIn>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {premiumPackages.map((pkg, index) => (
+              <FadeIn key={pkg.name} delay={index * 0.1}>
+                <motion.div
+                  className="glass-card p-6 flex flex-col"
+                  whileHover={{ y: -4 }}
+                  transition={{ duration: 0.3 }}
                 >
-                  {loading === generatePackageString(pkg) ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      Processing...
-                    </>
-                  ) : (
-                    <>
-                      Order Now
-                      <ArrowRight className="w-4 h-4" />
-                    </>
-                  )}
-                </Button>
-              </motion.div>
-            </FadeIn>
-          ))}
+                  <div className="text-center mb-6">
+                    <h3 className="text-xl font-semibold text-foreground mb-2">{pkg.name}</h3>
+                    <div className="flex items-center justify-center gap-2">
+                      <span className="text-muted-foreground line-through text-sm">{pkg.originalPrice}</span>
+                      <span className="text-3xl font-bold gradient-text">{pkg.price}</span>
+                    </div>
+                  </div>
+
+                  <ul className="space-y-3 mb-6 h-[400px] overflow-y-auto pr-2 custom-scrollbar">
+                    {pkg.features.map((feature) => (
+                      <li key={feature} className="flex items-start gap-2 text-sm text-muted-foreground">
+                        <Check className="w-4 h-4 text-secondary shrink-0 mt-0.5" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+
+                  <Link href={`${baseCrmUrl}?item=${pkg.name}&amount=${pkg.amount}&category=${pkg.category}&currency_code=${pkg.currency_code}`}>
+                    <Button
+                      variant="heroOutline"
+                      className="w-full gap-2"
+                      disabled={loading !== null}
+                    >
+                      <>
+                        Order Now
+                        <ArrowRight className="w-4 h-4" />
+                      </>
+                    </Button>
+                  </Link>
+                </motion.div>
+              </FadeIn>
+            ))}
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <style>
+      <style>
 
-      {`
+        {`
       
       .ptzero
       {
@@ -445,8 +454,8 @@ export function LandingPricing() {
       
       `}
 
-    </style>
-    
+      </style>
+
     </>
   );
 }
