@@ -270,7 +270,7 @@ export function LandingPricing() {
       <div className="container">
         <FadeIn className="text-center mb-12">
           <span className="inline-flex items-center gap-2 text-[#84CC16] text-sm font-semibold tracking-wide uppercase mb-4 px-4 py-1.5 rounded-full bg-[#84CC16]/10 border border-[#84CC16]/20">
-            Pricing & Packages
+            Pricing & Packages 
           </span>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-4">

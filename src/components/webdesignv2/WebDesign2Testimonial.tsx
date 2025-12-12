@@ -324,7 +324,14 @@ export function WebDesign2Testimonial() {
   const column3 = B2B_TESTIMONIALS.filter(t => t.column === 3);
 
   return (
-    <section id="reviews" className="py-24 lg:py-32 pt-0 relative overflow-hidden">
+
+    <>
+
+    <div id="reviews" style={{visibility: 'hidden'}}>
+      <div>sdfs</div><div>sdfs</div><div>sdfs</div>    
+    </div>
+   
+    <section className="py-24 lg:py-32 relative overflow-hidden pt40 p25">
       <GridPattern variant="lines" className="opacity-20" />
       
       <div className="container relative">
@@ -381,5 +388,24 @@ export function WebDesign2Testimonial() {
         </div>
       </div>
     </section>
+    
+
+    <style>
+
+      {`
+      
+      .pt40
+      {
+        padding-top:40px;
+      }
+      .p25
+      {
+        padding-bottom:0;
+      }
+      
+      `}
+
+    </style>
+    </>
   );
 }

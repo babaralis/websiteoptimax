@@ -730,14 +730,17 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
   // Mobile: Move by 100% of visible width per tab (which is 100/TABS.length of slider container)
   const mobileTranslateX = -(mobileSliderOffset * (100 / TABS.length));
   return (
-    <section id="portfolio" className="py-24 lg:py-32 relative overflow-hidden">
+    <>
+
+    <section id="portfolio" className="py-24 lg:py-32 relative overflow-hidden p25">
+   
       <GridPattern variant="lines" className="opacity-20" />
-      <div className="container relative">
+      <div className="container relative" >
         <FadeIn className="text-center mb-16">
-          <h2 className="section-heading text-foreground ...">
+          <h2 className="section-heading text-foreground ..." >
             Featured <span className="gradient-text">B2B Projects</span>
           </h2>
-          <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
+          <p className="text-lg text-muted-foreground max-w-2xl mx-auto" >
             Every project represents a transformation in how B2B companies attract and convert buyers.
           </p>
         </FadeIn>
@@ -903,7 +906,7 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
                     className="w-full h-auto object-contain transition-transform duration-500 group-hover:scale-110"
                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent z-10" />
+                  <div className="absolute inset-0 from-background/80 to-transparent z-10" />
                   <Badge className="absolute top-4 left-4 z-20 bg-background/80 backdrop-blur-sm text-foreground">
                     {project.category}
                   </Badge>
@@ -989,5 +992,21 @@ export function NewPortfolio({ limit }: NewPortfolioProps) {
         </DialogContent>
       </Dialog>
     </section>
+    
+
+    <style>
+
+    {`
+
+        .p25
+        {
+          padding-bottom:48px;
+        }
+
+    `}
+
+    </style>
+    
+    </>
   );
 }
