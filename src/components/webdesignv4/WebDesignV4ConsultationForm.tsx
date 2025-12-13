@@ -107,7 +107,7 @@ export function WebDesignV4ConsultationForm() {
           aria-label="Toggle consultation form"
         >
           <span 
-            className="text-lg md:text-xl text-[#0D9488] font-semibold tracking-[0.1em] md:tracking-[0.12em] capitalize whitespace-nowrap"
+            className="text-lg md:text-xl text-black font-semibold tracking-[0.1em] md:tracking-[0.12em] capitalize whitespace-nowrap"
             style={{ 
               writingMode: 'vertical-rl',
               textOrientation: 'mixed',
@@ -190,7 +190,7 @@ export function WebDesignV4ConsultationForm() {
                     variant="hero"
                     size="lg"
                     disabled={isLoading}
-                    className="w-full shadow-[#84CC16]/25 bg-[#84CC16] text-[#0D9488] hover:bg-[#A3E635] text-sm sm:text-base"
+                    className="w-full shadow-[#84CC16]/25 bg-[#84CC16] text-black hover:bg-[#A3E635] hover:shadow-[#84CC16]/30 text-sm sm:text-base"
                   >
                     {isLoading ? (
                       "Sending..."

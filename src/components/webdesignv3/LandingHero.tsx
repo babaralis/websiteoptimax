@@ -108,9 +108,9 @@ export function LandingHero() {
             </p>
             <div className="mobile-hero-button">
               <button 
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#01E6DF] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#01E6DF] text-[#0149D1] hover:bg-[#01E4DB] shadow-lg hover:shadow-xl hover:shadow-[#01E6DF]/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg gap-2"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#01E6DF] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#01E6DF] text-white hover:bg-[#01E4DB] shadow-lg hover:shadow-xl hover:shadow-[#01E6DF]/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg gap-2"
                 style={{
-                  animation: 'pulse-glow-teal 2s ease-in-out infinite',
+                  animation: 'pulse-glow-teal 0.4s ease-in-out infinite',
                   boxShadow: '0 10px 15px -3px rgba(1, 230, 223, 0.25), 0 4px 6px -2px rgba(1, 230, 223, 0.25)',
                 }}
                 onClick={(e) => {
@@ -241,7 +241,7 @@ export function LandingHero() {
                       <a type="submit"
                         onClick={form.handleSubmit(onSubmit)}
                         href="#" 
-                        className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#01E6DF] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-[#01E6DF] text-[#0149D1] hover:bg-[#01E4DB] shadow-lg hover:shadow-xl hover:shadow-[#01E6DF]/30 hover:-translate-y-0.5 h-12 rounded-lg px-8 text-base shadow-[#01E6DF]/25 gap-2"
+                        className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#01E6DF] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-[#01E6DF] text-white hover:bg-[#01E4DB] shadow-lg hover:shadow-xl hover:shadow-[#01E6DF]/30 hover:-translate-y-0.5 h-12 rounded-lg px-8 text-base shadow-[#01E6DF]/25 gap-2"
                       >
                         Get A FREE Landing Page
                         <ArrowRight className="w-5 h-5 ml-2" />

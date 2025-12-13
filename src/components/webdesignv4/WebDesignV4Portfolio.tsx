@@ -794,7 +794,7 @@ export function WebDesignV4Portfolio({ limit }: WebDesignV4PortfolioProps) {
                         "px-6 py-3 rounded-lg text-sm font-medium whitespace-nowrap transition-all duration-300 flex-shrink-0",
                         "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#14B8A6] focus-visible:ring-offset-2",
                         isActive
-                          ? "bg-[#84CC16] text-[#0D9488] shadow-lg shadow-[#84CC16]/20"
+                          ? "bg-[#84CC16] text-black shadow-lg shadow-[#84CC16]/20"
                           : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
                       )}    
                     >
@@ -829,7 +829,7 @@ export function WebDesignV4Portfolio({ limit }: WebDesignV4PortfolioProps) {
                           "px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-300 flex-shrink-0",
                           "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#14B8A6] focus-visible:ring-offset-2",
                           isActive
-                            ? "bg-[#84CC16] text-[#0D9488] shadow-lg shadow-[#84CC16]/20"
+                            ? "bg-[#84CC16] text-black shadow-lg shadow-[#84CC16]/20"
                             : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
                         )}
                         style={{

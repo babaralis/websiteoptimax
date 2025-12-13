@@ -45,25 +45,25 @@ export function WebDesignV4Header() {
           <nav className="hidden md:flex items-center gap-8">
             <button
               onClick={() => scrollToSection('about')}
-              className="text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors animated-underline"
+              className="text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors animated-underline after:bg-[#84CC16]"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection('portfolio')}
-              className="text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors animated-underline"
+              className="text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors animated-underline after:bg-[#84CC16]"
             >
               Portfolio
             </button>
             <button
               onClick={() => scrollToSection('reviews')}
-              className="text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors animated-underline"
+              className="text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors animated-underline after:bg-[#84CC16]"
             >
               Reviews
             </button>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors animated-underline"
+              className="text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors animated-underline after:bg-[#84CC16]"
             >
               Pricing
             </button>
@@ -79,7 +79,7 @@ export function WebDesignV4Header() {
               }}
               variant="hero"
               size="lg"
-              className="ml-4 bg-[#84CC16] hover:bg-[#A3E635] text-[#0D9488]"
+              className="ml-4 bg-[#84CC16] hover:bg-[#A3E635] text-black shadow-[#84CC16]/25 hover:shadow-[#84CC16]/30"
             >
               Get Started
             </Button>
@@ -102,25 +102,25 @@ export function WebDesignV4Header() {
           <nav className="container-wide py-4 space-y-4">
             <button
               onClick={() => scrollToSection('about')}
-              className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors py-2"
+              className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors py-2 animated-underline after:bg-[#84CC16]"
             >
               About
             </button>
             <button
               onClick={() => scrollToSection('portfolio')}
-              className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors py-2"
+              className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors py-2 animated-underline after:bg-[#84CC16]"
             >
               Portfolio
             </button>
             <button
               onClick={() => scrollToSection('reviews')}
-              className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors py-2"
+              className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors py-2 animated-underline after:bg-[#84CC16]"
             >
               Reviews
             </button>
             <button
               onClick={() => scrollToSection('pricing')}
-              className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors py-2"
+              className="block w-full text-left text-sm font-medium text-muted-foreground hover:text-[#84CC16] transition-colors py-2 animated-underline after:bg-[#84CC16]"
             >
               Pricing
             </button>
@@ -137,7 +137,7 @@ export function WebDesignV4Header() {
               }}
               variant="hero"
               size="lg"
-              className="w-full bg-[#84CC16] hover:bg-[#A3E635] text-[#0D9488]"
+              className="w-full bg-[#84CC16] hover:bg-[#A3E635] text-black shadow-[#84CC16]/25 hover:shadow-[#84CC16]/30"
             >
               Get Started
             </Button>

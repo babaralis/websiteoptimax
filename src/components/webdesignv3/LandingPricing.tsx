@@ -315,7 +315,7 @@ export function LandingPricing() {
                 
                 <Button 
                   variant={pkg.popular ? "hero" : "heroOutline"} 
-                  className={`w-full gap-2 ${pkg.popular ? 'bg-[#01E6DF] text-[#0149D1] hover:bg-[#01E4DB] hover:border-[#01E4DB] shadow-[#01E6DF]/25 hover:shadow-[#01E4DB]/30' : 'border-[#01E6DF] text-[#01E6DF] hover:bg-[#01E6DF] hover:text-[#0149D1] hover:border-[#01E6DF]'}`}
+                  className={`w-full gap-2 ${pkg.popular ? 'bg-[#01E6DF] text-white hover:bg-[#01E4DB] hover:border-[#01E4DB] shadow-[#01E6DF]/25 hover:shadow-[#01E4DB]/30' : 'border-[#01E6DF] text-[#01E6DF] hover:bg-[#01E6DF] hover:text-white hover:border-[#01E6DF]'}`}
                   onClick={() => handlePayment(pkg)}
                   disabled={loading !== null}
                 >
@@ -368,7 +368,7 @@ export function LandingPricing() {
                 
                 <Button 
                   variant="heroOutline" 
-                  className="w-full gap-2 border-[#01E6DF] text-[#01E6DF] hover:bg-[#01E6DF] hover:text-[#0149D1] hover:border-[#01E6DF]"
+                  className="w-full gap-2 border-[#01E6DF] text-[#01E6DF] hover:bg-[#01E6DF] hover:text-white hover:border-[#01E6DF]"
                   onClick={() => handlePayment(pkg)}
                   disabled={loading !== null}
                 >

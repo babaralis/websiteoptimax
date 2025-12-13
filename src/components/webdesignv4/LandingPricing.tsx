@@ -289,7 +289,7 @@ export function LandingPricing() {
               >
                 {pkg.popular && (
                   <div className="absolute -top-3 left-1/2 -translate-x-1/2">
-                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#84CC16] text-[#0D9488] text-xs font-semibold">
+                    <span className="inline-flex items-center gap-1 px-3 py-1 rounded-full bg-[#84CC16] text-black text-xs font-semibold">
                       <Star className="w-3 h-3" />
                       Most Popular
                     </span>
@@ -315,7 +315,7 @@ export function LandingPricing() {
                 
                 <Button 
                   variant={pkg.popular ? "hero" : "heroOutline"} 
-                  className={`w-full gap-2 ${pkg.popular ? 'bg-[#84CC16] text-[#0D9488] hover:bg-[#A3E635] hover:border-[#A3E635] shadow-[#84CC16]/25 hover:shadow-[#A3E635]/30' : 'border-[#14B8A6] text-[#14B8A6] hover:bg-[#14B8A6] hover:text-white hover:border-[#14B8A6]'}`}
+                  className={`w-full gap-2 ${pkg.popular ? 'bg-[#84CC16] text-black hover:bg-[#84CC16] hover:border-[#84CC16] hover:text-black shadow-[#84CC16]/25 hover:shadow-[#84CC16]/30' : 'border-[#84CC16] text-[#84CC16] hover:bg-[#84CC16] hover:text-black hover:border-[#84CC16]'}`}
                   onClick={() => handlePayment(pkg)}
                   disabled={loading !== null}
                 >
@@ -368,7 +368,7 @@ export function LandingPricing() {
                 
                 <Button 
                   variant="heroOutline" 
-                  className="w-full gap-2 border-[#14B8A6] text-[#14B8A6] hover:bg-[#14B8A6] hover:text-white hover:border-[#14B8A6]"
+                  className="w-full gap-2 border-[#84CC16] text-[#84CC16] hover:bg-[#84CC16] hover:text-black hover:border-[#84CC16]"
                   onClick={() => handlePayment(pkg)}
                   disabled={loading !== null}
                 >
