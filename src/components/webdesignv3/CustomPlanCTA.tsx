@@ -41,9 +41,9 @@ export function CustomPlanCTA() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 mb-4">
             <button 
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#01E6DF] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#01E6DF] text-[#0149D1] hover:bg-[#01E4DB] shadow-lg hover:shadow-xl hover:shadow-[#01E6DF]/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg gap-2"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#01E6DF] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#01E6DF] text-black hover:bg-[#01E4DB] shadow-lg hover:shadow-xl hover:shadow-[#01E6DF]/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg gap-2"
               style={{
-                animation: 'pulse-glow-teal 2s ease-in-out infinite',
+                animation: 'pulse-glow-teal 0.67s ease-in-out infinite',
                 boxShadow: '0 10px 15px -3px rgba(1, 230, 223, 0.25), 0 4px 6px -2px rgba(1, 230, 223, 0.25)',
               }}
               onClick={(e) => {

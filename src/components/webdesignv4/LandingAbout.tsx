@@ -68,7 +68,7 @@ export function LandingAbout() {
               </div>
             </div>
             
-            <Button variant="hero" size="lg" className="shadow-[#84CC16]/25 bg-[#84CC16] text-[#0D9488] hover:bg-[#A3E635] hover:shadow-[#A3E635]/30">
+            <Button variant="hero" size="lg" className="shadow-[#84CC16]/25 bg-[#84CC16] text-black hover:bg-[#A3E635] hover:shadow-[#A3E635]/30">
               <Link 
                 href="#" 
                 className="flex items-center gap-2"

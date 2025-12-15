@@ -5,7 +5,7 @@ import { Toaster as Sonner } from "@/components/ui/sonner";
 import { Providers } from "./providers";
 import { Layout } from "@/components/layout/Layout";
 import { CookieConsent } from "@/components/CookieConsent";
-import { ScrollToTop } from "@/components/ScrollToTop";
+import { ConditionalScrollToTop } from "@/components/ConditionalScrollToTop";
 import Script from "next/script";
 import "@/index.css";
 import { ConsultationForm } from "@/components/forms/ConsultationForm";
@@ -168,7 +168,7 @@ export default function RootLayout({
           <Toaster />
           <Sonner />
           <CookieConsent />
-          <ScrollToTop />
+          <ConditionalScrollToTop />
         </Providers>
         
       </body>

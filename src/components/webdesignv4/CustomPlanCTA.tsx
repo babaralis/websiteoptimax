@@ -41,7 +41,7 @@ export function CustomPlanCTA() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 mb-4">
             <button 
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#14B8A6] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#84CC16] text-[#0D9488] hover:bg-[#A3E635] shadow-lg hover:shadow-xl hover:shadow-[#84CC16]/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg gap-2"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#14B8A6] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#84CC16] text-black hover:bg-[#A3E635] shadow-lg hover:shadow-xl hover:shadow-[#84CC16]/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg gap-2"
               style={{
                 animation: 'pulse-glow-lime 2s ease-in-out infinite',
                 boxShadow: '0 10px 15px -3px rgba(132, 204, 22, 0.25), 0 4px 6px -2px rgba(132, 204, 22, 0.25)',
