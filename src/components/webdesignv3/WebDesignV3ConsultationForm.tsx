@@ -102,12 +102,12 @@ export function WebDesignV3ConsultationForm() {
       >
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-[#01E6DF] text-[#0149D1] backdrop-blur-lg border-l border-[#01E6DF]/30 px-2 md:px-3 py-4 md:py-4 flex items-center justify-center hover:bg-[#01E4DB] transition-colors rounded-l-lg md:rounded-l-xl flex-shrink-0 shadow-lg shadow-[#01E6DF]/25"
+          className="bg-[#01E6DF] text-black backdrop-blur-lg border-l border-[#01E6DF]/30 px-2 md:px-3 py-4 md:py-4 flex items-center justify-center hover:bg-[#01E4DB] transition-colors rounded-l-lg md:rounded-l-xl flex-shrink-0 shadow-lg shadow-[#01E6DF]/25"
           style={{ width: '50px' }}
           aria-label="Toggle consultation form"
         >
           <span 
-            className="text-lg md:text-xl text-[#0149D1] font-semibold tracking-[0.1em] md:tracking-[0.12em] capitalize whitespace-nowrap"
+            className="text-lg md:text-xl text-black font-semibold tracking-[0.1em] md:tracking-[0.12em] capitalize whitespace-nowrap"
             style={{ 
               writingMode: 'vertical-rl',
               textOrientation: 'mixed',
@@ -190,7 +190,7 @@ export function WebDesignV3ConsultationForm() {
                     variant="hero"
                     size="lg"
                     disabled={isLoading}
-                    className="w-full shadow-[#01E6DF]/25 bg-[#01E6DF] text-[#0149D1] hover:bg-[#01E4DB] hover:shadow-[#01E4DB]/30 text-sm sm:text-base"
+                    className="w-full shadow-[#01E6DF]/25 bg-[#01E6DF] text-black hover:bg-[#01E4DB] hover:shadow-[#01E4DB]/30 text-sm sm:text-base"
                   >
                     {isLoading ? (
                       "Sending..."

@@ -216,7 +216,7 @@ function VideoPlayer({ videoSrc, author }: { videoSrc: string; author: string })
           onClick={togglePlay}
         >
           <div className="w-16 h-16 rounded-full bg-white/90 flex items-center justify-center shadow-lg hover:bg-white transition-colors">
-            <Play className="w-8 h-8 text-[#14B8A6] ml-1" fill="currentColor" />
+            <Play className="w-8 h-8 text-[#84CC16] ml-1" fill="currentColor" />
           </div>
         </div>
       )}

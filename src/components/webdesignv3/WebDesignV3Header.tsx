@@ -80,7 +80,7 @@ export function WebDesignV3Header() {
               }}
               variant="hero"
               size="lg"
-              className="ml-4 bg-[#01E6DF] hover:bg-[#01E4DB] text-white shadow-[#01E6DF]/25 hover:shadow-[#01E6DF]/30"
+              className="ml-4 bg-[#01E6DF] hover:bg-[#01E4DB] text-black shadow-[#01E6DF]/25 hover:shadow-[#01E6DF]/30"
             >
               Get Started
             </Button>
@@ -138,7 +138,7 @@ export function WebDesignV3Header() {
               }}
               variant="hero"
               size="lg"
-              className="w-full bg-[#01E6DF] hover:bg-[#01E4DB] text-white shadow-[#01E6DF]/25 hover:shadow-[#01E6DF]/30"
+              className="w-full bg-[#01E6DF] hover:bg-[#01E4DB] text-black shadow-[#01E6DF]/25 hover:shadow-[#01E6DF]/30"
             >
               Get Started
             </Button>

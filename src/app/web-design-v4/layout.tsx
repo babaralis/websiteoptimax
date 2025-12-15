@@ -1,6 +1,7 @@
 import { ReactNode } from "react";
 import { WebDesignV4Header } from "@/components/webdesignv4/WebDesignV4Header";
 import { WebDesignV4Footer } from "@/components/webdesignv4/WebDesignV4Footer";
+import { WebDesignV4ScrollToTop } from "@/components/webdesignv4/WebDesignV4ScrollToTop";
 import { PageTransition } from "@/components/animations/PageTransition";
 import Script from "next/script";
 
@@ -16,6 +17,7 @@ export default function WebDesignV4Layout({ children }: WebDesignV4LayoutProps) 
         <PageTransition>{children}</PageTransition>
       </main>
       <WebDesignV4Footer />
+      <WebDesignV4ScrollToTop />
       <Script
           id="zopim-live-chat"
           strategy="beforeInteractive"
