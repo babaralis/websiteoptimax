@@ -47,6 +47,10 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#050816",
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 5,
+  userScalable: true,
 };
 
 export default function RootLayout({
@@ -58,6 +62,20 @@ export default function RootLayout({
     <html lang="en" className="dark">
       <head>
         <meta name="robots" content="noindex, nofollow" />
+        
+        {/* Apple-specific meta tags for better iOS/Safari compatibility */}
+        <meta name="apple-mobile-web-app-capable" content="yes" />
+        <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+        <meta name="apple-mobile-web-app-title" content="Website Optimax" />
+        <meta name="format-detection" content="telephone=no" />
+        
+        {/* Preconnect to external domains for faster loading on all devices including Apple */}
+        <link rel="preconnect" href="https://payment.websiteoptimax.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://v2.zopim.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://www.googletagmanager.com" crossOrigin="anonymous" />
+        <link rel="preconnect" href="https://js.clickrank.ai" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://static.zdassets.com" />
+        <link rel="dns-prefetch" href="https://ipapi.co" />
 
               {/* Google Tag Manager - Loads 10 seconds after page load */}
       <Script id="google-tag-manager" strategy="afterInteractive">
@@ -92,35 +110,54 @@ export default function RootLayout({
           `}
         </Script>
 
+        {/* Zendesk Zopim Chat - Optimized for all devices including Apple */}
         <Script
           id="zopim-live-chat"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
-              window.$zopim || (function(d, s) {
-                var z = $zopim = function(c){ z._.push(c) },
-                $ = z.s = d.createElement(s),
-                e = d.getElementsByTagName(s)[0];
+              (function() {
+                // Ensure compatibility with Safari and iOS
+                if (typeof window !== 'undefined') {
+                  window.$zopim || (function(d, s) {
+                    var z = $zopim = function(c){ z._.push(c) },
+                    $ = z.s = d.createElement(s),
+                    e = d.getElementsByTagName(s)[0];
 
-                z.set = function(o){ z.set._.push(o) };
-                z._ = [];
-                z.set._ = [];
+                    z.set = function(o){ z.set._.push(o) };
+                    z._ = [];
+                    z.set._ = [];
 
-                $.async = true;
-                $.setAttribute("charset", "utf-8");
-                $.src = "https://v2.zopim.com/?6a6T9BZl3SsAEZGSlYnFPv3jrDOvIhpw";
-                z.t = +new Date;
-                $.type = "text/javascript";
-                e.parentNode.insertBefore($, e);
-              })(document, "script");
+                    $.async = true;
+                    $.setAttribute("charset", "utf-8");
+                    $.src = "https://v2.zopim.com/?6a6T9BZl3SsAEZGSlYnFPv3jrDOvIhpw";
+                    z.t = +new Date;
+                    $.type = "text/javascript";
+                    
+                    // Ensure proper loading on iOS Safari
+                    if (e && e.parentNode) {
+                      e.parentNode.insertBefore($, e);
+                    } else {
+                      d.head.appendChild($);
+                    }
+                  })(document, "script");
 
-              $zopim(function() {
-                $zopim.livechat.setOnUnreadMsgs(function(count) {
-                  if (count >= 1) {
-                    $zopim.livechat.window.show();
+                  // Configure Zopim for better mobile experience (iOS/Android)
+                  if (window.$zopim) {
+                    $zopim(function() {
+                      $zopim.livechat.setOnUnreadMsgs(function(count) {
+                        if (count >= 1) {
+                          $zopim.livechat.window.show();
+                        }
+                      });
+                      
+                      // Mobile-optimized settings
+                      $zopim.livechat.button.setOffsetVerticalMobile(60);
+                      $zopim.livechat.window.setSize('compact');
+                    });
                   }
-                });
-              });
+                }
+              })();
             `,
           }}
         />

@@ -21,6 +21,8 @@ export async function submitEmail(data: {
     headers: {
       Accept: 'application/json',
     },
+    credentials: 'omit', // Explicitly set for Safari compatibility
+    mode: 'cors', // Explicitly enable CORS
     body: formData,
   })
   
@@ -59,6 +61,8 @@ export async function submitContactEmail(data: {
     headers: {
       Accept: 'application/json',
     },
+    credentials: 'omit', // Explicitly set for Safari compatibility
+    mode: 'cors', // Explicitly enable CORS
     body: formData,
   })
   
@@ -80,6 +84,8 @@ export async function getCategories() {
     headers: {
       Accept: 'application/json',
     },
+    credentials: 'omit', // Explicitly set for Safari compatibility
+    mode: 'cors', // Explicitly enable CORS
   })
   
   const responseData = await res.json().catch(() => ({}))
