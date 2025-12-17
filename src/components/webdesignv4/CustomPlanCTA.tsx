@@ -12,22 +12,24 @@ export function CustomPlanCTA() {
       <div className="hidden lg:block absolute left-0 bottom-[-7rem] w-[24%] h-full pointer-events-none z-0">
         <div className="relative w-full h-full">
           <Image
-            src="/assets/images/webdesign/cta-01.webp"
+            src="/assets/images/webdesign/cta-0001.webp"
             alt="Design mockups"
             fill
             className="object-contain object-left-bottom"
             sizes="25vw"
+            style={{ minHeight: '530px', top:'-88px'}}
           />
         </div>
       </div>
       <div className="hidden lg:block absolute right-0 bottom-[-7rem] w-[24%] h-full pointer-events-none z-0">
         <div className="relative w-full h-full">
           <Image
-            src="/assets/images/webdesign/cta-02.webp"
+            src="/assets/images/webdesign/cta-002.webp"
             alt="Design mockups"
             fill
             className="object-contain object-right-bottom"
             sizes="25vw"
+            style={{ minHeight: '530px', top:'-88px'}}
           />
         </div>
       </div>
@@ -41,7 +43,7 @@ export function CustomPlanCTA() {
           </p>
           <div className="flex flex-wrap items-center justify-center gap-4 mb-4">
             <button 
-              className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#14B8A6] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#84CC16] text-black hover:bg-[#A3E635] shadow-lg hover:shadow-xl hover:shadow-[#84CC16]/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg gap-2"
+              className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#074348] focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#84CC16] text-black hover:bg-[#a3e635] shadow-lg hover:shadow-xl hover:shadow-[#84CC16]/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg gap-2"
               style={{
                 animation: 'pulse-glow-lime 2s ease-in-out infinite',
                 boxShadow: '0 10px 15px -3px rgba(132, 204, 22, 0.25), 0 4px 6px -2px rgba(132, 204, 22, 0.25)',

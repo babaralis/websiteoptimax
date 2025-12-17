@@ -68,7 +68,7 @@ export function LandingAbout() {
               </div>
             </div>
             
-            <Button variant="hero" size="lg" className="shadow-[#84CC16]/25 bg-[#84CC16] text-black hover:bg-[#A3E635] hover:shadow-[#A3E635]/30">
+            <Button variant="hero" size="lg" className="shadow-[#84CC16]/25 bg-[#84CC16] text-black hover:bg-[#a3e635] hover:shadow-[#A3E635]/30">
               <Link 
                 href="#" 
                 className="flex items-center gap-2"
@@ -91,7 +91,7 @@ export function LandingAbout() {
                 {highlights.map((item, index) => (
                   <motion.div
                     key={item.label}
-                    className="glass-card-elevated p-6 text-center"
+                    className="glass-card-elevated shadow-[0_0_0_0.0625rem_hsl(var(--border)_/_0.15),_0_0.625rem_0.9375rem_-0.1875rem_hsl(0_0%_0%_/_0.2),_0_0.25rem_0.375rem_-0.25rem_hsl(0_0%_0%_/_0.1),_0_1.5625rem_3.125rem_-0.75rem_hsl(83.74deg_80.53%_44.31%_/_13%),_inset_0_0.0625rem_0_0_hsl(var(--foreground)_/_0.08)] p-6 text-center"
                     whileHover={{ y: -4 }}
                     transition={{ duration: 0.3 }}
                     initial={{ opacity: 0, y: 20 }}

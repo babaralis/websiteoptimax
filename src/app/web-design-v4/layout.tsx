@@ -4,6 +4,7 @@ import { WebDesignV4Footer } from "@/components/webdesignv4/WebDesignV4Footer";
 import { WebDesignV4ScrollToTop } from "@/components/webdesignv4/WebDesignV4ScrollToTop";
 import { PageTransition } from "@/components/animations/PageTransition";
 import Script from "next/script";
+import "./web-design-v4.css";
 
 interface WebDesignV4LayoutProps {
   children: ReactNode;
@@ -11,7 +12,7 @@ interface WebDesignV4LayoutProps {
 
 export default function WebDesignV4Layout({ children }: WebDesignV4LayoutProps) {
   return (
-    <div className="min-h-screen flex flex-col bg-background">
+    <div className="min-h-screen flex flex-col bg-background web-design-v4-theme">
       <WebDesignV4Header />
       <main className="flex-1">
         <PageTransition>{children}</PageTransition>

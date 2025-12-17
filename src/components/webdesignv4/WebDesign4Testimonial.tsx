@@ -226,7 +226,7 @@ function VideoPlayer({ videoSrc, author }: { videoSrc: string; author: string })
 
 function TextTestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <Card className="h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#14B8A6]/10 border-border/50 hover:border-[#14B8A6]/30 bg-card/50 backdrop-blur-sm">
+    <Card className="h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#14B8A6]/10 border-border/50 hover:border-[#0d454b]/30 bg-card/50 backdrop-blur-sm">
       <CardContent className="p-6 flex flex-col h-full">
         <blockquote className="text-foreground mb-4 flex-1 text-sm leading-relaxed">
           "{testimonial.quote}"
@@ -246,7 +246,7 @@ function TextTestimonialCard({ testimonial }: { testimonial: Testimonial }) {
                 alt={testimonial.author}
                 fill
                 sizes="48px"
-                className="rounded-full object-cover border-2 border-[#14B8A6]/20"
+                className="rounded-full object-cover border-2 border-[#0d454b]/20"
               />
             </div>
             <div>
@@ -274,7 +274,7 @@ function TextTestimonialCard({ testimonial }: { testimonial: Testimonial }) {
 
 function VideoTestimonialCard({ testimonial }: { testimonial: Testimonial }) {
   return (
-    <Card className="h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#14B8A6]/10 border-border/50 hover:border-[#14B8A6]/30 bg-card/50 backdrop-blur-sm">
+    <Card className="h-full transition-all duration-300 hover:-translate-y-2 hover:shadow-xl hover:shadow-[#14B8A6]/10 border-border/50 hover:border-[#0d454b]/30 bg-card/50 backdrop-blur-sm">
       <CardContent className="p-6 flex flex-col h-full">
         <div className="mb-4">
           <VideoPlayer videoSrc={testimonial.video!} author={testimonial.author} />

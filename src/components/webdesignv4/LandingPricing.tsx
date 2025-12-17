@@ -238,7 +238,7 @@ export function LandingPricing() {
           {packages.map((pkg, index) => (
             <FadeIn key={pkg.name} delay={index * 0.1}>
               <motion.div
-                className={`glass-card-elevated p-6 flex flex-col relative ${pkg.popular ? 'ring-2 ring-[#14B8A6]' : ''}`}
+                className={`glass-card-elevated p-6 flex flex-col relative shadow-[0_0_3px_4px_rgb(132_204_22_/_25%)] ${pkg.popular ? 'ring-2 ring-[#074348] shadow-[0_0_3px_6px_rgb(132_204_22_/_48%)]' : ''}`}
                 whileHover={{ y: -4 }}
                 transition={{ duration: 0.3 }}
               >

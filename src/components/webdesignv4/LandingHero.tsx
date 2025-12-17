@@ -94,7 +94,7 @@ export function LandingHero() {
   return (
     <section className="relative min-h-screen flex items-center py-20 lg:py-28 overflow-hidden mobile-hero-section">
       <GridPattern className="opacity-20" />
-      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#14B8A6]/20 rounded-full blur-3xl" />
+      <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-[#84cc1640]/20 rounded-full blur-3xl" />
       <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-[#84CC16]/15 rounded-full blur-3xl" />
       <div className="container relative z-10 mobile-hero-container">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center mobile-hero-grid">
@@ -108,7 +108,7 @@ export function LandingHero() {
             </p>
             <div className="mobile-hero-button">
               <button 
-                className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#84CC16] text-black hover:bg-[#A3E635] shadow-lg hover:shadow-xl hover:shadow-[#84CC16]/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg gap-2"
+                className="inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 bg-[#84CC16] text-black hover:bg-[#a3e635] shadow-lg hover:shadow-xl hover:shadow-[#84CC16]/30 hover:-translate-y-0.5 h-14 rounded-xl px-10 text-lg gap-2"
                 style={{
                   animation: 'pulse-glow-lime 0.67s ease-in-out infinite',
                   boxShadow: '0 10px 15px -3px rgba(132, 204, 22, 0.25), 0 4px 6px -2px rgba(132, 204, 22, 0.25)',
@@ -141,7 +141,7 @@ export function LandingHero() {
           <FadeIn delay={0.2} className="mobile-hero-form">
             <motion.div 
               id="quote-form"
-              className="glass-card-premium p-8 shadow-[0_0_3px_6px_rgba(20,184,166,0.5)] border border-[#14B8A6]"
+              className="glass-card-premium p-8 shadow-[0_0_3px_6px_rgb(132_204_22_/_48%)] border border-[#84cc16]"
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: 0.3 }}
@@ -177,7 +177,7 @@ export function LandingHero() {
                             <FormControl>
                               <Input 
                                 placeholder="Full Name*" 
-                                className="bg-muted/50 border-border/50 h-12 focus-visible:border-[#14B8A6] focus-visible:ring-[#14B8A6]/20"
+                                className="bg-muted/50 border-border/50 h-12 focus-visible:border-[#074348] focus-visible:ring-[#074348]/20"
                                 {...field} 
                               />
                             </FormControl>
@@ -194,7 +194,7 @@ export function LandingHero() {
                               <Input 
                                 type="email"
                                 placeholder="Email Address*" 
-                                className="bg-muted/50 border-border/50 h-12 focus-visible:border-[#14B8A6] focus-visible:ring-[#14B8A6]/20"
+                                className="bg-muted/50 border-border/50 h-12 focus-visible:border-[#074348] focus-visible:ring-[#074348]/20"
                                 {...field} 
                               />
                             </FormControl>
@@ -211,7 +211,7 @@ export function LandingHero() {
                               <Input 
                                 type="tel"
                                 placeholder=" Phone No" 
-                                className="bg-muted/50 border-border/50 h-12 focus-visible:border-[#14B8A6] focus-visible:ring-[#14B8A6]/20"
+                                className="bg-muted/50 border-border/50 h-12 focus-visible:border-[#074348] focus-visible:ring-[#074348]/20"
                                 {...field} 
                               />
                             </FormControl>
@@ -227,7 +227,7 @@ export function LandingHero() {
                             <FormControl>
                               <Textarea 
                                 placeholder="To Help Us Understand Better, Enter A Brief Description About Your Project."
-                                className="bg-muted/50 border-border/50 min-h-[100px] resize-none focus-visible:border-[#14B8A6] focus-visible:ring-[#14B8A6]/20"
+                                className="bg-muted/50 border-border/50 min-h-[100px] resize-none focus-visible:border-[#074348] focus-visible:ring-[#074348]/20"
                                 {...field} 
                               />
                             </FormControl>
@@ -241,7 +241,7 @@ export function LandingHero() {
                       <a type="submit"
                         onClick={form.handleSubmit(onSubmit)}
                         href="#" 
-                        className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-[#84CC16] text-black hover:bg-[#A3E635] shadow-lg hover:shadow-xl hover:shadow-[#84CC16]/30 hover:-translate-y-0.5 h-12 rounded-lg px-8 text-base shadow-[#84CC16]/25 gap-2"
+                        className="w-full inline-flex items-center justify-center gap-2 whitespace-nowrap font-semibold ring-offset-background transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&amp;_svg]:pointer-events-none [&amp;_svg]:size-4 [&amp;_svg]:shrink-0 bg-[#84CC16] text-black hover:bg-[#a3e635] shadow-lg hover:shadow-xl hover:shadow-[#84CC16]/30 hover:-translate-y-0.5 h-12 rounded-lg px-8 text-base shadow-[#84CC16]/25 gap-2"
                       >
                         Get A FREE Landing Page
                         <ArrowRight className="w-5 h-5 ml-2" />
