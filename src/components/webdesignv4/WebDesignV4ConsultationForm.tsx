@@ -102,7 +102,7 @@ export function WebDesignV4ConsultationForm() {
       >
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="bg-[#84CC16] text-[#0D9488] backdrop-blur-lg border-l border-[#84CC16]/30 px-2 md:px-3 py-4 md:py-4 flex items-center justify-center hover:bg-[#A3E635] transition-colors rounded-l-lg md:rounded-l-xl flex-shrink-0 shadow-lg shadow-[#84CC16]/25"
+          className="bg-[#84CC16] text-[#0D9488] backdrop-blur-lg border-l border-[#84CC16]/30 px-2 md:px-3 py-4 md:py-4 flex items-center justify-center hover:bg-[#a3e635] transition-colors rounded-l-lg md:rounded-l-xl flex-shrink-0 shadow-lg shadow-[#84CC16]/25"
           style={{ width: '50px' }}
           aria-label="Toggle consultation form"
         >
@@ -144,7 +144,7 @@ export function WebDesignV4ConsultationForm() {
                       placeholder="Your Name Here"
                       value={formData.name}
                       onChange={handleChange}
-                      className="bg-background/50 border-[#14B8A6]/30 focus-visible:border-[#14B8A6] focus-visible:ring-[#14B8A6]/20 text-sm sm:text-base"
+                      className="bg-background/50 border-[#0d454b]/30 focus-visible:border-[#0d454b] focus-visible:ring-[#074348]/20 text-sm sm:text-base"
                       required
                     />
                   </div>
@@ -156,7 +156,7 @@ export function WebDesignV4ConsultationForm() {
                       placeholder="Phone Number"
                       value={formData.phone}
                       onChange={handleChange}
-                      className="bg-background/50 border-[#14B8A6]/30 focus-visible:border-[#14B8A6] focus-visible:ring-[#14B8A6]/20 text-sm sm:text-base"
+                      className="bg-background/50 border-[#0d454b]/30 focus-visible:border-[#0d454b] focus-visible:ring-[#074348]/20 text-sm sm:text-base"
                       required
                     />
                   </div>
@@ -168,7 +168,7 @@ export function WebDesignV4ConsultationForm() {
                       placeholder="Your Email"
                       value={formData.email}
                       onChange={handleChange}
-                      className="bg-background/50 border-[#14B8A6]/30 focus-visible:border-[#14B8A6] focus-visible:ring-[#14B8A6]/20 text-sm sm:text-base"
+                      className="bg-background/50 border-[#0d454b]/30 focus-visible:border-[#0d454b] focus-visible:ring-[#074348]/20 text-sm sm:text-base"
                       required
                     />
                   </div>
@@ -180,7 +180,7 @@ export function WebDesignV4ConsultationForm() {
                       value={formData.project}
                       onChange={handleChange}
                       rows={4}
-                      className="bg-background/50 border-[#14B8A6]/30 focus-visible:border-[#14B8A6] focus-visible:ring-[#14B8A6]/20 resize-none text-sm sm:text-base"
+                      className="bg-background/50 border-[#0d454b]/30 focus-visible:border-[#0d454b] focus-visible:ring-[#074348]/20 resize-none text-sm sm:text-base"
                       required
                     />
                   </div>
@@ -190,7 +190,7 @@ export function WebDesignV4ConsultationForm() {
                     variant="hero"
                     size="lg"
                     disabled={isLoading}
-                    className="w-full shadow-[#84CC16]/25 bg-[#84CC16] text-black hover:bg-[#A3E635] hover:shadow-[#84CC16]/30 text-sm sm:text-base"
+                    className="w-full shadow-[#84CC16]/25 bg-[#84CC16] text-black hover:bg-[#a3e635] hover:shadow-[#84CC16]/30 text-sm sm:text-base"
                   >
                     {isLoading ? (
                       "Sending..."

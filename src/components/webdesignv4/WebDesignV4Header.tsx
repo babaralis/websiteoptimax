@@ -34,7 +34,7 @@ export function WebDesignV4Header() {
         className={cn(
           "fixed top-0 left-0 right-0 z-50 transition-all",
           isScrolled
-            ? "bg-background/80 backdrop-blur-xl border-b border-[#14B8A6]/20 py-3"
+            ? "bg-background/80 backdrop-blur-xl border-b border-[#0d454b]/20 py-3"
             : "bg-transparent py-5"
         )}
       >
@@ -79,7 +79,7 @@ export function WebDesignV4Header() {
               }}
               variant="hero"
               size="lg"
-              className="ml-4 bg-[#84CC16] hover:bg-[#A3E635] text-black shadow-[#84CC16]/25 hover:shadow-[#84CC16]/30"
+              className="ml-4 bg-[#84CC16] hover:bg-[#a3e635] text-black shadow-[#84CC16]/25 hover:shadow-[#84CC16]/30"
             >
               Get Started
             </Button>
@@ -97,7 +97,7 @@ export function WebDesignV4Header() {
             height: isMobileMenuOpen ? "auto" : 0,
             opacity: isMobileMenuOpen ? 1 : 0,
           }}
-          className="md:hidden overflow-hidden bg-background/95 backdrop-blur-xl border-b border-[#14B8A6]/20"
+          className="md:hidden overflow-hidden bg-background/95 backdrop-blur-xl border-b border-[#0d454b]/20"
         >
           <nav className="container-wide py-4 space-y-4">
             <button
@@ -137,7 +137,7 @@ export function WebDesignV4Header() {
               }}
               variant="hero"
               size="lg"
-              className="w-full bg-[#84CC16] hover:bg-[#A3E635] text-black shadow-[#84CC16]/25 hover:shadow-[#84CC16]/30"
+              className="w-full bg-[#84CC16] hover:bg-[#a3e635] text-black shadow-[#84CC16]/25 hover:shadow-[#84CC16]/30"
             >
               Get Started
             </Button>

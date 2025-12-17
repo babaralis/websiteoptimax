@@ -5,8 +5,9 @@ import { motion } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
-import { Check, ArrowRight, Sparkles, Loader2 } from "lucide-react";
+import { Check, ArrowRight, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Link from "next/link";
 
 type Plan = {
   name: string;
@@ -15,6 +16,9 @@ type Plan = {
   features: string[];
   popular?: boolean;
   cta: string;
+  amount: number;
+  category: string;
+  currency_code: string;
 };
 
 type TabId = "html" | "cms" | "ecom" | "portal";
@@ -53,6 +57,9 @@ const pricingTabs: PricingTab[] = [
           "Social Media Integrations",
         ],
         cta: "Order Now",
+        amount: 299,
+        category: "HTML Website",
+        currency_code: "USD",
       },
       {
         name: "5 Pages",
@@ -76,6 +83,9 @@ const pricingTabs: PricingTab[] = [
         ],
         popular: true,
         cta: "Order Now",
+        amount: 499,
+        category: "HTML Website",
+        currency_code: "USD",
       },
       {
         name: "8 Pages",
@@ -99,6 +109,9 @@ const pricingTabs: PricingTab[] = [
           "Social Media Integrations",
         ],
         cta: "Order Now",
+        amount: 699,
+        category: "HTML Website",
+        currency_code: "USD",
       },
       {
         name: "12 Pages",
@@ -122,6 +135,9 @@ const pricingTabs: PricingTab[] = [
           "Social Media Integrations",
         ],
         cta: "Order Now",
+        amount: 899,
+        category: "HTML Website",
+        currency_code: "USD",
       },
     ],
   },
@@ -151,6 +167,9 @@ const pricingTabs: PricingTab[] = [
           "Social Media Integrations",
         ],
         cta: "Order Now",
+        amount: 399,
+        category: "CMS Website",
+        currency_code: "USD",
       },
       {
         name: "5 Pages CMS Website",
@@ -174,6 +193,9 @@ const pricingTabs: PricingTab[] = [
           "Social Media Integrations",
         ],
         cta: "Order Now",
+        amount: 799,
+        category: "CMS Website",
+        currency_code: "USD",
       },
       {
         name: "8 Pages CMS Website",
@@ -197,6 +219,9 @@ const pricingTabs: PricingTab[] = [
           "Social Media Integrations",
         ],
         cta: "Order Now",
+        amount: 999,
+        category: "CMS Website",
+        currency_code: "USD",
       },
       {
         name: "12 Pages CMS Website",
@@ -221,6 +246,9 @@ const pricingTabs: PricingTab[] = [
           "3 Month LiveChat Support Agent",
         ],
         cta: "Order Now",
+        amount: 1299,
+        category: "CMS Website",
+        currency_code: "USD",
       },
     ],
   },
@@ -254,6 +282,9 @@ const pricingTabs: PricingTab[] = [
           "Social Media Integrations",
         ],
         cta: "Order Now",
+        amount: 1499,
+        category: "E-Commerce Website",
+        currency_code: "USD",
       },
       {
         name: "Extended E-Com Website",
@@ -280,6 +311,9 @@ const pricingTabs: PricingTab[] = [
           "Social Media Integrations",
         ],
         cta: "Order Now",
+        amount: 2499,
+        category: "E-Commerce Website",
+        currency_code: "USD",
       },
       {
         name: "Professional E-Com Website",
@@ -313,6 +347,9 @@ const pricingTabs: PricingTab[] = [
           "Social Media Integrations",
         ],
         cta: "Order Now",
+        amount: 3999,
+        category: "E-Commerce Website",
+        currency_code: "USD",
       },
       {
         name: "Enterprise E-Com Website",
@@ -347,6 +384,9 @@ const pricingTabs: PricingTab[] = [
           "Social Media Integrations",
         ],
         cta: "Order Now",
+        amount: 5999,
+        category: "E-Commerce Website",
+        currency_code: "USD",
       },
     ],
   },
@@ -391,6 +431,9 @@ const pricingTabs: PricingTab[] = [
           "3 Month LiveChat Agent",
         ],
         cta: "Discuss Now",
+        amount: 0,
+        category: "Marketplace Portal",
+        currency_code: "USD",
       },
       {
         name: "Service Based Marketplace",
@@ -426,6 +469,9 @@ const pricingTabs: PricingTab[] = [
           "3 Month LiveChat Agent",
         ],
         cta: "Discuss Now",
+        amount: 0,
+        category: "Marketplace Portal",
+        currency_code: "USD",
       },
       {
         name: "Networking Based Marketplace",
@@ -454,95 +500,18 @@ const pricingTabs: PricingTab[] = [
           "i.e. Social Networking Sites",
         ],
         cta: "Discuss Now",
+        amount: 0,
+        category: "Marketplace Portal",
+        currency_code: "USD",
       },
     ],
   },
 ];
 
 export function HomeWebPricing({className}: {className?: string}) {
+  const baseCrmUrl = "https://payment.websiteoptimax.com/payment/paynow";
   const [activeTab, setActiveTab] = useState<TabId>("html");
-  const [loading, setLoading] = useState<string | null>(null);
   const currentTab = pricingTabs.find((tab) => tab.id === activeTab)!;
-
-  // Helper function to generate package string
-  const generatePackageString = (tab: PricingTab, plan: Plan): string => {
-    // Extract currency and price from price string (e.g., "$299" -> "USD", "299")
-    const priceMatch = plan.price.match(/\$(\d+)/);
-    const currency = "USD";
-    const price = priceMatch ? priceMatch[1] : "0";
-    const discount = "0";
-    
-    // Format: Category-Type-Currency-Price-Discount
-    // Category is the tab label, Type is the plan name
-    // Handle special case: "E-Com Website" -> "ECom"
-    let category = tab.label;
-    if (category.includes("E-Com")) {
-      category = "ECom";
-    } else {
-      // Replace hyphens with spaces for other categories to avoid parsing issues
-      category = category.replace(/\s+/g, " ").replace(/-/g, " ");
-    }
-    
-    // Replace hyphens with spaces in type to avoid parsing issues
-    let type = plan.name.replace(/\s+/g, " ").replace(/-/g, " ");
-    type = type.replace(/E Com/g, "ECom"); // Convert "E Com" to "ECom" in type if needed
-    
-    return `${category}-${type}-${currency}-${price}-${discount}`;
-  };
-
-  // Handle payment button click
-  const handlePayment = async (tab: PricingTab, plan: Plan) => {
-    const packageString = generatePackageString(tab, plan);
-    
-    // Parse the package string
-    const firstHyphen = packageString.indexOf("-");
-    const category = packageString.substring(0, firstHyphen);
-    const rest = packageString.substring(firstHyphen + 1);
-    const parts = rest.split("-");
-    
-    const item_name = `${category} ${parts[0]}`;
-    const currency_code = parts[1];
-    const price = parts[2];
-    const discount = parts[3];
-
-    const item = {
-      item_name,
-      price,
-      currency_code,
-      category,
-      discount,
-    };
-
-    setLoading(packageString);
-
-    try {
-      const response = await fetch("https://payment.websiteoptimax.com/api/payment/ordernow/store", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json;charset=UTF-8",
-        },
-        credentials: "omit", // Explicitly set for Safari compatibility
-        mode: "cors", // Explicitly enable CORS
-        body: JSON.stringify(item),
-      });
-
-      const data = await response.json();
-
-      if (data.success && data.link) {
-        window.open(data.link, "_blank");
-        setLoading(null);
-      } else {
-        console.error("Payment failed:", data);
-        alert("Payment processing failed. Please try again or contact support.");
-        setLoading(null);
-      }
-    } catch (error) {
-      console.error("Payment error:", error);
-      alert("An error occurred. Please try again or contact support.");
-      setLoading(null);
-    }
-  };
 
   return (
     <section className={cn("py-24 lg:py-32", className)}>
@@ -661,33 +630,32 @@ export function HomeWebPricing({className}: {className?: string}) {
                       ))}
                     </ul>
 
-                    <Button
-                      variant={plan.popular ? "hero" : "outline"}
-                      size="lg"
-                      className="w-full text-sm font-semibold gap-2"
-                      onClick={() => {
-                        if (plan.cta === "Discuss Now") {
+                    {plan.cta === "Discuss Now" ? (
+                      <Button
+                        variant={plan.popular ? "hero" : "outline"}
+                        size="lg"
+                        className="w-full text-sm font-semibold gap-2"
+                        onClick={() => {
                           if (typeof window !== 'undefined' && (window as any).$zopim) {
                             (window as any).$zopim.livechat.window.toggle();
                           }
-                        } else {
-                          handlePayment(currentTab, plan);
-                        }
-                      }}
-                      disabled={loading !== null || (plan.price === "Portal" && plan.cta !== "Discuss Now")}
-                    >
-                      {loading === generatePackageString(currentTab, plan) ? (
-                        <>
-                          <Loader2 className="w-4 h-4 animate-spin" />
-                          Processing...
-                        </>
-                      ) : (
-                        <>
+                        }}
+                      >
+                        {plan.cta}
+                        <ArrowRight className="w-4 h-4" />
+                      </Button>
+                    ) : (
+                      <Link href={`${baseCrmUrl}?item=${plan.name}&amount=${plan.amount}&category=${plan.category}&currency_code=${plan.currency_code}`}>
+                        <Button
+                          variant={plan.popular ? "hero" : "outline"}
+                          size="lg"
+                          className="w-full text-sm font-semibold gap-2"
+                        >
                           {plan.cta}
                           <ArrowRight className="w-4 h-4" />
-                        </>
-                      )}
-                    </Button>
+                        </Button>
+                      </Link>
+                    )}
                   </CardContent>
                 </Card>
               </motion.div>
@@ -764,33 +732,32 @@ export function HomeWebPricing({className}: {className?: string}) {
                         ))}
                       </ul>
 
-                      <Button
-                        variant={plan.popular ? "hero" : "outline"}
-                        size="lg"
-                        className="w-full text-sm font-semibold gap-2"
-                        onClick={() => {
-                          if (plan.cta === "Discuss Now") {
+                      {plan.cta === "Discuss Now" ? (
+                        <Button
+                          variant={plan.popular ? "hero" : "outline"}
+                          size="lg"
+                          className="w-full text-sm font-semibold gap-2"
+                          onClick={() => {
                             if (typeof window !== 'undefined' && (window as any).$zopim) {
                               (window as any).$zopim.livechat.window.toggle();
                             }
-                          } else {
-                            handlePayment(currentTab, plan);
-                          }
-                        }}
-                        disabled={loading !== null || (plan.price === "Portal" && plan.cta !== "Discuss Now")}
-                      >
-                        {loading === generatePackageString(currentTab, plan) ? (
-                          <>
-                            <Loader2 className="w-4 h-4 animate-spin" />
-                            Processing...
-                          </>
-                        ) : (
-                          <>
+                          }}
+                        >
+                          {plan.cta}
+                          <ArrowRight className="w-4 h-4" />
+                        </Button>
+                      ) : (
+                        <Link href={`${baseCrmUrl}?item=${plan.name}&amount=${plan.amount}&category=${plan.category}&currency_code=${plan.currency_code}`}>
+                          <Button
+                            variant={plan.popular ? "hero" : "outline"}
+                            size="lg"
+                            className="w-full text-sm font-semibold gap-2"
+                          >
                             {plan.cta}
                             <ArrowRight className="w-4 h-4" />
-                          </>
-                        )}
-                      </Button>
+                          </Button>
+                        </Link>
+                      )}
                     </CardContent>
                   </Card>
                 </motion.div>

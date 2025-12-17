@@ -745,7 +745,7 @@ export function WebDesignV4Portfolio({ limit }: WebDesignV4PortfolioProps) {
             {canScrollPrev && (
               <button
                 onClick={handlePrev}
-                className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-[#14B8A6]/30 shadow-md items-center justify-center hover:bg-[#14B8A6]/10 transition-colors"
+                className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-[#0d454b]/30 shadow-md items-center justify-center hover:bg-[#14B8A6]/10 transition-colors"
                 aria-label="Previous tabs"
               >
                 <ChevronLeft className="h-5 w-5 text-[#14B8A6]" />
@@ -754,7 +754,7 @@ export function WebDesignV4Portfolio({ limit }: WebDesignV4PortfolioProps) {
             {canScrollPrevMobile && (
               <button
                 onClick={handlePrev}
-                className="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-background border border-[#14B8A6]/30 shadow-md flex items-center justify-center hover:bg-[#14B8A6]/10 transition-colors"
+                className="md:hidden absolute left-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-background border border-[#0d454b]/30 shadow-md flex items-center justify-center hover:bg-[#14B8A6]/10 transition-colors"
                 aria-label="Previous tabs"
               >
                 <ChevronLeft className="h-4 w-4 text-[#14B8A6]" />
@@ -792,7 +792,7 @@ export function WebDesignV4Portfolio({ limit }: WebDesignV4PortfolioProps) {
                       onClick={() => setActiveTab(tab)}
                       className={cn(
                         "px-6 py-3 rounded-lg text-sm font-medium whitespace-nowrap transition-all duration-300 flex-shrink-0",
-                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#14B8A6] focus-visible:ring-offset-2",
+                        "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#074348] focus-visible:ring-offset-2",
                         isActive
                           ? "bg-[#84CC16] text-black shadow-lg shadow-[#84CC16]/20"
                           : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
@@ -827,7 +827,7 @@ export function WebDesignV4Portfolio({ limit }: WebDesignV4PortfolioProps) {
                         onClick={() => setActiveTab(tab)}
                         className={cn(
                           "px-4 py-2.5 rounded-lg text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-300 flex-shrink-0",
-                          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#14B8A6] focus-visible:ring-offset-2",
+                          "focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#074348] focus-visible:ring-offset-2",
                           isActive
                             ? "bg-[#84CC16] text-black shadow-lg shadow-[#84CC16]/20"
                             : "bg-muted text-muted-foreground hover:bg-muted/80 hover:text-foreground"
@@ -846,7 +846,7 @@ export function WebDesignV4Portfolio({ limit }: WebDesignV4PortfolioProps) {
             {canScrollNext && (
               <button
                 onClick={handleNext}
-                className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-[#14B8A6]/30 shadow-md items-center justify-center hover:bg-[#14B8A6]/10 transition-colors"
+                className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-20 w-10 h-10 rounded-full bg-background border border-[#0d454b]/30 shadow-md items-center justify-center hover:bg-[#14B8A6]/10 transition-colors"
                 aria-label="Next tabs"
               >
                 <ChevronRight className="h-5 w-5 text-[#14B8A6]" />
@@ -855,7 +855,7 @@ export function WebDesignV4Portfolio({ limit }: WebDesignV4PortfolioProps) {
             {canScrollNextMobile && (
               <button
                 onClick={handleNext}
-                className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-background border border-[#14B8A6]/30 shadow-md flex items-center justify-center hover:bg-[#14B8A6]/10 transition-colors"
+                className="md:hidden absolute right-0 top-1/2 -translate-y-1/2 z-20 w-8 h-8 rounded-full bg-background border border-[#0d454b]/30 shadow-md flex items-center justify-center hover:bg-[#14B8A6]/10 transition-colors"
                 aria-label="Next tabs"
               >
                 <ChevronRight className="h-4 w-4 text-[#14B8A6]" />
@@ -878,7 +878,7 @@ export function WebDesignV4Portfolio({ limit }: WebDesignV4PortfolioProps) {
                     className={cn(
                       "group overflow-hidden transition-all duration-300",
                       "hover:-translate-y-2 hover:shadow-xl hover:shadow-[#14B8A6]/10",
-                      "border-border/50 hover:border-[#14B8A6]/30",
+                      "border-border/50 hover:border-[#0d454b]/30",
                       "bg-card/50 backdrop-blur-sm cursor-pointer"
                     )}
                     onClick={() => handleCardClick(project)}
@@ -953,11 +953,11 @@ export function WebDesignV4Portfolio({ limit }: WebDesignV4PortfolioProps) {
                     );
                   })()}
                 </div>
-                <div className="border-t border-[#14B8A6]/20 bg-background p-6">
+                <div className="border-t border-[#0d454b]/20 bg-background p-6">
                   <div className="flex items-start justify-between gap-4">
                     <div className="flex-1">
                       <div className="flex items-center gap-3 mb-2">
-                        <Badge variant="secondary" className="bg-[#14B8A6]/10 text-[#14B8A6] border-[#14B8A6]/20">{selectedImage.category}</Badge>
+                        <Badge variant="secondary" className="bg-[#14B8A6]/10 text-[#14B8A6] border-[#0d454b]/20">{selectedImage.category}</Badge>
                         <div className="flex items-center gap-2 text-success font-semibold">
                           <TrendingUp className="h-4 w-4" />
                           <span>{selectedImage.result}</span>

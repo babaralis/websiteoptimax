@@ -10,7 +10,7 @@ const logos = Array.from({ length: 14 }, (_, i) => ({
 
 export function LandingLogoSlider() {
   return (
-    <section className="py-8 lg:py-12 relative overflow-hidden border-y border-[#14B8A6]/30 bg-surface/30">
+    <section className="py-8 lg:py-12 relative overflow-hidden border-y border-[#0d454b]/30 bg-surface/30">
       <div className="container">
         <p className="text-center text-sm text-muted-foreground mb-6">
         Trusted by teams at <span className="text-foreground font-semibold">growth-focused</span> brands
@@ -32,7 +32,7 @@ export function LandingLogoSlider() {
             {[...logos, ...logos].map((logo, index) => (
               <div
                 key={`${logo.src}-${index}`}
-                className="flex items-center justify-center shrink-0 px-8 py-4 rounded-xl bg-card/50 border border-[#14B8A6]/30 h-24 w-48 md:h-28 md:w-56"
+                className="flex items-center justify-center shrink-0 px-8 py-4 rounded-xl bg-card/50 border border-[#0d454b]/30 h-24 w-48 md:h-28 md:w-56"
               >
                 <Image
                   src={logo.src}

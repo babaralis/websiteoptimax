@@ -1,10 +1,9 @@
 'use client';
 
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { FadeIn } from "@/components/animations/FadeIn";
 import { Button } from "@/components/ui/button";
-import { Check, Phone, MessageSquare, Star, ArrowRight, Loader2 } from "lucide-react";
+import { Check, Star, ArrowRight } from "lucide-react";
 import Link from "next/link";
 
 const packages = [
@@ -32,6 +31,9 @@ const packages = [
       "100% Money Back Guarantee *",
       "NO MONTHLY OR ANY YEARLY FEE *",
     ],
+    amount: 199,
+    category: 'Website Development',
+    currency_code: 'USD'
   },
   {
     name: "PROFESSIONAL",
@@ -59,6 +61,9 @@ const packages = [
       "CMS will be additional $149 *",
       "Mobile Responsive will be additional $199 *",
     ],
+    amount: 695,
+    category: 'Website Development',
+    currency_code: 'USD'
   },
   {
     name: "ELITE",
@@ -89,6 +94,9 @@ const packages = [
       "Mobile Responsive will be additional $199 *",
       "*NO MONTHLY OR ANY HIDDEN FEE*",
     ],
+    amount: 995,
+    category: 'Website Development',
+    currency_code: 'USD'
   },
 ];
 
@@ -125,6 +133,9 @@ const premiumPackages = [
       "100% Ownership Rights",
       "*NO MONTHLY OR ANY HIDDEN FEE*",
     ],
+    amount: 1595,
+    category: 'Website Development',
+    currency_code: 'USD'
   },
   {
     name: "BUSINESS",
@@ -159,6 +170,9 @@ const premiumPackages = [
       "100% Ownership Rights",
       "*NO MONTHLY OR ANY HIDDEN FEE*",
     ],
+    amount: 2495,
+    category: 'Website Development',
+    currency_code: 'USD'
   },
   {
     name: "PLATINUM",
@@ -197,75 +211,14 @@ const premiumPackages = [
       "100% Ownership Rights",
       "*NO MONTHLY OR ANY HIDDEN FEE*",
     ],
+    amount: 4495,
+    category: 'Website Development',
+    currency_code: 'USD'
   },
 ];
 
 export function LandingPricing() {
-  const [loading, setLoading] = useState<string | null>(null);
-
-  const generatePackageString = (pkg: typeof packages[0] | typeof premiumPackages[0]): string => {
-    const priceMatch = pkg.price.match(/\$?([\d,]+)/);
-    const currency = "USD";
-    const price = priceMatch ? priceMatch[1].replace(/,/g, "") : "0";
-    const discount = "0";
-    
-    const category = "Website Design";
-    let type = pkg.name.replace(/\s+/g, " ").replace(/-/g, " ");
-    
-    return `${category}-${type}-${currency}-${price}-${discount}`;
-  };
-
-  const handlePayment = async (pkg: typeof packages[0] | typeof premiumPackages[0]) => {
-    const packageString = generatePackageString(pkg);
-    
-    const firstHyphen = packageString.indexOf("-");
-    const category = packageString.substring(0, firstHyphen);
-    const rest = packageString.substring(firstHyphen + 1);
-    const parts = rest.split("-");
-    
-    const item_name = `${category} ${parts[0]}`;
-    const currency_code = parts[1];
-    const price = parts[2];
-    const discount = parts[3];
-
-    const item = {
-      item_name,
-      price,
-      currency_code,
-      category,
-      discount,
-    };
-
-    setLoading(packageString);
-
-    try {
-      const response = await fetch("https://payment.websiteoptimax.com/api/payment/ordernow/store", {
-        method: "POST",
-        headers: {
-          Accept: "application/json",
-          "Content-Type": "application/json;charset=UTF-8",
-        },
-        credentials: "omit", // Explicitly set for Safari compatibility
-        mode: "cors", // Explicitly enable CORS
-        body: JSON.stringify(item),
-      });
-
-      const data = await response.json();
-
-      if (data.success && data.link) {
-        window.open(data.link, "_blank");
-        setLoading(null);
-      } else {
-        console.error("Payment failed:", data);
-        alert("Payment processing failed. Please try again or contact support.");
-        setLoading(null);
-      }
-    } catch (error) {
-      console.error("Payment error:", error);
-      alert("An error occurred. Please try again or contact support.");
-      setLoading(null);
-    }
-  };
+  const baseCrmUrl = "https://payment.websiteoptimax.com/payment/paynow";
 
   return (
     <section id="pricing" className="py-20 lg:py-28 relative overflow-hidden pt-0">
@@ -315,24 +268,15 @@ export function LandingPricing() {
                   ))}
                 </ul>
                 
-                <Button 
-                  variant={pkg.popular ? "hero" : "heroOutline"} 
-                  className={`w-full gap-2 ${pkg.popular ? 'bg-[#01E6DF] text-black hover:bg-[#01E4DB] hover:border-[#01E4DB] shadow-[#01E6DF]/25 hover:shadow-[#01E4DB]/30' : 'border-[#01E6DF] text-[#01E6DF] hover:bg-[#01E6DF] hover:text-black hover:border-[#01E6DF]'}`}
-                  onClick={() => handlePayment(pkg)}
-                  disabled={loading !== null}
-                >
-                  {loading === generatePackageString(pkg) ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      Processing...
-                    </>
-                  ) : (
-                    <>
-                      Order Now
-                      <ArrowRight className="w-4 h-4" />
-                    </>
-                  )}
-                </Button>
+                <Link href={`${baseCrmUrl}?item=${pkg.name}&amount=${pkg.amount}&category=${pkg.category}&currency_code=${pkg.currency_code}`}>
+                  <Button 
+                    variant={pkg.popular ? "hero" : "heroOutline"} 
+                    className={`w-full gap-2 ${pkg.popular ? 'bg-[#01E6DF] text-black hover:bg-[#01E4DB] hover:border-[#01E4DB] shadow-[#01E6DF]/25 hover:shadow-[#01E4DB]/30' : 'border-[#01E6DF] text-[#01E6DF] hover:bg-[#01E6DF] hover:text-black hover:border-[#01E6DF]'}`}
+                  >
+                    Order Now
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
               </motion.div>
             </FadeIn>
           ))}
@@ -368,24 +312,15 @@ export function LandingPricing() {
                   ))}
                 </ul>
                 
-                <Button 
-                  variant="heroOutline" 
-                  className="w-full gap-2 border-[#01E6DF] text-[#01E6DF] hover:bg-[#01E6DF] hover:text-black hover:border-[#01E6DF]"
-                  onClick={() => handlePayment(pkg)}
-                  disabled={loading !== null}
-                >
-                  {loading === generatePackageString(pkg) ? (
-                    <>
-                      <Loader2 className="w-4 h-4 animate-spin" />
-                      Processing...
-                    </>
-                  ) : (
-                    <>
-                      Order Now
-                      <ArrowRight className="w-4 h-4" />
-                    </>
-                  )}
-                </Button>
+                <Link href={`${baseCrmUrl}?item=${pkg.name}&amount=${pkg.amount}&category=${pkg.category}&currency_code=${pkg.currency_code}`}>
+                  <Button 
+                    variant="heroOutline" 
+                    className="w-full gap-2 border-[#01E6DF] text-[#01E6DF] hover:bg-[#01E6DF] hover:text-black hover:border-[#01E6DF]"
+                  >
+                    Order Now
+                    <ArrowRight className="w-4 h-4" />
+                  </Button>
+                </Link>
               </motion.div>
             </FadeIn>
           ))}
