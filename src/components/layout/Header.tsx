@@ -45,7 +45,7 @@ export function Header() {
             : "bg-transparent py-5 duration-300"
         )}
       >
-        <div className="container-wide flex items-center justify-between">
+        <div className="container flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
               <Image src="/assets/images/logos/logo.svg" alt="Website Optimax" width={150} height={100} />
