@@ -77,6 +77,20 @@ export default function RootLayout({
         <link rel="dns-prefetch" href="https://static.zdassets.com" />
         <link rel="dns-prefetch" href="https://ipapi.co" />
 
+        {/* Google Ads (gtag.js) */}
+        <Script 
+          src="https://www.googletagmanager.com/gtag/js?id=AW-17795363418" 
+          strategy="afterInteractive"
+        />
+        <Script id="google-ads-init" strategy="afterInteractive">
+          {`
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+            gtag('config', 'AW-17795363418');
+          `}
+        </Script>
+
               {/* Google Tag Manager - Loads 10 seconds after page load */}
       <Script id="google-tag-manager" strategy="afterInteractive">
           {`(function(){

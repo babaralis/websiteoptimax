@@ -42,6 +42,15 @@ export function WebDesignV3ConsultationForm() {
     try {
       await contactLead(data);
       
+      // Fire Google Ads conversion tracking
+      if (typeof window !== 'undefined' && window.gtag) {
+        window.gtag('event', 'conversion', {
+          'send_to': 'AW-17795363418/oY1jCKi3rdQbENrkvqVC',
+          'value': 1.0,
+          'currency': 'USD'
+        });
+      }
+      
       trackEvent({
         action: "form_submit",
         category: "Contact",
