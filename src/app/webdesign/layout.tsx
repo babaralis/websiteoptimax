@@ -60,7 +60,7 @@ export default function WebDesignV2Layout({ children }: WebDesignV2LayoutProps) 
             t.src=v;s=b.getElementsByTagName(e)[0];
             s.parentNode.insertBefore(t,s)}(window, document,'script',
             'https://connect.facebook.net/en_US/fbevents.js');
-            fbq('init', '1210367194365034');
+            fbq('init', '1388369529394198');
             fbq('track', 'PageView');
           `}
         </Script>
@@ -69,7 +69,7 @@ export default function WebDesignV2Layout({ children }: WebDesignV2LayoutProps) 
             height="1" 
             width="1" 
             style={{display: 'none'}}
-            src="https://www.facebook.com/tr?id=1210367194365034&ev=PageView&noscript=1"
+            src="https://www.facebook.com/tr?id=1388369529394198&ev=PageView&noscript=1"
             alt=""
           />
         </noscript>
