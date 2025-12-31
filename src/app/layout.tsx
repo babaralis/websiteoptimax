@@ -186,7 +186,9 @@ export default function RootLayout({
                     $zopim(function() {
                       $zopim.livechat.setOnUnreadMsgs(function(count) {
                         if (count >= 1) {
-                          $zopim.livechat.window.show();
+                          setTimeout(function() {
+                            $zopim.livechat.window.show();
+                          }, 30000); // 30 second delay
                         }
                       });
                       
@@ -206,7 +208,7 @@ export default function RootLayout({
           <Layout>{children}</Layout>
           <Toaster />
           <Sonner />
-          <CookieConsent />
+          {/* <CookieConsent /> */}
           <ConditionalScrollToTop />
         </Providers>
         
