@@ -186,12 +186,15 @@ export default function RootLayout({
                     $zopim(function() {
                       $zopim.livechat.setOnUnreadMsgs(function(count) {
                         if (count >= 1) {
-                          setTimeout(function() {
-                            // Only show on mobile view (screen width <= 768px)
-                            if (window.innerWidth <= 768) {
+                          if (window.innerWidth <= 768) {
+                            // Mobile: show with 30 second timer
+                            setTimeout(function() {
                               $zopim.livechat.window.show();
-                            }
-                          }, 30000); // 30 second delay
+                            }, 30000); // 30 second delay
+                          } else {
+                            // Desktop/Tablet: show immediately without timer
+                            $zopim.livechat.window.show();
+                          }
                         }
                       });
                       
