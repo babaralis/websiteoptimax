@@ -104,6 +104,16 @@ export async function contactLead(data: {
       throw new Error(responseData.message || 'Failed to submit contact form')
     }
     
+    // Track Facebook Pixel Lead event
+    if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+      (window as any).fbq('track', 'Lead', {
+        content_name: 'Contact Form',
+        content_category: 'contact',
+        value: data.budget || 0,
+        currency: 'USD'
+      })
+    }
+    
     return res
   }
 
@@ -159,7 +169,16 @@ export async function contactLead(data: {
     const responseData = await res.json().catch(() => ({}))
     
     if (!res.ok || responseData.status === false) {
-      throw new Error(responseData.message || 'Failed to submit contact form')
+      throw new Error(responseData.message || 'Failed to submit brief form')
+    }
+    
+    // Track Facebook Pixel Lead event
+    if (typeof window !== 'undefined' && typeof (window as any).fbq === 'function') {
+      (window as any).fbq('track', 'Lead', {
+        content_name: 'Brief Form',
+        content_category: 'brief',
+        industry: data.industry
+      })
     }
     
     return res
