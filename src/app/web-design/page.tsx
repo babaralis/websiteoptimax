@@ -10,6 +10,7 @@ import { WebDesignDevUX } from "@/components/webdesign/WebDevDesignUX";
 import { WebDesignLead } from "@/components/webdesign/WebDesignLead";
 import { WebDesignPopup } from "@/components/webdesign/WebDesignPopup";
 import { WebDesignFloatingCTA } from "@/components/webdesign/WebDesignFloatingCTA";
+import { PromoAmpPopup } from "@/components/webdesignv2/PromoAmpPopup";
 
 import { PAGE_SEO, generateServiceSchema } from "@/lib/seo";
 import { generateMetadata as genMeta } from "@/lib/metadata";
@@ -25,6 +26,7 @@ export default function WebDesignPage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceSchema) }}
       />
+      <PromoAmpPopup />
       <WebDesignPopup />
       <WebDesignFloatingCTA />
       <LandingHero />
