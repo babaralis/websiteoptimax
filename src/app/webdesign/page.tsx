@@ -74,7 +74,6 @@ export default function WebDesignV2Page() {
 
   return (
     <>
-      <h1>Web Design V2</h1>
       <LandingHero />
       <LandingLogoSlider />
       <LandingAbout />
