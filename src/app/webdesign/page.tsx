@@ -58,7 +58,7 @@ export default function WebDesignV2Page() {
                 popupContainer.style.width = '90%';
                 popupContainer.style.maxWidth = '400px';
                 popupContainer.style.height = 'auto';
-                popupContainer.style.maxHeight = '90vh';
+                popupContainer.style.maxHeight = '100vh';
               } else {
                 popupContainer.style.width = '800px';
                 popupContainer.style.maxWidth = '90vw';
