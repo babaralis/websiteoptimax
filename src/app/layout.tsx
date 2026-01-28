@@ -87,7 +87,45 @@ export default function RootLayout({
             window.dataLayer = window.dataLayer || [];
             function gtag(){dataLayer.push(arguments);}
             gtag('js', new Date());
-            gtag('config', 'AW-17795363418');
+            gtag('config', 'AW-17795363418', { 'allow_enhanced_conversions': true });
+          `}
+        </Script>
+
+        {/* Google Ads Conversion Tracking */}
+        <Script id="google-ads-conversion" strategy="afterInteractive">
+          {`
+            // Google Ads Configuration
+            const AW_KEY = 'AW-17795363418';
+            const AW_LABEL_KEY = 'oY1jCKi3rdQbENrkvqVC';
+
+            // Function to fire conversion event (only once)
+            window.fireConversionEvent = function() {
+              // Check if conversion has already been tracked
+              const conversionTracked = localStorage.getItem('zopim_conversion_tracked');
+              
+              if (!conversionTracked && AW_KEY !== '' && AW_LABEL_KEY !== '') {
+                // Wait for gtag to be loaded
+                const waitForGtag = setInterval(() => {
+                  if (window.gtag) {
+                    clearInterval(waitForGtag);
+                    
+                    // Fire conversion event
+                    gtag('event', 'conversion', {
+                      'send_to': AW_KEY + '/' + AW_LABEL_KEY,
+                      'value': 1.0,
+                      'currency': 'USD',
+                      'transaction_id': 'zopim_chat_' + Date.now()
+                    });
+
+                    // Mark conversion as tracked
+                    localStorage.setItem('zopim_conversion_tracked', 'true');
+                    console.log('Zopim chat conversion event fired');
+                  }
+                }, 100);
+              } else if (conversionTracked) {
+                console.log('Conversion already tracked for this user');
+              }
+            };
           `}
         </Script>
 
@@ -197,7 +235,11 @@ export default function RootLayout({
                           }
                         }
                       });
-                      
+                        
+                      $zopim.livechat.setOnChatStart(() => {
+                        console.log('User started chat - firing conversion event');
+                        fireConversionEvent();
+                      });
                       // Mobile-optimized settings
                       $zopim.livechat.button.setOffsetVerticalMobile(60);
                       $zopim.livechat.window.setSize('compact');
