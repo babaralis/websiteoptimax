@@ -96,7 +96,7 @@ export default function RootLayout({
           {`
             // Google Ads Configuration
             const AW_KEY = 'AW-17795363418';
-            const AW_LABEL_KEY = 'oY1jCKi3rdQbENrkvqVC';
+            const AW_LABEL_KEY = 'RjOdCOO1gtAbENrkvqVC';
 
             // Function to fire conversion event (only once)
             window.fireConversionEvent = function() {
